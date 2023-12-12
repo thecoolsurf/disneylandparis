@@ -1,0 +1,105 @@
+@media screen and (max-width: 650px) {
+  .nav {
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav .slidedown {
+    position: absolute;
+    top: 80px;
+    left: 0px;
+    z-index: 1;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+}
+
+@media screen and (min-width: 651px) {
+  .nav {
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav .slidedown {
+    position: relative;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/* ************************************************************ */
+
+.nav {
+  position: relative;
+  background: #1833b4;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.nav .link {
+  font-size: 1.2rem;
+  color: #FFF;
+  text-decoration: none;
+  margin: 0 5px 10px 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgb(0,0,0,0.2);
+}
+
+.nav .link:hover {
+  background: #FFF;
+  color: #000;
+}
+
+.nav .active {
+  background: #FFF;
+  color: #000;
+}
+
+.nav .nav-home {
+  background: none;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin: -5px 0 0 0;
+  box-shadow: none;
+}
+
+.nav .slider {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1;
+  padding: 10px 15px;
+  font-size: 1.2rem;
+  line-height: 1;
+  color: #FFF;
+  border-radius: 5px;
+  border: solid 1px #FFF;
+}
+
+.nav .slider:hover {
+  background: #FFF;
+  color: #000;
+}
+
+.slidedown {
+  transition: all 1s;
+}
+
+.show {
+  display: flex;
+}
+
+.hide {
+  display: none;
+}

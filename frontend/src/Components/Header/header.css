@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'DisneyScript';
+  src: url('./DisneyScript.ttf');
+}
+
+/* ****************************************************************** */
+
+.header {
+  background: center center / 100% auto no-repeat url("../../assets/images/bkg-disneyland-paris-v4.jpg") #000;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0 0 0;
+  box-sizing: border-box;
+}
+
+.header .block {
+  width: 100%;
+  margin: 0 20px;
+  text-align: left;
+}
+
+.header h1 {
+  font-family: 'DisneyScript', sans-serif;
+  font-weight: normal;
+  color: #FFF;
+  font-size: clamp(2rem, 25vw, 10rem);
+  line-height: 0.75;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
+  margin: 0 0 20px 0;
+}
+
+.header h3 {
+  font-family: 'lato', sans-serif;
+  font-weight: normal;
+  font-size: clamp(1rem, 2vw, 2rem);
+  line-height: 1;
+  text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
+  color: #FFF;
+  margin: 0;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.header .logo {
+  display: inline-block;
+  width: clamp(8vh,12vw,20vw);
+  height: auto;
+  box-sizing: border-box;
+  overflow: hidden;
+  animation: zoom 1s ease;
+}
+
+.header .logo img {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  object-fit: cover;
+}

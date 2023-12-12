@@ -1,0 +1,60 @@
+.houses {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.house {
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+
+.search {
+    background: #252633;
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+.search .house {
+    font-size: 2rem;
+    color: #FFF;
+}
+.search .house .category {
+    font-size: 1rem;
+}
+.search .searchbox {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+}
+.search input[type="text"] {
+    width: 250px;
+    margin: 0 20px;
+    padding: 10px;
+    font-size: 1.2rem;
+}
+.search .fa-search {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #888;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    color: #252633;
+}
