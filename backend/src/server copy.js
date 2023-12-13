@@ -20,19 +20,10 @@ const app = express();
 app.use(morgan("common"));
 
 app.get("/", function(req, res, next) {
-  database.raw('SHOW TABLES')
-    .then(([rows, columns]) => {
-      console.log(rows);
-      rows
-    })
-    .then((row) => {
-      res.json({ msg: `MySQL ${row}` })
-    })
+  database.raw('select VERSION() version')
+    .then(([rows, columns]) => rows[0])
+    .then((row) => res.json({ message: `Hello from MySQL ${row.version}` }))
     .catch(next);
-});
-
-app.get('/', function (req, res) {
-  res.send('Hello from Hubert')
 });
 
 app.get("/healthz", function(req, res) {
@@ -41,7 +32,5 @@ app.get("/healthz", function(req, res) {
   // if you want, you should be able to restrict this to localhost (include ipv4 and ipv6)
   res.send("I am happy and healthy\n");
 });
-
-app.listen(3000);
 
 module.exports = app;
