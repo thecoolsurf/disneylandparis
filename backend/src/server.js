@@ -1,47 +1,46 @@
-// simple node web server that displays hello world
-// optimized for Docker image
+/* ******************************************************** */
+/* IT WORKS */
 
-const express = require("express");
-// this example uses express web framework so we know what longer build times
-// do and how Dockerfile layer ordering matters. If you mess up Dockerfile ordering
-// you'll see long build times on every code change + build. If done correctly,
-// code changes should be only a few seconds to build locally due to build cache.
-
-const morgan = require("morgan");
-// morgan provides easy logging for express, and by default it logs to stdout
-// which is a best practice in Docker. Friends don't let friends code their apps to
-// do app logging to files in containers.
-
+const mod_express = require("express");
+const mod_morgan = require("morgan");
 const database = require("./database");
+const query = mod_express();
 
-// Appi
-const app = express();
+// function select(table,attributes) {
+//   let request = `SELECT ${attributes} FROM ${table};`
+//   query.use(mod_morgan("common"));
+//   query.get("/", (req, res, next) => {
+//     database.raw(request)
+//       .then(([rows, columns]) => rows[0])
+//       .then((row) => res.json({
+//         id: row.id,
+//         name: row.name,
+//         url: row.url
+//       }))
+//       .catch(next);
+//   });
+//   return query;
+// }
 
-app.use(morgan("common"));
+function select(table, attributes) {
+  let request = `SELECT ${attributes} FROM ${table};`;
+  let result = [];
+  query.use(mod_morgan("common"));
+  query.get("/", (req, res, next) => {
+    database.raw(request)
+      .then(([rows, columns]) => rows.map((el => {
+        console.log('id',el.id);
+        result.push(res.json({
+          id: el.id,
+          name: el.name,
+          url: el.url
+        }))
+      })))
+      .catch(next);
+  });
+  return query;
+}
 
-app.get("/", function(req, res, next) {
-  database.raw('SHOW TABLES')
-    .then(([rows, columns]) => {
-      console.log(rows);
-      rows
-    })
-    .then((row) => {
-      res.json({ msg: `MySQL ${row}` })
-    })
-    .catch(next);
-});
+module.exports = select('park', '*');
 
-app.get('/', function (req, res) {
-  res.send('Hello from Hubert')
-});
-
-app.get("/healthz", function(req, res) {
-  // do app logic here to determine if app is truly healthy
-  // you should return 200 if healthy, and anything else will fail
-  // if you want, you should be able to restrict this to localhost (include ipv4 and ipv6)
-  res.send("I am happy and healthy\n");
-});
-
-app.listen(3000);
-
-module.exports = app;
+/* ******************************************************** */

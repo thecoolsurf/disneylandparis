@@ -11,16 +11,6 @@ CREATE TABLE attraction (
     CONSTRAINT FK_AttractionCategory FOREIGN KEY (`id_cat`)
     REFERENCES category(`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
-DELETE FROM attraction;
-ALTER TABLE attraction AUTO_INCREMENT=1;
-
-
--- |  1 | Adventureland      | adventureland   |
--- |  2 | Discoveryland      | discoveryland   |
--- |  3 | Fantasyland        | fantasyland     |
--- |  4 | Frontierland       | Frontierland    |
--- |  5 | Main Street, U.S.A | main-street-usa
-
 INSERT INTO attraction (`id`,`id_cat`,`name`,`url`,`description`,`restriction`,`pictures`,`movies`) VALUES
 (1,1,'Adventure Isle','adventure-isle','Aventure en famille','Promenades relaxantes','picture1.jpg','movie.avi'),
 (2,3,'Alice\'s Curious Labyrinth','alice-s-curious-labyrinth','Divertissement pour les plus petits','Pas de restriction', 'picture1.jpg', 'movie.avi'),
