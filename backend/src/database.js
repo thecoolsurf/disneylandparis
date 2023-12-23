@@ -1,7 +1,7 @@
 const knex = require('knex');
-const { database } = require('./config');
+const config = require('./config');
 
 module.exports = knex({
   client: 'mysql2',
-  connection: database,
+  connection: config.db,
 });

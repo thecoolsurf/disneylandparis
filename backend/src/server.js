@@ -1,46 +1,32 @@
-/* ******************************************************** */
-/* IT WORKS */
-
-const mod_express = require("express");
-const mod_morgan = require("morgan");
+const express = require("express");
+const morgan = require("morgan");
 const database = require("./database");
-const query = mod_express();
-
-// function select(table,attributes) {
-//   let request = `SELECT ${attributes} FROM ${table};`
-//   query.use(mod_morgan("common"));
-//   query.get("/", (req, res, next) => {
-//     database.raw(request)
-//       .then(([rows, columns]) => rows[0])
-//       .then((row) => res.json({
-//         id: row.id,
-//         name: row.name,
-//         url: row.url
-//       }))
-//       .catch(next);
-//   });
-//   return query;
-// }
+const server = express();
+const cors = require('cors');
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  credentials: true,
+  optionSuccessStatus: 200
+}
 
 function select(table, attributes) {
-  let request = `SELECT ${attributes} FROM ${table};`;
-  let result = [];
-  query.use(mod_morgan("common"));
-  query.get("/", (req, res, next) => {
-    database.raw(request)
-      .then(([rows, columns]) => rows.map((el => {
-        console.log('id',el.id);
-        result.push(res.json({
+  let sql = `SELECT ${attributes} FROM ${table};`;
+  server.use(morgan("common"));
+  server.use(cors(corsOptions));
+  server.get("/", (req, res, next) => {
+    database.raw(sql)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
           id: el.id,
           name: el.name,
           url: el.url
-        }))
-      })))
-      .catch(next);
-  });
-  return query;
+        }));
+        res.json(result);
+      })
+      .catch((error) => {
+        res.status(500).json({ error: 'error server' });
+      });
+  })
+  return server;
 }
-
 module.exports = select('park', '*');
-
-/* ******************************************************** */

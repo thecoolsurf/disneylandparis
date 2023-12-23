@@ -99,7 +99,8 @@ cd /path/to/your/project
 Install or Update REACT and dependances
 ```
 npm install
-npm install react-router-dom
+npm install react-router-dom --save
+npm install cors --save
 ```
 
 
