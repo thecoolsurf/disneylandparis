@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const database = require("../database");
+const database = require("./database");
 const server = express();
 const cors = require('cors');
 const corsOptions = {
@@ -13,7 +13,7 @@ function select(table, attributes) {
   let sql = `SELECT ${attributes} FROM ${table};`;
   server.use(morgan("common"));
   server.use(cors(corsOptions));
-  server.get("/", (req, res, next) => {
+  server.get("/park", (req, res, next) => {
     database.raw(sql)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({

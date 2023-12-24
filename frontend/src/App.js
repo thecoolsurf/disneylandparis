@@ -9,24 +9,22 @@ import { Attraction } from './Containers/Attraction/Attraction.js';
 import "./App.css";
 
 function App() {
-  const arrMenus = [
-    { name: 'Adventureland', url: 'adventureland' },
-    { name: 'Discoveryland', url: 'discoveryland' },
-    { name: 'Fantasyland', url: 'fantasyland' },
-    { name: 'Frontierland', url: 'frontierland' },
-    { name: 'Main Street', url: 'main-street' }
-  ];
   const [menus, setMenus] = useState([]);
+  const [category, setCategory] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const datasMenus = await fetch('http://localhost:80');
+      const datasMenus = await fetch('http://localhost:80/park');
       const menus = await datasMenus.json();
       setMenus(menus);
+      const datasCategory = await fetch('http://localhost:80/category');
+      const category = await datasCategory.json();
+      setCategory(category);
     };
     fetchData();
   }, []);
   return (
     <div className="main">
+      <pre>{JSON.stringify(category)}</pre>
       <BrowserRouter>
         <Navigation menus={menus} />
         <Header />
