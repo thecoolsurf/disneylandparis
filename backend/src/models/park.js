@@ -1,6 +1,6 @@
 const express = require("express");
 const morgan = require("morgan");
-const database = require("./database");
+const database = require("../database");
 const server = express();
 const cors = require('cors');
 const corsOptions = {
