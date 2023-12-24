@@ -16,7 +16,7 @@ function App() {
     { name: 'Frontierland', url: 'frontierland' },
     { name: 'Main Street', url: 'main-street' }
   ];
-  const [menus, setMenus] = useState(null);
+  const [menus, setMenus] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const datasMenus = await fetch('http://localhost:80');
@@ -27,13 +27,12 @@ function App() {
   }, []);
   return (
     <div className="main">
-      <pre>{JSON.stringify(menus)}</pre>
       <BrowserRouter>
-        <Navigation menus={arrMenus} />
+        <Navigation menus={menus} />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          {arrMenus.map((item) => {
+          {menus.map((item) => {
             return (
               <Route path={item.name} element={<Attractions url={item.url} />} />
             )
