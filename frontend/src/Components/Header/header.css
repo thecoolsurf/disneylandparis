@@ -25,24 +25,29 @@
   text-align: left;
 }
 
-.header h1 {
+.header .title {
   font-family: 'DisneyScript', sans-serif;
   font-weight: normal;
   color: #FFF;
   font-size: clamp(2rem, 25vw, 10rem);
   line-height: 0.75;
   text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
+  text-decoration: none;
   margin: 0 0 20px 0;
 }
 
-.header h3 {
+.header .title:hover {
+  text-shadow: none;
+}
+
+.header .baseline {
   font-family: 'lato', sans-serif;
   font-weight: normal;
-  font-size: clamp(1rem, 2vw, 2rem);
+  font-size: clamp(1rem, 1.5vw, 2rem);
   line-height: 1;
   text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
   color: #FFF;
-  margin: 0;
+  margin: 10px 0 0 0;
   padding: 0 20px;
   box-sizing: border-box;
 }

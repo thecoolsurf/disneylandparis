@@ -13,37 +13,44 @@ server.use(morgan("common"));
 server.use(cors(corsOptions));
 
 function select() {
-  let sql_park = 'SELECT id, name, url FROM park';
-  server.get("/park", (req, res, next) => {
-    database.raw(sql_park)
+  let sqlParks = 'SELECT id, name, slug, description FROM park';
+  server.get("/parks", (req, res, next) => {
+    database.raw(sqlParks)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
           id: el.id,
           name: el.name,
-          url: el.url
+          slug: el.slug,
+          description: el.description
         }));
         res.json(result);
       })
-      .catch((error) => {
-        res.status(500).json({ error: 'error server' });
-      });
-  })
-  let sql_cat = 'SELECT c.id, c.name, c.url, p.id AS park_id, p.name AS park_name FROM category AS c LEFT JOIN park AS p ON p.id = c.id_park';
-  server.get("/category", (req, res, next) => {
-    database.raw(sql_cat)
+  });
+  let sqlUniversPark = 'SELECT id, name, slug, description FROM univers WHERE id_park = 1';
+  server.get("/univers_park", (req, res, next) => {
+    database.raw(sqlUniversPark)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
-          park_name: el.park_name,
-          park_id: el.park_id,
           id: el.id,
           name: el.name,
-          url: el.url
+          slug: el.slug,
+          description: el.description
         }));
         res.json(result);
       })
-      .catch((error) => {
-        res.status(500).json({ error: 'error server' });
-      });
+  });
+  let sqlUniversStudio = 'SELECT id, name, slug, description FROM univers WHERE id_park = 2';
+  server.get("/univers_studio", (req, res, next) => {
+    database.raw(sqlUniversStudio)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          id: el.id,
+          name: el.name,
+          slug: el.slug,
+          description: el.description
+        }));
+        res.json(result);
+      })
   });
   return server;
 }

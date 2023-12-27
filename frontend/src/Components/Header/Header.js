@@ -4,8 +4,10 @@ export const Header = () => {
     return (
         <header className="header">
             <div className="block">
-                <h1>Disneyland</h1>
-                <h3>Your Favourite Attractions in one Click.</h3>
+                <a className="title" href="/" alt="Disneyland Paris">
+                    Disneyland
+                </a>
+                <div className="baseline">Your Favourite Attractions in one Click.</div>
             </div>
         </header>
     )

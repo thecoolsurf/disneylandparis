@@ -9,33 +9,35 @@ import { Attraction } from './Containers/Attraction/Attraction.js';
 import "./App.css";
 
 function App() {
-  const [menus, setMenus] = useState([]);
-  const [category, setCategory] = useState([]);
+  const [parks, setParks] = useState([]);
+  const [universPark, setUniversPark] = useState([]);
+  const [universStudio, setUniversStudio] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const datasMenus = await fetch('http://localhost:80/park');
-      const menus = await datasMenus.json();
-      setMenus(menus);
-      const datasCategory = await fetch('http://localhost:80/category');
-      const category = await datasCategory.json();
-      setCategory(category);
+      const dataParks = await fetch('http://localhost:80/parks');
+      const parks = await dataParks.json();
+      setParks(parks);
+      const dataUniversPark = await fetch('http://localhost:80/univers_park');
+      const universPark = await dataUniversPark.json();
+      setUniversPark(universPark);
+      const dataUniversStudio = await fetch('http://localhost:80/univers_studio');
+      const universStudio = await dataUniversStudio.json();
+      setUniversStudio(universStudio);
     };
     fetchData();
-  }, []);
-  return (
+  }, []); return (
     <div className="main">
-      <pre>{JSON.stringify(category)}</pre>
       <BrowserRouter>
-        <Navigation menus={menus} />
+        <Navigation parks={parks} universPark={universPark} universStudio={universStudio} />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          {menus.map((item) => {
+          {parks.map((item) => {
             return (
-              <Route path={item.name} element={<Attractions url={item.url} />} />
+              <Route path={'/'+item.slug} element={<Attractions url={item.slug} />} />
             )
           })}
-          <Route path="/Attraction/:id" element={<Attraction />} />
+          <Route path="/attraction/:url" element={<Attraction />} />
         </Routes>
         <Footer />
       </BrowserRouter>
