@@ -29,12 +29,12 @@ export const Navigation = (props) => {
                             }}>{el.name}
                             </div>
                             <div className="nav-childs">
-                                {props.universPark.map((e) => {
-                                    tagPark = el.id === 1 ? <a className={slidePark} href={'/'+e.pslug+'/'+e.slug}>{e.name}</a> : '';
+                                {props.universPark.map((epark) => {
+                                    tagPark = el.id === 1 ? <a className={slidePark} href={'/'+epark.pslug+'/'+epark.slug}>{epark.name}</a> : '';
                                     return tagPark;
                                 })}
-                                {props.universStudio.map((e) => {
-                                    tagStudio = el.id === 2 ? <a className={slideStudio} href={'/'+e.pslug+'/'+e.slug}>{e.name}</a> : '';
+                                {props.universStudio.map((estud) => {
+                                    tagStudio = el.id === 2 ? <a className={slideStudio} href={'/'+estud.pslug+'/'+estud.slug}>{estud.name}</a> : '';
                                     return tagStudio;
                                 })}
                             </div>

@@ -31,7 +31,8 @@ function select() {
 
   /* Query Menus Park Disneyland */
   server.get("/nav_univers_park", (req, res, next) => {
-    let sqlNavUniversPark = 'SELECT u.id, u.name, u.slug, u.id_park, p.slug AS pslug, p.name AS pname FROM univers AS u LEFT JOIN park AS p ON p.id = u.id_park AND p.id = 1';
+    let id = 1;
+    let sqlNavUniversPark = `SELECT u.id, u.name, u.slug, u.id_park, p.slug AS pslug, p.name AS pname FROM univers AS u JOIN park AS p ON p.id = u.id_park AND p.id = ${id}`;
     database.raw(sqlNavUniversPark)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
@@ -48,7 +49,8 @@ function select() {
 
   /* Query Menus Walt Disney Studio */
   server.get("/nav_univers_studio", (req, res, next) => {
-    let sqlNavUniversStudio = 'SELECT u.id, u.name, u.slug, u.id_park, p.slug AS pslug, p.name AS pname FROM univers AS u LEFT JOIN park AS p ON p.id = u.id_park AND p.id = 2';
+    let id = 2;
+    let sqlNavUniversStudio = `SELECT u.id, u.name, u.slug, u.id_park, p.slug AS pslug, p.name AS pname FROM univers AS u JOIN park AS p ON p.id = u.id_park AND p.id = ${id}`;
     database.raw(sqlNavUniversStudio)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
@@ -80,9 +82,11 @@ function select() {
   });
 
   /* Query Attractions by Univers -> page univers */
-  server.get("/attraction_by_univers", (req, res, next) => {
-    let id_univ = 1;
-    let sqlAttractionByUnivers = `SELECT id, slug, name, pictures FROM attraction WHERE id_univ = ${id_univ}`;
+  server.get("/attraction_by_univers/:id_park/:id_univ", (req, res, next) => {
+    let id_univ = req.get('id_park');
+    console.log(id_univ);
+    let id = 1;
+    let sqlAttractionByUnivers = `SELECT id, slug, name, pictures FROM attraction WHERE id_univ = ${id}`;
     database.raw(sqlAttractionByUnivers)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({

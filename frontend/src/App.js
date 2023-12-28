@@ -5,7 +5,6 @@ import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
 import { Home } from './Containers/Home/Home.js';
 import { Univers } from './Containers/Univers/Univers.js';
-import { Attraction } from './Containers/Attraction/Attraction.js';
 import "./App.css";
 
 function App() {
@@ -34,12 +33,12 @@ function App() {
           <Route path="/" element={<Home />} />
           {universPark.map((el) => {
             return (
-              <Route path={'/'+el.pslug+'/:'+el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
+              <Route path={'/'+el.pslug+'/'+el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
             )
           })}
           {universStudio.map((el) => {
             return (
-              <Route path={'/'+el.pslug+'/:'+el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
+              <Route path={'/'+el.pslug+'/'+el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
             )
           })}
         </Routes>
