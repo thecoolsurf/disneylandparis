@@ -8,9 +8,16 @@ export const Univers = (props) => {
     const [attractions, setAttractions] = useState([]);
     const [filterDatas, setFilterDatas] = useState([]);
 
+    const data = new URLSearchParams();
+    data.append('id_park', 1);
+    data.append('id_univ', 1);
+
     useEffect(() => {
         const fetchData = async () => {
-            const dataUnivers = await fetch(`http://localhost:80/univers_by_park`);
+            const dataUnivers = await fetch(`http://localhost:80/univers_by_park`,{
+                // method:'GET',
+                // body: {id_park:1,id_univ:2}
+            });
             const univers = await dataUnivers.json();
             setUnivers(univers);
             const dataAttractions = await fetch(`http://localhost:80/attraction_by_univers`);

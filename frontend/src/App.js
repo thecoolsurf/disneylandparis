@@ -30,15 +30,16 @@ function App() {
         <Navigation parks={parks} universPark={universPark} universStudio={universStudio} />
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home parks={parks} />} />
+          <Route path="/home" element={<Home parks={parks} />} />
           {universPark.map((el) => {
             return (
-              <Route path={'/'+el.pslug+'/'+el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
+              <Route path={'/' + el.pslug + '/' + el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
             )
           })}
           {universStudio.map((el) => {
             return (
-              <Route path={'/'+el.pslug+'/'+el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
+              <Route path={'/' + el.pslug + '/' + el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
             )
           })}
         </Routes>

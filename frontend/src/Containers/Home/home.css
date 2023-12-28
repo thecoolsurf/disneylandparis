@@ -1,6 +1,12 @@
 .home {
-  background-color: #041118;
+  background-color: #FFF;
   margin: 0;
   padding: 0;
   overflow: hidden;
+}
+
+.home .description {
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
