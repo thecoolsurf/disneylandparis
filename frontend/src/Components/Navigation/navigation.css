@@ -1,10 +1,14 @@
 .navigation {
-  position: relative;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100;
   background: #1833b4;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%;
   padding: 10px;
@@ -18,16 +22,18 @@
   align-content: center;
 }
 .navigation .link {
-  font-size: 1.2rem;
+  background: #1833b4;
+  font-size: 1.1rem;
   color: #FFF;
   text-decoration: none;
-  margin: 0 5px 10px 5px;
-  padding: 5px 10px;
+  text-wrap: nowrap;
+  margin: 0 5px;
+  padding: 10px 15px;
   cursor: pointer;
   box-shadow: 5px 5px 10px rgb(0,0,0,0.2);
 }
 
-.navivation .link:hover {
+.navigation .link:hover {
   background: #FFF;
   color: #000;
 }
@@ -37,7 +43,25 @@
   color: #000;
 }
 
-.nav .nav-home {
+.navigation .nav-parent {
+  position: relative;
+}
+
+.navigation .nav-childs {
+  position: absolute;
+  top: 40px;
+  left: 0px;
+  z-index: 1;
+}
+
+.navigation .nav-childs .link {
+  margin: 5px;
+}
+.navigation .nav-childs .link:hover {
+  background: #FFF;
+  color: #000;
+}
+.navigation .nav-home {
   background: none;
   font-size: 1.5rem;
   line-height: 1;
@@ -45,12 +69,8 @@
   box-shadow: none;
 }
 
-.nav .slider {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 1;
-  padding: 10px 15px;
+.navigation .slider {
+  padding: 5px 10px;
   font-size: 1.2rem;
   line-height: 1;
   color: #FFF;
@@ -58,7 +78,7 @@
   border: solid 1px #FFF;
 }
 
-.nav .slider:hover {
+.navigation .slider:hover {
   background: #FFF;
   color: #000;
 }

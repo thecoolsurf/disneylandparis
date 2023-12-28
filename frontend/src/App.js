@@ -4,7 +4,7 @@ import { Header } from './Components/Header/Header.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
 import { Home } from './Containers/Home/Home.js';
-import { Attractions } from './Containers/Attractions/Attractions.js';
+import { Univers } from './Containers/Univers/Univers.js';
 import { Attraction } from './Containers/Attraction/Attraction.js';
 import "./App.css";
 
@@ -14,13 +14,13 @@ function App() {
   const [universStudio, setUniversStudio] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const dataParks = await fetch('http://localhost:80/parks');
+      const dataParks = await fetch('http://localhost:80/nav_parks');
       const parks = await dataParks.json();
       setParks(parks);
-      const dataUniversPark = await fetch('http://localhost:80/univers_park');
+      const dataUniversPark = await fetch('http://localhost:80/nav_univers_park');
       const universPark = await dataUniversPark.json();
       setUniversPark(universPark);
-      const dataUniversStudio = await fetch('http://localhost:80/univers_studio');
+      const dataUniversStudio = await fetch('http://localhost:80/nav_univers_studio');
       const universStudio = await dataUniversStudio.json();
       setUniversStudio(universStudio);
     };
@@ -32,12 +32,16 @@ function App() {
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
-          {parks.map((item) => {
+          {universPark.map((el) => {
             return (
-              <Route path={'/'+item.slug} element={<Attractions url={item.slug} />} />
+              <Route path={'/'+el.pslug+'/:'+el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
             )
           })}
-          <Route path="/attraction/:url" element={<Attraction />} />
+          {universStudio.map((el) => {
+            return (
+              <Route path={'/'+el.pslug+'/:'+el.slug} element={<Univers name={el.name} pname={el.pname} id_park={el.id_park} id_univ={el.id} />} />
+            )
+          })}
         </Routes>
         <Footer />
       </BrowserRouter>

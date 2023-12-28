@@ -1,21 +1,38 @@
-.houses {
+.universes {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-content: flex-start;
     justify-content: flex-start;
     width: 100%;
-    max-width: 1280px;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
 
-.house {
-    font-size: 2rem;
-    text-transform: uppercase;
+.universes .theme .park {
+    font-size: 1.5rem;
+    color: #999;
 }
 
+.universes .theme .univers {
+    font-size: 2rem;
+    color: #FFF;
+}
+
+.universes .theme .infos {
+    font-size: 1rem;
+    color: #FFF;
+}
+
+.universes .description {
+    width: 100%;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+.universes .description h1 {
+    font-size: 2rem;
+}
 .search {
     background: #252633;
     display: flex;
@@ -24,11 +41,11 @@
     margin: 0 auto;
     box-sizing: border-box;
 }
-.search .house {
+.search .theme {
     font-size: 2rem;
     color: #FFF;
 }
-.search .house .category {
+.search .category {
     font-size: 1rem;
 }
 .search .searchbox {

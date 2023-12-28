@@ -1,4 +1,4 @@
-import "./attraction.css";
+import "./carousel.css";
 import Card from "../Card/Card.js";
 import { useState } from "react";
 

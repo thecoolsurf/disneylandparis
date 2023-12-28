@@ -5,7 +5,7 @@ export const Header = () => {
         <header className="header">
             <div className="block">
                 <a className="title" href="/" alt="Disneyland Paris">
-                    Disneyland
+                    DisneylandParis
                 </a>
                 <div className="baseline">Your Favourite Attractions in one Click.</div>
             </div>
