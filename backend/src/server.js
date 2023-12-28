@@ -82,7 +82,7 @@ function select() {
   });
 
   /* Query Attractions by Univers -> page univers */
-  server.get("/attraction_by_univers/:id_park/:id_univ", (req, res, next) => {
+  server.get("/attraction_by_univers", (req, res, next) => {
     let id_univ = req.get('id_park');
     console.log(id_univ);
     let id = 1;
