@@ -1,15 +1,10 @@
 import "./card.css";
 
-import card_1 from '../../assets/images/card-1.jpg';
+import img_default_attraction from '../../assets/images/img_default_attraction.jpg';
 
 const Card = (props) => {
-  function blason() {
-    switch (props.url) {
-      case 'gryffindor': return card_1;
-      default: return card_1;
-    }
-  }
-  let img = props.character.image ? props.character.image : blason();
+
+  let img = props.character.image ? props.character.image : img_default_attraction;
   return (
     <a className="card" href={'Character/'+props.character.id}>
       <img src={img} title={props.character.name} alt={props.character.name} />

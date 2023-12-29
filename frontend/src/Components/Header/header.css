@@ -1,12 +1,61 @@
 @font-face {
   font-family: 'DisneyScript';
-  src: url('./DisneyScript.ttf');
+  src: url('../../assets/fonts/All_Disney_Fonts/Disney/DisneyScript.ttf');
+}
+@font-face {
+  font-family: 'LibreFranklin';
+  src: url('../../assets/fonts/LibreFranklin-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'Waltograph42';
+  src: url('../../assets/fonts/All_Disney_Fonts/Waltograph/Waltograph42.ttf');
+}
+
+/* ****************************************************************** */
+
+.park-disneyland {
+  background-image: url('../../assets/images/park-disneyland.webp');
+}
+.walt-disney-studios {
+  background-image: url('../../assets/images/walt-disney-studios.webp');
+}
+.adventureland {
+  background-image: url('../../assets/images/aventureland.webp');
+}
+.discoveryland {
+  background-image: url('../../assets/images/discoveryland.webp');
+}
+.fantasyland {
+  background-image: url('../../assets/images/fantasyland.webp');
+}
+.frontierland {
+  background-image: url('../../assets/images/frontierland.webp');
+}
+.main-street-usa {
+  background-image: url('../../assets/images/main-street-usa.webp');
+}
+.toon-studio {
+  background-image: url('../../assets/images/toon-studio.webp');
+}
+.avengers-campus {
+  background-image: url('../../assets/images/avengers-campus.webp');
+}
+.worlds-of-pixar {
+  background-image: url('../../assets/images/world-of-Pixar.webp');
+}
+.front-lot {
+  background-image: url('../../assets//images/front-lot.webp');
+}
+.production-courtyard {
+  background-image: url('../../assets/images/production-courtyard.webp');
 }
 
 /* ****************************************************************** */
 
 .header {
-  background: center center / 100% auto no-repeat url("../../assets/images/bkg-disneyland-paris-v4.jpg") #000;
+  background-position: top center;
+  box-sizing: 100% auto;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -15,7 +64,7 @@
   justify-content: space-between;
   width: 100%;
   overflow: hidden;
-  margin: 50px 0 0 0;
+  margin: 75px 0 0 0;
   padding: 20px 0 0 0;
   box-sizing: border-box;
 }
@@ -27,6 +76,7 @@
 }
 
 .header .title {
+  position: relative;
   font-family: 'DisneyScript', sans-serif;
   font-weight: normal;
   color: #FFF;
@@ -41,14 +91,26 @@
   text-shadow: none;
 }
 
+.header .title .paris {
+  position: absolute;
+  bottom:8px;
+  right: -10px;
+  z-index: 1;
+  font-family:'LibreFranklin', sans-serif;
+  font-weight: bold;
+  font-size: clamp(0.5rem, 1.75vw, 2rem);
+  letter-spacing: 24px;
+  line-height: 1;
+}
+
 .header .baseline {
   font-family: 'lato', sans-serif;
   font-weight: normal;
-  font-size: clamp(1rem, 1.5vw, 2rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   line-height: 1;
   text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
   color: #FFF;
-  margin: 10px 0 0 0;
+  margin: 60px 0 0 30px;
   padding: 0 20px;
   box-sizing: border-box;
 }

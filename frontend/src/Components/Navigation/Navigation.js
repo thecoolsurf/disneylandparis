@@ -17,7 +17,8 @@ export const Navigation = (props) => {
                 {props.parks.map((el) => {
                     return (
                         <div className="nav-parent">
-                            <div id={el.id} class="link" onClick={(e) => {
+                            <a href={'/'+el.slug} alt={el.name} id={el.id} className="link" onMouseOver={(e) => {
+                                e.preventDefault()
                                 if (el.id === 1) {
                                     setSlidePark('link show');
                                     setSlideStudio('link hide')
@@ -27,14 +28,14 @@ export const Navigation = (props) => {
                                     setSlideStudio('link show')
                                 }
                             }}>{el.name}
-                            </div>
+                            </a>
                             <div className="nav-childs">
                                 {props.universPark.map((epark) => {
-                                    tagPark = el.id === 1 ? <a className={slidePark} href={'/'+epark.pslug+'/'+epark.slug}>{epark.name}</a> : '';
+                                    tagPark = el.id === 1 ? <a className={slidePark} href={'/'+epark.pslug+'/univers/'+epark.slug}>{epark.name}</a> : '';
                                     return tagPark;
                                 })}
                                 {props.universStudio.map((estud) => {
-                                    tagStudio = el.id === 2 ? <a className={slideStudio} href={'/'+estud.pslug+'/'+estud.slug}>{estud.name}</a> : '';
+                                    tagStudio = el.id === 2 ? <a className={slideStudio} href={'/'+estud.pslug+'/univers/'+estud.slug}>{estud.name}</a> : '';
                                     return tagStudio;
                                 })}
                             </div>

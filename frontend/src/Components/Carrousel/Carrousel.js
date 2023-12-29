@@ -1,8 +1,8 @@
-import "./carousel.css";
+import "./carrousel.css";
 import Card from "../Card/Card.js";
 import { useState } from "react";
 
-export const Attraction = (props) => {
+export const Carrousel = (props) => {
   const incr = 200;
   const marg = 20;
   const total = props.total;
@@ -11,7 +11,7 @@ export const Attraction = (props) => {
   const [showPrev, setShowPrev] = useState('prev hide');
   const [showNext, setShowNext] = useState('next show');
   return (
-    <section className="characters">
+    <section className="carrousel">
       { total === 0 ? ('<div className="loader"></div>') : '' }
       <div className={showPrev} onClick={() => {
         setMargX(margX-(incr+marg));
@@ -29,7 +29,7 @@ export const Attraction = (props) => {
       </div>
       <div className="wrapper" style={{marginLeft: -margX + 'px'}}>
         {props.datas.map((item,i) => {
-          return <Card id={i} url={props.url} character={item} />;
+          return <Card slug={props.slug} character={item} />;
         })}
       </div>
     </section>

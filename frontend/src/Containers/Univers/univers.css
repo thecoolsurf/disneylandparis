@@ -11,12 +11,12 @@
 }
 
 .universes .theme .park {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     color: #999;
 }
 
 .universes .theme .univers {
-    font-size: 2rem;
+    font-size: 2.5rem;
     color: #FFF;
 }
 
@@ -34,7 +34,7 @@
     font-size: 2rem;
 }
 .search {
-    background: #252633;
+    background: #1833b4;
     display: flex;
     width: 100%;
     padding: 20px;

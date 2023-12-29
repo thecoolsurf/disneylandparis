@@ -14,7 +14,7 @@ Elit exercitation mollit deserunt aliquip esse culpa velit et dolor elit sit Lor
 Proident adipisicing incididunt excepteur officia voluptate.
 Occaecat laboris non minim adipisicing eiusmod dolor adipisicing ea proident ullamco officia consequat eiusmod.
 '),
-(null,'Walt Disney Studios','walt-disney-studio','Est aute dolore incididunt laboris proident excepteur id consectetur sit ea pariatur pariatur proident adipisicing.
+(null,'Walt Disney Studios','walt-disney-studios','Est aute dolore incididunt laboris proident excepteur id consectetur sit ea pariatur pariatur proident adipisicing.
 Veniam do ut laborum incididunt duis irure officia cupidatat et magna pariatur occaecat velit. 
 Elit exercitation mollit deserunt aliquip esse culpa velit et dolor elit sit Lorem.
 Proident adipisicing incididunt excepteur officia voluptate.
