@@ -1,6 +1,6 @@
 import "./card.css";
 
-import img_default_attraction from '../../assets/images/img_default_attraction.jpg';
+import img_default_attraction from '../../assets/images/attractions/img_default_attraction.jpg';
 
 const Card = (props) => {
 

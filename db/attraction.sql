@@ -13,10 +13,10 @@ CREATE TABLE attraction (
     CONSTRAINT FK_AttractionUnivers FOREIGN KEY (`id_univ`) REFERENCES univers(`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 INSERT INTO attraction (`id`,`id_park`,`id_univ`,`name`,`slug`,`description`,`restriction`,`pictures`,`movies`) VALUES
-(1,1,1,'Adventure Isle','adventure-isle','Aventure en famille','Promenades relaxantes','picture1.jpg','movie.avi'),
-(2,1,3,'Alice\'s Curious Labyrinth','alice-s-curious-labyrinth','Divertissement pour les plus petits','Pas de restriction', 'picture1.jpg', 'movie.avi'),
+(1,1,1,'Adventure Isle','adventure-isle','Aventure en famille','Promenades relaxantes','adventure-isle.jpg','adventure-isle.avi'),
+(2,1,3,'Alice\'s Curious Labyrinth','alice-s-curious-labyrinth','Divertissement pour les plus petits','Pas de restriction', 'alice-s-curious-labyrinth.jpg', 'alice-s-curious-labyrinth.avi'),
 (3,1,2,'Autopia','autopia','Divertissement pour les plus petits','Taille: 0,80m','picture1.jpg','movie.avi'),
-(4,1,4,'Big Thunder Mountain','big-thunder-mountain','Grands frissons','Taille: 1,02m','picture1.jpg','movie.avi'),
+(4,1,4,'Big Thunder Mountain','big-thunder-mountain','Grands frissons','Taille: 1,02m','big-thunder-mountain.jpg','big-thunder-mountain.avi'),
 (5,1,3,'Blanche-Neige et les Sept Nains','blanche-neige-et-les-sept-nains','Aventure en famille. Peut effrayer les plus petits','Pas de restriction','picture1.jpg','movie.avi'),
 (6,1,2,'Buzz Lightyear Laser Blast','buzz-lightyear-last-blast','Aventure en famille','Pas de restriction','picture1.jpg','movie.avi'),
 (7,1,5,'Discovery Arcade Main Street - USA','discovery-arcade-main-street-usa','Aventure en famille','Pas de restriction','picture1.jpg','movie.avi'),

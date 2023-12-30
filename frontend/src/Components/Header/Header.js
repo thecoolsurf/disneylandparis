@@ -1,7 +1,6 @@
 import './header.css';
 
 export const Header = (props) => {
-    console.log(props.slug);
     return (
         <header className={'header '+props.bkgHeader}>
             <div className="block">

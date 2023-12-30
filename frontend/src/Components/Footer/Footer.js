@@ -14,12 +14,12 @@ export const Footer = () => {
                 <li><i className="fa fa-link" aria-hidden="true"></i><a className="link" href="http://h.douin.free.fr" target="_blank" alt="DOUIN Hubert - développeur web">http://h.douin.free.fr</a></li>
             </ul>
             <ul>
-                <li><a href="#" target="_blank" alt="Facebook"><i className="fa fa-brands fa-facebook"></i>
+                <li><a href="#" target="_blank" rel="noreferrer" alt="Facebook"><i className="fa fa-brands fa-facebook"></i>
                     Facebook</a>
                 </li>
-                <li><a href="#" target="_blank" alt="Twitter"><i className="fa fa-brands fa-twitter"></i> Twitter</a>
+                <li><a href="#" target="_blank" rel="noreferrer" alt="Twitter"><i className="fa fa-brands fa-twitter"></i> Twitter</a>
                 </li>
-                <li><a href="#" target="_blank" alt="Linkedin"><i className="fa fa-brands fa-linkedin"></i>
+                <li><a href="#" target="_blank" rel="noreferrer" alt="Linkedin"><i className="fa fa-brands fa-linkedin"></i>
                     Linkedin</a>
                 </li>
             </ul>

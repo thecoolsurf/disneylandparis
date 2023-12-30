@@ -31,11 +31,11 @@ export const Navigation = (props) => {
                             </a>
                             <div className="nav-childs">
                                 {props.universPark.map((epark) => {
-                                    tagPark = el.id === 1 ? <a className={slidePark} href={'/'+epark.pslug+'/univers/'+epark.slug}>{epark.name}</a> : '';
+                                    tagPark = el.id === 1 ? <a className={slidePark} href={'/park/'+epark.pslug+'/univers/'+epark.slug}>{epark.name}</a> : '';
                                     return tagPark;
                                 })}
                                 {props.universStudio.map((estud) => {
-                                    tagStudio = el.id === 2 ? <a className={slideStudio} href={'/'+estud.pslug+'/univers/'+estud.slug}>{estud.name}</a> : '';
+                                    tagStudio = el.id === 2 ? <a className={slideStudio} href={'/park/'+estud.pslug+'/univers/'+estud.slug}>{estud.name}</a> : '';
                                     return tagStudio;
                                 })}
                             </div>

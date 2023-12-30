@@ -2,6 +2,21 @@
   font-family: 'lato';
   src: url('./assets/fonts/lato/Lato-Regular.ttf');
 }
+@font-face {
+  font-family: 'DisneyScript';
+  src: url('./assets/fonts/All_Disney_Fonts/Disney/DisneyScript.ttf');
+}
+@font-face {
+  font-family: 'LibreFranklin';
+  src: url('./assets/fonts/LibreFranklin-ExtraBold.ttf');
+}
+
+@font-face {
+  font-family: 'Waltograph42';
+  src: url('./assets/fonts/All_Disney_Fonts/Waltograph/Waltograph42.ttf');
+}
+
+/* **************************************************************** */
 
 @keyframes zoom {
   0% {
@@ -57,6 +72,50 @@
     justify-content: space-around;
     align-items: center;
   }
+}
+
+/* ****************************************************************** */
+/* parks */
+
+.park-disneyland {
+  background-image: url('./assets/images/parks/park-disneyland.webp');
+}
+.walt-disney-studios {
+  background-image: url('./assets/images/parks/walt-disney-studios.webp');
+}
+
+/* ****************************************************************** */
+/* univers */
+
+.adventureland {
+  background-image: url('./assets/images/univers/aventureland.webp');
+}
+.discoveryland {
+  background-image: url('./assets/images/univers/discoveryland.webp');
+}
+.fantasyland {
+  background-image: url('./assets/images/univers/fantasyland.webp');
+}
+.frontierland {
+  background-image: url('./assets/images/univers/frontierland.webp');
+}
+.main-street-usa {
+  background-image: url('./assets/images/univers/main-street-usa.webp');
+}
+.toon-studio {
+  background-image: url('./assets/images/univers/toon-studio.webp');
+}
+.avengers-campus {
+  background-image: url('./assets/images/univers/avengers-campus.webp');
+}
+.worlds-of-pixar {
+  background-image: url('./assets/images/univers/world-of-Pixar.webp');
+}
+.front-lot {
+  background-image: url('./assets//images/univers/front-lot.webp');
+}
+.production-courtyard {
+  background-image: url('./assets/images/univers/production-courtyard.webp');
 }
 
 /* **************************************************************** */

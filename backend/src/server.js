@@ -38,12 +38,11 @@ function select() {
   */
   server.get("/nav_univers_park", (req, res, next) => {
     let id = 1;
-    let sqlNavUniversPark = `SELECT u.id, u.name, u.slug, u.id_park, p.slug AS pslug, p.name AS pname FROM univers AS u JOIN park AS p ON p.id = u.id_park AND p.id = ${id} ORDER BY u.name`;
+    let sqlNavUniversPark = `SELECT u.id, u.name, u.slug, p.slug AS pslug, p.name AS pname FROM univers AS u JOIN park AS p ON p.id = u.id_park AND p.id = ${id} ORDER BY u.name`;
     database.raw(sqlNavUniversPark)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
           id: el.id,
-          id_park: el.id_park,
           name: el.name,
           slug: el.slug,
           pname: el.pname,
@@ -59,12 +58,11 @@ function select() {
   */
   server.get("/nav_univers_studio", (req, res, next) => {
     let id = 2;
-    let sqlNavUniversStudio = `SELECT u.id, u.name, u.slug, u.id_park, p.slug AS pslug, p.name AS pname FROM univers AS u JOIN park AS p ON p.id = u.id_park AND p.id = ${id} ORDER BY u.name`;
+    let sqlNavUniversStudio = `SELECT u.id, u.name, u.slug, p.slug AS pslug, p.name AS pname FROM univers AS u JOIN park AS p ON p.id = u.id_park AND p.id = ${id} ORDER BY u.name`;
     database.raw(sqlNavUniversStudio)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
           id: el.id,
-          id_park: el.id_park,
           name: el.name,
           slug: el.slug,
           pname: el.pname,
@@ -74,6 +72,8 @@ function select() {
       })
   });
 
+  /* ************************************************************************************************** */
+  
   /*
   Page Park
   Query park by ID

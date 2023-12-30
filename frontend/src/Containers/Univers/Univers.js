@@ -7,14 +7,12 @@ export const Univers = (props) => {
     const [univers, setUnivers] = useState([]);
     const [attractions, setAttractions] = useState([]);
     const [filterDatas, setFilterDatas] = useState([]);
-
-    // console.log(props.id_park,props.id_univ);
     useEffect(() => {
         const fetchData = async () => {
-            const dataUnivers = await fetch(`http://localhost:80/univers_by_id?id=${props.id_univ}`);
+            const dataUnivers = await fetch(`http://localhost:80/univers_by_id?id=${props.id}`);
             const univers = await dataUnivers.json();
             setUnivers(univers);
-            const dataAttractions = await fetch(`http://localhost:80/attractions_by_univers?id=${props.id_univ}`);
+            const dataAttractions = await fetch(`http://localhost:80/attractions_by_univers?id=${props.id}`);
             const attractions = await dataAttractions.json();
             setAttractions(attractions);
         };
@@ -36,7 +34,7 @@ export const Univers = (props) => {
                 <div className="theme">
                     <div className="park">{props.pname}</div>
                     <div className="univers">{props.name}</div>
-                    <div className="infos">{attractions.length + (attractions.length>1 ? ' attractions' : ' attraction')}</div>
+                    <div className="infos">{attractions.length + (attractions.length > 1 ? ' attractions' : ' attraction')}</div>
                 </div>
                 <div className="searchbox">
                     <input type="text" max="50" value={search} name="search" onChange={(e) => { setSearch(e.target.value) }} />
@@ -44,14 +42,16 @@ export const Univers = (props) => {
                 </div>
             </div>
             <Carrousel datas={dataForAttractions} slug={props.slug} />
-            {univers.map((el) => {
-                return (
-                    <section className="description">
-                        <h1>{el.name}</h1>
-                        <p>{el.description}</p>
-                    </section>
-                )
-            })}
+            <section className="description">
+                {univers.map((el) => {
+                    return (
+                        <>
+                            <h1>{el.name}</h1>
+                            <p>{el.description}</p>
+                        </>
+                    )
+                })}
+            </section>
         </div>
     )
 }

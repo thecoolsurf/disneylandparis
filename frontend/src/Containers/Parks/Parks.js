@@ -1,7 +1,7 @@
-import './park.css';
+import './parks.css';
 import { useState, useEffect } from 'react';
 
-export const Park = (props) => {
+export const Parks = (props) => {
     const [park, setPark] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -11,12 +11,15 @@ export const Park = (props) => {
         };
         fetchData();
     }, []);
-    {park.map((el) => {
-        return (
-            <section className="description">
-                <h1>{el.name}</h1>
-                <p>{el.description}</p>
-            </section>
-        )
-    })}
+    <section className="description">
+        <p>{props.name}</p>
+        {park.map((el) => {
+            return (
+                <>
+                    <h1>{el.name}</h1>
+                    <p>{el.description}</p>
+                </>
+            )
+        })}
+    </section>
 }

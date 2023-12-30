@@ -6,8 +6,8 @@ export const Home = (props) => {
             {props.parks.map((el) => {
                 return (
                     <section className="description">
-                        <h1>{el.name}</h1>
-                        <p>{el.description}</p>
+                        <p>{el.name}</p>
+                        <a href={'/'+el.slug} alt={el.name} target="_blank" rel="noreferrer" className="link">{el.slug}</a>
                     </section>
                 )
             })}

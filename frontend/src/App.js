@@ -4,7 +4,7 @@ import { Header } from './Components/Header/Header.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
 import { Home } from './Containers/Home/Home.js';
-import { Park } from './Containers/Park/Park.js';
+import { Parks } from './Containers/Parks/Parks.js';
 import { Univers } from './Containers/Univers/Univers.js';
 import "./App.css";
 
@@ -15,7 +15,7 @@ function App() {
 
   const queryString = window.location.pathname;
   const params = queryString.split('/');
-  const bkgHeader = params[3] ? params[3].toLowerCase() : params[1] ? params[1].toLowerCase() : 'park-disneyland';
+  const bkgHeader = params[4] ? params[4].toLowerCase() : params[1] ? params[1].toLowerCase() : 'park-disneyland';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,17 +39,17 @@ function App() {
           <Route path="/" element={<Home parks={parks} />} />
           {parks.map((el) => {
             return (
-              <Route path={'park/'+el.slug} element={<Park id={el.id} />} />
+              <Route path={'park/'+el.slug} element={<Parks id={el.id} />} />
             )
           })}
           {universPark.map((el) => {
             return (
-              <Route path={el.pslug + '/univers/' + el.slug} element={<Univers name={el.name} slug={el.slug} id_univ={el.id} pname={el.pname} />} />
+              <Route path={'/park/'+el.pslug + '/univers/' + el.slug} element={<Univers name={el.name} slug={el.slug} id={el.id} pname={el.pname} />} />
             )
           })}
           {universStudio.map((el) => {
             return (
-              <Route path={el.pslug + '/univers/' + el.slug} element={<Univers name={el.name} slug={el.slug} id_univ={el.id} pname={el.pname} />} />
+              <Route path={'/park/'+el.pslug + '/univers/' + el.slug} element={<Univers name={el.name} slug={el.slug} id={el.id} pname={el.pname} />} />
             )
           })}
         </Routes>
