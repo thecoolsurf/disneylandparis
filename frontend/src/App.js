@@ -15,7 +15,7 @@ function App() {
 
   const queryString = window.location.pathname;
   const params = queryString.split('/');
-  const bkgHeader = params[4] ? params[4].toLowerCase() : params[1] ? params[1].toLowerCase() : 'park-disneyland';
+  const bkgHeader = params[4] ? params[4].toLowerCase() : params[1] ? params[1].toLowerCase() : 'bkg-default-header';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,13 +33,13 @@ function App() {
   }, []); return (
     <div className="main">
       <BrowserRouter>
-        <Navigation parks={parks} universPark={universPark} universStudio={universStudio} />
         <Header bkgHeader={bkgHeader} />
+        <Navigation parks={parks} universPark={universPark} universStudio={universStudio} />
         <Routes>
           <Route path="/" element={<Home parks={parks} />} />
           {parks.map((el) => {
             return (
-              <Route path={'park/'+el.slug} element={<Parks id={el.id} />} />
+              <Route path={'/park-'+el.slug} element={<Parks id={el.id} slug={el.slug} />} />
             )
           })}
           {universPark.map((el) => {

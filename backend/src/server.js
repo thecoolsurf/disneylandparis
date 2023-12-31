@@ -79,8 +79,8 @@ function select() {
   Query park by ID
   */
   server.get("/park_by_id", (req, res, next) => {
-    // let id = req.query.id;
-    let id = 1;
+    let id = req.query.id;
+    // let id = 1;
     let sqlParkById = `SELECT slug, name, description FROM park WHERE id = ${id}`;
     database.raw(sqlParkById)
       .then(([rows, columns]) => {

@@ -4,6 +4,7 @@
   left: 0px;
   z-index: 1;
   width: 100;
+  min-height: 75px;
   background: #1833b4;
   display: flex;
   flex-direction: row;

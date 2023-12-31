@@ -1,16 +1,24 @@
 import './home.css';
+import park_disneyland from '../../assets/images/svg/park-disneyland.svg';
+import walt_disney_studios from '../../assets/images/svg/walt-disney-studios.svg';
 
 export const Home = (props) => {
     return (
         <div className="home">
-            {props.parks.map((el) => {
-                return (
-                    <section className="description">
-                        <p>{el.name}</p>
-                        <a href={'/'+el.slug} alt={el.name} target="_blank" rel="noreferrer" className="link">{el.slug}</a>
-                    </section>
-                )
-            })}
+            <section className="description">
+                {props.parks.map((el) => {
+                    let logo = el.slug === 'park-disneyland' ? park_disneyland : walt_disney_studios;
+                    return (
+                        <div className="link-park">
+                            <a href={'/park-' + el.slug} alt={el.name} target="_self" rel="noreferrer">
+                                <img src={logo} title={el.name} repeat="no-repeat" width="150px" height="auto" />
+                            </a>
+                            <h2>{el.name}</h2>
+                            <p>{el.description}</p>
+                        </div>
+                    )
+                })}
+            </section>
         </div>
     )
 }

@@ -17,7 +17,7 @@ export const Navigation = (props) => {
                 {props.parks.map((el) => {
                     return (
                         <div className="nav-parent">
-                            <a href={'/'+el.slug} alt={el.name} id={el.id} className="link" onMouseOver={(e) => {
+                            <a href={'/park-'+el.slug} alt={el.name} id={el.id} className="link" onMouseOver={(e) => {
                                 e.preventDefault()
                                 if (el.id === 1) {
                                     setSlidePark('link show');

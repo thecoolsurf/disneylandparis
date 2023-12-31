@@ -30,19 +30,24 @@
 
 /* **************************************************************** */
 
-@media screen and (max-width: 800px) {
-  .header {
-    height: clamp(300px, 50vh, 500px);
-  }
-  .houses .header {
-    height: clamp(300px, 40vh, 500px);
-  }
+@media screen and (max-width: 600px) {
   .slider {
     display: block;
   }
-  .identity .images,
-  .identity .infos {
-    width: 100%;
+  .navigation .nav {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .slider {
+    display: none;
+  }
+  .bkg-default-header {
+    background-position: center top;
+  }
+  .header {
+    height: clamp(300px, 50vh, 500px);
   }
   .search {
     flex-wrap: wrap;
@@ -53,18 +58,14 @@
 }
 
 @media screen and (min-width: 801px) {
-  .header {
-    height: clamp(400px, 80vh, 600px);
-  }
-  .houses .header {
-    height: clamp(300px, 50vh, 500px);
-  }
   .slider {
     display: none;
   }
-  .identity .images,
-  .identity .infos {
-    width: 50%;
+  .bkg-default-header {
+    background-position: center top;
+  }
+  .header {
+    height: clamp(400px, 80vh, 600px);
   }
   .search {
     flex-wrap: nowrap;
@@ -74,13 +75,26 @@
   }
 }
 
+@media screen and (min-width: 1000px) {
+  .slider {
+    display: none;
+  }
+  .bkg-default-header {
+    background-position: center -200px;
+  }
+  
+}
+
 /* ****************************************************************** */
 /* parks */
 
-.park-disneyland {
+.bkg-default-header {
+  background-image: url('./assets/images/others/bkg-disneyland-paris-v2.jpg');
+}
+.park-park-disneyland {
   background-image: url('./assets/images/parks/park-disneyland.webp');
 }
-.walt-disney-studios {
+.park-walt-disney-studios {
   background-image: url('./assets/images/parks/walt-disney-studios.webp');
 }
 

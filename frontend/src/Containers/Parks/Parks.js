@@ -11,15 +11,16 @@ export const Parks = (props) => {
         };
         fetchData();
     }, []);
-    <section className="description">
-        <p>{props.name}</p>
-        {park.map((el) => {
-            return (
-                <>
+    return (
+        <section className={'description '+props.slug}>
+            {park.map((el) => {
+                return (
+                    <>
                     <h1>{el.name}</h1>
                     <p>{el.description}</p>
                 </>
-            )
-        })}
-    </section>
+                )
+            })}
+        </section>
+    )
 }
