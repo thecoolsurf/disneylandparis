@@ -1,12 +1,17 @@
 import './univers.css';
 import { useState, useEffect } from 'react';
 import { Carrousel } from '../../Components/Carrousel/Carrousel.js';
+import { Infos } from '../../Components/infos/Infos.js';
+import { Logo } from '../../Components/Logo/Logo.js';
+import { ListAttractions } from '../../Components/Listing/Attractions.js';
+import { ListLogos } from '../../Components/Listing/Logos.js';
 
 export const Univers = (props) => {
     const [search, setSearch] = useState('');
     const [univers, setUnivers] = useState([]);
     const [attractions, setAttractions] = useState([]);
     const [filterDatas, setFilterDatas] = useState([]);
+    const slug_props = props.uslug ? props.uslug : props.slug;
     useEffect(() => {
         const fetchData = async () => {
             const dataUnivers = await fetch(`http://localhost:80/univers_by_id?id=${props.id}`);
@@ -30,7 +35,7 @@ export const Univers = (props) => {
     const dataForAttractions = search ? filterDatas : attractions;
     return (
         <div className="universes">
-            <div className="search">
+            <section className="search">
                 <div className="theme">
                     <div className="park">{props.pname}</div>
                     <div className="univers">{props.name}</div>
@@ -40,42 +45,13 @@ export const Univers = (props) => {
                     <input type="text" max="50" value={search} name="search" onChange={(e) => { setSearch(e.target.value) }} />
                     <i className="fa fa-search"></i>
                 </div>
-            </div>
+            </section>
             <Carrousel datas={dataForAttractions} slug={props.slug} />
             <section className="description">
-                <div className="infos">
-                    {univers.map((el) => {
-                        return (
-                            <>
-                                <h1>{el.name}</h1>
-                                <p>{el.description}</p>
-                            </>
-                        )
-                    })}
-                </div>
-                <div className={'logo logo-' + props.slug}></div>
-                <div className="list-attractions">
-                    <div className="total">
-                        <div className="tt">{attractions.length}</div>
-                        <div className="legend">attractions</div>
-                    </div>
-                    <ul className="list">
-                        {attractions.map((e) => {
-                            return (
-                                <li>{e.name}</li>
-                            )
-                        })}
-                    </ul>
-                </div>
-                <div className="list-logos">
-                    {attractions.map((e) => {
-                        return (
-                            <a className="link" href={'/park/' + props.pslug + '/univers/' + props.slug + '/attraction/' + e.slug} alt={e.name}>
-                                <div className={'logos logo-' + e.slug}></div>
-                            </a>
-                        )
-                    })}
-                </div>
+                <Infos datas={univers} />
+                <Logo slug={slug_props} />
+                <ListAttractions datas={attractions} />
+                <ListLogos datas={attractions} pslug={props.pslug} uslug={slug_props} />
             </section>
         </div>
     )

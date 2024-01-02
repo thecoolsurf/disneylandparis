@@ -79,7 +79,7 @@ function select() {
   */
   server.get("/nav_attractions_park", (req, res, next) => {
     let id = 1;
-    let sqlNavAttractionsPark = `SELECT p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.name, a.description, a.restriction FROM attraction a JOIN univers u ON u.id = a.id_univ JOIN park p ON p.id = u.id_park WHERE p.id = ${id}`;
+    let sqlNavAttractionsPark = `SELECT p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.id, a.name, a.description, a.restriction FROM attraction a JOIN univers u ON u.id = a.id_univ JOIN park p ON p.id = u.id_park WHERE p.id = ${id}`;
     database.raw(sqlNavAttractionsPark)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
@@ -99,9 +99,9 @@ function select() {
   Navigation
   Attractions Walt Disney Studios
   */
-  server.get("/nav_attractions_park", (req, res, next) => {
+  server.get("/nav_attractions_studio", (req, res, next) => {
     let id = 2;
-    let sqlNavAttractionsPark = `SELECT p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.name, a.description, a.restriction FROM attraction a JOIN univers u ON u.id = a.id_univ JOIN park p ON p.id = u.id_park WHERE p.id = ${id}`;
+    let sqlNavAttractionsPark = `SELECT p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.id, a.name, a.description, a.restriction FROM attraction a JOIN univers u ON u.id = a.id_univ JOIN park p ON p.id = u.id_park WHERE p.id = ${id}`;
     database.raw(sqlNavAttractionsPark)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
@@ -118,7 +118,7 @@ function select() {
   });
 
   /* ************************************************************************************************** */
-  
+
   /*
   Page Parks
   Query park, univers, attractions by park ID
@@ -138,7 +138,7 @@ function select() {
   });
 
   /* ************************************************************************************************** */
-  
+
   /*
   Page Univers
   Query Univers by ID
@@ -171,6 +171,29 @@ function select() {
           slug: el.slug,
           name: el.name,
           pictures: el.pictures
+        }));
+        res.json(result);
+      })
+  });
+
+  /* ************************************************************************************************** */
+
+  /*
+  Page Attraction
+  Attraction by ID
+  */
+  server.get("/attraction_by_id", (req, res, next) => {
+    let id = req.query.id;
+    let sqlAttractionById = `SELECT slug, name, description, restriction, pictures, movies FROM attraction WHERE id = ${id}`;
+    database.raw(sqlAttractionById)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          slug: el.slug,
+          name: el.name,
+          description: el.description,
+          restriction: el.restriction,
+          pictures: el.pictures,
+          movies: el.movies
         }));
         res.json(result);
       })
