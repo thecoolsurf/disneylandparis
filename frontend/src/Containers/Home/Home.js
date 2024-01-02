@@ -1,6 +1,6 @@
 import './home.css';
-import park_disneyland from '../../assets/images/svg/park-disneyland.svg';
-import walt_disney_studios from '../../assets/images/svg/walt-disney-studios.svg';
+import park_disneyland from '../../assets/images/parks/logo-park-disneyland.svg';
+import walt_disney_studios from '../../assets/images/parks/logo-walt-disney-studios.svg';
 
 export const Home = (props) => {
     return (

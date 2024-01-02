@@ -6,12 +6,15 @@ import { Navigation } from './Components/Navigation/Navigation.js';
 import { Home } from './Containers/Home/Home.js';
 import { Parks } from './Containers/Parks/Parks.js';
 import { Univers } from './Containers/Univers/Univers.js';
+import { Attraction } from './Containers/Attraction/Attraction.js';
 import "./App.css";
 
 function App() {
   const [parks, setParks] = useState([]);
   const [universPark, setUniversPark] = useState([]);
   const [universStudio, setUniversStudio] = useState([]);
+  const [attractionsPark, setAttractionsPark] = useState([]);
+  const [attractionsStudio, setAttractionsStudio] = useState([]);
 
   const queryString = window.location.pathname;
   const params = queryString.split('/');
@@ -28,6 +31,12 @@ function App() {
       const dataUniversStudio = await fetch('http://localhost:80/nav_univers_studio');
       const universStudio = await dataUniversStudio.json();
       setUniversStudio(universStudio);
+      const dataAttractionsPark = await fetch('http://localhost:80/nav_attractions_park');
+      const attractionsPark = await dataAttractionsPark.json();
+      setAttractionsPark(attractionsPark);
+      const dataAttractionsStudio = await fetch('http://localhost:80/nav_univers_park');
+      const attractionsStudio = await dataAttractionsStudio.json();
+      setAttractionsStudio(attractionsStudio);
     };
     fetchData();
   }, []); return (
@@ -37,19 +46,25 @@ function App() {
         <Navigation parks={parks} universPark={universPark} universStudio={universStudio} />
         <Routes>
           <Route path="/" element={<Home parks={parks} />} />
-          {parks.map((el) => {
+          {parks.map((p) => {
+            let univers = (p.slug === 'park-disneyland') ? universPark : universStudio;
             return (
-              <Route path={'/park-'+el.slug} element={<Parks id={el.id} slug={el.slug} />} />
+              <Route path={'/park-'+p.slug} element={<Parks id={p.id} slug={p.slug} univers={univers} />} />
             )
           })}
-          {universPark.map((el) => {
+          {universPark.map((up) => {
             return (
-              <Route path={'/park/'+el.pslug + '/univers/' + el.slug} element={<Univers name={el.name} slug={el.slug} id={el.id} pname={el.pname} />} />
+              <Route path={'/park/'+up.pslug + '/univers/' + up.slug} element={<Univers name={up.name} slug={up.slug} id={up.id} pname={up.pname} />} />
             )
           })}
-          {universStudio.map((el) => {
+          {universStudio.map((us) => {
             return (
-              <Route path={'/park/'+el.pslug + '/univers/' + el.slug} element={<Univers name={el.name} slug={el.slug} id={el.id} pname={el.pname} />} />
+              <Route path={'/park/'+us.pslug + '/univers/' + us.slug} element={<Univers name={us.name} slug={us.slug} id={us.id} pname={us.pname} pslug={us.pslug} />} />
+            )
+          })}
+          {attractionsPark.map((ap) => {
+            return (
+              <Route path={'/park/'+ap.pslug + '/univers/' + ap.uslug + '/attraction/' + ap.slug} element={<Attraction name={ap.name} slug={ap.slug} id={ap.id} uname={ap.uname} pname={ap.pname} />} />
             )
           })}
         </Routes>

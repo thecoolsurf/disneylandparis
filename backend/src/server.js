@@ -16,7 +16,8 @@ function select() {
 
   /*
   Navigation
-  Query Park Disneyland and WaltDisney Studios
+  Park Disneyland
+  Park WaltDisney Studios
   */
   server.get("/nav_parks", (req, res, next) => {
     let sqlNavParks = 'SELECT id, name, slug, description FROM park';
@@ -34,7 +35,7 @@ function select() {
 
   /*
   Navigation
-  Query Menus Univers Park Disneyland
+  Univers Park Disneyland
   */
   server.get("/nav_univers_park", (req, res, next) => {
     let id = 1;
@@ -54,7 +55,7 @@ function select() {
 
   /*
   Navigation
-  Query Menus Univers Walt Disney Studio
+  Univers Walt Disney Studio
   */
   server.get("/nav_univers_studio", (req, res, next) => {
     let id = 2;
@@ -72,16 +73,59 @@ function select() {
       })
   });
 
+  /*
+  Navigation
+  Attractions Park Disneyland
+  */
+  server.get("/nav_attractions_park", (req, res, next) => {
+    let id = 1;
+    let sqlNavAttractionsPark = `SELECT p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.name, a.description, a.restriction FROM attraction a JOIN univers u ON u.id = a.id_univ JOIN park p ON p.id = u.id_park WHERE p.id = ${id}`;
+    database.raw(sqlNavAttractionsPark)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          id: el.id,
+          name: el.name,
+          slug: el.slug,
+          uname: el.uname,
+          uslug: el.uslug,
+          pname: el.pname,
+          pslug: el.pslug
+        }));
+        res.json(result);
+      })
+  });
+
+  /*
+  Navigation
+  Attractions Walt Disney Studios
+  */
+  server.get("/nav_attractions_park", (req, res, next) => {
+    let id = 2;
+    let sqlNavAttractionsPark = `SELECT p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.name, a.description, a.restriction FROM attraction a JOIN univers u ON u.id = a.id_univ JOIN park p ON p.id = u.id_park WHERE p.id = ${id}`;
+    database.raw(sqlNavAttractionsPark)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          id: el.id,
+          name: el.name,
+          slug: el.slug,
+          uname: el.uname,
+          uslug: el.uslug,
+          pname: el.pname,
+          pslug: el.pslug
+        }));
+        res.json(result);
+      })
+  });
+
   /* ************************************************************************************************** */
   
   /*
-  Page Park
-  Query park by ID
+  Page Parks
+  Query park, univers, attractions by park ID
   */
-  server.get("/park_by_id", (req, res, next) => {
+  server.get("/park_by_id_with_univers_count", (req, res, next) => {
     let id = req.query.id;
-    // let id = 1;
-    let sqlParkById = `SELECT slug, name, description FROM park WHERE id = ${id}`;
+    let sqlParkById = `SELECT p.slug , p.name, p.description FROM park p WHERE p.id = ${id}`;
     database.raw(sqlParkById)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
@@ -93,6 +137,8 @@ function select() {
       })
   });
 
+  /* ************************************************************************************************** */
+  
   /*
   Page Univers
   Query Univers by ID
@@ -130,6 +176,9 @@ function select() {
       })
   });
 
+  /* ************************************************************************************************** */
+
   return server;
 }
+
 module.exports = select();

@@ -89,47 +89,93 @@
 /* parks */
 
 .bkg-default-header {
-  background-image: url('./assets/images/others/bkg-disneyland-paris-v2.jpg');
+  background: url('./assets/images/others/bkg-disneyland-paris-v2.jpg');
 }
 .park-park-disneyland {
-  background-image: url('./assets/images/parks/park-disneyland.webp');
+  background: url('./assets/images/parks/bkg-park-disneyland.webp');
 }
 .park-walt-disney-studios {
-  background-image: url('./assets/images/parks/walt-disney-studios.webp');
+  background: url('./assets/images/parks/bkg-walt-disney-studios.webp');
+}
+.logo-park-disneyland {
+  background: url('./assets/images/parks/logo-park-disneyland.svg');
+}
+.logo-walt-disney-studios {
+  background: url('./assets/images/parks/logo-walt-disney-studios.svg');
 }
 
 /* ****************************************************************** */
 /* univers */
 
 .adventureland {
-  background-image: url('./assets/images/univers/aventureland.webp');
+  background-image: url('./assets/images/univers/park/bkg-aventureland.webp');
 }
 .discoveryland {
-  background-image: url('./assets/images/univers/discoveryland.webp');
+  background-image: url('./assets/images/univers/park/bkg-discoveryland.webp');
 }
 .fantasyland {
-  background-image: url('./assets/images/univers/fantasyland.webp');
+  background-image: url('./assets/images/univers/park/bkg-fantasyland.webp');
 }
 .frontierland {
-  background-image: url('./assets/images/univers/frontierland.webp');
+  background-image: url('./assets/images/univers/park/bkg-frontierland.webp');
 }
 .main-street-usa {
-  background-image: url('./assets/images/univers/main-street-usa.webp');
+  background-image: url('./assets/images/univers/park/bkg-main-street-usa.webp');
 }
 .toon-studio {
-  background-image: url('./assets/images/univers/toon-studio.webp');
+  background-image: url('./assets/images/univers/studio/bkg-toon-studio.webp');
 }
 .avengers-campus {
-  background-image: url('./assets/images/univers/avengers-campus.webp');
+  background-image: url('./assets/images/univers/studio/bkg-avengers-campus.webp');
 }
 .worlds-of-pixar {
-  background-image: url('./assets/images/univers/world-of-Pixar.webp');
+  background-image: url('./assets/images/univers/studio/bkg-world-of-Pixar.webp');
 }
 .front-lot {
-  background-image: url('./assets//images/univers/front-lot.webp');
+  background-image: url('./assets//images/univers/studio/bkg-front-lot.webp');
 }
 .production-courtyard {
-  background-image: url('./assets/images/univers/production-courtyard.webp');
+  background-image: url('./assets/images/univers/studio/bkg-production-courtyard.webp');
+}
+.logo-adventureland {
+  background: url('./assets/images/univers/park/logo-adventureland.png');
+}
+.logo-discoveryland {
+  background: url('./assets/images/univers/park/logo-discoveryland.png');
+}
+.logo-fantasyland {
+  background: url('./assets/images/univers/park/logo-fantasyland.png');
+}
+.logo-frontierland {
+  background: url('./assets/images/univers/park/logo-frontierland.png');
+}
+.logo-main-street-usa {
+  background: url('./assets/images/univers/park/logo-main-street-usa.png');
+}
+.logo-avengers-campus {
+  background: url('./assets/images/univers/studio/logo-avengers-campus.png');
+}
+.logo-front-lot {
+  background: url('./assets/images/univers/studio/logo-front-lot.png');
+}
+.logo-production-courtyard {
+  background: url('./assets/images/univers/studio/logo-production-courtyard.png');
+}
+.logo-toon-studio {
+  background: url('./assets/images/univers/studio/logo-toon-studio.png');
+}
+.logo-worlds-of-pixar {
+  background: url('./assets/images/univers/studio/logo-worlds-of-pixar.png');
+}
+
+/* **************************************************************** */
+/* attractions */
+
+.logo-spider-man-web-aventure {
+  background: url('./assets/images/attractions/studio/logo-spider-man-web-aventure.png');
+}
+.logo-avengers-assemble-flight-force {
+  background: url('./assets/images/attractions/studio/logo-avengers-assemble-flight-force.png');
 }
 
 /* **************************************************************** */

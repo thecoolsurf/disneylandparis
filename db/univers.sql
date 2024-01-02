@@ -25,7 +25,7 @@ Veniam do ut laborum incididunt duis irure officia cupidatat et magna pariatur o
 Elit exercitation mollit deserunt aliquip esse culpa velit et dolor elit sit Lorem.
 Proident adipisicing incididunt excepteur officia voluptate.
 Occaecat laboris non minim adipisicing eiusmod dolor adipisicing ea proident ullamco officia consequat eiusmod.'),
-(4,1,'Frontierland','Frontierland','Est aute dolore incididunt laboris proident excepteur id consectetur sit ea pariatur pariatur proident adipisicing.
+(4,1,'Frontierland','frontierland','Est aute dolore incididunt laboris proident excepteur id consectetur sit ea pariatur pariatur proident adipisicing.
 Veniam do ut laborum incididunt duis irure officia cupidatat et magna pariatur occaecat velit. 
 Elit exercitation mollit deserunt aliquip esse culpa velit et dolor elit sit Lorem.
 Proident adipisicing incididunt excepteur officia voluptate.

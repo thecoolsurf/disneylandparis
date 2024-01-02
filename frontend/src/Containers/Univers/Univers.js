@@ -43,14 +43,39 @@ export const Univers = (props) => {
             </div>
             <Carrousel datas={dataForAttractions} slug={props.slug} />
             <section className="description">
-                {univers.map((el) => {
-                    return (
-                        <>
-                            <h1>{el.name}</h1>
-                            <p>{el.description}</p>
-                        </>
-                    )
-                })}
+                <div className="infos">
+                    {univers.map((el) => {
+                        return (
+                            <>
+                                <h1>{el.name}</h1>
+                                <p>{el.description}</p>
+                            </>
+                        )
+                    })}
+                </div>
+                <div className={'logo logo-' + props.slug}></div>
+                <div className="list-attractions">
+                    <div className="total">
+                        <div className="tt">{attractions.length}</div>
+                        <div className="legend">attractions</div>
+                    </div>
+                    <ul className="list">
+                        {attractions.map((e) => {
+                            return (
+                                <li>{e.name}</li>
+                            )
+                        })}
+                    </ul>
+                </div>
+                <div className="list-logos">
+                    {attractions.map((e) => {
+                        return (
+                            <a className="link" href={'/park/' + props.pslug + '/univers/' + props.slug + '/attraction/' + e.slug} alt={e.name}>
+                                <div className={'logos logo-' + e.slug}></div>
+                            </a>
+                        )
+                    })}
+                </div>
             </section>
         </div>
     )
