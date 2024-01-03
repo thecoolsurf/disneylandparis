@@ -1,11 +1,8 @@
 import './attraction.css';
 import { useState, useEffect } from 'react';
-import { Infos } from '../../Components/infos/Infos.js';
-import { Logo } from '../../Components/Logo/Logo.js';
 
 export const Attraction = (props) => {
     const [attraction, setAttraction] = useState([]);
-    const slug_props = props.uslug ? props.uslug : props.slug;
     useEffect(() => {
         const fetchtheData = async () => {
             const dataAttraction = await fetch(`http://localhost:80/attraction_by_id?id=${props.id}`);
@@ -16,27 +13,30 @@ export const Attraction = (props) => {
     }, []);
     return (
         <div className="attraction">
-            <section className="description">
-                <Infos datas={attraction} />
-                <Logo slug={slug_props} />
-                <div className="list-infos">
-                    <div className="total">
-                        <div className="tt">i</div>
-                        <div className="legend">Infos</div>
-                    </div>
-
-                    <ul className="list">
-                        {attraction.map((e) => {
-                            return (
-                                <>
-                                    <li>{e.description}</li>
-                                    <li>{e.restriction}</li>
-                                </>
-                            )
-                        })}
-                    </ul>
-                </div>
-            </section>
+            {attraction.map((el) => {
+                return (
+                    <section className="infos">
+                        <div className="col-left">
+                            <div className={'logo logo-' + el.slug} title={el.name}></div>
+                            <div className="back">
+                                <a className="link" href={'/park/' + props.pslug + '/univers/' + props.uslug}>
+                                    Back to Univers
+                                </a>
+                            </div>
+                        </div>
+                        <div className="col-infos">
+                            <div className="name">{el.name}</div>
+                            <ul className="list">
+                                <li><i>Park</i><div>{props.pname}</div></li>
+                                <li><i>Univers</i><div>{props.uname}</div></li>
+                                <li><i>Public</i><div>{el.public}</div></li>
+                                <li><i>Restriction</i><div>{el.restriction}</div></li>
+                            </ul>
+                        </div>
+                        <div className="description">{el.description}</div>
+                    </section>
+                )
+            })}
         </div>
     )
 }

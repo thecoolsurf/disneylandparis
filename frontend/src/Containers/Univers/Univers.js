@@ -1,18 +1,11 @@
 import './univers.css';
-// import '../../Components/Listing/listing.css';
 import { useState, useEffect } from 'react';
 import { Carrousel } from '../../Components/Carrousel/Carrousel.js';
-import { Infos } from '../../Components/infos/Infos.js';
-import { Logo } from '../../Components/Logo/Logo.js';
-import { ListAttractions } from '../../Components/Listing/Attractions.js';
-import { ListLogos } from '../../Components/Listing/Logos.js';
 
 export const Univers = (props) => {
-    const [search, setSearch] = useState('');
     const [univers, setUnivers] = useState([]);
     const [attractions, setAttractions] = useState([]);
-    const [filterDatas, setFilterDatas] = useState([]);
-    const slug_props = props.uslug ? props.uslug : props.slug;
+    const str_attraction = attractions.length > 1 ? 'attractions' : 'attraction';
     useEffect(() => {
         const fetchData = async () => {
             const dataUnivers = await fetch(`http://localhost:80/univers_by_id?id=${props.id}`);
@@ -24,36 +17,39 @@ export const Univers = (props) => {
         };
         fetchData();
     }, []);
-    /* filtre local depuis le tableau origine */
-    useEffect(() => {
-        if (attractions) {
-            const searcattraction = attractions.filter((el) => {
-                return el.name.includes(search);
-            });
-            setFilterDatas(searcattraction);
-        } else { setFilterDatas('') }
-    }, [search]);
-    const dataForAttractions = search ? filterDatas : attractions;
     return (
-        <div className="universes">
-            <section className="search">
-                <div className="theme">
-                    <div className="park">{props.pname}</div>
-                    <div className="univers">{props.name}</div>
-                    <div className="infos">{attractions.length + (attractions.length > 1 ? ' attractions' : ' attraction')}</div>
-                </div>
-                <div className="searchbox">
-                    <input type="text" max="50" value={search} name="search" onChange={(e) => { setSearch(e.target.value) }} />
-                    <i className="fa fa-search"></i>
-                </div>
-            </section>
-            <Carrousel datas={dataForAttractions} slug={props.slug} />
-            <section className="description">
-                <Infos datas={univers} />
-                <Logo slug={slug_props} />
-                <ListAttractions datas={attractions} />
-                <ListLogos datas={attractions} pslug={props.pslug} uslug={slug_props} />
-            </section>
+        <div className="univers">
+            <Carrousel datas={attractions} slug={props.slug} />
+            {univers.map((el) => {
+                return (
+                    <section className="infos">
+                        <div className="col-left">
+                            <div className={'logo logo-' + el.slug} title={el.name}></div>
+                            <div className="back">
+                                <a className="link" href={'/park-' + props.pslug}>
+                                    Back to Park
+                                </a>
+                            </div>
+                        </div>
+                        <div className="col-infos">
+                            <div className="name">{el.name}</div>
+                            <ul className="list">
+                                <li><i>Park</i><div>{props.pname}</div></li>
+                                <li><i>Univers</i><div>{el.name}</div></li>
+                                <li><i>Total attractions</i><div>{attractions.length + ' ' + str_attraction}</div></li>
+                                <li><i>Names</i>
+                                {attractions.map((e) => {
+                                    return (
+                                        <div>{e.name}</div>
+                                    )
+                                })}
+                                </li>
+                            </ul>
+                        </div>
+                        <div className="description">{el.description}</div>
+                    </section>
+                )
+            })}
         </div>
     )
 }

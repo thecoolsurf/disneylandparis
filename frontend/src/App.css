@@ -2,10 +2,12 @@
   font-family: 'lato';
   src: url('./assets/fonts/lato/Lato-Regular.ttf');
 }
+
 @font-face {
   font-family: 'DisneyScript';
   src: url('./assets/fonts/All_Disney_Fonts/Disney/DisneyScript.ttf');
 }
+
 @font-face {
   font-family: 'LibreFranklin';
   src: url('./assets/fonts/LibreFranklin-ExtraBold.ttf');
@@ -28,12 +30,21 @@
   }
 }
 
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+
 /* **************************************************************** */
 
 @media screen and (max-width: 600px) {
   .slider {
     display: block;
   }
+
   .navigation .nav {
     display: none;
   }
@@ -43,12 +54,15 @@
   .slider {
     display: none;
   }
+
   .bkg-default-header {
     background-position: center top;
   }
+
   .header {
     height: clamp(300px, 50vh, 500px);
   }
+
   .search {
     flex-wrap: wrap;
     flex-direction: column;
@@ -61,12 +75,15 @@
   .slider {
     display: none;
   }
+
   .bkg-default-header {
     background-position: center top;
   }
+
   .header {
     height: clamp(400px, 80vh, 600px);
   }
+
   .search {
     flex-wrap: nowrap;
     flex-direction: row;
@@ -79,43 +96,147 @@
   .slider {
     display: none;
   }
+
   .bkg-default-header {
     background-position: center -200px;
     background-repeat: no-repeat;
   }
-  
+
+}
+
+/* ****************************************************************** */
+/* parks */
+
+.bkg-default-header {
+  background-image: url('./assets/images/others/bkg-disneyland-paris-v2.jpg');
+}
+
+.park-park-disneyland {
+  background-image: url('./assets/images/parks/bkg-park-disneyland.webp');
+}
+
+.park-walt-disney-studios {
+  background-image: url('./assets/images/parks/bkg-walt-disney-studios.webp');
+}
+
+.logo-park-disneyland {
+  background-image: url('./assets/images/parks/logo-park-disneyland.svg');
+  background-size:80%;
+  background-position: center center;
+
+}
+
+.logo-walt-disney-studios {
+  background-image: url('./assets/images/parks/logo-walt-disney-studios.svg');
+  background-size:80%;
+  background-position: center center;}
+
+/* ****************************************************************** */
+/* univers */
+
+.adventureland {
+  background-image: url('./assets/images/univers/park/bkg-aventureland.webp');
+}
+
+.discoveryland {
+  background-image: url('./assets/images/univers/park/bkg-discoveryland.webp');
+}
+
+.fantasyland {
+  background-image: url('./assets/images/univers/park/bkg-fantasyland.webp');
+}
+
+.frontierland {
+  background-image: url('./assets/images/univers/park/bkg-frontierland.webp');
+}
+
+.main-street-usa {
+  background-image: url('./assets/images/univers/park/bkg-main-street-usa.webp');
+}
+
+.toon-studio {
+  background-image: url('./assets/images/univers/studio/bkg-toon-studio.webp');
+}
+
+.avengers-campus {
+  background-image: url('./assets/images/univers/studio/bkg-avengers-campus.webp');
+}
+
+.worlds-of-pixar {
+  background-image: url('./assets/images/univers/studio/bkg-world-of-Pixar.webp');
+}
+
+.front-lot {
+  background-image: url('./assets//images/univers/studio/bkg-front-lot.webp');
+}
+
+.production-courtyard {
+  background-image: url('./assets/images/univers/studio/bkg-production-courtyard.webp');
+}
+
+.logo-adventureland {
+  background-image: url('./assets/images/univers/park/logo-adventureland.png');
+}
+
+.logo-discoveryland {
+  background-image: url('./assets/images/univers/park/logo-discoveryland.png');
+}
+
+.logo-fantasyland {
+  background-image: url('./assets/images/univers/park/logo-fantasyland.png');
+}
+
+.logo-frontierland {
+  background-image: url('./assets/images/univers/park/logo-frontierland.png');
+}
+
+.logo-main-street-usa {
+  background-image: url('./assets/images/univers/park/logo-main-street-usa.png');
+}
+
+.logo-avengers-campus {
+  background-image: url('./assets/images/univers/studio/logo-avengers-campus.png');
+}
+
+.logo-front-lot {
+  background-image: url('./assets/images/univers/studio/logo-front-lot.png');
+}
+
+.logo-production-courtyard {
+  background-image: url('./assets/images/univers/studio/logo-production-courtyard.png');
+}
+
+.logo-toon-studio {
+  background-image: url('./assets/images/univers/studio/logo-toon-studio.png');
+}
+
+.logo-worlds-of-pixar {
+  background-image: url('./assets/images/univers/studio/logo-worlds-of-pixar.png');
 }
 
 /* **************************************************************** */
+/* attraction park */
 
-.loader {
-  background: #fc3;
-  position: absolute;
-  bottom: 20px;
-  left: 48%;
-  z-index: 1000;
-  width: 40px;
-  height: 30px;
-  padding: 4px 2px 5px 2px;
-  border-radius: 5px;
-  text-align: center
+.logo-adventure-isle {
+  background-image: url('./assets/images/attractions/park/bkg-adventure-isle.webp');
+  background-size: 200%;
+  background-position: top 0px left -30px;
+
 }
 
-.loader i {
-  display: block;
-  font-size: 2em;
-  line-height: 1;
-  color: #000;
-  -webkit-animation: spin 1s linear infinite;
-  -moz-animation: spin 1s linear infinite;
-  animation: spin 1s linear infinite
+.logo-avengers-assemble-flight-force {
+  background-image: url('./assets/images/attractions/studio/logo-avengers-assemble-flight-force.png');
 }
 
-@keyframes spin {
-  100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg)
-  }
+/* **************************************************************** */
+/* attraction studio */
+
+.logo-spider-man-web-aventure {
+  background-image: url('./assets/images/attractions/studio/logo-spider-man-web-aventure.png');
+}
+
+.logo-avengers-assemble-flight-force {
+  background-image: url('./assets/images/attractions/studio/logo-avengers-assemble-flight-force.png');
 }
 
 /* ************************************************************************* */
@@ -128,16 +249,21 @@ body {
 .main {
   position: relative;
   background: #FFF;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   width: 100%;
   margin: 0 auto;
 }
 
-.texte {
-  width: 100%;
-  padding: 20px 40px;
-  box-sizing: border-box;
+.logo {
+  display: block;
+  background-repeat: no-repeat;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+  border-radius: 20px;
+  text-decoration: none;
+  box-shadow: 5px 5px 10px  rgb(0, 0, 0, 0.2);
+}
+
+.logo:hover {
+  box-shadow: 5px 5px 10px  rgb(0, 0, 0, 0.5);
 }

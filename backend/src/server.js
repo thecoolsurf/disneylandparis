@@ -184,12 +184,14 @@ function select() {
   */
   server.get("/attraction_by_id", (req, res, next) => {
     let id = req.query.id;
-    let sqlAttractionById = `SELECT slug, name, description, restriction, pictures, movies FROM attraction WHERE id = ${id}`;
+    let sqlAttractionById = `SELECT slug, name, public, description, restriction, pictures, movies FROM attraction WHERE id = ${id}`;
     database.raw(sqlAttractionById)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
+          uname: el.uname,
           slug: el.slug,
           name: el.name,
+          public: el.public,
           description: el.description,
           restriction: el.restriction,
           pictures: el.pictures,

@@ -1,8 +1,10 @@
 import './parks.css';
 import { useState, useEffect } from 'react';
+import { Carrousel } from '../../Components/Carrousel/Carrousel.js';
 
 export const Parks = (props) => {
     const [park, setPark] = useState([]);
+    const [univers, setUnivers] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
             const dataPark = await fetch(`http://localhost:80/park_by_id_with_univers_count?id=${props.id}`);
@@ -11,38 +13,32 @@ export const Parks = (props) => {
         };
         fetchData();
     }, []);
+    const str = park.length > 1 ? 'univers' : 'univers';
     return (
         <div className="parks">
+            <Carrousel datas={props.univers} slug={props.slug} />
             {park.map((el) => {
                 return (
-                    <section className="description">
-                        <div className="infos">
-                            <h1>{el.name}</h1>
-                            <p>{el.description}</p>
+                    <section className="infos">
+                        <div className="col-left">
+                            <a href={'/park-' + el.slug} className={'logo logo-' + el.slug} alt={el.name}></a>
+                            <a className="link" href={'/'} alt="home">Back Home</a>
                         </div>
-                        <div className={'logo logo-'+el.slug}></div>
-                        <div className="list-univers">
-                            <div className="total">
-                                <div className="tt">{props.univers.length}</div>
-                                <div className="legend">univers</div>
-                            </div>
+                        <div className="col-infos">
+                            <div className="name">{el.name}</div>
                             <ul className="list">
-                                {props.univers.map((e) => {
-                                    return (
-                                        <li>{e.name}</li>
-                                    )
-                                })}
+                                <li><i>Name</i><div>{el.name}</div></li>
+                                <li><i>Total univers</i><div>{props.univers.length + ' ' + str}</div></li>
+                                <li><i>Univers</i>
+                                    {props.univers.map((e) => {
+                                        return (
+                                            <div>{e.name}</div>
+                                        )
+                                    })}
+                                </li>
                             </ul>
                         </div>
-                        <div className="list-logos">
-                            {props.univers.map((e,) => {
-                                return (
-                                    <a className="link" href={'/park/' + el.slug + '/univers/' + e.slug} alt={e.name}>
-                                        <div className={'logos logo-'+e.slug}></div>
-                                    </a>
-                                )
-                            })}
-                        </div>
+                        <div className="description">{el.description}</div>
                     </section>
                 )
             })}

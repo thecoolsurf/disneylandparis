@@ -4,6 +4,7 @@ CREATE TABLE attraction (
     `id_univ` int,
     `name` VARCHAR(255),
     `slug` VARCHAR(255),
+    `public` VARCHAR(255),
     `description` TEXT, 
     `restriction` VARCHAR (255), 
     `pictures` VARCHAR (255), 
@@ -12,7 +13,8 @@ CREATE TABLE attraction (
     CONSTRAINT FK_AttractionPark FOREIGN KEY (`id_park`) REFERENCES park(`id`),
     CONSTRAINT FK_AttractionUnivers FOREIGN KEY (`id_univ`) REFERENCES univers(`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
-INSERT INTO attraction (`id`,`id_park`,`id_univ`,`name`,`slug`,`description`,`restriction`,`pictures`,`movies`) VALUES
+
+INSERT INTO attraction (`id`,`id_park`,`id_univ`,`name`,`slug`,`public`,`description`,`restriction`,`pictures`,`movies`) VALUES
 (1,1,1,'Adventure Isle','adventure-isle','Aventure en famille','Promenades relaxantes','adventure-isle.jpg','adventure-isle.avi'),
 (2,1,3,'Alice\'s Curious Labyrinth','alice-s-curious-labyrinth','Divertissement pour les plus petits','Pas de restriction', 'alice-s-curious-labyrinth.jpg', 'alice-s-curious-labyrinth.avi'),
 (3,1,2,'Autopia','autopia','Divertissement pour les plus petits','Taille: 0,80m','picture1.jpg','movie.avi'),

@@ -1,66 +1,24 @@
 .home {
-  width: 100%;
-  margin: 0;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 0;
   overflow: hidden;
 }
 
-.home .description {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-content: center;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px 50px;
-  box-sizing: border-box;
-}
-
-.home .link-park {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  width: clamp(200px,50vw,400px);
-  margin: 0 20px;
+.link-park {
   text-align: center;
 }
 
-.home .link-park a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content:end;
-  width: 150px;
-  height: 150px;
-  margin: 0 auto;
-  border-radius: 20px;
-  color: #000;
-  text-align: center;
-  text-decoration: none;
-  box-shadow: 5px 5px 10px  rgb(0, 0, 0, 0.2);
-}
-
-.home .link-park a:hover {
-  box-shadow: 5px 5px 10px  rgb(0, 0, 0, 0.5);
-}
-.home .link-park h2 {
+.link-park h2 {
   font-size: 1.5rem;
   font-weight: bold;
   line-height: 1;
   margin: 20px 0;
 }
 
-.home .link-park p {
+.link-park p {
   font-size: 1rem;
   margin: 0;
-}
-
-.home .link-park a img {
-  width: 80%;
-  height: auto;
-  margin: 0 auto;
 }
 
 
