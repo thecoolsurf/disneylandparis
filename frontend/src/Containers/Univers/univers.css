@@ -1,3 +1,4 @@
+/* ************************************************************************************** */
 /* park disneyland */
 
 .img-adventureland {
@@ -30,6 +31,8 @@
   background-size: cover;
 }
 
+/* ************************************************************************************** */
+
 .logo-adventureland {
   background-image: url('../../assets/images/univers/park/logo-adventureland.png');
   background-size: 80%;
@@ -60,6 +63,7 @@
   background-position: center center;
 }
 
+/* ************************************************************************************** */
 /* walt disney studio */
 
 .img-toon-studio {

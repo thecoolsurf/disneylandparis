@@ -46,6 +46,7 @@
 }
 .infos .col-left .logo {
   position: relative;
+  background-position: center center;
   background-repeat: no-repeat;
   float: left;
   margin: 0 0 20px 0;

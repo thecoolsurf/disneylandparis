@@ -1,7 +1,8 @@
 import "./App.css";
 import "./Containers/Parks/parks.css";
 import "./Containers/Univers/univers.css";
-import "./Containers/Attraction/attraction.css";
+import "./Containers/Attraction/park-disneyland.css";
+import "./Containers/Attraction/walt-disney-studios.css";
 
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
