@@ -1,4 +1,4 @@
-.bkg-default-header {
+.img-default-header {
   background-image: url('../../assets/images/others/bkg-disneyland-paris-v2.jpg');
   background-position: center center;
   background-size: cover;
@@ -6,7 +6,7 @@
 
 /* park disnelyland */
 
-.bkg-park-park-disneyland {
+.img-park-park-disneyland {
   background-image: url('../../assets/images/parks/bkg-park-disneyland.webp');
   background-position: center center;
   background-size: cover;
@@ -21,7 +21,7 @@
 
 /* walt disney studio */
 
-.bkg-park-walt-disney-studios {
+.img-park-walt-disney-studios {
   background-image: url('../../assets/images/parks/bkg-walt-disney-studios.webp');
   background-position: center center;
   background-size: cover;

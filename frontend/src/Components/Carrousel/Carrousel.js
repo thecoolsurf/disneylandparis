@@ -28,7 +28,7 @@ export const Carrousel = (props) => {
       </div>
       <div className="wrapper" style={{ marginLeft: -margX + 'px' }}>
         {props.datas.map((item) => {
-          return <Card slugs={props.slugs} slug={props.slug} datas={item} />;
+          return <Card slugs={props.slugs} slug={props.slug} item={item} />;
         })}
       </div>
     </section>

@@ -163,11 +163,12 @@ function select() {
   */
   server.get("/attractions_by_univers", (req, res, next) => {
     let id = req.query.id;
-    let sqlAttractionsByUnivers = `SELECT id, slug, name, pictures FROM attraction WHERE id_univ = ${id}`;
+    let sqlAttractionsByUnivers = `SELECT id, id_park, slug, name, pictures FROM attraction WHERE id_univ = ${id}`;
     database.raw(sqlAttractionsByUnivers)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
           id: el.id,
+          id_park: el.id_park,
           slug: el.slug,
           name: el.name,
           pictures: el.pictures
@@ -188,7 +189,6 @@ function select() {
     database.raw(sqlAttractionById)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
-          uname: el.uname,
           slug: el.slug,
           name: el.name,
           public: el.public,

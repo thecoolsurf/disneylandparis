@@ -12,7 +12,7 @@ CREATE TABLE attraction (
     PRIMARY KEY (`id`),
     CONSTRAINT FK_AttractionPark FOREIGN KEY (`id_park`) REFERENCES park(`id`),
     CONSTRAINT FK_AttractionUnivers FOREIGN KEY (`id_univ`) REFERENCES univers(`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
 INSERT INTO attraction (`id`,`id_park`,`id_univ`,`name`,`slug`,`public`,`description`,`restriction`,`pictures`,`movies`) VALUES
 (1,1,1,'Adventure Isle','adventure-isle','Aventure en famille','Promenades relaxantes','adventure-isle.jpg','adventure-isle.avi'),

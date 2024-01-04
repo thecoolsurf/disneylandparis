@@ -1,30 +1,30 @@
 /* park disneyland */
 
-.bkg-adventureland {
+.img-adventureland {
   background-image: url('../../assets/images/univers/park/bkg-aventureland.webp');
   background-position: top center;
   background-size: cover;
 }
 
-.bkg-discoveryland {
+.img-discoveryland {
   background-image: url('../../assets/images/univers/park/bkg-discoveryland.webp');
   background-position: top center;
   background-size: cover;
 }
 
-.bkg-fantasyland {
+.img-fantasyland {
   background-image: url('../../assets/images/univers/park/bkg-fantasyland.webp');
   background-position: top center;
   background-size: cover;
 }
 
-.bkg-frontierland {
+.img-frontierland {
   background-image: url('../../assets/images/univers/park/bkg-frontierland.webp');
   background-position: top center;
   background-size: cover;
 }
 
-.bkg-main-street-usa {
+.img-main-street-usa {
   background-image: url('../../assets/images/univers/park/bkg-main-street-usa.webp');
   background-position: top center;
   background-size: cover;
@@ -62,31 +62,31 @@
 
 /* walt disney studio */
 
-.bkg-toon-studio {
+.img-toon-studio {
   background-image: url('../../assets/images/univers/studio/bkg-toon-studio.webp');
   background-position: top center;
   background-size: cover;
 }
 
-.bkg-avengers-campus {
+.img-avengers-campus {
   background-image: url('../../assets/images/univers/studio/bkg-avengers-campus.webp');
   background-position: top center;
   background-size: cover;
 }
 
-.bkg-worlds-of-pixar {
+.img-worlds-of-pixar {
   background-image: url('../../assets/images/univers/studio/bkg-world-of-Pixar.webp');
   background-position: top center;
   background-size: cover;
 }
 
-.bkg-front-lot {
+.img-front-lot {
   background-image: url('../../assets//images/univers/studio/bkg-front-lot.webp');
   background-position: center center;
   background-size: cover;
 }
 
-.bkg-production-courtyard {
+.img-production-courtyard {
   background-image: url('../../assets/images/univers/studio/bkg-production-courtyard.webp');
   background-position: top center;
   background-size: cover;
