@@ -1,5 +1,11 @@
+import "./App.css";
+import "./Containers/Parks/parks.css";
+import "./Containers/Univers/univers.css";
+import "./Containers/Attraction/attraction.css";
+
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { Header } from './Components/Header/Header.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
@@ -7,7 +13,6 @@ import { Home } from './Containers/Home/Home.js';
 import { Parks } from './Containers/Parks/Parks.js';
 import { Univers } from './Containers/Univers/Univers.js';
 import { Attraction } from './Containers/Attraction/Attraction.js';
-import "./App.css";
 
 function App() {
   const [parks, setParks] = useState([]);
@@ -18,8 +23,8 @@ function App() {
 
   const queryString = window.location.pathname;
   const params = queryString.split('/');
-  const bkgHeader = params[4] ? params[4].toLowerCase() : params[1] ? params[1].toLowerCase() : 'bkg-default-header';
-  const bkgNav = params[1].toLowerCase().includes('park-') ? 'bkg-nav-park' : 'bkg-nav-studio';
+  const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
+  const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,34 +58,34 @@ function App() {
             let univers = (p.slug === 'park-disneyland') ? universPark : universStudio;
             return (
               <Route path={'/park-' + p.slug} element=
-                {<Parks id={p.id} slug={p.slug} univers={univers} bkgNav={bkgNav} />} />
+                {<Parks id={p.id} slugs={params} slug={p.slug} univers={univers} bkgNav={bkgNav} />} />
             )
           })}
           {universPark.map((up) => {
             return (
               <Route path={'/park/' + up.pslug + '/univers/' + up.slug} element={
-                <Univers id={up.id} uslug={up.slug} pslug={up.pslug} name={up.name} pname={up.pname} />
+                <Univers id={up.id} slugs={params} slug={up.slug} pname={up.pname} bkgNav={bkgNav} />
               } />
             )
           })}
           {universStudio.map((us) => {
             return (
               <Route path={'/park/' + us.pslug + '/univers/' + us.slug} element={
-                <Univers id={us.id} slug={us.slug} pslug={us.pslug} name={us.name} pname={us.pname} />
+                <Univers id={us.id} slugs={params} slug={us.slug} pname={us.pname} bkgNav={bkgNav} />
               } />
             )
           })}
           {attractionsPark.map((ap) => {
             return (
               <Route path={'/park/' + ap.pslug + '/univers/' + ap.uslug + '/attraction/' + ap.slug} element={
-                <Attraction id={ap.id} slug={ap.slug} uslug={ap.uslug} pslug={ap.pslug} name={ap.name} uname={ap.uname} pname={ap.pname} />
+                <Attraction id={ap.id} slugs={params} pname={ap.pname} uname={ap.uname} bkgNav={bkgNav} />
               } />
             )
           })}
           {attractionsStudio.map((as) => {
             return (
               <Route path={'/park/' + as.pslug + '/univers/' + as.uslug + '/attraction/' + as.slug} element={
-                <Attraction id={as.id} slug={as.slug} uslug={as.uslug} pslug={as.pslug} name={as.name} uname={as.uname} pname={as.pname} />
+                <Attraction id={as.id} slugs={params} pname={as.pname} uname={as.uname} bkgNav={bkgNav} />
               } />
             )
           })}

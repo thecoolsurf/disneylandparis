@@ -1,76 +1,123 @@
-.univers {
-    width: 100%;
-}
-.infos {
-    float: left;
-    width: 100%;
-    padding: 30px 50px;
-    box-sizing: border-box;
+/* park disneyland */
+
+.bkg-adventureland {
+  background-image: url('../../assets/images/univers/park/bkg-aventureland.webp');
+  background-position: top center;
+  background-size: cover;
 }
 
-.col-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    float: left;
-    margin: 0 30px 30px 0;
+.bkg-discoveryland {
+  background-image: url('../../assets/images/univers/park/bkg-discoveryland.webp');
+  background-position: top center;
+  background-size: cover;
 }
 
-.infos .col-left .logo {
-    background-repeat: no-repeat;
-    float: left;
-    width: 150px;
-    height: 150px;
-    margin: 0 0 20px 0;
-    border-radius: 20px;
-    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
-    overflow: hidden;
+.bkg-fantasyland {
+  background-image: url('../../assets/images/univers/park/bkg-fantasyland.webp');
+  background-position: top center;
+  background-size: cover;
 }
 
-.infos .col-left .back {
-    text-align: center;
+.bkg-frontierland {
+  background-image: url('../../assets/images/univers/park/bkg-frontierland.webp');
+  background-position: top center;
+  background-size: cover;
 }
 
-.col-infos {
-    float: left;
-    min-width: 300px;
-    margin: 0 30px 30px 0;
+.bkg-main-street-usa {
+  background-image: url('../../assets/images/univers/park/bkg-main-street-usa.webp');
+  background-position: top center;
+  background-size: cover;
 }
 
-.col-infos .name {
-    font-size: 2rem;
-    font-weight: bold;
-    line-height: 1;
+.logo-adventureland {
+  background-image: url('../../assets/images/univers/park/logo-adventureland.png');
+  background-size: 80%;
+  background-position: center center;
 }
 
-.col-infos .list-infos {
-    float: left;
-    margin: 0 30px 30px 0;
-    padding: 0;
+.logo-discoveryland {
+  background-image: url('../../assets/images/univers/park/logo-discoveryland.png');
+  background-size: 80%;
+  background-position: center center;
 }
 
-.col-infos ul {
-    margin: 0;
-    padding: 0;
+.logo-fantasyland {
+  background-image: url('../../assets/images/univers/park/logo-fantasyland.png');
+  background-size: 80%;
+  background-position: center center;
 }
 
-.col-infos ul li {
-    margin: 10px 0 0 0;
-    padding: 0;
-    list-style: none;
+.logo-frontierland {
+  background-image: url('../../assets/images/univers/park/logo-frontierland.png');
+  background-size: 80%;
+  background-position: center center;
 }
 
-.col-infos ul li i {
-    font-style: normal;
-    font-size: 0.8rem;
-    font-weight: bold;
-    color: #000;
+.logo-main-street-usa {
+  background-image: url('../../assets/images/univers/park/logo-main-street-usa.png');
+  background-size: 80%;
+  background-position: center center;
 }
 
-.description {
-    float: left;
-    max-width: 500px;
-    font-size: 1rem;
+/* walt disney studio */
+
+.bkg-toon-studio {
+  background-image: url('../../assets/images/univers/studio/bkg-toon-studio.webp');
+  background-position: top center;
+  background-size: cover;
 }
 
+.bkg-avengers-campus {
+  background-image: url('../../assets/images/univers/studio/bkg-avengers-campus.webp');
+  background-position: top center;
+  background-size: cover;
+}
+
+.bkg-worlds-of-pixar {
+  background-image: url('../../assets/images/univers/studio/bkg-world-of-Pixar.webp');
+  background-position: top center;
+  background-size: cover;
+}
+
+.bkg-front-lot {
+  background-image: url('../../assets//images/univers/studio/bkg-front-lot.webp');
+  background-position: center center;
+  background-size: cover;
+}
+
+.bkg-production-courtyard {
+  background-image: url('../../assets/images/univers/studio/bkg-production-courtyard.webp');
+  background-position: top center;
+  background-size: cover;
+}
+
+.logo-avengers-campus {
+  background-image: url('../../assets/images/univers/studio/logo-avengers-campus.png');
+  background-size: 120%;
+  background-position: center center;
+}
+
+.logo-front-lot {
+  background-image: url('../../assets/images/univers/studio/logo-front-lot.png');
+  background-size: 80%;
+  background-position: center center;
+}
+
+.logo-production-courtyard {
+  background-image: url('../../assets/images/univers/studio/logo-production-courtyard.png');
+  background-size: 80%;
+  background-position: center center;
+}
+
+.logo-toon-studio {
+  background-image: url('../../assets/images/univers/studio/logo-toon-studio.png');
+  background-size: 80%;
+  background-position: center center;
+}
+
+.logo-worlds-of-pixar {
+  background-image: url('../../assets/images/univers/studio/logo-worlds-of-pixar.png');
+  background-size: 100%;
+  background-position: center center;
+}

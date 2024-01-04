@@ -1,0 +1,22 @@
+/* attraction park */
+
+.logo-adventure-isle {
+    background-image: url('../../assets/images/attractions/park/bkg-adventure-isle.webp');
+    background-size: 200%;
+    background-position: top 0px left -30px;
+
+}
+
+.logo-avengers-assemble-flight-force {
+    background-image: url('../../assets/images/attractions/studio/logo-avengers-assemble-flight-force.png');
+}
+
+/* attraction studio */
+
+.logo-spider-man-web-aventure {
+    background-image: url('../../assets/images/attractions/studio/logo-spider-man-web-aventure.png');
+}
+
+.logo-avengers-assemble-flight-force {
+    background-image: url('../../assets/images/attractions/studio/logo-avengers-assemble-flight-force.png');
+}

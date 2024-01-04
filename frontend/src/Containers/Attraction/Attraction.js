@@ -1,4 +1,3 @@
-import './attraction.css';
 import { useState, useEffect } from 'react';
 
 export const Attraction = (props) => {
@@ -14,15 +13,13 @@ export const Attraction = (props) => {
     return (
         <div className="attraction">
             {attraction.map((el) => {
+                let back = '/park/' + props.slugs[2] + '/univers/' + props.slugs[4];
                 return (
                     <section className="infos">
                         <div className="col-left">
-                            <div className={'logo logo-' + el.slug} title={el.name}></div>
-                            <div className="back">
-                                <a className="link" href={'/park/' + props.pslug + '/univers/' + props.uslug}>
-                                    Back to Univers
-                                </a>
-                            </div>
+                            <a href={back} className={'logo logo-' + el.slug} title={el.name}>
+                                <div className="back"><i className="fa fa-reply"></i></div>
+                            </a>
                         </div>
                         <div className="col-infos">
                             <div className="name">{el.name}</div>

@@ -1,12 +1,19 @@
-import "./card.css";
 import default_attraction from '../../assets/images/attractions/default_attraction.jpg';
 
 const Card = (props) => {
-  let img = props.character.image ? props.character.image : default_attraction;
+  let img = props.datas.image ? props.datas.image : default_attraction;
+  let uri = props.slugs.toString();
+  let path = uri.replaceAll(',','/');
+  let href = '';
+  if (props.slugs.length > 2) {
+    href = path + '/attraction/' + props.datas.slug;
+  } else {
+    href = '/park/' + path.slice(6,) + '/univers/' + props.datas.slug;
+  }
   return (
-    <a className="card" href={'Character/'+props.character.id}>
-      <img src={img} title={props.character.name} alt={props.character.name} />
-      <span className="legend">{props.character.name}</span>
+    <a className="card" href={href} alt={props.datas.name}>
+      <img src={img} title={props.datas.name} alt={props.datas.name} />
+      <div className="legend">{props.datas.name}</div>
     </a>
   );
 };

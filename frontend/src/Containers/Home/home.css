@@ -21,4 +21,99 @@
   margin: 0;
 }
 
+.univers {
+  width: 100%;
+}
+.infos {
+  float: left;
+  width: 100%;
+  padding: 30px 50px;
+  box-sizing: border-box;
+}
+
+.col-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  float: left;
+  margin: 0 30px 30px 0;
+}
+
+.infos .col-left .logo, .infos .col-left .back {
+  width: 150px;
+  height: 150px;
+}
+.infos .col-left .logo {
+  position: relative;
+  background-repeat: no-repeat;
+  float: left;
+  margin: 0 0 20px 0;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+.infos .col-left .logo:hover {
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
+}
+
+.infos .col-left .logo:hover .back {
+  display: block;
+}
+
+.infos .col-left .back {
+  background: rgb(0, 0, 0, 0.5);
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1;
+  font-size: 60px;
+  line-height: 150px;
+  color: #FFF;
+  text-align: center;
+  display: none;
+}
+
+.col-infos {
+  float: left;
+  min-width: 300px;
+  margin: 0 30px 30px 0;
+}
+
+.col-infos .name {
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.col-infos .list-infos {
+  float: left;
+  margin: 0 30px 30px 0;
+  padding: 0;
+}
+
+.col-infos ul {
+  margin: 0;
+  padding: 0;
+}
+
+.col-infos ul li {
+  margin: 10px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.col-infos ul li i {
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.description {
+  float: left;
+  max-width: 500px;
+  font-size: 1rem;
+}
 

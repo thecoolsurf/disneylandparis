@@ -1,8 +1,5 @@
 .header {
-  background-position: top center;
   background-repeat: no-repeat;
-  background-size: cover;
-  box-sizing: 100% auto;
   position: relative;
   display: flex;
   flex-direction: row;
@@ -12,7 +9,6 @@
   width: 100%;
   overflow: hidden;
   margin: 75px 0 0 0;
-  box-sizing: border-box;
 }
 
 .header .block {

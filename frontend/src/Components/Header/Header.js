@@ -2,7 +2,7 @@ import './header.css';
 
 export const Header = (props) => {
     return (
-        <header className={'header '+props.bkgHeader}>
+        <header className={'header bkg-'+props.bkgHeader}>
             <div className="block">
                 <a className="title" href="/" alt="Disneyland Paris">
                     Disneyland

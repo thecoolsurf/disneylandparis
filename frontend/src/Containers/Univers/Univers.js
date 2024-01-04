@@ -1,4 +1,3 @@
-import './univers.css';
 import { useState, useEffect } from 'react';
 import { Carrousel } from '../../Components/Carrousel/Carrousel.js';
 
@@ -19,17 +18,14 @@ export const Univers = (props) => {
     }, []);
     return (
         <div className="univers">
-            <Carrousel datas={attractions} slug={props.slug} />
+            <Carrousel datas={attractions} slugs={props.slugs} slug={props.slug} bkgNav={props.bkgNav} />
             {univers.map((el) => {
                 return (
                     <section className="infos">
                         <div className="col-left">
-                            <div className={'logo logo-' + el.slug} title={el.name}></div>
-                            <div className="back">
-                                <a className="link" href={'/park-' + props.pslug}>
-                                    Back to Park
-                                </a>
-                            </div>
+                            <a href={'/park-' + props.slugs[2]} className={'logo logo-' + el.slug} title={el.name}>
+                                <div className="back"><i className="fa fa-reply"></i></div>
+                            </a>
                         </div>
                         <div className="col-infos">
                             <div className="name">{el.name}</div>
@@ -38,11 +34,11 @@ export const Univers = (props) => {
                                 <li><i>Univers</i><div>{el.name}</div></li>
                                 <li><i>Total attractions</i><div>{attractions.length + ' ' + str_attraction}</div></li>
                                 <li><i>Names</i>
-                                {attractions.map((e) => {
-                                    return (
-                                        <div>{e.name}</div>
-                                    )
-                                })}
+                                    {attractions.map((e) => {
+                                        return (
+                                            <div>{e.name}</div>
+                                        )
+                                    })}
                                 </li>
                             </ul>
                         </div>
