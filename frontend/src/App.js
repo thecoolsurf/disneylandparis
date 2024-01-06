@@ -10,10 +10,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Components/Header/Header.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
+import { Finder } from './Components/Search/Finder.js';
 import { Home } from './Containers/Home/Home.js';
 import { Parks } from './Containers/Parks/Parks.js';
 import { Univers } from './Containers/Univers/Univers.js';
 import { Attraction } from './Containers/Attraction/Attraction.js';
+import { FindAttractions } from './Containers/Attractions/FindAttractions.js';
 
 function App() {
   const [parks, setParks] = useState([]);
@@ -52,6 +54,7 @@ function App() {
       <BrowserRouter>
         <Header bkgHeader={bkgHeader} />
         <Navigation bkgNav={bkgNav} parks={parks} universPark={universPark} universStudio={universStudio} />
+        <Finder />
         <Routes>
           <Route path="/" element={
             <Home parks={parks} universPark={universPark} universStudio={universStudio} attractionsPark={attractionsPark} attractionsStudio={attractionsStudio} />
@@ -91,6 +94,9 @@ function App() {
               } />
             )
           })}
+          <Route key={'findAttractions'} path={'/find/attractions'} element={
+            <FindAttractions slugs={params} bkgNav={bkgNav} />
+          } />
         </Routes>
         <Footer />
       </BrowserRouter>

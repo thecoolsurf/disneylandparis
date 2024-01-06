@@ -203,6 +203,24 @@ function select() {
 
   /* ************************************************************************************************** */
 
+  /*
+  Page Find attractions
+  */
+  server.get("/all_attractions", (req, res, next) => {
+    let find = req.query.find ? req.query.find : 'crush';
+    let sqlAttractionById = `SELECT slug, name FROM attraction WHERE name LIKE '%${find}%' LIMIT 10`;
+    database.raw(sqlAttractionById)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          slug: el.slug,
+          name: el.name
+        }));
+        res.json(result);
+      })
+  });
+
+  /* ************************************************************************************************** */
+
   return server;
 }
 
