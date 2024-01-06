@@ -15,7 +15,7 @@ export const Attraction = (props) => {
             {attraction.map((el) => {
                 let back = '/park/' + props.slugs[2] + '/univers/' + props.slugs[4];
                 return (
-                    <section className="infos">
+                    <section key={el.slug} className="infos">
                         <div className="col-left">
                             <a href={back} className={'logo logo-' + el.slug} title={el.name}>
                                 <div className="back"><i className="fa fa-reply"></i></div>

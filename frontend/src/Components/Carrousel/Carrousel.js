@@ -21,7 +21,6 @@ export const Carrousel = (props) => {
       <div className={'next '+showNext} onClick={() => {
         setIndex(index + 1);
         setMargX(margX + (incr + marg));
-        console.log(index,total)
         if (margX > (incr + marg)) { setShowPrev('show'); setShowNext('hide'); }
         if (index === total-1) { setShowNext('hide'); }
       }}>
@@ -29,7 +28,7 @@ export const Carrousel = (props) => {
       </div>
       <div className="wrapper" style={{ marginLeft: -margX + 'px' }}>
         {props.datas.map((item) => {
-          return <Card slugs={props.slugs} slug={props.slug} item={item} />;
+          return <Card key={item.slug} slugs={props.slugs} slug={props.slug} item={item} />;
         })}
       </div>
     </section>

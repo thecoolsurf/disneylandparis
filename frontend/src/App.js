@@ -59,35 +59,35 @@ function App() {
           {parks.map((p) => {
             let univers = (p.slug === 'park-disneyland') ? universPark : universStudio;
             return (
-              <Route path={'/park-' + p.slug} element=
-                {<Parks id={p.id} slugs={params} slug={p.slug} univers={univers} bkgNav={bkgNav} />} />
+              <Route key={p.id} path={'/park-' + p.slug} element=
+                {<Parks key={p.slug} id={p.id} slugs={params} slug={p.slug} univers={univers} bkgNav={bkgNav} />} />
             )
           })}
           {universPark.map((up) => {
             return (
-              <Route path={'/park/' + up.pslug + '/univers/' + up.slug} element={
-                <Univers id={up.id} slugs={params} slug={up.slug} pname={up.pname} bkgNav={bkgNav} />
+              <Route key={up.id} path={'/park/' + up.pslug + '/univers/' + up.slug} element={
+                <Univers key={up.slug} id={up.id} slugs={params} slug={up.slug} pname={up.pname} bkgNav={bkgNav} />
               } />
             )
           })}
           {universStudio.map((us) => {
             return (
-              <Route path={'/park/' + us.pslug + '/univers/' + us.slug} element={
-                <Univers id={us.id} slugs={params} slug={us.slug} pname={us.pname} bkgNav={bkgNav} />
+              <Route key={us.id} path={'/park/' + us.pslug + '/univers/' + us.slug} element={
+                <Univers key={us.slug} id={us.id} slugs={params} slug={us.slug} pname={us.pname} bkgNav={bkgNav} />
               } />
             )
           })}
           {attractionsPark.map((ap) => {
             return (
-              <Route path={'/park/' + ap.pslug + '/univers/' + ap.uslug + '/attraction/' + ap.slug} element={
-                <Attraction id={ap.id} slugs={params} pname={ap.pname} uname={ap.uname} bkgNav={bkgNav} />
+              <Route key={ap.id} path={'/park/' + ap.pslug + '/univers/' + ap.uslug + '/attraction/' + ap.slug} element={
+                <Attraction key={ap.slug} id={ap.id} slugs={params} pname={ap.pname} uname={ap.uname} bkgNav={bkgNav} />
               } />
             )
           })}
           {attractionsStudio.map((as) => {
             return (
-              <Route path={'/park/' + as.pslug + '/univers/' + as.uslug + '/attraction/' + as.slug} element={
-                <Attraction id={as.id} slugs={params} pname={as.pname} uname={as.uname} bkgNav={bkgNav} />
+              <Route key={as.id} path={'/park/' + as.pslug + '/univers/' + as.uslug + '/attraction/' + as.slug} element={
+                <Attraction key={as.slug} id={as.id} slugs={params} pname={as.pname} uname={as.uname} bkgNav={bkgNav} />
               } />
             )
           })}

@@ -21,7 +21,7 @@ export const Home = (props) => {
                         univers = props.universStudio;
                 }
                 return (
-                    <section className="infos">
+                    <section key={el.slug} className="infos">
                         <div className="col-left">
                             <a href={'/park-' + el.slug} className={'logo logo-' + el.slug} alt={el.name}></a>
                         </div>
@@ -33,7 +33,7 @@ export const Home = (props) => {
                                 <li><i>Univers</i>
                                     {univers.map((e) => {
                                         return (
-                                            <div>{e.name}</div>
+                                            <div key={e.name}>{e.name}</div>
                                         )
                                     })}
                                 </li>

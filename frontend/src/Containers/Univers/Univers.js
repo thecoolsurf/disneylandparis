@@ -21,7 +21,7 @@ export const Univers = (props) => {
             <Carrousel datas={attractions} slugs={props.slugs} slug={props.slug} bkgNav={props.bkgNav} />
             {univers.map((el) => {
                 return (
-                    <section className="infos">
+                    <section key={el.slug} className="infos">
                         <div className="col-left">
                             <a href={'/park-' + props.slugs[2]} className={'logo logo-' + el.slug} title={el.name}>
                                 <div className="back"><i className="fa fa-reply"></i></div>
@@ -37,7 +37,7 @@ export const Univers = (props) => {
                                     <ul>
                                     {attractions.map((e) => {
                                         return (
-                                            <li className="item"><i className="fa fa-point"></i>{e.name}</li>
+                                            <li key={e.slug} className="item"><i className="fa fa-point"></i>{e.name}</li>
                                         )
                                     })}
                                     </ul>
