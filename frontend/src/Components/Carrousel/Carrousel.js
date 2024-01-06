@@ -4,25 +4,26 @@ import { useState } from "react";
 
 export const Carrousel = (props) => {
   const incr = 200;
-  const marg = 20;
-  const total = props.total;
+  const marg = 0;
+  const total = props.datas.length;
   const [index, setIndex] = useState(1);
   const [margX, setMargX] = useState(0);
-  const [showPrev, setShowPrev] = useState('prev hide');
-  const [showNext, setShowNext] = useState('next show');
+  const [showPrev, setShowPrev] = useState('hide');
+  const [showNext, setShowNext] = useState('show');
   return (
     <section className={'carrousel ' + props.bkgNav}>
-      <div className={showPrev} onClick={() => {
+      <div className={'prev '+showPrev} onClick={() => {
         setMargX(margX - (incr + marg));
-        if (margX < (incr + marg) * 2) setShowPrev('prev hide');
+        if (margX < (incr + marg) * 2) { setShowPrev('hide'); setShowNext('show'); }
       }}>
         <i className="fa fa-chevron-circle-left" aria-hidden="true"></i>
       </div>
-      <div className={showNext} onClick={() => {
+      <div className={'next '+showNext} onClick={() => {
         setIndex(index + 1);
         setMargX(margX + (incr + marg));
-        if (margX > (incr + marg)) setShowPrev('prev show');
-        if (index === total - 6) setShowNext('next hide');
+        console.log(index,total)
+        if (margX > (incr + marg)) { setShowPrev('show'); setShowNext('hide'); }
+        if (index === total-1) { setShowNext('hide'); }
       }}>
         <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
       </div>

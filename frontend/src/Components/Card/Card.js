@@ -1,5 +1,4 @@
 const Card = (props) => {
-  console.log(props.item.id_park);
   let uri = props.slugs.toString();
   let path = uri.replaceAll(',','/');
   let href = '';

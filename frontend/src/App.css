@@ -45,14 +45,41 @@
     display: block;
   }
 
-  .navigation .nav {
-    display: none;
+  .nav {
+    position: absolute;
+    top: 90px;
+    left: 0px;
+    z-index: 1;
+    width: 100%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .nav-childs {
+    position: relative;
   }
 }
 
 @media screen and (min-width: 601px) {
   .slider {
     display: none;
+  }
+
+  .nav {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .nav-childs {
+    position: absolute;
+    top: 40px;
+    left: 0px;
   }
 
   .bkg-default-header {
@@ -81,7 +108,7 @@
   }
 
   .header {
-    height: clamp(300px, 80vh, 400px);
+    height: clamp(300px, 80vh, 600px);
   }
 
   .search {

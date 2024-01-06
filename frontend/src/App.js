@@ -46,7 +46,8 @@ function App() {
       setAttractionsStudio(attractionsStudio);
     };
     fetchData();
-  }, []); return (
+  }, []);
+  return (
     <div className="main">
       <BrowserRouter>
         <Header bkgHeader={bkgHeader} />

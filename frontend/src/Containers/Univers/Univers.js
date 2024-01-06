@@ -33,12 +33,14 @@ export const Univers = (props) => {
                                 <li><i>Park</i><div>{props.pname}</div></li>
                                 <li><i>Univers</i><div>{el.name}</div></li>
                                 <li><i>Total attractions</i><div>{attractions.length + ' ' + str_attraction}</div></li>
-                                <li><i>Names</i>
+                                <li><i>Liste des attractions</i>
+                                    <ul>
                                     {attractions.map((e) => {
                                         return (
-                                            <div>{e.name}</div>
+                                            <li className="item"><i className="fa fa-point"></i>{e.name}</li>
                                         )
                                     })}
+                                    </ul>
                                 </li>
                             </ul>
                         </div>

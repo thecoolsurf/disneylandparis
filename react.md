@@ -101,6 +101,7 @@ Install or Update REACT and dependances
 npm install
 npm install react-router-dom --save
 npm install cors --save
+npm i --package-lock-only
 ```
 
 
