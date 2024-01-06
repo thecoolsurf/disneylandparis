@@ -1,10 +1,13 @@
-.home {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
-  overflow: hidden;
+.home, .parks, .univers, .attraction {
+  width: 100%;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
 .link-park {
   text-align: center;
 }
@@ -25,8 +28,9 @@
   width: 100%;
 }
 .infos {
-  float: left;
   width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 30px;
   box-sizing: border-box;
 }
@@ -130,6 +134,7 @@
 .description {
   float: left;
   max-width: 500px;
+  margin: 0 0 30px 0;
   font-size: 1.2rem;
   line-height: 2;
 }
