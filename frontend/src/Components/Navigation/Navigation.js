@@ -19,19 +19,16 @@ export const Navigation = (props) => {
     const [show1, setShow1] = useState('hide');
     const [show2, setShow2] = useState('hide');
     return (
-        <div className={'navigation' + ' ' + props.bkgNav}>
-            <div className="slider" onClick={(e) => {
-                console.log(show0)
-                show0 === 'show' ? setShow0('hide') : setShow0('show');
-            }}><i className="fa fa-bars"></i></div>
+        <div className={'navigation' + ' ' + props.bkgNav} onClick={()=>{setShow1('hide');setShow2('hide')}}>
+            <div className="slider" onClick={() => { show0 === 'show' ? setShow0('hide') : setShow0('show'); }}><i className="fa fa-bars"></i></div>
             <div className={'nav ' + show0}>
                 {buildMenus.map((p) => {
                     let show = (p.id === 1) ? show1 : show2;
                     return (
-                        <div key={p.id} className={'nav-parent'}>
-                            <a key={'parent' + p.slug} href={'/park-' + p.slug} alt={p.name} className={'link show ' + props.bkgNav} onMouseOver={(e) => {
-                                if (show1 === 'hide') { setShow1('show'); setShow2('hide'); }
-                                if (show2 === 'hide') { setShow1('hide'); setShow2('show'); }
+                        <div key={'parent'+p.id} className={'nav-parent'}>
+                            <a id={p.id} key={'p' + p.slug} href={'/park-' + p.slug} alt={p.name} className={'link show ' + props.bkgNav} onMouseOver={(e) => {
+                                if (e.target.id === '1') { setShow1('show'); setShow2('hide') }
+                                if (e.target.id === '2') { setShow2('show'); setShow1('hide')}
                             }}>{p.name}
                             </a>
                             <div id={'child' + p.id} className={'nav-childs ' + show}>
