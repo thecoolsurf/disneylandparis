@@ -26,12 +26,12 @@ export const Navigation = (props) => {
                     let show = (p.id === 1) ? show1 : show2;
                     return (
                         <div key={'parent'+p.id} className={'nav-parent'}>
-                            <a id={p.id} key={'p' + p.slug} href={'/park-' + p.slug} alt={p.name} className={'link show ' + props.bkgNav} onMouseOver={(e) => {
+                            <a key={'p' + p.slug} id={p.id} href={'/park-' + p.slug} alt={p.name} className={'link show ' + props.bkgNav} onMouseOver={(e) => {
                                 if (e.target.id === '1') { setShow1('show'); setShow2('hide') }
                                 if (e.target.id === '2') { setShow2('show'); setShow1('hide')}
                             }}>{p.name}
                             </a>
-                            <div id={'child' + p.id} className={'nav-childs ' + show}>
+                            <div key={'child' + p.id} className={'nav-childs ' + show}>
                                 {p.childs.map((u) => {
                                     return (<a key={u.slug} className={'link'} href={'/park/' + p.slug + '/univers/' + u.slug}>{u.name}</a>)
                                 })}
