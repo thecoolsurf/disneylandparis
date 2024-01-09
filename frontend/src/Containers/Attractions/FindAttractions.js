@@ -13,17 +13,21 @@ export const FindAttractions = (props) => {
     }, [find]);
     return (
         <div className="finder">
-            <form action="/find/attractions" method="get" className="search">
+            <form action="/find/attractions" method="get" className={'search ' + props.bkgNav}>
                 <input type="text" max="50" value={find} name="find" onChange={(e) => {
                     setFind(e.target.value);
                 }} />
-                <input type="submit" value="send" /><i className="fa fa-search"></i>
+                <label>Rechercher une attraction</label>
             </form>
             <div className="infos">
                 <h2>Résultat de recherche</h2>
                 <ul>
                     {findAttractions.map((el) => {
-                        return <li key={el.slug}>{el.name}</li>
+                        return (
+                        <li key={el.slug}>
+                            <a href={'/park/'+el.pslug+'/univers/'+el.uslug+'/attraction/'+el.slug}>{el.name}</a>
+                        </li>
+                        )
                     })}
                 </ul>
             </div>

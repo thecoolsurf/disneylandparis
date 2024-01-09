@@ -1,4 +1,5 @@
 import './home.css';
+import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
 
 export const Home = (props) => {
     const tt_univers_park = props.universPark.length;
@@ -10,15 +11,16 @@ export const Home = (props) => {
     let univers = '';
     return (
         <div className="home">
+            <LinkToFinder />
             {props.parks.map((el) => {
                 if (el.slug === 'park-disneyland') {
-                        tt_univers = tt_univers_park + ' univers';
-                        tt_attractions = tt_attractions_park + ' attractions';
-                        univers = props.universPark;
+                    tt_univers = tt_univers_park + ' univers';
+                    tt_attractions = tt_attractions_park + ' attractions';
+                    univers = props.universPark;
                 } else {
-                        tt_univers = tt_univers_studio + ' univers';
-                        tt_attractions = tt_attractions_studio + ' attractions';
-                        univers = props.universStudio;
+                    tt_univers = tt_univers_studio + ' univers';
+                    tt_attractions = tt_attractions_studio + ' attractions';
+                    univers = props.universStudio;
                 }
                 return (
                     <section key={el.slug} className="infos">

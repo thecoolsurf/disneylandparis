@@ -105,9 +105,4 @@ npm i --package-lock-only
 ```
 
 
-### Run Node server
-```
-npm start
-```
-
 

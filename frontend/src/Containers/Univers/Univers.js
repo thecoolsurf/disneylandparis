@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Carrousel } from '../../Components/Carrousel/Carrousel.js';
+import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
 
 export const Univers = (props) => {
     const [univers, setUnivers] = useState([]);
@@ -18,6 +19,7 @@ export const Univers = (props) => {
     }, []);
     return (
         <div className="univers">
+            <LinkToFinder />
             <Carrousel datas={attractions} slugs={props.slugs} slug={props.slug} bkgNav={props.bkgNav} />
             {univers.map((el) => {
                 return (

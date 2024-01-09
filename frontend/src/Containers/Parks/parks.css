@@ -1,4 +1,5 @@
-.img-default-header {
+.img-default-header,
+.img-find {
   background-image: url('../../assets/images/others/bkg-disneyland-paris-v2.jpg');
   background-position: center center;
   background-size: cover;

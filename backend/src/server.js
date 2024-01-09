@@ -207,11 +207,13 @@ function select() {
   Page Find attractions
   */
   server.get("/all_attractions", (req, res, next) => {
-    let find = req.query.find ? req.query.find : 'crush';
-    let sqlAttractionById = `SELECT slug, name FROM attraction WHERE name LIKE '%${find}%' LIMIT 10`;
+    let find = req.query.find ? req.query.find : '';
+    let sqlAttractionById = `SELECT p.slug AS pslug, u.slug AS uslug, a.slug, a.name FROM attraction a JOIN park p ON p.id = a.id_park JOIN univers u ON u.id = a.id_univ AND a.name LIKE '%${find}%' LIMIT 5`;
     database.raw(sqlAttractionById)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
+          pslug: el.pslug,
+          uslug: el.uslug,
           slug: el.slug,
           name: el.name
         }));

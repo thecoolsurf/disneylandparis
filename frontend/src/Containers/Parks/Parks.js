@@ -1,6 +1,7 @@
 import './parks.css';
 import { useState, useEffect } from 'react';
 import { Carrousel } from '../../Components/Carrousel/Carrousel.js';
+import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
 
 export const Parks = (props) => {
     const [park, setPark] = useState([]);
@@ -15,6 +16,7 @@ export const Parks = (props) => {
     }, []);
     return (
         <div className="parks">
+            <LinkToFinder />
             <Carrousel datas={props.univers} slugs={props.slugs} bkgNav={props.bkgNav} />
             {park.map((el) => {
                 return (

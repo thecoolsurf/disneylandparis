@@ -2,14 +2,11 @@ import './navigation.css';
 import { useState } from 'react';
 
 export const Navigation = (props) => {
-    const parent = props.parks;
-    const childs1 = props.universPark;
-    const childs2 = props.universStudio;
     const childs = [];
     function buildDatasNav() {
-        childs.push(childs1);
-        childs.push(childs2);
-        const arr = parent.map((el, i) => ({
+        childs.push(props.universPark);
+        childs.push(props.universStudio);
+        const arr = props.parks.map((el, i) => ({
             id: el.id,
             name: el.name,
             slug: el.slug,
@@ -27,19 +24,17 @@ export const Navigation = (props) => {
                 console.log(show0)
                 show0 === 'show' ? setShow0('hide') : setShow0('show');
             }}><i className="fa fa-bars"></i></div>
-            <div className={'nav '+show0}>
+            <div className={'nav ' + show0}>
                 {buildMenus.map((p) => {
-                    let show =  (p.id === 1) ? show1 : show2;
+                    let show = (p.id === 1) ? show1 : show2;
                     return (
                         <div key={p.id} className={'nav-parent'}>
-                            <a key={p.slug} href={'/park-' + p.slug} alt={p.name} className={'link show ' + props.bkgNav} onMouseOver={(e) => {
+                            <a key={'parent' + p.slug} href={'/park-' + p.slug} alt={p.name} className={'link show ' + props.bkgNav} onMouseOver={(e) => {
                                 if (show1 === 'hide') { setShow1('show'); setShow2('hide'); }
-                                if (show1 === 'show') { setShow1('hide'); setShow2('show'); }
                                 if (show2 === 'hide') { setShow1('hide'); setShow2('show'); }
-                                if (show2 === 'show') { setShow1('show'); setShow2('hide'); }
                             }}>{p.name}
                             </a>
-                            <div id={'child-'+p.id} className={'nav-childs '+show}>
+                            <div id={'child' + p.id} className={'nav-childs ' + show}>
                                 {p.childs.map((u) => {
                                     return (<a key={u.slug} className={'link'} href={'/park/' + p.slug + '/univers/' + u.slug}>{u.name}</a>)
                                 })}

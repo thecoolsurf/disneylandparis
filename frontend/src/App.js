@@ -10,7 +10,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Components/Header/Header.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
-import { Finder } from './Components/Search/Finder.js';
 import { Home } from './Containers/Home/Home.js';
 import { Parks } from './Containers/Parks/Parks.js';
 import { Univers } from './Containers/Univers/Univers.js';
@@ -54,7 +53,6 @@ function App() {
       <BrowserRouter>
         <Header bkgHeader={bkgHeader} />
         <Navigation bkgNav={bkgNav} parks={parks} universPark={universPark} universStudio={universStudio} />
-        <Finder />
         <Routes>
           <Route path="/" element={
             <Home parks={parks} universPark={universPark} universStudio={universStudio} attractionsPark={attractionsPark} attractionsStudio={attractionsStudio} />

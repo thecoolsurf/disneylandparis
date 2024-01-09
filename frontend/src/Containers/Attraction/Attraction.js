@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import{ Carrousel } from '../../Components/Carrousel/Carrousel.js';
 
 export const Attraction = (props) => {
     const [attraction, setAttraction] = useState([]);
@@ -12,6 +13,7 @@ export const Attraction = (props) => {
     }, []);
     return (
         <div className="attraction">
+            <Carrousel datas={attraction} slugs={props.slugs} bkgNav={props.bkgNav} />
             {attraction.map((el) => {
                 let back = '/park/' + props.slugs[2] + '/univers/' + props.slugs[4];
                 return (

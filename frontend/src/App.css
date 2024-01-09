@@ -134,11 +134,38 @@ body {
   margin: 0 auto;
 }
 
-.search {
+.home .search,
+.parks .search,
+.univers .search {
   position: fixed;
   top: 20px;
   right: 20px;
   z-index: 10;
+  text-decoration: none;
+}
+
+.finder .search {
+  position: relative;
+  padding: 20px 0;
+}
+
+.finder .search button {
+  background: none;
+  border: none;
+}
+
+.finder .search label {
+  color: #FFF;
+}
+.search:hover .fa-search {
+  background: #252633;
+  color: #FFF;
+}
+
+.search div {
+  float: left;
+  margin: 5px 10px 0 0;
+  color: #FFF;
 }
 .search input[type="text"] {
   width: 250px;
@@ -148,19 +175,16 @@ body {
   border: none;
 }
 .search .fa-search {
-  position: absolute;
-  top: 5px;
-  right: 15px;
-  z-index: 1;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: #d8d8d8;
+  background: #FFF;
   width: 30px;
   height: 30px;
   border-radius: 50%;
   font-size: 1.2rem;
   color: #252633;
 }
+
