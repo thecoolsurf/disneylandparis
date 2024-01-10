@@ -7,9 +7,11 @@ import "./Containers/Attraction/walt-disney-studios.css";
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+/* components */
 import { Header } from './Components/Header/Header.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
+/* routes */
 import { Home } from './Containers/Home/Home.js';
 import { Parks } from './Containers/Parks/Parks.js';
 import { Univers } from './Containers/Univers/Univers.js';
