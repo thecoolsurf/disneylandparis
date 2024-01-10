@@ -62,7 +62,7 @@ function App() {
             <Home parks={parks} allUnivers={allUnivers} allAttractions={allAttractions} />
           } />
           {parks.map((p) => {
-            let univers = (p.id === '1') ? universPark : universStudio;
+            let univers = (p.id === 1) ? universPark : universStudio;
             return (
               <Route key={p.id} path={'/park-' + p.slug} element={
                 <Parks key={p.slug} id={p.id} slugs={params} slug={p.slug} univers={univers} bkgNav={bkgNav} />
