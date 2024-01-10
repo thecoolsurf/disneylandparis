@@ -47,7 +47,7 @@ function selectUniversByPark(server, route) {
     u.id, u.name, u.slug, p.slug AS pslug, p.name AS pname 
     FROM univers AS u 
     JOIN park AS p ON p.id = u.id_park AND p.id = ${id} 
-    ORDER BY u.name`
+    ORDER BY u.name`;
     database.raw(sql)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
@@ -68,7 +68,7 @@ selectUniversByPark(server, "/nav_univers");
 /*
 Navigation Attractions by park
 */
-function selectAttractionsByUnivers(server, route) {
+function selectAttractionsByPark(server, route) {
   server.get(route, (req, res, next) => {
     let id = req.query.id;
     let sql = `SELECT 
@@ -76,7 +76,7 @@ function selectAttractionsByUnivers(server, route) {
     FROM attraction a 
     JOIN univers u ON u.id = a.id_univ 
     JOIN park p ON p.id = u.id_park 
-    WHERE p.id = ${id}`
+    WHERE p.id = ${id}`;
     database.raw(sql)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
@@ -93,7 +93,7 @@ function selectAttractionsByUnivers(server, route) {
   });
   return server;
 }
-selectAttractionsByUnivers(server, "/nav_attractions");
+selectAttractionsByPark(server, "/nav_attractions");
 
 /* ************************************************************************************************** */
 /*
@@ -121,9 +121,8 @@ function selectParkById(server, route) {
 selectParkById(server,"/park_by_id");
 
 /* ************************************************************************************************** */
-
 /*
-Page Univers - univers by id
+Page Univers - univers by id - attractions by univers
 */
 function selectUniversById(server, route) {
   server.get(route, (req, res, next) => {
@@ -144,81 +143,87 @@ function selectUniversById(server, route) {
   });
   return server;  
 }
+function selectAttractionsByUnivers(server, route) {
+  server.get(route, (req, res, next) => {
+    let id = req.query.id;
+    let sql = `SELECT 
+    id, id_park, slug, name, pictures 
+    FROM attraction 
+    WHERE id_univ = ${id}`;
+    database.raw(sql)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          id: el.id,
+          id_park: el.id_park,
+          slug: el.slug,
+          name: el.name,
+          pictures: el.pictures
+        }));
+        res.json(result);
+      })
+  });
+  return server;  
+}
 selectUniversById(server,"/univers_by_id");
-
-/*
-Page Univers - attractions by Univers
-*/
-server.get("/attractions_by_univers", (req, res, next) => {
-  let id = req.query.id;
-  let sql = `SELECT 
-  id, id_park, slug, name, pictures 
-  FROM attraction 
-  WHERE id_univ = ${id}`;
-  database.raw(sql)
-    .then(([rows, columns]) => {
-      const result = rows.map((el) => ({
-        id: el.id,
-        id_park: el.id_park,
-        slug: el.slug,
-        name: el.name,
-        pictures: el.pictures
-      }));
-      res.json(result);
-    })
-});
+selectAttractionsByUnivers(server,"/attractions_by_univers");
 
 /* ************************************************************************************************** */
-
 /*
 Page Attraction - attraction by ID
 */
-server.get("/attraction_by_id", (req, res, next) => {
-  let id = req.query.id;
-  let sql = `SELECT 
-  slug, name, public, description, restriction, pictures, movies 
-  FROM attraction 
-  WHERE id = ${id}`;
-  database.raw(sql)
-    .then(([rows, columns]) => {
-      const result = rows.map((el) => ({
-        slug: el.slug,
-        name: el.name,
-        public: el.public,
-        description: el.description,
-        restriction: el.restriction,
-        pictures: el.pictures,
-        movies: el.movies
-      }));
-      res.json(result);
-    })
-});
+function selectAttractionById(server, route) {
+  server.get(route, (req, res, next) => {
+    let id = req.query.id;
+    let sql = `SELECT 
+    slug, name, public, description, restriction, pictures, movies 
+    FROM attraction 
+    WHERE id = ${id}`;
+    database.raw(sql)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          slug: el.slug,
+          name: el.name,
+          public: el.public,
+          description: el.description,
+          restriction: el.restriction,
+          pictures: el.pictures,
+          movies: el.movies
+        }));
+        res.json(result);
+      })
+  });
+  return server;  
+}
+selectAttractionById(server,"/attraction_by_id");
 
 /* ************************************************************************************************** */
-
 /*
 Page Find attractions
 */
-server.get("/all_attractions", (req, res, next) => {
-  let find = req.query.find ? req.query.find : '';
-  let sql = `SELECT 
-  p.slug AS pslug, u.slug AS uslug, a.slug, a.name 
-  FROM attraction a 
-  JOIN park p ON p.id = a.id_park 
-  JOIN univers u ON u.id = a.id_univ 
-  AND a.name LIKE '%${find}%' 
-  LIMIT 5`;
-  database.raw(sql)
-    .then(([rows, columns]) => {
-      const result = rows.map((el) => ({
-        pslug: el.pslug,
-        uslug: el.uslug,
-        slug: el.slug,
-        name: el.name
-      }));
-      res.json(result);
-    })
-});
+function selectFindAttraction(server, route) {
+  server.get(route, (req, res, next) => {
+    let find = req.query.find ? req.query.find : '';
+    let sql = `SELECT 
+    p.slug AS pslug, u.slug AS uslug, a.slug, a.name 
+    FROM attraction a 
+    JOIN park p ON p.id = a.id_park 
+    JOIN univers u ON u.id = a.id_univ 
+    AND a.name LIKE '%${find}%' 
+    LIMIT 5`;
+    database.raw(sql)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          pslug: el.pslug,
+          uslug: el.uslug,
+          slug: el.slug,
+          name: el.name
+        }));
+        res.json(result);
+      })
+  });
+  return server;  
+}
+selectFindAttraction(server,"/all_attractions");
 
 /* ************************************************************************************************** */
 
