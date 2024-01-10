@@ -23,7 +23,7 @@ export const Carrousel = (props) => {
         setIndex(index + 1);
         setMargX(margX + (incr + marg));
         if (margX > (incr + marg)) { setShowPrev('show'); setShowNext('hide'); }
-        if (index === total-1) { setShowNext('hide'); }
+        if (index === total-1 || total < 4) { setShowNext('hide'); }
       }}>
         <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
       </div>
