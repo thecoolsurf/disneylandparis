@@ -4,8 +4,8 @@ import { useState } from 'react';
 export const Navigation = (props) => {
     const childs = [];
     function buildDatasNav() {
-        childs.push(props.universPark);
-        childs.push(props.universStudio);
+        childs.push(props.allUnivers[0]);
+        childs.push(props.allUnivers[1]);
         const arr = props.parks.map((el, i) => ({
             id: el.id,
             name: el.name,

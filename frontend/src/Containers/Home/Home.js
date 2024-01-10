@@ -2,10 +2,6 @@ import './home.css';
 import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
 
 export const Home = (props) => {
-    const tt_univers_park = props.universPark.length;
-    const tt_univers_studio = props.universPark.length;
-    const tt_attractions_park = props.attractionsPark.length;
-    const tt_attractions_studio = props.attractionsStudio.length;
     let tt_univers = '';
     let tt_attractions = '';
     let univers = '';
@@ -14,13 +10,13 @@ export const Home = (props) => {
             <LinkToFinder />
             {props.parks.map((el) => {
                 if (el.slug === 'park-disneyland') {
-                    tt_univers = tt_univers_park + ' univers';
-                    tt_attractions = tt_attractions_park + ' attractions';
-                    univers = props.universPark;
+                    tt_univers = props.allUnivers[0].length + ' univers';
+                    tt_attractions = props.allAttractions[0].length + ' attractions';
+                    univers = props.allUnivers[0];
                 } else {
-                    tt_univers = tt_univers_studio + ' univers';
-                    tt_attractions = tt_attractions_studio + ' attractions';
-                    univers = props.universStudio;
+                    tt_univers = props.allUnivers[1].length + ' univers';
+                    tt_attractions = props.allAttractions[1].length + ' attractions';
+                    univers = props.allUnivers[1];
                 }
                 return (
                     <section key={el.slug} className="infos">
