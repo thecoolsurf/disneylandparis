@@ -35,16 +35,16 @@ function App() {
       const dataParks = await fetch('http://localhost:80/nav_parks');
       const parks = await dataParks.json();
       setParks(parks);
-      const dataUniversPark = await fetch('http://localhost:80/nav_univers_park');
+      const dataUniversPark = await fetch('http://localhost:80/nav_univers?id=1');
       const universPark = await dataUniversPark.json();
       setUniversPark(universPark);
-      const dataUniversStudio = await fetch('http://localhost:80/nav_univers_studio');
+      const dataUniversStudio = await fetch('http://localhost:80/nav_univers?id=2');
       const universStudio = await dataUniversStudio.json();
       setUniversStudio(universStudio);
-      const dataAttractionsPark = await fetch('http://localhost:80/nav_attractions_park');
+      const dataAttractionsPark = await fetch('http://localhost:80/nav_attractions?id=1');
       const attractionsPark = await dataAttractionsPark.json();
       setAttractionsPark(attractionsPark);
-      const dataAttractionsStudio = await fetch('http://localhost:80/nav_attractions_studio');
+      const dataAttractionsStudio = await fetch('http://localhost:80/nav_attractions?id=2');
       const attractionsStudio = await dataAttractionsStudio.json();
       setAttractionsStudio(attractionsStudio);
     };
@@ -72,8 +72,9 @@ function App() {
           {allUnivers.map((all) => {
             return (
               all.map((u) => {
+                let route = '/park/' + u.pslug + '/univers/' + u.slug;
                 return (
-                  <Route key={u.id} path={'/park/' + u.pslug + '/univers/' + u.slug} element={
+                  <Route key={u.id} path={route} element={
                     <Univers key={u.slug} id={u.id} slugs={params} slug={u.slug} pname={u.pname} uname={u.name} bkgNav={bkgNav} />
                   } />
                 )
@@ -83,8 +84,9 @@ function App() {
           {allAttractions.map((all) => {
             return (
               all.map((a) => {
+                let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.slug;
                 return (
-                  <Route key={a.id} path={'/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.slug} element={
+                  <Route key={a.id} path={route} element={
                     <Attraction key={a.slug} id={a.id} slugs={params} pname={a.pname} uname={a.uname} name={a.name} bkgNav={bkgNav} />
                   } />
                 )

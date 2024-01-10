@@ -12,16 +12,16 @@ const corsOptions = {
 server.use(morgan("common"));
 server.use(cors(corsOptions));
 
-function select() {
-
-  /*
-  Navigation
-  Park Disneyland
-  Park WaltDisney Studios
-  */
-  server.get("/nav_parks", (req, res, next) => {
-    let sqlNavParks = 'SELECT id, name, slug, description FROM park';
-    database.raw(sqlNavParks)
+/* ************************************************************************************************** */
+/*
+Navigation Parks
+*/
+function selectAllParks(server, route) {
+  let sql = `SELECT 
+  id, name, slug, description 
+  FROM park`;
+  server.get(route, (req, res, next) => {
+    database.raw(sql)
       .then(([rows, columns]) => {
         const result = rows.map((el) => ({
           id: el.id,
@@ -32,198 +32,195 @@ function select() {
         res.json(result);
       })
   });
-
-  /*
-  Navigation
-  Univers Park Disneyland
-  */
-  server.get("/nav_univers_park", (req, res, next) => {
-    let id = 1;
-    let sqlNavUniversPark = `SELECT u.id, u.name, u.slug, p.slug AS pslug, p.name AS pname FROM univers AS u JOIN park AS p ON p.id = u.id_park AND p.id = ${id} ORDER BY u.name`;
-    database.raw(sqlNavUniversPark)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          id: el.id,
-          name: el.name,
-          slug: el.slug,
-          pname: el.pname,
-          pslug: el.pslug
-        }));
-        res.json(result);
-      })
-  });
-
-  /*
-  Navigation
-  Univers Walt Disney Studio
-  */
-  server.get("/nav_univers_studio", (req, res, next) => {
-    let id = 2;
-    let sqlNavUniversStudio = `SELECT u.id, u.name, u.slug, p.slug AS pslug, p.name AS pname FROM univers AS u JOIN park AS p ON p.id = u.id_park AND p.id = ${id} ORDER BY u.name`;
-    database.raw(sqlNavUniversStudio)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          id: el.id,
-          name: el.name,
-          slug: el.slug,
-          pname: el.pname,
-          pslug: el.pslug
-        }));
-        res.json(result);
-      })
-  });
-
-  /*
-  Navigation
-  Attractions Park Disneyland
-  */
-  server.get("/nav_attractions_park", (req, res, next) => {
-    let id = 1;
-    let sqlNavAttractionsPark = `SELECT p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.id, a.name, a.description, a.restriction FROM attraction a JOIN univers u ON u.id = a.id_univ JOIN park p ON p.id = u.id_park WHERE p.id = ${id}`;
-    database.raw(sqlNavAttractionsPark)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          id: el.id,
-          name: el.name,
-          slug: el.slug,
-          uname: el.uname,
-          uslug: el.uslug,
-          pname: el.pname,
-          pslug: el.pslug
-        }));
-        res.json(result);
-      })
-  });
-
-  /*
-  Navigation
-  Attractions Walt Disney Studios
-  */
-  server.get("/nav_attractions_studio", (req, res, next) => {
-    let id = 2;
-    let sqlNavAttractionsPark = `SELECT p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.id, a.name, a.description, a.restriction FROM attraction a JOIN univers u ON u.id = a.id_univ JOIN park p ON p.id = u.id_park WHERE p.id = ${id}`;
-    database.raw(sqlNavAttractionsPark)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          id: el.id,
-          name: el.name,
-          slug: el.slug,
-          uname: el.uname,
-          uslug: el.uslug,
-          pname: el.pname,
-          pslug: el.pslug
-        }));
-        res.json(result);
-      })
-  });
-
-  /* ************************************************************************************************** */
-
-  /*
-  Page Parks
-  Query park, univers, attractions by park ID
-  */
-  server.get("/park_by_id_with_univers_count", (req, res, next) => {
-    let id = req.query.id;
-    let sqlParkById = `SELECT p.slug , p.name, p.description FROM park p WHERE p.id = ${id}`;
-    database.raw(sqlParkById)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          slug: el.slug,
-          name: el.name,
-          description: el.description
-        }));
-        res.json(result);
-      })
-  });
-
-  /* ************************************************************************************************** */
-
-  /*
-  Page Univers
-  Query Univers by ID
-  */
-  server.get("/univers_by_id", (req, res, next) => {
-    let id = req.query.id;
-    let sqlUniversById = `SELECT slug, name, description FROM univers WHERE id = ${id}`;
-    database.raw(sqlUniversById)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          slug: el.slug,
-          name: el.name,
-          description: el.description
-        }));
-        res.json(result);
-      })
-  });
-
-  /*
-  Page Univers
-  Query Attractions by Univers
-  */
-  server.get("/attractions_by_univers", (req, res, next) => {
-    let id = req.query.id;
-    let sqlAttractionsByUnivers = `SELECT id, id_park, slug, name, pictures FROM attraction WHERE id_univ = ${id}`;
-    database.raw(sqlAttractionsByUnivers)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          id: el.id,
-          id_park: el.id_park,
-          slug: el.slug,
-          name: el.name,
-          pictures: el.pictures
-        }));
-        res.json(result);
-      })
-  });
-
-  /* ************************************************************************************************** */
-
-  /*
-  Page Attraction
-  Attraction by ID
-  */
-  server.get("/attraction_by_id", (req, res, next) => {
-    let id = req.query.id;
-    let sqlAttractionById = `SELECT slug, name, public, description, restriction, pictures, movies FROM attraction WHERE id = ${id}`;
-    database.raw(sqlAttractionById)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          slug: el.slug,
-          name: el.name,
-          public: el.public,
-          description: el.description,
-          restriction: el.restriction,
-          pictures: el.pictures,
-          movies: el.movies
-        }));
-        res.json(result);
-      })
-  });
-
-  /* ************************************************************************************************** */
-
-  /*
-  Page Find attractions
-  */
-  server.get("/all_attractions", (req, res, next) => {
-    let find = req.query.find ? req.query.find : '';
-    let sqlAttractionById = `SELECT p.slug AS pslug, u.slug AS uslug, a.slug, a.name FROM attraction a JOIN park p ON p.id = a.id_park JOIN univers u ON u.id = a.id_univ AND a.name LIKE '%${find}%' LIMIT 5`;
-    database.raw(sqlAttractionById)
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          pslug: el.pslug,
-          uslug: el.uslug,
-          slug: el.slug,
-          name: el.name
-        }));
-        res.json(result);
-      })
-  });
-
-  /* ************************************************************************************************** */
-
   return server;
 }
+selectAllParks(server, "/nav_parks");
 
-module.exports = select();
+/* ************************************************************************************************** */
+/*
+Navigation Univers by park
+*/
+function selectUniversByPark(server, route) {
+  server.get(route, (req, res, next) => {
+    let id = req.query.id;
+    let sql = `SELECT 
+    u.id, u.name, u.slug, p.slug AS pslug, p.name AS pname 
+    FROM univers AS u 
+    JOIN park AS p ON p.id = u.id_park AND p.id = ${id} 
+    ORDER BY u.name`
+    database.raw(sql)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          id: el.id,
+          name: el.name,
+          slug: el.slug,
+          pname: el.pname,
+          pslug: el.pslug
+        }));
+        res.json(result);
+      })
+  });
+  return server;
+}
+selectUniversByPark(server, "/nav_univers");
+
+/* ************************************************************************************************** */
+/*
+Navigation Attractions by park
+*/
+function selectAttractionsByUnivers(server, route) {
+  server.get(route, (req, res, next) => {
+    let id = req.query.id;
+    let sql = `SELECT 
+    p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.id, a.name, a.description, a.restriction 
+    FROM attraction a 
+    JOIN univers u ON u.id = a.id_univ 
+    JOIN park p ON p.id = u.id_park 
+    WHERE p.id = ${id}`
+    database.raw(sql)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          id: el.id,
+          name: el.name,
+          slug: el.slug,
+          pname: el.pname,
+          pslug: el.pslug,
+          uslug: el.uslug,
+          uname: el.uname
+        }));
+        res.json(result);
+      })
+  });
+  return server;
+}
+selectAttractionsByUnivers(server, "/nav_attractions");
+
+/* ************************************************************************************************** */
+/*
+Page Parks - park by id
+*/
+function selectParkById(server, route) {
+  server.get(route, (req, res, next) => {
+    let id = req.query.id;
+    let sql = `SELECT 
+    p.slug , p.name, p.description 
+    FROM park p 
+    WHERE p.id = ${id}`;
+    database.raw(sql)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          slug: el.slug,
+          name: el.name,
+          description: el.description
+        }));
+        res.json(result);
+      })
+  });
+  return server;
+}
+selectParkById(server,"/park_by_id");
+
+/* ************************************************************************************************** */
+
+/*
+Page Univers - univers by id
+*/
+function selectUniversById(server, route) {
+  server.get(route, (req, res, next) => {
+    let id = req.query.id;
+    let sql = `SELECT 
+    slug, name, description 
+    FROM univers 
+    WHERE id = ${id}`;
+    database.raw(sql)
+      .then(([rows, columns]) => {
+        const result = rows.map((el) => ({
+          slug: el.slug,
+          name: el.name,
+          description: el.description
+        }));
+        res.json(result);
+      })
+  });
+  return server;  
+}
+selectUniversById(server,"/univers_by_id");
+
+/*
+Page Univers - attractions by Univers
+*/
+server.get("/attractions_by_univers", (req, res, next) => {
+  let id = req.query.id;
+  let sql = `SELECT 
+  id, id_park, slug, name, pictures 
+  FROM attraction 
+  WHERE id_univ = ${id}`;
+  database.raw(sql)
+    .then(([rows, columns]) => {
+      const result = rows.map((el) => ({
+        id: el.id,
+        id_park: el.id_park,
+        slug: el.slug,
+        name: el.name,
+        pictures: el.pictures
+      }));
+      res.json(result);
+    })
+});
+
+/* ************************************************************************************************** */
+
+/*
+Page Attraction - attraction by ID
+*/
+server.get("/attraction_by_id", (req, res, next) => {
+  let id = req.query.id;
+  let sql = `SELECT 
+  slug, name, public, description, restriction, pictures, movies 
+  FROM attraction 
+  WHERE id = ${id}`;
+  database.raw(sql)
+    .then(([rows, columns]) => {
+      const result = rows.map((el) => ({
+        slug: el.slug,
+        name: el.name,
+        public: el.public,
+        description: el.description,
+        restriction: el.restriction,
+        pictures: el.pictures,
+        movies: el.movies
+      }));
+      res.json(result);
+    })
+});
+
+/* ************************************************************************************************** */
+
+/*
+Page Find attractions
+*/
+server.get("/all_attractions", (req, res, next) => {
+  let find = req.query.find ? req.query.find : '';
+  let sql = `SELECT 
+  p.slug AS pslug, u.slug AS uslug, a.slug, a.name 
+  FROM attraction a 
+  JOIN park p ON p.id = a.id_park 
+  JOIN univers u ON u.id = a.id_univ 
+  AND a.name LIKE '%${find}%' 
+  LIMIT 5`;
+  database.raw(sql)
+    .then(([rows, columns]) => {
+      const result = rows.map((el) => ({
+        pslug: el.pslug,
+        uslug: el.uslug,
+        slug: el.slug,
+        name: el.name
+      }));
+      res.json(result);
+    })
+});
+
+/* ************************************************************************************************** */
+
+
+module.exports = server;

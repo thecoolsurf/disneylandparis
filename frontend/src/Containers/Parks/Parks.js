@@ -8,7 +8,7 @@ export const Parks = (props) => {
     const tt_univers = props.univers.length;
     useEffect(() => {
         const fetchData = async () => {
-            const dataPark = await fetch(`http://localhost:80/park_by_id_with_univers_count?id=${props.id}`);
+            const dataPark = await fetch(`http://localhost:80/park_by_id?id=${props.id}`);
             const park = await dataPark.json();
             setPark(park);
         };
