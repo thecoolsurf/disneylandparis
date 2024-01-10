@@ -17,10 +17,11 @@ export const Univers = (props) => {
         };
         fetchData();
     }, []);
+    let legend = 'Liste des attractions - univers '+props.uname+' - park '+props.pname;
     return (
         <div className="univers">
             <LinkToFinder />
-            <Carrousel datas={attractions} slugs={props.slugs} slug={props.slug} bkgNav={props.bkgNav} />
+            <Carrousel datas={attractions} slugs={props.slugs} slug={props.slug} bkgNav={props.bkgNav} legend={legend} />
             {univers.map((el) => {
                 return (
                     <section key={el.slug} className="infos">

@@ -11,9 +11,10 @@ export const Attraction = (props) => {
         };
         fetchtheData();
     }, []);
+    let legend = 'Galerie d\'images - '+props.name;
     return (
         <div className="attraction">
-            <Carrousel datas={attraction} slugs={props.slugs} bkgNav={props.bkgNav} />
+            <Carrousel datas={attraction} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
             {attraction.map((el) => {
                 let back = '/park/' + props.slugs[2] + '/univers/' + props.slugs[4];
                 return (

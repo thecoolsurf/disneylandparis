@@ -21,7 +21,9 @@ export const Home = (props) => {
                 return (
                     <section key={el.slug} className="infos">
                         <div className="col-left">
-                            <a href={'/park-' + el.slug} className={'logo logo-' + el.slug} alt={el.name}></a>
+                            <a href={'/park-' + el.slug} className={'logo logo-' + el.slug} alt={el.name}>
+                                <div className="back"><i className="fa fa-share"></i></div>
+                            </a>
                         </div>
                         <div className="col-infos">
                             <div className="name">{el.name}</div>

@@ -12,6 +12,7 @@ export const Carrousel = (props) => {
   const [showNext, setShowNext] = useState('show');
   return (
     <section className={'carrousel ' + props.bkgNav}>
+      <div className="legend">{props.legend}</div>
       <div className={'prev '+showPrev} onClick={() => {
         setMargX(margX - (incr + marg));
         if (margX < (incr + marg) * 2) { setShowPrev('hide'); setShowNext('show'); }
@@ -28,7 +29,7 @@ export const Carrousel = (props) => {
       </div>
       <div className="wrapper" style={{ marginLeft: -margX + 'px' }}>
         {props.datas.map((item) => {
-          return <Card key={item.slug} slugs={props.slugs} slug={props.slug} item={item} />;
+          return <Card key={item.slug} slugs={props.slugs} item={item} />;
         })}
       </div>
     </section>

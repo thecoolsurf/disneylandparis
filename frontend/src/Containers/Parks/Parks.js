@@ -14,10 +14,11 @@ export const Parks = (props) => {
         };
         fetchData();
     }, []);
+    let legend = 'Liste des univers - park '+props.name;
     return (
         <div className="parks">
             <LinkToFinder />
-            <Carrousel datas={props.univers} slugs={props.slugs} bkgNav={props.bkgNav} />
+            <Carrousel datas={props.univers} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
             {park.map((el) => {
                 return (
                     <section key={el.slug} className="infos">
@@ -29,9 +30,9 @@ export const Parks = (props) => {
                         <div className="col-infos">
                             <div className="name">{el.name}</div>
                             <ul className="list">
-                                <li><i>Name</i><div>{el.name}</div></li>
-                                <li><i>Total univers</i><div>{tt_univers + ' univers'}</div></li>
-                                <li><i>Univers</i>
+                                <li><i>Nom du park</i><div>{el.name}</div></li>
+                                <li><i>Total des univers</i><div>{tt_univers + ' univers'}</div></li>
+                                <li><i>Liste des univers</i>
                                     {props.univers.map((e) => {
                                         return (
                                             <div key={e.slug}>{e.name}</div>
