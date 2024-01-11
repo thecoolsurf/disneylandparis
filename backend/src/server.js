@@ -1,16 +1,22 @@
 const express = require("express");
 const morgan = require("morgan");
-const knex = require("./database");
-const server = express();
 const cors = require('cors');
+const config = require('./config');
+const server = express();
 
-const corsOptions = {
+const knex = require('knex')({
+  client: 'mysql2',
+  connection: config.db
+});
+
+const options = {
   origin: 'http://localhost:3000',
   credentials: true,
   optionSuccessStatus: 200
 }
+
 server.use(morgan("common"));
-server.use(cors(corsOptions));
+server.use(cors(options));
 
 /* ************************************************************************************************** */
 /*
