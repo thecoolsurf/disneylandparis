@@ -1,14 +1,19 @@
 .carrousel {
-    height: 180px;
+    height: 230px;
 }
 
 .carrousel .card {
-    height: 150px;
+    height: 200px;
 }
 
 .carrousel .card,
 .carrousel .legend {
-    width: 200px;
+    width: 300px;
+}
+
+.prev,
+.next {
+    height: 218px;
 }
 
 .carrousel {
@@ -47,11 +52,6 @@
 
 .carrousel.hide {
     display: none;
-}
-
-.prev,
-.next {
-    height: 165px;
 }
 
 .prev {
@@ -114,7 +114,8 @@
     left: 0px;
     z-index: 1;
     padding: 10px;
-    font-size: 1rem;
+    font-family: 'DisneyScript', sans-serif;
+    font-size: 2.5rem;
     color: white;
     text-align: center;
     box-sizing: border-box;

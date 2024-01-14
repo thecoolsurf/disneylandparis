@@ -3,7 +3,7 @@ import Card from "../Card/Card.js";
 import { useState } from "react";
 
 export const Carrousel = (props) => {
-  const incr = 200;
+  const incr = 300;
   const marg = 0;
   const total = props.datas.length;
   const [index, setIndex] = useState(1);

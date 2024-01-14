@@ -19,16 +19,41 @@
   text-align: left;
 }
 
+.header .logo-disneylandparis {
+  width: 15vw;
+  height: 5vw;
+}
+
+.header .logo-disneylandparis img {
+  width: 100%;
+  height: auto;
+}
+
+.header .logo-white {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}  
+
 .header .title {
-  position: relative;
-  font-family: 'DisneyScript', sans-serif;
-  font-weight: normal;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   color: #FFF;
+  text-decoration: none;
+  text-align: center;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.header .title .item1 {
+  font-size: clamp(1rem, 5vw, 2.5rem);
+  line-height: 0.75;
+  letter-spacing: -2px;
+}
+
+.header .title .item2 {
   font-size: clamp(2rem, 25vw, 10rem);
   line-height: 0.75;
-  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  text-decoration: none;
-  margin: 0 0 20px 0;
+  letter-spacing: -6px;
+  margin: -20px 0 0 0;
 }
 
 .header .title:hover {
@@ -37,10 +62,10 @@
 
 .header .title .paris {
   position: absolute;
-  bottom:0px;
+  bottom: 0px;
   right: -20px;
   z-index: 1;
-  font-family:'LibreFranklin', sans-serif;
+  font-family: 'LibreFranklin', sans-serif;
   font-weight: bold;
   font-size: clamp(0.5rem, 1.75vw, 2rem);
   letter-spacing: 22px;
@@ -54,14 +79,14 @@
   line-height: 1;
   text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.8);
   color: #FFF;
-  margin: 60px 0 0 30px;
+  margin: 10px 0 0 30px;
   padding: 0 20px;
   box-sizing: border-box;
 }
 
 .header .logo {
   display: inline-block;
-  width: clamp(8vh,12vw,20vw);
+  width: clamp(8vh, 12vw, 20vw);
   height: auto;
   box-sizing: border-box;
   overflow: hidden;
