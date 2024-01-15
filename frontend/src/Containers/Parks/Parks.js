@@ -14,7 +14,7 @@ export const Parks = (props) => {
         };
         fetchData();
     }, []);
-    let legend = 'Liste des univers - park '+props.name;
+    let legend = 'Liste des univers - '+props.name;
     return (
         <div className="parks">
             <LinkToFinder />

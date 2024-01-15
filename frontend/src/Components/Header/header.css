@@ -14,19 +14,22 @@
 .header .block {
   width: 100%;
   margin: 0 auto;
-  padding: 20px 10px;
+  padding: 10px;
   box-sizing: border-box;
   text-align: left;
 }
 
-.header .logo-disneylandparis {
-  width: 15vw;
-  height: 5vw;
+.header .logo {
+  display: block;
+  text-decoration: none;
+  animation: zoom 1s ease;
 }
 
-.header .logo-disneylandparis img {
+.header .logo img {
   width: 100%;
   height: auto;
+  margin: 0;
+  object-fit: cover;
 }
 
 .header .logo-white {
@@ -35,25 +38,32 @@
 }  
 
 .header .title {
+  display: block;
+  margin: 20px 0;
+  padding: 0 0 0 40px;
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
   color: #FFF;
   text-decoration: none;
-  text-align: center;
+  text-align: left;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .header .title .item1 {
-  font-size: clamp(1rem, 5vw, 2.5rem);
-  line-height: 0.75;
-  letter-spacing: -2px;
+  font-size: clamp(1.4rem, 8vw, 2.5rem);
+  line-height: 1;
 }
 
 .header .title .item2 {
-  font-size: clamp(2rem, 25vw, 10rem);
-  line-height: 0.75;
-  letter-spacing: -6px;
-  margin: -20px 0 0 0;
+  font-size: clamp(1.8rem, 15vw, 8rem);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin: -5px 0 0 0;
+}
+
+.header .title .item3 {
+  font-size: clamp(1.1rem, 6vw, 2.0rem);
+  line-height: 1;
 }
 
 .header .title:hover {
@@ -84,18 +94,3 @@
   box-sizing: border-box;
 }
 
-.header .logo {
-  display: inline-block;
-  width: clamp(8vh, 12vw, 20vw);
-  height: auto;
-  box-sizing: border-box;
-  overflow: hidden;
-  animation: zoom 1s ease;
-}
-
-.header .logo img {
-  width: 100%;
-  height: auto;
-  margin: 0;
-  object-fit: cover;
-}

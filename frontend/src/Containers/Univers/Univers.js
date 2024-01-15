@@ -17,7 +17,7 @@ export const Univers = (props) => {
         };
         fetchData();
     }, []);
-    let legend = 'Liste des attractions - univers '+props.uname+' - park '+props.pname;
+    let legend = 'Liste des attractions - '+props.uname+' - '+props.pname;
     return (
         <div className="univers">
             <LinkToFinder />

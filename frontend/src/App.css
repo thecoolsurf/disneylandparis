@@ -41,6 +41,10 @@
 /* **************************************************************** */
 
 @media screen and (max-width: 600px) {
+  .header .logo {
+    width: 150px;
+  }
+
   .slider {
     display: block;
   }
@@ -65,6 +69,10 @@
 }
 
 @media screen and (min-width: 601px) {
+  .header .logo {
+    width: 150px;
+  }
+  
   .slider {
     display: none;
   }
@@ -94,6 +102,10 @@
 }
 
 @media screen and (min-width: 801px) {
+  .header .logo {
+    width: 200px;
+  }
+  
   .slider {
     display: none;
   }
@@ -103,7 +115,7 @@
   }
 
   .header {
-    height: clamp(300px, 80vh, 600px);
+    height: clamp(20px, 80vh, 400px);
   }
 
 }
