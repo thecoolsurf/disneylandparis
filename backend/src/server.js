@@ -1,7 +1,7 @@
-const express = require("express");
 const morgan = require("morgan");
 const cors = require('cors');
 const config = require('./config');
+const express = require("express");
 const server = express();
 
 const knex = require('knex')({
@@ -18,6 +18,8 @@ const options = {
 server.use(morgan("common"));
 server.use(cors(options));
 
+/* ************************************************************************************************** */
+
 function select(route,sql) {
   server.get(route, (req, res, next) => {
     let id = req.query.id;
@@ -29,96 +31,10 @@ function select(route,sql) {
   return server;
 }
 
-/* ************************************************************************************************** */
-/*
-Navigation Parks
-*/
-sql = `SELECT 
-id, name, slug, description 
-FROM park`;
-
-select("/nav_parks",sql);
-
-/* ************************************************************************************************** */
-/*
-Navigation Univers by park
-*/
-sql = `SELECT 
-u.id, u.name, u.slug, p.slug AS pslug, p.name AS pname 
-FROM univers AS u 
-JOIN park AS p ON p.id = u.id_park AND p.id = ? 
-ORDER BY u.name`;
-
-select("/nav_univers",sql);
-
-/* ************************************************************************************************** */
-/*
-Navigation Attractions by park
-*/
-sql = `SELECT 
-p.slug AS pslug, p.name AS pname, u.slug AS uslug, u.name AS uname, a.slug, a.id, a.name, a.description, a.restriction 
-FROM attraction a 
-JOIN univers u ON u.id = a.id_univ 
-JOIN park p ON p.id = u.id_park 
-WHERE p.id = ?`;
-
-select("/nav_attractions",sql);
-
-/* ************************************************************************************************** */
-/*
-Page Parks - park by id
-*/
-sql = `SELECT 
-p.slug , p.name, p.description 
-FROM park p 
-WHERE p.id = ?`;
-
-select("/park_by_id",sql);
-
-/* ************************************************************************************************** */
-/*
-Page Univers - univers by id - attractions by univers
-*/
-sql = `SELECT 
-slug, name, description 
-FROM univers 
-WHERE id = ?`;
-
-select("/univers_by_id",sql);
-
-sql = `SELECT 
-id, id_park, slug, name, pictures 
-FROM attraction 
-WHERE id_univ = ?`;
-
-select("/attractions_by_univers",sql);
-
-/* ************************************************************************************************** */
-/*
-Page Attraction - attraction by ID
-*/
-sql = `SELECT 
-slug, name, public, description, restriction, pictures, movies 
-FROM attraction 
-WHERE id = ?`;
-
-select("/attraction_by_id",sql);
-
-/* ************************************************************************************************** */
-/*
-Page Find attractions
-*/
-function findAttraction(route) {
+function selectFind(route,sql) {
   server.get(route, (req, res, next) => {
     let find = req.query.find ? req.query.find : '';
-    let sql = `SELECT 
-    p.slug AS pslug, u.slug AS uslug, a.slug, a.name 
-    FROM attraction a 
-    JOIN park p ON p.id = a.id_park 
-    JOIN univers u ON u.id = a.id_univ 
-    AND a.name LIKE '%${find}%' 
-    LIMIT 5`;
-    knex.raw(sql)
+    knex.raw(sql,'%'+find+'%')
       .then(([rows, columns]) => {
         const result = rows.map((e) => ({
           pslug: e.pslug,
@@ -131,7 +47,44 @@ function findAttraction(route) {
   });
   return server;
 }
-findAttraction("/all_attractions");
+
+/* ************************************************************************************************** */
+/* NAVIGATION */
+
+/* Park */
+const nav_parks = require('./Model/Public/Park/AllParks.js');
+select("/nav_parks",nav_parks);
+
+/* Univers by park */
+const nav_univers = require('./Model/Public/Univers/AllUniversByPark.js');
+select("/nav_univers",nav_univers);
+
+/* Attractions by park */
+const attractions_by_univers = require('./Model/Public/Attraction/AllAttractionsByUnivers.js');
+select("/nav_attractions",attractions_by_univers);
+
+/* ************************************************************************************************** */
+/* PUBLIC PAGES */
+
+/* park by id */
+const park_by_id = require('./Model/Public/Park/ParkById.js');
+select("/park_by_id",park_by_id);
+
+/* Univers by id */
+const univers_by_id = require('./Model/Public/Univers/UniversById.js');
+select("/univers_by_id",univers_by_id);
+
+/* Attractions by univers */
+const all_attractions_by_univers = require('./Model/Public/Attraction/AllAttractionsByUnivers.js');
+select("/attractions_by_univers",all_attractions_by_univers);
+
+/* Attraction by ID */
+const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
+select("/attraction_by_id",attraction_by_id);
+
+/* Find attractions */
+const find_attraction_by_name = require('./Model/Public/Attraction/FindAttractionByName.js');
+selectFind("/all_attractions",find_attraction_by_name);
 
 /* ************************************************************************************************** */
 
