@@ -11,14 +11,15 @@ import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 import { Header } from './Components/Header/Header.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
-/* routes */
+/* public routes */
 import { Home } from './Pages/Home/Home.js';
 import { Parks } from './Pages/Parks/Parks.js';
 import { Univers } from './Pages/Univers/Univers.js';
 import { Attraction } from './Pages/Attraction/Attraction.js';
 import { FindAttractions } from './Pages/Attractions/FindAttractions.js';
-
-import { AdminCollection } from "./Admin/Collection.js";
+/* admin routes */
+import { AdminCollection } from "./Pages/Admin/Collection.js";
+import { AdminUpdate } from "./Pages/Admin/Update.js";
 
 function App() {
   const [parks, setParks] = useState([]);
@@ -28,6 +29,7 @@ function App() {
   const [attractionsStudio, setAttractionsStudio] = useState([]);
 
   const queryString = window.location.pathname;
+  const url = window.location.href;
   const params = queryString.split('/');
   const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
   const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
@@ -59,13 +61,17 @@ function App() {
 
   const entities = ['attraction', 'park', 'univers'];
   const [adminCollection, setAdminCollection] = useState([]);
-  const url = window.location.href;
+  const [adminUpdate, setAdminUpdate] = useState([]);
   const uri = url.split('?')[1] ? url.split('?')[1].slice(4,) : '';
+  const id = url.split('&')[1] ? url.split('&')[1].slice(3,) : '';
   useEffect(() => {
     const fetchData = async () => {
       const dataAdmin = await fetch(`http://localhost:80/admin/collection?uri=${uri}`);
       const adminCollection = await dataAdmin.json();
       setAdminCollection(adminCollection);
+      const dataUpdate = await fetch(`http://localhost:80/admin/update?uri=${uri}&id=${id}`);
+      const adminUpdate = await dataUpdate.json();
+      setAdminUpdate(adminUpdate);
     };
     fetchData();
   }, []);
@@ -115,6 +121,9 @@ function App() {
           } />
           <Route key={'admin'} path={'/admin/collection'} element={
             <AdminCollection entities={entities} datas={adminCollection} uri={uri} />
+          } />
+          <Route key={'update'} path={'/admin/update'} element={
+            <AdminUpdate entities={entities} datas={adminUpdate} uri={uri} />
           } />
         </Routes>
         <Footer />

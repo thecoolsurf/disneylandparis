@@ -48,30 +48,37 @@ function selectFind(route, sql) {
   return server;
 }
 
-function selectAdmin() {
+function selectAdminCollection() {
   server.get("/admin/collection", (req, res, next) => {
-    switch (req.query.uri) {
-      case 'attraction':
-        sql = require('./Model/Admin/Attraction/AttractionCollection.js');
-      case 'park':
-        sql = require('./Model/Admin/Park/ParkCollection.js');
-      case 'univers':
-        sql = require('./Model/Admin/Univers/UniversCollection.js');
-      default:
-        sql = require('./Model/Admin/Attraction/AttractionCollection.js');
-
-    }
+    let uri = req.query.uri;
+    if (uri === 'attraction') sql = require('./Model/Admin/Attraction/AttractionCollection.js');
+    if (uri === 'park') sql = require('./Model/Admin/Park/ParkCollection.js');
+    if (uri === 'univers') sql = require('./Model/Admin/Univers/UniversCollection.js');
     knex.raw(sql)
       .then(([rows, columns]) => {
-        const result = rows.map((e) => ({
-          id: e.id,
-          name: e.name
-        }));
-        res.json(result);
+        res.json(rows);
       })
   });
   return server;
 }
+
+function selectAdminUpdate() {
+  server.get("/admin/update", (req, res, next) => {
+    let uri = req.query.uri;
+    // let id = req.query.id;
+    let id = 1;
+    console.log(uri,id)
+    if (uri === 'attraction') sql = require('./Model/Admin/Attraction/AttractionById.js');
+    if (uri === 'park') sql = require('./Model/Admin/Park/ParkById.js');
+    if (uri === 'univers') sql = require('./Model/Admin/Univers/UniversById.js');
+    knex.raw(sql,id)
+      .then(([rows, columns]) => {
+        res.json(rows);
+      })
+  });
+  return server;
+}
+
 /* ************************************************************************************************** */
 /* NAVIGATION */
 
@@ -113,6 +120,7 @@ selectFind("/all_attractions", find_attraction_by_name);
 /* ************************************************************************************************** */
 /* ADMIN COLLECTIONS */
 
-selectAdmin();
+selectAdminCollection();
+selectAdminUpdate();
 
 module.exports = server;

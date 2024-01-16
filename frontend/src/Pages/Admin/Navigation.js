@@ -1,6 +1,6 @@
 export const Navigation = (props) => {
     return (
-        <div className="navigation-admin">
+        <div className="navigation">
             <div className="nav">
                 {props.entities.map((e) => {
                     return (
