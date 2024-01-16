@@ -1,22 +1,24 @@
 import "./App.css";
-import "./Containers/Parks/parks.css";
-import "./Containers/Univers/univers.css";
-import "./Containers/Attraction/park-disneyland.css";
-import "./Containers/Attraction/walt-disney-studios.css";
+import "./Pages/Parks/parks.css";
+import "./Pages/Univers/univers.css";
+import "./Pages/Attraction/park-disneyland.css";
+import "./Pages/Attraction/walt-disney-studios.css";
 
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
 
 /* components */
 import { Header } from './Components/Header/Header.js';
 import { Footer } from './Components/Footer/Footer.js';
 import { Navigation } from './Components/Navigation/Navigation.js';
 /* routes */
-import { Home } from './Containers/Home/Home.js';
-import { Parks } from './Containers/Parks/Parks.js';
-import { Univers } from './Containers/Univers/Univers.js';
-import { Attraction } from './Containers/Attraction/Attraction.js';
-import { FindAttractions } from './Containers/Attractions/FindAttractions.js';
+import { Home } from './Pages/Home/Home.js';
+import { Parks } from './Pages/Parks/Parks.js';
+import { Univers } from './Pages/Univers/Univers.js';
+import { Attraction } from './Pages/Attraction/Attraction.js';
+import { FindAttractions } from './Pages/Attractions/FindAttractions.js';
+
+import { AdminCollection } from "./Admin/Collection.js";
 
 function App() {
   const [parks, setParks] = useState([]);
@@ -52,6 +54,21 @@ function App() {
   }, []);
   const allUnivers = [universPark, universStudio];
   const allAttractions = [attractionsPark, attractionsStudio];
+
+  /* *************************************************************************************** */
+
+  const entities = ['attraction', 'park', 'univers'];
+  const [adminCollection, setAdminCollection] = useState([]);
+  const url = window.location.href;
+  const uri = url.split('?')[1] ? url.split('?')[1].slice(4,) : '';
+  useEffect(() => {
+    const fetchData = async () => {
+      const dataAdmin = await fetch(`http://localhost:80/admin/collection?uri=${uri}`);
+      const adminCollection = await dataAdmin.json();
+      setAdminCollection(adminCollection);
+    };
+    fetchData();
+  }, []);
   return (
     <div className="main">
       <BrowserRouter>
@@ -95,6 +112,9 @@ function App() {
           })}
           <Route key={'findAttractions'} path={'/find/attractions'} element={
             <FindAttractions slugs={params} bkgNav={bkgNav} />
+          } />
+          <Route key={'admin'} path={'/admin/collection'} element={
+            <AdminCollection entities={entities} datas={adminCollection} uri={uri} />
           } />
         </Routes>
         <Footer />

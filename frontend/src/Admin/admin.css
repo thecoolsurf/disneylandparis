@@ -1,0 +1,77 @@
+.header {
+  display: none;
+}
+
+.navigation {
+  display: none;
+}
+
+.navigation-admin {
+  background: #888;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+  width: 100;
+  min-height: 75px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.5);
+}
+
+.link {
+  font-size: 1.1rem;
+  color: #FFF;
+  text-decoration: none;
+  text-wrap: wrap;
+  padding: 10px 15px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+}
+
+.link:hover {
+  background: #FFF;
+  color: #000;
+}
+
+.admin {
+  float: left;
+  width: 100%;
+  padding: 90px 20px 20px 20px;
+  box-sizing: border-box;
+}
+
+.admin .title {
+  font-weight: bold;
+  padding: 0 0 30px 0;
+}
+.admin .row {
+  float: left;
+  width: 100%;
+  padding: 10px 0;
+  border-top: solid 1px #555;
+}
+
+.admin .row div {
+  float: left;
+}
+
+.admin .row .id {
+  width: 30px;
+  text-align: center;
+}
+.admin .row .item {
+  text-align: left;
+  width: auto;
+}
+.admin .row .buttons {
+  float: right;
+  width: 100px;
+  text-align: center;
+}
