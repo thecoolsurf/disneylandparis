@@ -31,7 +31,7 @@ function App() {
   const queryString = window.location.pathname;
   const url = window.location.href;
   const params = queryString.split('/');
-  console.log(url.split('/')[3]);
+  // console.log(url.split('/')[3]);
   const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
   const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
@@ -59,13 +59,13 @@ function App() {
   const allAttractions = [attractionsPark, attractionsStudio];
 
   /* *************************************************************************************** */
-
+  /* ADMIN */
   const entities = ['admin','attraction', 'park', 'univers', 'user'];
   const [adminCollection, setAdminCollection] = useState([]);
   const [adminUpdate, setAdminUpdate] = useState([]);
   const uri = queryString.split('/')[3];
   const id = url.includes('?') ? url.split('?')[1].slice(3,) : '';
-  console.log(uri,id);
+  // console.log(uri,id);
   useEffect(() => {
     const fetchData = async () => {
       const dataAdmin = await fetch(`http://localhost:80/admin/collection/${uri}`);

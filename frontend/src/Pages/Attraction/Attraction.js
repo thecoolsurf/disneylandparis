@@ -3,6 +3,7 @@ import{ Carrousel } from '../../Components/Carrousel/Carrousel.js';
 
 export const Attraction = (props) => {
     const [attraction, setAttraction] = useState([]);
+    console.log(props.id)
     useEffect(() => {
         const fetchtheData = async () => {
             const dataAttraction = await fetch(`http://localhost:80/attraction_by_id?id=${props.id}`);
