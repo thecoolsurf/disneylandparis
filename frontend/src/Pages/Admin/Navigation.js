@@ -4,7 +4,7 @@ export const Navigation = (props) => {
             <div className="nav">
                 {props.entities.map((e) => {
                     return (
-                        <a key={e} className="link" href={'/admin/collection?uri=' + e}>{e}</a>
+                        <a key={e} className="link" href={'/admin/collection/' + e}>{e}</a>
                     )
                 })}
             </div>

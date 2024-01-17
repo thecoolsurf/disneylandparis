@@ -1,6 +1,3 @@
-const park_collection = `SELECT 
-    id, name, slug, description 
-    FROM park
-    ORDER BY id`;
+const park_collection = `SELECT * FROM park`;
 
 module.exports = park_collection;

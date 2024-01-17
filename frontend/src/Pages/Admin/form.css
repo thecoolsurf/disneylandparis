@@ -1,0 +1,21 @@
+.admin form {
+    max-width: 300px;
+}
+
+.admin form legend span {
+    padding: 0 0 0 10px;
+}
+.admin form p,
+.admin form label,
+.admin form input {
+    width: 100%;
+}
+
+.admin form label {
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.admin form input {
+    padding: 10px;
+    box-sizing: border-box;
+}

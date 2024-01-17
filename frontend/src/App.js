@@ -31,6 +31,7 @@ function App() {
   const queryString = window.location.pathname;
   const url = window.location.href;
   const params = queryString.split('/');
+  console.log(url.split('/')[3]);
   const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
   const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
@@ -59,17 +60,18 @@ function App() {
 
   /* *************************************************************************************** */
 
-  const entities = ['attraction', 'park', 'univers'];
+  const entities = ['admin','attraction', 'park', 'univers', 'user'];
   const [adminCollection, setAdminCollection] = useState([]);
   const [adminUpdate, setAdminUpdate] = useState([]);
-  const uri = url.split('?')[1] ? url.split('?')[1].slice(4,) : '';
-  const id = url.split('&')[1] ? url.split('&')[1].slice(3,) : '';
+  const uri = queryString.split('/')[3];
+  const id = url.includes('?') ? url.split('?')[1].slice(3,) : '';
+  console.log(uri,id);
   useEffect(() => {
     const fetchData = async () => {
-      const dataAdmin = await fetch(`http://localhost:80/admin/collection?uri=${uri}`);
+      const dataAdmin = await fetch(`http://localhost:80/admin/collection/${uri}`);
       const adminCollection = await dataAdmin.json();
       setAdminCollection(adminCollection);
-      const dataUpdate = await fetch(`http://localhost:80/admin/update?uri=${uri}&id=${id}`);
+      const dataUpdate = await fetch(`http://localhost:80/admin/update/${uri}?id=${id}`);
       const adminUpdate = await dataUpdate.json();
       setAdminUpdate(adminUpdate);
     };
@@ -119,12 +121,30 @@ function App() {
           <Route key={'findAttractions'} path={'/find/attractions'} element={
             <FindAttractions slugs={params} bkgNav={bkgNav} />
           } />
-          <Route key={'admin'} path={'/admin/collection'} element={
-            <AdminCollection entities={entities} datas={adminCollection} uri={uri} />
-          } />
-          <Route key={'update'} path={'/admin/update'} element={
-            <AdminUpdate entities={entities} datas={adminUpdate} uri={uri} />
-          } />
+          {/* ADMIN */}
+          {entities.map((e) => {
+            return (
+              <Route key={'collection-' + e} path={'/admin/collection/' + e} element={
+                <AdminCollection entities={entities} datas={adminCollection} uri={e} />
+              } />
+            )
+          })}
+          {/* ADMIN */}
+          {entities.map((e) => {
+            return (
+              <Route key={'form-update-' + e} path={'/admin/update/' + e} element={
+                <AdminUpdate entities={entities} datas={adminUpdate} uri={e} />
+              } />
+            )
+          })}
+          {/* ADMIN */}
+          {entities.map((e) => {
+            return (
+              <Route key={'entity-update-' + e} path={'/admin/update/entity/' + e} element={
+                <AdminUpdate entities={entities} datas={adminUpdate} uri={e} />
+              } />
+            )
+          })}
         </Routes>
         <Footer />
       </BrowserRouter>
