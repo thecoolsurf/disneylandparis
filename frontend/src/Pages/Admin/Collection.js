@@ -2,7 +2,7 @@ import './admin.css'
 import { Navigation } from "./Navigation.js";
 
 export const AdminCollection = (props) => {
-    console.log(props.uri)
+    // console.log(props.uri)
     return (
         <div className="admin">
             <Navigation entities={props.entities} />

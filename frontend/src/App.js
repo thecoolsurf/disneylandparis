@@ -29,9 +29,7 @@ function App() {
   const [attractionsStudio, setAttractionsStudio] = useState([]);
 
   const queryString = window.location.pathname;
-  const url = window.location.href;
   const params = queryString.split('/');
-  // console.log(url.split('/')[3]);
   const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
   const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
@@ -60,12 +58,13 @@ function App() {
 
   /* *************************************************************************************** */
   /* ADMIN */
-  const entities = ['admin','attraction', 'park', 'univers', 'user'];
+  const entities = ['admin', 'attraction', 'park', 'univers', 'user'];
   const [adminCollection, setAdminCollection] = useState([]);
   const [adminUpdate, setAdminUpdate] = useState([]);
-  const uri = queryString.split('/')[3];
-  const id = url.includes('?') ? url.split('?')[1].slice(3,) : '';
-  // console.log(uri,id);
+  const url = window.location.href;
+  const uri = url.includes('admin') ? queryString.split('/')[3] : 'park';
+  const id = url.includes('?') ? url.split('?')[1].slice(3,) : 0;
+  // console.log('app:',uri,id);
   useEffect(() => {
     const fetchData = async () => {
       const dataAdmin = await fetch(`http://localhost:80/admin/collection/${uri}`);
@@ -81,7 +80,7 @@ function App() {
     <div className="main">
       <BrowserRouter>
         <Header bkgHeader={bkgHeader} />
-        <Navigation bkgNav={bkgNav} parks={parks} allUnivers={allUnivers} />
+        <Navigation bkgNav={bkgNav} />
         <Routes>
           <Route path="/" element={
             <Home parks={parks} allUnivers={allUnivers} allAttractions={allAttractions} />
@@ -106,16 +105,22 @@ function App() {
               })
             )
           })}
-          {allAttractions.map((all) => {
+          {attractionsPark.map((a) => {
+            // console.log(a.pslug,a.uslug,a.slug);
+            let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.slug;
             return (
-              all.map((a) => {
-                let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.slug;
-                return (
-                  <Route key={a.id} path={route} element={
-                    <Attraction key={a.slug} id={a.id} slugs={params} pname={a.pname} uname={a.uname} name={a.name} bkgNav={bkgNav} />
-                  } />
-                )
-              })
+              <Route key={a.id} path={route} element={
+                <Attraction key={a.slug} id={a.id} slugs={params} pname={a.pname} uname={a.uname} name={a.name} bkgNav={bkgNav} />
+              } />
+            )
+          })}
+          {attractionsStudio.map((a) => {
+            // console.log(a.pslug,a.uslug,a.slug);
+            let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.slug;
+            return (
+              <Route key={a.id} path={route} element={
+                <Attraction key={a.slug} id={a.id} slugs={params} pname={a.pname} uname={a.uname} name={a.name} bkgNav={bkgNav} />
+              } />
             )
           })}
           <Route key={'findAttractions'} path={'/find/attractions'} element={

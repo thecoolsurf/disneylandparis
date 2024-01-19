@@ -6,6 +6,7 @@ export const Univers = (props) => {
     const [univers, setUnivers] = useState([]);
     const [attractions, setAttractions] = useState([]);
     const str_attraction = attractions.length > 1 ? 'attractions' : 'attraction';
+    // console.log('univers:', props.id)
     useEffect(() => {
         const fetchData = async () => {
             const dataUnivers = await fetch(`http://localhost:80/univers_by_id?id=${props.id}`);
@@ -17,7 +18,7 @@ export const Univers = (props) => {
         };
         fetchData();
     }, []);
-    let legend = 'Liste des attractions - '+props.uname+' - '+props.pname;
+    let legend = 'Liste des attractions - ' + props.uname + ' - ' + props.pname;
     return (
         <div className="univers">
             <LinkToFinder />
@@ -38,11 +39,13 @@ export const Univers = (props) => {
                                 <li><i>Total attractions</i><div>{attractions.length + ' ' + str_attraction}</div></li>
                                 <li><i>Liste des attractions</i>
                                     <ul>
-                                    {attractions.map((e) => {
-                                        return (
-                                            <li key={e.slug} className="item"><i className="fa fa-point"></i>{e.name}</li>
-                                        )
-                                    })}
+                                        {attractions.map((e) => {
+                                            return (
+                                                <li key={e.slug} className="item">
+                                                    <i className="fa fa-point"></i>{e.name} {e.id}
+                                                </li>
+                                            )
+                                        })}
                                     </ul>
                                 </li>
                             </ul>

@@ -23,6 +23,16 @@ server.use(cors(options));
 
 function select(route, sql) {
   server.get(route, (req, res, next) => {
+    knex.raw(sql)
+      .then(([rows, columns]) => {
+        res.json(rows);
+      })
+  });
+  return server;
+}
+
+function selectWithId(route, sql) {
+  server.get(route, (req, res, next) => {
     let id = req.query.id;
     knex.raw(sql, id)
       .then(([rows, columns]) => {
@@ -64,29 +74,32 @@ function selectFind(route, sql) {
 /* ************************************************************************************************** */
 /* PUBLIC NAVIGATION */
 
+const univers_and_park = require('./Model/Public/Attraction/AttractionsAndUniversAndPark.js');
+select("/navigation", univers_and_park);
+
 const nav_parks = require('./Model/Public/Park/AllParks.js');
-select("/nav_parks", nav_parks);
+selectWithId("/nav_parks", nav_parks);
 
 const nav_univers = require('./Model/Public/Univers/AllUniversByPark.js');
-select("/nav_univers", nav_univers);
+selectWithId("/nav_univers", nav_univers);
 
-const attractions_by_univers = require('./Model/Public/Attraction/AllAttractionsByUnivers.js');
-select("/nav_attractions", attractions_by_univers);
+const attractions_by_univers = require('./Model/Public/Attraction/AllAttractionsByUniversAndPark.js');
+selectWithId("/nav_attractions", attractions_by_univers);
 
 /* ************************************************************************************************** */
 /* PUBLIC PAGES */
 
 const park_by_id = require('./Model/Public/Park/ParkById.js');
-select("/park_by_id", park_by_id);
+selectWithId("/park_by_id", park_by_id);
 
 const univers_by_id = require('./Model/Public/Univers/UniversById.js');
-select("/univers_by_id", univers_by_id);
+selectWithId("/univers_by_id", univers_by_id);
 
-const all_attractions_by_univers = require('./Model/Public/Attraction/AllAttractionsByUnivers.js');
-select("/attractions_by_univers", all_attractions_by_univers);
+const all_attractions_by_univers = require('./Model/Public/Attraction/AllAttractionsByUniversAndPark.js');
+selectWithId("/attractions_by_univers", all_attractions_by_univers);
 
 const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
-select("/attraction_by_id", attraction_by_id);
+selectWithId("/attraction_by_id", attraction_by_id);
 
 const find_attraction_by_name = require('./Model/Public/Attraction/FindAttractionByName.js');
 selectFind("/all_attractions", find_attraction_by_name);
@@ -95,29 +108,29 @@ selectFind("/all_attractions", find_attraction_by_name);
 /* ADMIN COLLECTIONS */
 
 const attraction_collection = require('./Model/Admin/Attraction/AttractionCollection.js');
-select("/admin/collection/attraction", attraction_collection);
+selectWithId("/admin/collection/attraction", attraction_collection);
 const attraction_update = require('./Model/Admin/Attraction/AttractionById.js');
-select("/admin/update/attraction", attraction_update);
+selectWithId("/admin/update/attraction", attraction_update);
 
 const park_collection = require('./Model/Admin/Park/ParkCollection.js');
-select("/admin/collection/park", park_collection);
+selectWithId("/admin/collection/park", park_collection);
 const park_update = require('./Model/Admin/Park/ParkById.js');
-select("/admin/update/park", park_update);
+selectWithId("/admin/update/park", park_update);
 
 const univers_collection = require('./Model/Admin/Univers/UniversCollection.js');
-select("/admin/collection/univers", univers_collection);
+selectWithId("/admin/collection/univers", univers_collection);
 const univers_update = require('./Model/Admin/Univers/UniversById.js');
-select("/admin/update/univers", univers_update);
+selectWithId("/admin/update/univers", univers_update);
 
 const user_collection = require('./Model/Admin/User/UserCollection.js');
-select("/admin/collection/user", user_collection);
+selectWithId("/admin/collection/user", user_collection);
 const user_update = require('./Model/Admin/User/UserById.js');
-select("/admin/update/user", user_update);
+selectWithId("/admin/update/user", user_update);
 
 const administrator_collection = require('./Model/Admin/Admin/AdministratorCollection.js');
-select("/admin/collection/admin", administrator_collection);
+selectWithId("/admin/collection/admin", administrator_collection);
 const administrator_update = require('./Model/Admin/Admin/AdministratorById.js');
-select("/admin/collection/admin", administrator_update);
+selectWithId("/admin/collection/admin", administrator_update);
 
 
 

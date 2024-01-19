@@ -6,6 +6,7 @@ import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
 export const Parks = (props) => {
     const [park, setPark] = useState([]);
     const tt_univers = props.univers.length;
+    // console.log('park',props.id);
     useEffect(() => {
         const fetchData = async () => {
             const dataPark = await fetch(`http://localhost:80/park_by_id?id=${props.id}`);
