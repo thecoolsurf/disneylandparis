@@ -1,16 +1,30 @@
-import './admin.css'
+import './admin.css';
+import { useState, useEffect } from 'react';
 import { Navigation } from "./Navigation.js";
 
 import './form.css';
 
 export const AdminUpdate = (props) => {
+    const [datas, setDatas] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const datasUpdate = await fetch(`http://localhost:80/admin/update/${uri}?id=${id}`);
+            const datas = await datasUpdate.json();
+            setDatas(datas);
+        };
+        fetchData();
+    }, []);
+    const queryString = window.location.pathname;
+    const url = window.location.href;
+    const uri = url.includes('admin') ? queryString.split('/')[3] : 'park';
+    const id = url.includes('?') ? url.split('?')[1].slice(3,) : 0;
     return (
         <div className="admin">
             <Navigation entities={props.entities} />
-            <form action={'/admin/update/entity/'+props.uri} method="POST" enctype="application/x-www-form-urlencoded">
+            <form action={'/admin/update/entity/' + props.uri} method="POST" enctype="application/x-www-form-urlencoded">
                 <fieldset>
                     <legend>UPDATE:<span>{props.uri}</span></legend>
-                    {props.datas.map((e) => {
+                    {datas.map((e) => {
                         if (props.uri === 'attraction') {
                             return (
                                 <>

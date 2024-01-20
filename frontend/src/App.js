@@ -23,7 +23,6 @@ import { AdminUpdate } from "./Pages/Admin/Update.js";
 
 function App() {
   const [navigation, setNavigation] = useState([]);
-  
   useEffect(() => {
     const fetchData = async () => {
       const dataNavigation = await fetch('http://localhost:80/navigation');
@@ -52,80 +51,32 @@ function App() {
     for (let i = 0; i < park.length; i++) park[i].univers = univers[i];
     return park;
   }
-  const menus = filterParkAndUnivers();
-
-  const [parks, setParks] = useState([]);
-  const [universPark, setUniversPark] = useState([]);
-  const [universStudio, setUniversStudio] = useState([]);
-  const [attractionsPark, setAttractionsPark] = useState([]);
-  const [attractionsStudio, setAttractionsStudio] = useState([]);
-
+  const parkAndUnivers = filterParkAndUnivers();
+  const allAttractions = navigation;
   const queryString = window.location.pathname;
   const params = queryString.split('/');
   const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
   const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const dataParks = await fetch('http://localhost:80/nav_parks');
-      const parks = await dataParks.json();
-      setParks(parks);
-      const dataUniversPark = await fetch('http://localhost:80/nav_univers?id=1');
-      const universPark = await dataUniversPark.json();
-      setUniversPark(universPark);
-      const dataUniversStudio = await fetch('http://localhost:80/nav_univers?id=2');
-      const universStudio = await dataUniversStudio.json();
-      setUniversStudio(universStudio);
-      const dataAttractionsPark = await fetch('http://localhost:80/nav_attractions?id=1');
-      const attractionsPark = await dataAttractionsPark.json();
-      setAttractionsPark(attractionsPark);
-      const dataAttractionsStudio = await fetch('http://localhost:80/nav_attractions?id=2');
-      const attractionsStudio = await dataAttractionsStudio.json();
-      setAttractionsStudio(attractionsStudio);
-    };
-    fetchData();
-  }, []);
-  const allUnivers = [universPark, universStudio];
-  const allAttractions = [attractionsPark, attractionsStudio];
-
-  /* *************************************************************************************** */
-  /* ADMIN */
   const entities = ['admin', 'attraction', 'park', 'univers', 'user'];
-  const [adminCollection, setAdminCollection] = useState([]);
-  const [adminUpdate, setAdminUpdate] = useState([]);
-  const url = window.location.href;
-  const uri = url.includes('admin') ? queryString.split('/')[3] : 'park';
-  const id = url.includes('?') ? url.split('?')[1].slice(3,) : 0;
-  // console.log('app:',uri,id);
-  useEffect(() => {
-    const fetchData = async () => {
-      const dataAdmin = await fetch(`http://localhost:80/admin/collection/${uri}`);
-      const adminCollection = await dataAdmin.json();
-      setAdminCollection(adminCollection);
-      const dataUpdate = await fetch(`http://localhost:80/admin/update/${uri}?id=${id}`);
-      const adminUpdate = await dataUpdate.json();
-      setAdminUpdate(adminUpdate);
-    };
-    fetchData();
-  }, []);
   return (
     <div className="main">
       <BrowserRouter>
         <Header bkgHeader={bkgHeader} />
-        <Navigation datas={menus} bkgNav={bkgNav} />
+        <Navigation datas={parkAndUnivers} bkgNav={bkgNav} />
         <Routes>
           <Route path="/" element={
-            <Home parks={parks} allUnivers={allUnivers} allAttractions={allAttractions} />
+            <Home />
           } />
-          {menus.map((p) => {
-            let univers = (p.pid === 1) ? menus[0].univers : menus[1].univers;
+          {parkAndUnivers.map((p) => {
+            let univers = (p.pid === 1) ? parkAndUnivers[0].univers : parkAndUnivers[1].univers;
             return (
               <Route key={p.pid} path={'/park-' + p.pslug} element={
                 <Parks key={p.pid} id={p.pid} slugs={params} slug={p.pslug} name={p.pname} univers={univers} bkgNav={bkgNav} />
               } />
             )
           })}
-          {menus.map((m) => {
+          {parkAndUnivers.map((m) => {
             return (
               m.univers.map((u) => {
                 let route = '/park/' + m.pslug + '/univers/' + u.uslug;
@@ -137,49 +88,33 @@ function App() {
               })
             )
           })}
-          {attractionsPark.map((a) => {
-            // console.log(a.pslug,a.uslug,a.slug);
-            let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.slug;
+          {allAttractions.map((a) => {
+            let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.aslug;
             return (
-              <Route key={a.id} path={route} element={
-                <Attraction key={a.slug} id={a.id} slugs={params} pname={a.pname} uname={a.uname} name={a.name} bkgNav={bkgNav} />
+              <Route key={a.aid} path={route} element={
+                <Attraction key={a.aid} id={a.aid} slugs={params} pname={a.pname} uname={a.uname} name={a.aname} bkgNav={bkgNav} />
               } />
             )
           })}
-          {attractionsStudio.map((a) => {
-            // console.log(a.pslug,a.uslug,a.slug);
-            let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.slug;
-            return (
-              <Route key={a.id} path={route} element={
-                <Attraction key={a.slug} id={a.id} slugs={params} pname={a.pname} uname={a.uname} name={a.name} bkgNav={bkgNav} />
-              } />
-            )
-          })}
+
           <Route key={'findAttractions'} path={'/find/attractions'} element={
             <FindAttractions slugs={params} bkgNav={bkgNav} />
           } />
+
           {/* ADMIN */}
           {entities.map((e) => {
             return (
+              <>
               <Route key={'collection-' + e} path={'/admin/collection/' + e} element={
-                <AdminCollection entities={entities} datas={adminCollection} uri={e} />
+                <AdminCollection key={'c'+e} entities={entities} uri={e} />
               } />
-            )
-          })}
-          {/* ADMIN */}
-          {entities.map((e) => {
-            return (
               <Route key={'form-update-' + e} path={'/admin/update/' + e} element={
-                <AdminUpdate entities={entities} datas={adminUpdate} uri={e} />
+                <AdminUpdate key={'f'+e} entities={entities} uri={e} />
               } />
-            )
-          })}
-          {/* ADMIN */}
-          {entities.map((e) => {
-            return (
               <Route key={'entity-update-' + e} path={'/admin/update/entity/' + e} element={
-                <AdminUpdate entities={entities} datas={adminUpdate} uri={e} />
+                <AdminUpdate key={'u'+e} entities={entities} uri={e} />
               } />
+              </>
             )
           })}
         </Routes>

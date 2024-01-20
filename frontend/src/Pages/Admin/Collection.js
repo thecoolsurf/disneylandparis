@@ -1,8 +1,20 @@
 import './admin.css'
+import { useState, useEffect } from 'react';
 import { Navigation } from "./Navigation.js";
 
 export const AdminCollection = (props) => {
-    // console.log(props.uri)
+    const [datas, setDatas] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const dataAdmin = await fetch(`http://localhost:80/admin/datas/${uri}`);
+            const datas = await dataAdmin.json();
+            setDatas(datas);
+        };
+        fetchData();
+    }, []);
+    const queryString = window.location.pathname;
+    const url = window.location.href;
+    const uri = url.includes('admin') ? queryString.split('/')[3] : 'park';
     return (
         <div className="admin">
             <Navigation entities={props.entities} />
@@ -11,32 +23,32 @@ export const AdminCollection = (props) => {
                 <div>ADMIN:<span>{props.uri}</span></div>
             </div>
             <div className="list">
-                {props.datas.map((e) => {
+                {datas.map((e) => {
                     if (props.uri === 'user') {
-                    return (
-                        <div key={e.id} className="row">
-                            <div className="id">{e.id}</div>
-                            <div className="item">{e.firstname + ' ' + e.lastname}</div>
-                            <div className="btn">
-                                <a href={'/admin/delete?uri='+props.uri+'&id='+e.id}>Delete</a>
+                        return (
+                            <div key={e.id} className="row">
+                                <div className="id">{e.id}</div>
+                                <div className="item">{e.firstname + ' ' + e.lastname}</div>
+                                <div className="btn">
+                                    <a href={'/admin/delete?uri=' + props.uri + '&id=' + e.id}>Delete</a>
+                                </div>
+                                <div className="btn">
+                                    <a href={'/admin/update/' + props.uri + '?id=' + e.id}>Update</a>
+                                </div>
                             </div>
-                            <div className="btn">
-                                <a href={'/admin/update/'+props.uri+'?id='+e.id}>Update</a>
-                            </div>
-                        </div>
-                    )
+                        )
                     } else {
                         return (
                             <div key={e.id} className="row">
-                            <div className="id">{e.id}</div>
-                            <div className="item">{e.name}</div>
-                            <div className="btn">
-                                <a href={'/admin/delete?uri='+props.uri+'&id='+e.id}>Delete</a>
+                                <div className="id">{e.id}</div>
+                                <div className="item">{e.name}</div>
+                                <div className="btn">
+                                    <a href={'/admin/delete?uri=' + props.uri + '&id=' + e.id}>Delete</a>
+                                </div>
+                                <div className="btn">
+                                    <a href={'/admin/update/' + props.uri + '?id=' + e.id}>Update</a>
+                                </div>
                             </div>
-                            <div className="btn">
-                                <a href={'/admin/update/'+props.uri+'?id='+e.id}>Update</a>
-                            </div>
-                        </div>
 
                         )
                     }

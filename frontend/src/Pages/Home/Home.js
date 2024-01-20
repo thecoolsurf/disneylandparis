@@ -1,46 +1,77 @@
 import './home.css';
+import { useState, useEffect } from 'react';
 import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
 
-export const Home = (props) => {
+export const Home = () => {
+    const [home, setDatas] = useState([]);
+    useEffect(() => {
+        const fetchData = async () => {
+            const homeDatas = await fetch('http://localhost:80/home');
+            const home = await homeDatas.json();
+            setDatas(home);
+        };
+        fetchData();
+    }, []);
+    function filterParkAndUnivers() {
+        const park = [];
+        const univers = [[], []];
+        const map = new Map();
+        for (const el of home) {
+            if (!map.has(el.pid)) {
+                map.set(el.pid, true);
+                park.push({ pid: el.pid, pslug: el.pslug, pname: el.pname, description: el.description });
+            }
+            for (let i = 0; i < park.length; i++) {
+                if (!map.has(el.uslug) && el.pid === i + 1) {
+                    map.set(el.uslug, true);
+                    univers[i].push({ uid: el.uid, uslug: el.uslug, uname: el.uname });
+                }
+            }
+        }
+        for (let i = 0; i < park.length; i++) park[i].univers = univers[i];
+        return park;
+    }
+    const parkAndUnivers = filterParkAndUnivers();
     let tt_univers = '';
     let tt_attractions = '';
-    let univers = '';
+    let univers = null;
+
     return (
         <div className="home">
             <LinkToFinder />
-            {props.parks.map((el) => {
-                if (el.slug === 'park-disneyland') {
-                    tt_univers = props.allUnivers[0].length + ' univers';
-                    tt_attractions = props.allAttractions[0].length + ' attractions';
-                    univers = props.allUnivers[0];
+            {parkAndUnivers.map((p) => {
+                if (p.pid === 1) {
+                    tt_univers = parkAndUnivers[0].univers.length + ' univers';
+                    tt_attractions = 0 + ' attractions';
+                    univers = parkAndUnivers[0].univers;
                 } else {
-                    tt_univers = props.allUnivers[1].length + ' univers';
-                    tt_attractions = props.allAttractions[1].length + ' attractions';
-                    univers = props.allUnivers[1];
+                    tt_univers = parkAndUnivers[1].univers.length + ' univers';
+                    tt_attractions = 0 + ' attractions';
+                    univers = parkAndUnivers[1].univers;
                 }
                 return (
-                    <section key={el.slug} className="infos">
+                    <section key={p.pslug} className="infos">
                         <div className="col-left">
-                            <a href={'/park-' + el.slug} className={'logo logo-' + el.slug} alt={el.name}>
+                            <a href={'/park-' + p.pslug} className={'logo logo-' + p.pslug} alt={p.pname}>
                                 <div className="back"><i className="fa fa-share"></i></div>
                             </a>
                         </div>
                         <div className="col-infos">
-                            <div className="name">{el.name}</div>
+                            <div className="name">{p.pname}</div>
                             <ul className="univers">
-                                <li><i>Name</i><div>{el.name}</div></li>
+                                <li><i>Name</i><div>{p.pname}</div></li>
                                 <li><i>Total univers</i><div>{tt_univers}</div></li>
                                 <li><i>Univers</i>
-                                    {univers.map((e) => {
+                                    {p.univers.map((u) => {
                                         return (
-                                            <div key={e.name}>{e.name}</div>
+                                            <div key={u.uname}>{u.uname}</div>
                                         )
                                     })}
                                 </li>
                                 <li><i>Total attractions</i><div>{tt_attractions}</div></li>
                             </ul>
                         </div>
-                        <div className="description">{el.description}</div>
+                        <div className="description">{p.description}</div>
                     </section>
                 )
             })}
