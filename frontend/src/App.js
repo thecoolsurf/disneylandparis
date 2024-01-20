@@ -22,6 +22,36 @@ import { AdminCollection } from "./Pages/Admin/Collection.js";
 import { AdminUpdate } from "./Pages/Admin/Update.js";
 
 function App() {
+  const [navigation, setNavigation] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      const dataNavigation = await fetch('http://localhost:80/navigation');
+      const navigation = await dataNavigation.json();
+      setNavigation(navigation);
+    };
+    fetchData();
+  }, []);
+  function filterDatasNav() {
+    const park = [];
+    const univers = [[], []];
+    const map = new Map();
+    for (const el of navigation) {
+      if (!map.has(el.pid)) {
+        map.set(el.pid, true);
+        park.push({ pid: el.pid, pslug: el.pslug, pname: el.pname });
+      }
+      for (let i = 0; i < park.length; i++) {
+        if (!map.has(el.uslug) && el.pid === i + 1) {
+          map.set(el.uslug, true);
+          univers[i].push({ uid: el.uid, uslug: el.uslug, uname: el.uname });
+        }
+      }
+    }
+    for (let i = 0; i < park.length; i++) park[i].univers = univers[i];
+    return park;
+  }
+  const menus = filterDatasNav();
+
   const [parks, setParks] = useState([]);
   const [universPark, setUniversPark] = useState([]);
   const [universStudio, setUniversStudio] = useState([]);
@@ -80,13 +110,13 @@ function App() {
     <div className="main">
       <BrowserRouter>
         <Header bkgHeader={bkgHeader} />
-        <Navigation bkgNav={bkgNav} />
+        <Navigation datas={menus} bkgNav={bkgNav} />
         <Routes>
           <Route path="/" element={
             <Home parks={parks} allUnivers={allUnivers} allAttractions={allAttractions} />
           } />
           {parks.map((p) => {
-            let univers = (p.id === 1) ? universPark : universStudio;
+            let univers = (p.pid === 1) ? universPark : universStudio;
             return (
               <Route key={p.id} path={'/park-' + p.slug} element={
                 <Parks key={p.slug} id={p.id} slugs={params} slug={p.slug} name={p.name} univers={univers} bkgNav={bkgNav} />

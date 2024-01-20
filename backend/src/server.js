@@ -74,7 +74,7 @@ function selectFind(route, sql) {
 /* ************************************************************************************************** */
 /* PUBLIC NAVIGATION */
 
-const univers_and_park = require('./Model/Public/Attraction/AttractionsAndUniversAndPark.js');
+const univers_and_park = require('./Model/Public/Navigation/UniversAndPark.js');
 select("/navigation", univers_and_park);
 
 const nav_parks = require('./Model/Public/Park/AllParks.js');
