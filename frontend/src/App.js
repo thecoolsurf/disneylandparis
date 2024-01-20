@@ -115,21 +115,21 @@ function App() {
           <Route path="/" element={
             <Home parks={parks} allUnivers={allUnivers} allAttractions={allAttractions} />
           } />
-          {parks.map((p) => {
-            let univers = (p.pid === 1) ? universPark : universStudio;
+          {menus.map((p) => {
+            let univers = (p.pid === 1) ? menus[0].univers : menus[1].univers;
             return (
-              <Route key={p.id} path={'/park-' + p.slug} element={
-                <Parks key={p.slug} id={p.id} slugs={params} slug={p.slug} name={p.name} univers={univers} bkgNav={bkgNav} />
+              <Route key={p.pid} path={'/park-' + p.pslug} element={
+                <Parks key={p.pid} id={p.pid} slugs={params} slug={p.pslug} name={p.pname} univers={univers} bkgNav={bkgNav} />
               } />
             )
           })}
-          {allUnivers.map((all) => {
+          {menus.map((m) => {
             return (
-              all.map((u) => {
-                let route = '/park/' + u.pslug + '/univers/' + u.slug;
+              m.univers.map((u) => {
+                let route = '/park/' + m.pslug + '/univers/' + u.uslug;
                 return (
-                  <Route key={u.id} path={route} element={
-                    <Univers key={u.slug} id={u.id} slugs={params} slug={u.slug} pname={u.pname} uname={u.name} bkgNav={bkgNav} />
+                  <Route key={u.uid} path={route} element={
+                    <Univers key={u.uid} id={u.uid} slugs={params} slug={u.uslug} pname={u.pname} uname={u.uname} bkgNav={bkgNav} />
                   } />
                 )
               })

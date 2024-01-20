@@ -1,5 +1,5 @@
 import './navigation.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 export const Navigation = (props) => {
     const [show0, setShow0] = useState('show');
