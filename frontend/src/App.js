@@ -23,6 +23,7 @@ import { AdminUpdate } from "./Pages/Admin/Update.js";
 
 function App() {
   const [navigation, setNavigation] = useState([]);
+  
   useEffect(() => {
     const fetchData = async () => {
       const dataNavigation = await fetch('http://localhost:80/navigation');
@@ -31,7 +32,8 @@ function App() {
     };
     fetchData();
   }, []);
-  function filterDatasNav() {
+
+  function filterParkAndUnivers() {
     const park = [];
     const univers = [[], []];
     const map = new Map();
@@ -50,7 +52,7 @@ function App() {
     for (let i = 0; i < park.length; i++) park[i].univers = univers[i];
     return park;
   }
-  const menus = filterDatasNav();
+  const menus = filterParkAndUnivers();
 
   const [parks, setParks] = useState([]);
   const [universPark, setUniversPark] = useState([]);
