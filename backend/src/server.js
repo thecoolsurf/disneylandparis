@@ -72,7 +72,7 @@ function selectFind(route, sql) {
 }
 
 /* ************************************************************************************************** */
-/* PUBLIC PAGES */
+/* PUBLIC */
 
 const nav_attractions_univers_parks = require('./Model/Public/Navigation/AttractionsAndUniversAndParks.js');
 select("/navigation", nav_attractions_univers_parks);
@@ -96,7 +96,7 @@ const find_attraction_by_name = require('./Model/Public/Attraction/FindAttractio
 selectFind("/all_attractions", find_attraction_by_name);
 
 /* ************************************************************************************************** */
-/* ADMIN COLLECTIONS */
+/* ADMIN */
 
 const attraction_collection = require('./Model/Admin/Attraction/AttractionCollection.js');
 selectWithId("/admin/collection/attraction", attraction_collection);

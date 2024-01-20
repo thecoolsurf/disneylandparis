@@ -69,10 +69,9 @@ function App() {
             <Home />
           } />
           {parkAndUnivers.map((p) => {
-            let univers = (p.pid === 1) ? parkAndUnivers[0].univers : parkAndUnivers[1].univers;
             return (
               <Route key={p.pid} path={'/park-' + p.pslug} element={
-                <Parks key={p.pid} id={p.pid} slugs={params} slug={p.pslug} name={p.pname} univers={univers} bkgNav={bkgNav} />
+                <Parks key={p.pid} id={p.pid} slugs={params} name={p.pname} bkgNav={bkgNav} />
               } />
             )
           })}
