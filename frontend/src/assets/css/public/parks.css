@@ -1,6 +1,6 @@
 .img-default-header,
 .img-find {
-  background-image: url('../../assets/images/others/bkg-disneyland-paris-v2.jpg');
+  background-image: url('../../images/others/bkg-disneyland-paris-v2.jpg');
   background-position: center center;
   background-size: cover;
 }
@@ -9,13 +9,13 @@
 /* park disnelyland */
 
 .img-park-park-disneyland {
-  background-image: url('../../assets/images/parks/bkg-park-disneyland.webp');
+  background-image: url('../../images/parks/bkg-park-disneyland.webp');
   background-position: center center;
   background-size: cover;
 }
 
 .logo-park-disneyland {
-  background-image: url('../../assets/images/parks/logo-park-disneyland.svg');
+  background-image: url('../../images/parks/logo-park-disneyland.svg');
   background-size: 80%;
   background-position: center center;
 
@@ -25,13 +25,13 @@
 /* walt disney studio */
 
 .img-park-walt-disney-studios {
-  background-image: url('../../assets/images/parks/bkg-walt-disney-studios.webp');
+  background-image: url('../../images/parks/bkg-walt-disney-studios.webp');
   background-position: center center;
   background-size: cover;
 }
 
 .logo-walt-disney-studios {
-  background-image: url('../../assets/images/parks/logo-walt-disney-studios.svg');
+  background-image: url('../../images/parks/logo-walt-disney-studios.svg');
   background-size: 80%;
   background-position: center center;
 }

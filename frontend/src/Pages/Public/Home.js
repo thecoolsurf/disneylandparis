@@ -1,6 +1,6 @@
-import './home.css';
+import '../../assets/css/public/home.css';
 import { useState, useEffect } from 'react';
-import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
+import { LinkToFinder } from '../../Components/Public/LinkToFinder.js';
 
 export const Home = () => {
     const [home, setDatas] = useState([]);

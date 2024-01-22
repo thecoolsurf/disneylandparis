@@ -1,4 +1,4 @@
-import './header.css';
+import '../../assets/css/public/header.css';
 import { Logo } from './Logo.js';
 
 export const Header = (props) => {

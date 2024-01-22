@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import{ Carrousel } from '../../Components/Carrousel/Carrousel.js';
+import{ Carrousel } from '../../Components/Public/Carrousel.js';
 
 export const Attraction = (props) => {
     const [attraction, setAttraction] = useState([]);

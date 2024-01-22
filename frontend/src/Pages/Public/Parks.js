@@ -1,7 +1,7 @@
-import './parks.css';
+import '../../assets/css/public/parks.css';
 import { useState, useEffect } from 'react';
-import { Carrousel } from '../../Components/Carrousel/Carrousel.js';
-import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
+import { Carrousel } from '../../Components/Public/Carrousel.js';
+import { LinkToFinder } from '../../Components/Public/LinkToFinder.js';
 
 export const Parks = (props) => {
     const [datas, setDatas] = useState([]);

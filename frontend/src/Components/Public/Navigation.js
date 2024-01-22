@@ -1,4 +1,4 @@
-import './navigation.css';
+import '../../assets/css/public/navigation.css';
 import { useState } from 'react';
 
 export const Navigation = (props) => {

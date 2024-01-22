@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Carrousel } from '../../Components/Carrousel/Carrousel.js';
-import { LinkToFinder } from '../../Components/Search/LinkToFinder.js';
+import { Carrousel } from '../../Components/Public/Carrousel.js';
+import { LinkToFinder } from '../../Components/Public/LinkToFinder.js';
 
 export const Univers = (props) => {
     const [univers, setUnivers] = useState([]);

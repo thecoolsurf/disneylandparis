@@ -1,5 +1,5 @@
-import "./carrousel.css";
-import Card from "../Card/Card.js";
+import "../../assets/css/public/carrousel.css";
+import Card from "./Card.js";
 import { useState } from "react";
 
 /*

@@ -1,23 +1,24 @@
 import "./App.css";
-import "./Pages/Parks/parks.css";
-import "./Pages/Univers/univers.css";
-import "./Pages/Attraction/park-disneyland.css";
-import "./Pages/Attraction/walt-disney-studios.css";
+import "./assets/css/public/parks.css";
+import "./assets/css/public/univers.css";
+import "./assets/css/public/park-disneyland.css";
+import "./assets/css/public/walt-disney-studios.css";
 
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 /* components */
-import { Header } from './Components/Header/Header.js';
-import { Footer } from './Components/Footer/Footer.js';
-import { Navigation } from './Components/Navigation/Navigation.js';
+import { Header } from './Components/Public/Header.js';
+import { Footer } from './Components/Public/Footer.js';
+import { Navigation } from './Components/Public/Navigation.js';
 /* public routes */
-import { Home } from './Pages/Home/Home.js';
-import { Parks } from './Pages/Parks/Parks.js';
-import { Univers } from './Pages/Univers/Univers.js';
-import { Attraction } from './Pages/Attraction/Attraction.js';
-import { FindAttractions } from './Pages/Attractions/FindAttractions.js';
+import { Home } from './Pages/Public/Home.js';
+import { Parks } from './Pages/Public/Parks.js';
+import { Univers } from './Pages/Public/Univers.js';
+import { Attraction } from './Pages/Public/Attraction.js';
+import { FindAttractions } from './Pages/Public/FindAttractions.js';
 /* admin routes */
+import { AdminConnexion } from './Pages/Admin/Connexion.js';
 import { AdminCollection } from "./Pages/Admin/Collection.js";
 import { AdminUpdate } from "./Pages/Admin/Update.js";
 
@@ -103,6 +104,9 @@ function App() {
           } />
 
           {/* ADMIN */}
+          <Route key="connex" path={'/admin/connexion'} element={
+            <AdminConnexion />
+          } />
           {entities.map((e) => {
             return (
               <>

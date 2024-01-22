@@ -1,8 +1,7 @@
-import './admin.css';
+import '../../assets/css/admin/admin.css';
+import '../../assets/css/admin/form.css';
 import { useState, useEffect } from 'react';
-import { Navigation } from "./Navigation.js";
-
-import './form.css';
+import { Navigation } from "../../Components/Admin/Navigation.js";
 
 export const AdminUpdate = (props) => {
     const [datas, setDatas] = useState([]);
