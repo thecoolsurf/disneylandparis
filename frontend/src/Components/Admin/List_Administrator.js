@@ -1,11 +1,12 @@
 import { Button_Delete } from "./Button_Delete.js";
 import { Button_Update } from "./Button_Update.js";
 
-export const List_User = (props) => {
+export const List_Administrator = (props) => {
     return (
         <div key={props.e.id} className="row">
             <div className="id">{props.e.id}</div>
-            <div className="item">{props.e.firstname + ' ' + props.e.lastname}</div>
+            <div className="item">{props.e.name}</div>
+            <div className="item">{props.e.password}</div>
             <Button_Delete id={props.e.id} uri={props.uri} />
             <Button_Update id={props.e.id} uri={props.uri} />
         </div>

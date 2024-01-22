@@ -1,12 +1,16 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
 import { Navigation } from "../../Components/Admin/Navigation.js";
+import { List_Administrator } from "../../Components/Admin/List_Administrator.js";
+import { List_Attraction } from "../../Components/Admin/List_Attraction.js";
+import { List_Park } from "../../Components/Admin/List_Park.js";
+import { List_Univers } from "../../Components/Admin/List_Univers.js";
 import { List_User } from "../../Components/Admin/List_User.js";
 
 export const AdminCollection = (props) => {
     const queryString = window.location.pathname;
     const url = window.location.href;
-    const uri = url.includes('admin') ? queryString.split('/')[3] : 'park';
+    const uri = url.includes('admin') ? queryString.split('/')[4] : 'park';
     const [datas, setDatas] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -25,24 +29,19 @@ export const AdminCollection = (props) => {
             </div>
             <div className="list">
                 {datas.map((el) => {
-                    if (props.uri === 'user') {
-                        return (
-                            <List_User e={el} />
-                        )
-                    } else {
-                        return (
-                            <div key={el.id} className="row">
-                                <div className="id">{el.id}</div>
-                                <div className="item">{el.name}</div>
-                                <div className="btn">
-                                    <a href={'/admin/delete?uri=' + props.uri + '&id=' + el.id}>Delete</a>
-                                </div>
-                                <div className="btn">
-                                    <a href={'/admin/update/' + props.uri + '?id=' + el.id}>Update</a>
-                                </div>
-                            </div>
-
-                        )
+                    switch (props.uri) {
+                        case 'administrator':
+                            return (<List_Administrator e={el} uri={uri} />)
+                        case 'attraction':
+                            return (<List_Attraction e={el} uri={uri} />)
+                        case 'park':
+                            return (<List_Park e={el} uri={uri} />)
+                        case 'univers':
+                            return (<List_Univers e={el} uri={uri} />)
+                        case 'user':
+                            return (<List_User e={el} uri={uri} />)
+                        default:
+                            return (<List_Park e={el} uri={uri} />)
                     }
                 })}
             </div>

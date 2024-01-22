@@ -1,5 +1,9 @@
 /* hide header public */
-.img-admin {
+.img-administrator,
+.img-attraction,
+.img-park,
+.img-univers,
+.img-user  {
   display: none;
 }
 

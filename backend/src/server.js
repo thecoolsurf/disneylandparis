@@ -104,29 +104,29 @@ selectFind("/all_attractions", find_attraction_by_name);
 /* ADMIN */
 
 const attraction_collection = require('./Model/Admin/Attraction/AttractionCollection.js');
-selectWithId("/admin/collection/attraction", attraction_collection);
+select("/admin/collection/attraction", attraction_collection);
 const attraction_update = require('./Model/Admin/Attraction/AttractionById.js');
 selectWithId("/admin/update/attraction", attraction_update);
 
 const park_collection = require('./Model/Admin/Park/ParkCollection.js');
-selectWithId("/admin/collection/park", park_collection);
+select("/admin/collection/park", park_collection);
 const park_update = require('./Model/Admin/Park/ParkById.js');
 selectWithId("/admin/update/park", park_update);
 
 const univers_collection = require('./Model/Admin/Univers/UniversCollection.js');
-selectWithId("/admin/collection/univers", univers_collection);
+select("/admin/collection/univers", univers_collection);
 const univers_update = require('./Model/Admin/Univers/UniversById.js');
 selectWithId("/admin/update/univers", univers_update);
 
 const user_collection = require('./Model/Admin/User/UserCollection.js');
-selectWithId("/admin/collection/user", user_collection);
+select("/admin/collection/user", user_collection);
 const user_update = require('./Model/Admin/User/UserById.js');
 selectWithId("/admin/update/user", user_update);
 
-const administrator_collection = require('./Model/Admin/Admin/AdministratorCollection.js');
-selectWithId("/admin/collection/admin", administrator_collection);
-const administrator_update = require('./Model/Admin/Admin/AdministratorById.js');
-selectWithId("/admin/collection/admin", administrator_update);
+const administrator_collection = require('./Model/Admin/Administrator/AdministratorCollection.js');
+select("/admin/collection/administrator", administrator_collection);
+const administrator_update = require('./Model/Admin/Administrator/AdministratorById.js');
+selectWithId("/admin/update/administrator", administrator_update);
 
 
 

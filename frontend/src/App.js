@@ -18,9 +18,9 @@ import { Univers } from './Pages/Public/Univers.js';
 import { Attraction } from './Pages/Public/Attraction.js';
 import { FindAttractions } from './Pages/Public/FindAttractions.js';
 /* admin routes */
-import { AdminConnexion } from './Pages/Admin/Connexion.js';
-import { AdminCollection } from "./Pages/Admin/Collection.js";
-import { AdminUpdate } from "./Pages/Admin/Update.js";
+import { AdminConnexion } from './Pages/Admin/AdminConnexion.js';
+import { AdminCollection } from "./Pages/Admin/AdminCollection.js";
+import { AdminUpdate } from "./Pages/Admin/AdminUpdate.js";
 
 function App() {
   const [navigation, setNavigation] = useState([]);
@@ -61,7 +61,7 @@ function App() {
   const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
   const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
-  const entities = ['admin', 'attraction', 'park', 'univers', 'user'];
+  const entities = ['administrator', 'attraction', 'park', 'univers', 'user'];
   return (
     <div className="main">
       <BrowserRouter>
@@ -110,13 +110,13 @@ function App() {
           {entities.map((e) => {
             return (
               <>
-              <Route key={'collection-' + e} path={'/admin/collection/' + e} element={
+              <Route key={'collection-' + e} path={'/admin/entity/collection/' + e} element={
                 <AdminCollection key={'c'+e} entities={entities} uri={e} />
               } />
-              <Route key={'form-update-' + e} path={'/admin/update/' + e} element={
+              <Route key={'entity-form-' + e} path={'/admin/entity/form/' + e} element={
                 <AdminUpdate key={'f'+e} entities={entities} uri={e} />
               } />
-              <Route key={'entity-update-' + e} path={'/admin/update/entity/' + e} element={
+              <Route key={'entity-update-' + e} path={'/admin/entity/update/' + e} element={
                 <AdminUpdate key={'u'+e} entities={entities} uri={e} />
               } />
               </>
