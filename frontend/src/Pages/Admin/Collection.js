@@ -3,6 +3,9 @@ import { useState, useEffect } from 'react';
 import { Navigation } from "./Navigation.js";
 
 export const AdminCollection = (props) => {
+    const queryString = window.location.pathname;
+    const url = window.location.href;
+    const uri = url.includes('admin') ? queryString.split('/')[3] : 'park';
     const [datas, setDatas] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -12,9 +15,6 @@ export const AdminCollection = (props) => {
         };
         fetchData();
     }, []);
-    const queryString = window.location.pathname;
-    const url = window.location.href;
-    const uri = url.includes('admin') ? queryString.split('/')[3] : 'park';
     return (
         <div className="admin">
             <Navigation entities={props.entities} />

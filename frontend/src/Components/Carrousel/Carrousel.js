@@ -2,6 +2,13 @@ import "./carrousel.css";
 import Card from "../Card/Card.js";
 import { useState } from "react";
 
+/*
+@require bkgNav
+@requre legend
+@require slugs
+@require datas {id,slug,name}
+*/
+
 export const Carrousel = (props) => {
   const incr = 300;
   const marg = 0;

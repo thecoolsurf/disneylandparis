@@ -42,18 +42,6 @@ function selectWithId(route, sql) {
   return server;
 }
 
-function update(route, sql) {
-  server.post(route, (req, res, next) => {
-    let datas = req.body;
-    console.log(datas);
-    knex.raw(sql, datas)
-      .then(([rows, columns]) => {
-        res.json(rows);
-      })
-  });
-  return server;
-}
-
 function selectFind(route, sql) {
   server.get(route, (req, res, next) => {
     let find = req.query.find ? req.query.find : '';
@@ -71,27 +59,44 @@ function selectFind(route, sql) {
   return server;
 }
 
+function update(route, sql) {
+  server.post(route, (req, res, next) => {
+    let datas = req.body;
+    console.log(datas);
+    knex.raw(sql, datas)
+      .then(([rows, columns]) => {
+        res.json(rows);
+      })
+  });
+  return server;
+}
+
 /* ************************************************************************************************** */
 /* PUBLIC */
 
+// navigation
 const nav_attractions_univers_parks = require('./Model/Public/Navigation/AttractionsAndUniversAndParks.js');
 select("/navigation", nav_attractions_univers_parks);
 
+// page home
 const home = require('./Model/Public/Home/Datas.js');
 select("/home", home);
 
+// page park
 const park_by_id = require('./Model/Public/Park/ParkById.js');
 selectWithId("/park_by_id", park_by_id);
 
+// page univers
 const univers_by_id = require('./Model/Public/Univers/UniversById.js');
 selectWithId("/univers_by_id", univers_by_id);
+const attractions_by_univers = require('./Model/Public/Attraction/AttractionsByUnivers.js');
+selectWithId("/attractions_by_univers", attractions_by_univers);
 
-const all_attractions_by_univers = require('./Model/Public/Attraction/AllAttractionsByUniversAndPark.js');
-selectWithId("/attractions_by_univers", all_attractions_by_univers);
-
+// page attraction
 const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
 selectWithId("/attraction_by_id", attraction_by_id);
 
+// find attraction
 const find_attraction_by_name = require('./Model/Public/Attraction/FindAttractionByName.js');
 selectFind("/all_attractions", find_attraction_by_name);
 

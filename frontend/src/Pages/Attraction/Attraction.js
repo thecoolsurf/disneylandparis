@@ -3,7 +3,6 @@ import{ Carrousel } from '../../Components/Carrousel/Carrousel.js';
 
 export const Attraction = (props) => {
     const [attraction, setAttraction] = useState([]);
-    console.log('attraction:',props.id)
     useEffect(() => {
         const fetchtheData = async () => {
             const dataAttraction = await fetch(`http://localhost:80/attraction_by_id?id=${props.id}`);
@@ -17,11 +16,11 @@ export const Attraction = (props) => {
         <div className="attraction">
             <Carrousel datas={attraction} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
             {attraction.map((el) => {
-                let back = '/park/' + props.slugs[2] + '/univers/' + props.slugs[4];
+                let path = '/park/' + props.slugs[2] + '/univers/' + props.slugs[4];
                 return (
                     <section key={el.slug} className="infos">
                         <div className="col-left">
-                            <a href={back} className={'logo logo-' + el.slug} title={el.name}>
+                            <a href={path} className={'logo logo-' + el.slug} title={el.name}>
                                 <div className="back"><i className="fa fa-reply"></i></div>
                             </a>
                         </div>

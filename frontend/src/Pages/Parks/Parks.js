@@ -36,7 +36,7 @@ export const Parks = (props) => {
     return (
         <div className="parks">
             <LinkToFinder />
-            <Carrousel datas={park} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
+            <Carrousel datas={datas} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
             {park.map((p) => {
                 return (
                     <section key={p.pslug} className="infos">

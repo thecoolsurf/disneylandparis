@@ -5,7 +5,7 @@ import "./Pages/Attraction/park-disneyland.css";
 import "./Pages/Attraction/walt-disney-studios.css";
 
 import { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, useParams } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 /* components */
 import { Header } from './Components/Header/Header.js';
@@ -33,23 +33,25 @@ function App() {
   }, []);
 
   function filterParkAndUnivers() {
-    const park = [];
+    const parks = [];
     const univers = [[], []];
     const map = new Map();
     for (const el of navigation) {
+      /* park */
       if (!map.has(el.pid)) {
         map.set(el.pid, true);
-        park.push({ pid: el.pid, pslug: el.pslug, pname: el.pname });
+        parks.push({ pid: el.pid, pslug: el.pslug, pname: el.pname });
       }
-      for (let i = 0; i < park.length; i++) {
+      /* univers */
+      for (let i = 0; i < parks.length; i++) {
         if (!map.has(el.uslug) && el.pid === i + 1) {
           map.set(el.uslug, true);
           univers[i].push({ uid: el.uid, uslug: el.uslug, uname: el.uname });
         }
       }
     }
-    for (let i = 0; i < park.length; i++) park[i].univers = univers[i];
-    return park;
+    for (let i = 0; i < parks.length; i++) parks[i].univers = univers[i];
+    return parks;
   }
   const parkAndUnivers = filterParkAndUnivers();
   const allAttractions = navigation;
@@ -70,8 +72,8 @@ function App() {
           } />
           {parkAndUnivers.map((p) => {
             return (
-              <Route key={p.pid} path={'/park-' + p.pslug} element={
-                <Parks key={p.pid} id={p.pid} slugs={params} name={p.pname} bkgNav={bkgNav} />
+              <Route key={'rp'+p.pid} path={'/park-' + p.pslug} element={
+                <Parks key={'p'+p.pid} id={p.pid} slugs={params} name={p.pname} bkgNav={bkgNav} />
               } />
             )
           })}
@@ -80,8 +82,8 @@ function App() {
               m.univers.map((u) => {
                 let route = '/park/' + m.pslug + '/univers/' + u.uslug;
                 return (
-                  <Route key={u.uid} path={route} element={
-                    <Univers key={u.uid} id={u.uid} slugs={params} slug={u.uslug} pname={u.pname} uname={u.uname} bkgNav={bkgNav} />
+                  <Route key={'ru'+u.uid} path={route} element={
+                    <Univers key={'u'+u.uid} id={u.uid} slugs={params} slug={u.uslug} pname={u.pname} uname={u.uname} bkgNav={bkgNav} />
                   } />
                 )
               })
@@ -90,14 +92,14 @@ function App() {
           {allAttractions.map((a) => {
             let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.aslug;
             return (
-              <Route key={a.aid} path={route} element={
-                <Attraction key={a.aid} id={a.aid} slugs={params} pname={a.pname} uname={a.uname} name={a.aname} bkgNav={bkgNav} />
+              <Route key={'ra'+a.aid} path={route} element={
+                <Attraction key={'a'+a.aid} id={a.aid} slugs={params} pname={a.pname} uname={a.uname} name={a.aname} bkgNav={bkgNav} />
               } />
             )
           })}
 
-          <Route key={'findAttractions'} path={'/find/attractions'} element={
-            <FindAttractions slugs={params} bkgNav={bkgNav} />
+          <Route key="rf" path={'/find/attractions'} element={
+            <FindAttractions key="f" slugs={params} bkgNav={bkgNav} />
           } />
 
           {/* ADMIN */}

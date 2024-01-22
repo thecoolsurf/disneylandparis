@@ -6,7 +6,6 @@ export const Univers = (props) => {
     const [univers, setUnivers] = useState([]);
     const [attractions, setAttractions] = useState([]);
     const str_attraction = attractions.length > 1 ? 'attractions' : 'attraction';
-    // console.log('univers:', props.id)
     useEffect(() => {
         const fetchData = async () => {
             const dataUnivers = await fetch(`http://localhost:80/univers_by_id?id=${props.id}`);
@@ -22,7 +21,7 @@ export const Univers = (props) => {
     return (
         <div className="univers">
             <LinkToFinder />
-            <Carrousel datas={attractions} slugs={props.slugs} slug={props.slug} bkgNav={props.bkgNav} legend={legend} />
+            <Carrousel datas={attractions} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
             {univers.map((el) => {
                 return (
                     <section key={el.slug} className="infos">
