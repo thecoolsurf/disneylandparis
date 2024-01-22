@@ -77,25 +77,20 @@ function update(route, sql) {
 // navigation
 const nav_attractions_univers_parks = require('./Model/Public/Navigation/AttractionsAndUniversAndParks.js');
 select("/navigation", nav_attractions_univers_parks);
-
 // page home
 const home = require('./Model/Public/Home/Datas.js');
 select("/home", home);
-
 // page park
 const park_by_id = require('./Model/Public/Park/ParkById.js');
 selectWithId("/park_by_id", park_by_id);
-
 // page univers
 const univers_by_id = require('./Model/Public/Univers/UniversById.js');
 selectWithId("/univers_by_id", univers_by_id);
 const attractions_by_univers = require('./Model/Public/Attraction/AttractionsByUnivers.js');
 selectWithId("/attractions_by_univers", attractions_by_univers);
-
 // page attraction
 const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
 selectWithId("/attraction_by_id", attraction_by_id);
-
 // find attraction
 const find_attraction_by_name = require('./Model/Public/Attraction/FindAttractionByName.js');
 selectFind("/all_attractions", find_attraction_by_name);
@@ -105,33 +100,33 @@ selectFind("/all_attractions", find_attraction_by_name);
 
 const attraction_collection = require('./Model/Admin/Attraction/AttractionCollection.js');
 select("/admin/collection/attraction", attraction_collection);
-const attraction_update = require('./Model/Admin/Attraction/AttractionById.js');
-selectWithId("/admin/update/attraction", attraction_update);
+const attraction_form = require('./Model/Admin/Attraction/AttractionById.js');
+selectWithId("/admin/form/attraction", attraction_form);
 
 const park_collection = require('./Model/Admin/Park/ParkCollection.js');
 select("/admin/collection/park", park_collection);
-const park_update = require('./Model/Admin/Park/ParkById.js');
-selectWithId("/admin/update/park", park_update);
+const park_form = require('./Model/Admin/Park/ParkById.js');
+selectWithId("/admin/form/park", park_form);
 
 const univers_collection = require('./Model/Admin/Univers/UniversCollection.js');
 select("/admin/collection/univers", univers_collection);
-const univers_update = require('./Model/Admin/Univers/UniversById.js');
-selectWithId("/admin/update/univers", univers_update);
+const univers_form = require('./Model/Admin/Univers/UniversById.js');
+selectWithId("/admin/form/univers", univers_form);
 
 const user_collection = require('./Model/Admin/User/UserCollection.js');
 select("/admin/collection/user", user_collection);
-const user_update = require('./Model/Admin/User/UserById.js');
-selectWithId("/admin/update/user", user_update);
+const user_form = require('./Model/Admin/User/UserById.js');
+selectWithId("/admin/form/user", user_form);
 
 const administrator_collection = require('./Model/Admin/Administrator/AdministratorCollection.js');
 select("/admin/collection/administrator", administrator_collection);
-const administrator_update = require('./Model/Admin/Administrator/AdministratorById.js');
-selectWithId("/admin/update/administrator", administrator_update);
+const administrator_form = require('./Model/Admin/Administrator/AdministratorById.js');
+selectWithId("/admin/form/administrator", administrator_form);
 
 
 
-const attraction_update_entity = require('./Model/Admin/Attraction/AttractionUpdate.js');
-update("/admin/update/entity/attraction", attraction_update_entity);
+const attraction_update = require('./Model/Admin/Attraction/AttractionUpdate.js');
+update("/admin/update/attraction", attraction_update);
 
 /* ************************************************************************************************** */
 

@@ -12,7 +12,7 @@ export const AdminUpdate = (props) => {
     const [datas, setDatas] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const datasUpdate = await fetch(`http://localhost:80/admin/update/${uri}?id=${id}`);
+            const datasUpdate = await fetch(`http://localhost:80/admin/form/${uri}?id=${id}`);
             const datas = await datasUpdate.json();
             setDatas(datas);
         };
@@ -26,7 +26,7 @@ export const AdminUpdate = (props) => {
     return (
         <div className="admin">
             <Navigation entities={props.entities} />
-            <form action={'/admin/entity/update/' + props.uri} method="POST" enctype="application/x-www-form-urlencoded">
+            <form action={'/admin/update/' + props.uri} method="POST" enctype="application/x-www-form-urlencoded">
                 <fieldset>
                     <legend>UPDATE:<span>{props.uri}</span></legend>
                     {datas.map((e) => {

@@ -25,11 +25,11 @@ export const AdminCollection = (props) => {
             <Navigation entities={props.entities} />
             <div className="title">
                 <div className="btn"><button name="insert">Insert</button></div>
-                <div>ADMIN:<span>{props.uri}</span></div>
+                <div>ADMIN:<span>{uri}</span></div>
             </div>
             <div className="list">
                 {datas.map((el) => {
-                    switch (props.uri) {
+                    switch (uri) {
                         case 'administrator':
                             return (<List_Administrator e={el} uri={uri} />)
                         case 'attraction':
