@@ -1,4 +1,4 @@
-export const Fields_Administrator = (props) => {
+export const Administrator = (props) => {
     return (
         <>
             <input type="hidden" name="id" value={props.e.id} />

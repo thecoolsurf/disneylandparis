@@ -1,4 +1,4 @@
-export const Fields_Attraction = (props) => {
+export const Attraction = (props) => {
     return (
         <>
             <input type="hidden" name="id" value={props.e.id} />

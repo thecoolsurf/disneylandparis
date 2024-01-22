@@ -1,4 +1,4 @@
-export const Delete = () => {
+export const AdminDelete = () => {
     return (
         <>
         </>

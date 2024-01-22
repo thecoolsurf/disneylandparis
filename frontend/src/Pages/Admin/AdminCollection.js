@@ -1,11 +1,11 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
 import { Navigation } from "../../Components/Admin/Navigation.js";
-import { List_Administrator } from "../../Components/Admin/List_Administrator.js";
-import { List_Attraction } from "../../Components/Admin/List_Attraction.js";
-import { List_Park } from "../../Components/Admin/List_Park.js";
-import { List_Univers } from "../../Components/Admin/List_Univers.js";
-import { List_User } from "../../Components/Admin/List_User.js";
+import { Administrator } from "../../Components/Admin/Lists/Administrator.js";
+import { Attraction } from "../../Components/Admin/Lists/Attraction.js";
+import { Park } from "../../Components/Admin/Lists/Park.js";
+import { Univers } from "../../Components/Admin/Lists/Univers.js";
+import { User } from "../../Components/Admin/Lists/User.js";
 
 export const AdminCollection = (props) => {
     const queryString = window.location.pathname;
@@ -31,17 +31,17 @@ export const AdminCollection = (props) => {
                 {datas.map((el) => {
                     switch (uri) {
                         case 'administrator':
-                            return (<List_Administrator e={el} uri={uri} />)
+                            return (<Administrator e={el} uri={uri} />)
                         case 'attraction':
-                            return (<List_Attraction e={el} uri={uri} />)
+                            return (<Attraction e={el} uri={uri} />)
                         case 'park':
-                            return (<List_Park e={el} uri={uri} />)
+                            return (<Park e={el} uri={uri} />)
                         case 'univers':
-                            return (<List_Univers e={el} uri={uri} />)
+                            return (<Univers e={el} uri={uri} />)
                         case 'user':
-                            return (<List_User e={el} uri={uri} />)
+                            return (<User e={el} uri={uri} />)
                         default:
-                            return (<List_Park e={el} uri={uri} />)
+                            return (<Park e={el} uri={uri} />)
                     }
                 })}
             </div>

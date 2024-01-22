@@ -2,11 +2,11 @@ import '../../assets/css/admin/admin.css';
 import '../../assets/css/admin/form.css';
 import { useState, useEffect } from 'react';
 import { Navigation } from "../../Components/Admin/Navigation.js";
-import { Fields_Administrator } from "../../Components/Admin/Fields_Administrator.js";
-import { Fields_Attraction } from "../../Components/Admin/Fields_Attraction.js";
-import { Fields_Park } from "../../Components/Admin/Fields_Park.js";
-import { Fields_Univers } from "../../Components/Admin/Fields_Univers.js";
-import { Fields_User } from "../../Components/Admin/Fields_User.js";
+import { Administrator } from "../../Components/Admin/Fields/Administrator.js";
+import { Attraction } from "../../Components/Admin/Fields/Attraction.js";
+import { Park } from "../../Components/Admin/Fields/Park.js";
+import { Univers } from "../../Components/Admin/Fields/Univers.js";
+import { User } from "../../Components/Admin/Fields/User.js";
 
 export const AdminUpdate = (props) => {
     const [datas, setDatas] = useState([]);
@@ -32,15 +32,15 @@ export const AdminUpdate = (props) => {
                     {datas.map((e) => {
                         switch (props.uri) {
                             case 'administrator':
-                                return (<Fields_Administrator e={e} />)
+                                return (<Administrator e={e} />)
                             case 'attraction':
-                                return (<Fields_Attraction e={e} />)
+                                return (<Attraction e={e} />)
                             case 'park':
-                                return (<Fields_Park e={e} />)
+                                return (<Park e={e} />)
                             case 'univers':
-                                return (<Fields_Univers e={e} />)
+                                return (<Univers e={e} />)
                             case 'user':
-                                return (<Fields_User e={e} />)
+                                return (<User e={e} />)
                         }
                     })}
                     <input type="submit" value="Update" />

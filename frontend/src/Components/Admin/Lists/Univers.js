@@ -1,7 +1,7 @@
-import { Button_Delete } from "./Button_Delete.js";
-import { Button_Update } from "./Button_Update.js";
+import {Button_Delete } from "../Button_Delete.js";
+import {Button_Update } from "../Button_Update.js";
 
-export const List_Attraction = (props) => {
+export const Univers = (props) => {
     return (
         <div key={props.e.id} className="row">
             <div className="id">{props.e.id}</div>

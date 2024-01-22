@@ -1,4 +1,4 @@
-export const Fields_User = (props) => {
+export const User = (props) => {
     return (
         <>
             <input type="hidden" name="id" value={props.e.id} />
