@@ -17,6 +17,7 @@ const options = {
 
 server.use(morgan("common"));
 server.use(cors(options));
+server.use(express.urlencoded({ extended: true }));
 
 
 /* ************************************************************************************************** */
@@ -59,13 +60,42 @@ function selectFind(route, sql) {
   return server;
 }
 
-function update(route, sql) {
-  server.post(route, (req, res, next) => {
-    let datas = req.body;
-    console.log(datas);
-    knex.raw(sql, datas)
+/* ************************************************************************************************** */
+
+function updateAttraction() {
+  server.post("/admin/update/attraction", (req, res, next) => {
+    let id = req.body.id;
+    let sql = `UPDATE attraction SET 
+    id_park = '${req.body.id_park}', 
+    id_univ = '${req.body.id_univ}', 
+    name = '${req.body.name}', 
+    slug = '${req.body.slug}', 
+    public = '${req.body.public}', 
+    description = '${req.body.description}', 
+    restriction = '${req.body.restriction}', 
+    pictures = '${req.body.pictures}', 
+    movies = '${req.body.movies}' 
+    WHERE id = ${id}`;
+    knex.raw(sql)
       .then(([rows, columns]) => {
-        res.json(rows);
+        res.send(`Update ATTRACTION (${id})`);
+      })
+  });
+  return server;
+}
+
+function updateUser() {
+  server.post("/admin/update/user", (req, res, next) => {
+    let id = req.body.id;
+    let sql = `UPDATE user SET 
+    firstname = '${req.body.firstname}', 
+    lastname = '${req.body.lastname}', 
+    email = '${req.body.email}', 
+    password = '${req.body.password}' 
+    WHERE id = ${id}`;
+    knex.raw(sql)
+      .then(([rows, columns]) => {
+        res.send(`Update USER (${id})`);
       })
   });
   return server;
@@ -102,6 +132,7 @@ const attraction_collection = require('./Model/Admin/Attraction/AttractionCollec
 select("/admin/collection/attraction", attraction_collection);
 const attraction_form = require('./Model/Admin/Attraction/AttractionById.js');
 selectWithId("/admin/form/attraction", attraction_form);
+// updateAttraction();
 
 const park_collection = require('./Model/Admin/Park/ParkCollection.js');
 select("/admin/collection/park", park_collection);
@@ -117,6 +148,7 @@ const user_collection = require('./Model/Admin/User/UserCollection.js');
 select("/admin/collection/user", user_collection);
 const user_form = require('./Model/Admin/User/UserById.js');
 selectWithId("/admin/form/user", user_form);
+updateUser();
 
 const administrator_collection = require('./Model/Admin/Administrator/AdministratorCollection.js');
 select("/admin/collection/administrator", administrator_collection);
@@ -124,9 +156,6 @@ const administrator_form = require('./Model/Admin/Administrator/AdministratorByI
 selectWithId("/admin/form/administrator", administrator_form);
 
 
-
-const attraction_update = require('./Model/Admin/Attraction/AttractionUpdate.js');
-update("/admin/update/attraction", attraction_update);
 
 /* ************************************************************************************************** */
 

@@ -23,7 +23,7 @@ export const AdminUpdate = (props) => {
     return (
         <div className="admin">
             <Navigation data={props.nav} />
-            <form action={'/admin/update/' + props.uri} method="POST" encType="application/x-www-form-urlencoded">
+            <form action={`http://localhost:80/admin/update/${props.uri}`} method="POST" encType="application/x-www-form-urlencoded">
                 <fieldset>
                     <legend>UPDATE:<span>{props.uri}</span></legend>
                     {datas.map((el) => {
@@ -40,7 +40,7 @@ export const AdminUpdate = (props) => {
                                 return (<User key={el} e={el} />)
                         }
                     })}
-                    <input type="submit" value="Update" />
+                    <input type="submit" defaultValue="Update" />
                 </fieldset>
             </form>
         </div>

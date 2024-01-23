@@ -1,6 +1,9 @@
+import { Field } from './Field.js';
+
 export const Administrator = (props) => {
     return (
         <>
+        
             <input type="hidden" name="id" defaultValue={props.e.id} />
             <p className="item">
                 <label>Admin</label>

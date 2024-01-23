@@ -8,14 +8,19 @@
 .admin form p,
 .admin form label,
 .admin form input {
+    float: left;
     width: 100%;
 }
 
+.admin form p {
+    margin: 0 0 10px 0;
+}
 .admin form label {
+    margin: 0 0 5px 0;
     font-size: 0.8rem;
     font-weight: bold;
 }
 .admin form input {
-    padding: 10px;
+    padding: 5px;
     box-sizing: border-box;
 }

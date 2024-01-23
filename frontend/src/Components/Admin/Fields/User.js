@@ -1,7 +1,6 @@
 export const User = (props) => {
     return (
         <>
-            <input type="hidden" name="id" defaultValue={props.e.id} />
             <p className="item">
                 <label>Firstname</label>
                 <input type="text" name="firstname" defaultValue={props.e.firstname} />

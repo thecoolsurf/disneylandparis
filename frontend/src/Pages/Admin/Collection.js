@@ -1,6 +1,7 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
 import { Navigation } from "../../Components/Admin/Navigation.js";
+/* entity */
 import { Administrator } from "../../Components/Admin/Lists/Administrator.js";
 import { Attraction } from "../../Components/Admin/Lists/Attraction.js";
 import { Park } from "../../Components/Admin/Lists/Park.js";
@@ -26,7 +27,6 @@ export const AdminCollection = (props) => {
             </div>
             <div className="list">
                 {datas.map((el) => {
-                    console.log(el);
                     switch (props.uri) {
                         case 'administrator':
                             return (<Administrator key={el} e={el} uri={props.uri} />)
