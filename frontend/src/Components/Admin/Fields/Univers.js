@@ -1,14 +1,14 @@
 export const Univers = (props) => {
     return (
         <>
-            <input type="hidden" name="id" value={props.e.id} />
+            <input type="hidden" name="id" defaultValue={props.e.id} />
             <p className="item">
                 <label>Slug</label>
-                <input type="text" name="slug" value={props.e.slug} />
+                <input type="text" name="slug" defaultValue={props.e.slug} />
             </p>
             <p className="item">
                 <label>Name</label>
-                <input type="text" name="name" value={props.e.name} />
+                <input type="text" name="name" defaultValue={props.e.name} />
             </p>
             <p className="item">
                 <label>Description</label>
