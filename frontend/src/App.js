@@ -18,9 +18,10 @@ import { Univers } from './Pages/Public/Univers.js';
 import { Attraction } from './Pages/Public/Attraction.js';
 import { FindAttractions } from './Pages/Public/FindAttractions.js';
 /* admin routes */
-import { AdminConnexion } from './Pages/Admin/AdminConnexion.js';
-import { AdminCollection } from "./Pages/Admin/AdminCollection.js";
-import { AdminUpdate } from "./Pages/Admin/AdminUpdate.js";
+import { AdminConnexion } from './Pages/Admin/Connexion.js';
+import { AdminCollection } from "./Pages/Admin/Collection.js";
+import { AdminUpdate } from "./Pages/Admin/Update.js";
+import { AdminDelete } from "./Pages/Admin/Delete.js";
 
 function App() {
   const [navigation, setNavigation] = useState([]);
@@ -61,7 +62,7 @@ function App() {
   const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
   const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
-  const entities = ['administrator', 'attraction', 'park', 'univers', 'user'];
+  const Admin = ['administrator','attraction','park','univers','user'];
   return (
     <div className="main">
       <BrowserRouter>
@@ -84,7 +85,7 @@ function App() {
                 let route = '/park/' + m.pslug + '/univers/' + u.uslug;
                 return (
                   <Route key={'ru'+u.uid} path={route} element={
-                    <Univers key={'u'+u.uid} id={u.uid} slugs={params} slug={u.uslug} pname={u.pname} uname={u.uname} bkgNav={bkgNav} />
+                    <Univers key={'u'+u.uid} id={u.uid} slugs={params} pname={m.pname} uname={u.uname} bkgNav={bkgNav} />
                   } />
                 )
               })
@@ -104,20 +105,23 @@ function App() {
           } />
 
           {/* ADMIN */}
-          <Route key="connex" path={'/admin/connexion'} element={
-            <AdminConnexion />
+          <Route key="connexion" path={'/admin/connexion'} element={
+            <AdminConnexion uri={'connexion'} />
           } />
-          {entities.map((e) => {
-            return (
+          {Admin.map((slug) => {
+              return (
               <>
-              <Route key={'collection-' + e} path={'/admin/entity/collection/' + e} element={
-                <AdminCollection key={'c'+e} entities={entities} uri={e} />
+              <Route key={slug} path={'/admin/entity/collection/' + slug} element={
+                <AdminCollection key={'c'+slug} nav={Admin} uri={slug} />
               } />
-              <Route key={'entity-form-' + e} path={'/admin/entity/form/' + e} element={
-                <AdminUpdate key={'f'+e} entities={entities} uri={e} />
+              <Route key={slug} path={'/admin/entity/form/' + slug} element={
+                <AdminUpdate key={'f'+slug} nav={Admin} uri={slug} />
               } />
-              <Route key={'entity-update-' + e} path={'/admin/entity/update/' + e} element={
-                <AdminUpdate key={'u'+e} entities={entities} uri={e} />
+              <Route key={slug} path={'/admin/entity/update/' + slug} element={
+                <AdminUpdate key={'u'+slug} nav={Admin} uri={slug} />
+              } />
+              <Route key={slug} path={'/admin/entity/delete/' + slug} element={
+                <AdminDelete key={'u'+slug} nav={Admin} uri={slug} />
               } />
               </>
             )

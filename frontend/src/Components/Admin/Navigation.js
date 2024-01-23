@@ -2,9 +2,9 @@ export const Navigation = (props) => {
     return (
         <div className="navigation">
             <div className="nav">
-                {props.entities.map((e) => {
+                {props.data.map((slug) => {
                     return (
-                        <a key={e} className="link" href={'/admin/entity/collection/' + e}>{e}</a>
+                        <a key={slug} className="link" href={'/admin/entity/collection/' + slug}>{slug}</a>
                     )
                 })}
             </div>

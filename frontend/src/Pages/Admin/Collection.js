@@ -8,13 +8,10 @@ import { Univers } from "../../Components/Admin/Lists/Univers.js";
 import { User } from "../../Components/Admin/Lists/User.js";
 
 export const AdminCollection = (props) => {
-    const queryString = window.location.pathname;
-    const url = window.location.href;
-    const uri = url.includes('admin') ? queryString.split('/')[4] : 'park';
     const [datas, setDatas] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const dataAdmin = await fetch(`http://localhost:80/admin/collection/${uri}`);
+            const dataAdmin = await fetch(`http://localhost:80/admin/collection/${props.uri}`);
             const datas = await dataAdmin.json();
             setDatas(datas);
         };
@@ -22,26 +19,27 @@ export const AdminCollection = (props) => {
     }, []);
     return (
         <div className="admin">
-            <Navigation entities={props.entities} />
+            <Navigation data={props.nav} />
             <div className="title">
                 <div className="btn"><button name="insert">Insert</button></div>
-                <div>ADMIN:<span>{uri}</span></div>
+                <div>ADMIN:<span>{props.uri}</span></div>
             </div>
             <div className="list">
                 {datas.map((el) => {
-                    switch (uri) {
+                    console.log(el);
+                    switch (props.uri) {
                         case 'administrator':
-                            return (<Administrator e={el} uri={uri} />)
+                            return (<Administrator key={el} e={el} uri={props.uri} />)
                         case 'attraction':
-                            return (<Attraction e={el} uri={uri} />)
+                            return (<Attraction key={el} e={el} uri={props.uri} />)
                         case 'park':
-                            return (<Park e={el} uri={uri} />)
+                            return (<Park key={el} e={el} uri={props.uri} />)
                         case 'univers':
-                            return (<Univers e={el} uri={uri} />)
+                            return (<Univers key={el} e={el} uri={props.uri} />)
                         case 'user':
-                            return (<User e={el} uri={uri} />)
+                            return (<User key={el} e={el} uri={props.uri} />)
                         default:
-                            return (<Park e={el} uri={uri} />)
+                            return (<Park key={el} e={el} uri={props.uri} />)
                     }
                 })}
             </div>

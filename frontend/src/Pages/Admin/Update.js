@@ -9,38 +9,35 @@ import { Univers } from "../../Components/Admin/Fields/Univers.js";
 import { User } from "../../Components/Admin/Fields/User.js";
 
 export const AdminUpdate = (props) => {
+    const url = window.location.href;
+    const id = url.includes('?') ? url.split('?')[1].slice(3,) : 1;
     const [datas, setDatas] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const datasUpdate = await fetch(`http://localhost:80/admin/form/${uri}?id=${id}`);
+            const datasUpdate = await fetch(`http://localhost:80/admin/form/${props.uri}?id=${id}`);
             const datas = await datasUpdate.json();
             setDatas(datas);
         };
         fetchData();
     }, []);
-    const queryString = window.location.pathname;
-    const url = window.location.href;
-    const uri = url.includes('admin') ? queryString.split('/')[4] : 'park';
-    const id = url.includes('?') ? url.split('?')[1].slice(3,) : 0;
-    console.log(uri)
     return (
         <div className="admin">
-            <Navigation entities={props.entities} />
-            <form action={'/admin/update/' + props.uri} method="POST" enctype="application/x-www-form-urlencoded">
+            <Navigation data={props.nav} />
+            <form action={'/admin/update/' + props.uri} method="POST" encType="application/x-www-form-urlencoded">
                 <fieldset>
                     <legend>UPDATE:<span>{props.uri}</span></legend>
-                    {datas.map((e) => {
+                    {datas.map((el) => {
                         switch (props.uri) {
                             case 'administrator':
-                                return (<Administrator e={e} />)
+                                return (<Administrator key={el} e={el} />)
                             case 'attraction':
-                                return (<Attraction e={e} />)
+                                return (<Attraction key={el} e={el} />)
                             case 'park':
-                                return (<Park e={e} />)
+                                return (<Park key={el} e={el} />)
                             case 'univers':
-                                return (<Univers e={e} />)
+                                return (<Univers key={el} e={el} />)
                             case 'user':
-                                return (<User e={e} />)
+                                return (<User key={el} e={el} />)
                         }
                     })}
                     <input type="submit" value="Update" />
