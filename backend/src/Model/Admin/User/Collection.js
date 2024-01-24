@@ -1,3 +1,3 @@
-const user_collection = `SELECT * 
+const collection = `SELECT * 
 FROM user`;
-module.exports = user_collection;
+module.exports = collection;

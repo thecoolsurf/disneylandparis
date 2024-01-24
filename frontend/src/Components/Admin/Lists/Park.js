@@ -1,13 +1,13 @@
-import {Button_Delete } from "../Button_Delete.js";
-import {Button_Update } from "../Button_Update.js";
+import { BtnDelete } from "../BtnDelete.js";
+import { BtnUpdate } from "../BtnUpdate.js";
 
 export const Park = (props) => {
     return (
         <div key={props.e.id} className="row">
             <div className="id">{props.e.id}</div>
             <div className="item">{props.e.name}</div>
-            <Button_Delete id={props.e.id} uri={props.uri} />
-            <Button_Update id={props.e.id} uri={props.uri} />
+            <BtnDelete id={props.e.id} uri={props.uri} />
+            <BtnUpdate id={props.e.id} uri={props.uri} />
         </div>
     )
 }

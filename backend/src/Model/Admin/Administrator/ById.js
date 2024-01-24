@@ -1,5 +1,6 @@
-const administrator_by_id = `SELECT * 
+const by_id = `SELECT 
+id, firstname, lastname, email, password, token
 FROM administrator
 WHERE id = ?`;
 
-module.exports = administrator_by_id;
+module.exports = by_id;

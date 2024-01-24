@@ -1,3 +1,3 @@
-const collection = `SELECT id, name FROM attraction`;
+const collection = `SELECT * FROM attraction`;
 
 module.exports = collection;

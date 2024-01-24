@@ -1,4 +1,3 @@
-const collection = `SELECT 
-id, name, password
+const collection = `SELECT  *
 FROM administrator`;
 module.exports = collection;
