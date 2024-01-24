@@ -16,7 +16,23 @@ export const Field = (props) => {
         return (
             <p className="item">
                 <label>{props.name}</label>
-                <textarea name={props.name} rows="10" cols="50">{props.value}</textarea>
+                <textarea name={props.name} rows="10" cols="50" defaultValue={props.value} />
+            </p>
+        )
+    }
+    if (props.type === 'select') {
+        return (
+            <p className="item">
+                <label>{props.name}</label>
+                <select name={props.name}>
+                    <option value="">--choose an option--</option>
+                    {props.chooser.map((el) => {
+                        const selected = el.id === props.value ? 'selected' : '';
+                        return (
+                            <option value={el.id} selected={selected}>{el.name}</option>
+                        )
+                    })}
+                </select>
             </p>
         )
     }

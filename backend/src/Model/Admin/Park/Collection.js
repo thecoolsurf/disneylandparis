@@ -1,5 +1,4 @@
-const collection = `SELECT 
-id, slug, name, description 
+const collection = `SELECT *
 FROM park`;
 
 module.exports = collection;

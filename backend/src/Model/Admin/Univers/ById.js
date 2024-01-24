@@ -1,5 +1,5 @@
 const univers_by_id = `SELECT 
-id, slug, name, description
+id, id_park, slug, name, description
 FROM univers
 WHERE id = ?`;
 

@@ -1,5 +1,4 @@
-const collection = `SELECT 
-id, name, slug, description 
+const collection = `SELECT * 
 FROM univers`;
 
 module.exports = collection;

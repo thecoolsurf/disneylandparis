@@ -24,3 +24,7 @@
     padding: 5px;
     box-sizing: border-box;
 }
+
+.admin form select {
+    padding: 5px;
+}
