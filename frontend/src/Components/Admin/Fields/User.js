@@ -1,34 +1,16 @@
+import { Field } from '../Field.js';
+
 export const User = (props) => {
     return (
         <>
-            <p className="item">
-                <label>Firstname</label>
-                <input type="text" name="firstname" defaultValue={props.e.firstname} />
-            </p>
-            <p className="item">
-                <label>Lastame</label>
-                <input type="text" name="lastname" defaultValue={props.e.lastname} />
-            </p>
-            <p className="item">
-                <label>Email</label>
-                <input type="text" name="email" defaultValue={props.e.email} />
-            </p>
-            <p className="item">
-                <label>Password</label>
-                <input type="text" name="password" defaultValue={props.e.password} />
-            </p>
-            <p className="item">
-                <label>Born</label>
-                <input type="text" name="born" defaultValue={props.e.born} />
-            </p>
-            <p className="item">
-                <label>Date start</label>
-                <input type="text" name="date_start" defaultValue={props.e.date_start} />
-            </p>
-            <p className="item">
-                <label>Date end</label>
-                <input type="text" name="date_end" defaultValue={props.e.date_end} />
-            </p>
+            <Field type="text" name="firstname" value={props.e.firstname} />
+            <Field type="text" name="lastname" value={props.e.lastname} />
+            <Field type="text" name="email" value={props.e.email} />
+            <Field type="text" name="password" value={props.e.password} />
+            <Field type="text" name="born" value={props.e.born} />
+            <Field type="text" name="date_start" value={props.e.date_start} />
+            <Field type="text" name="date_end" value={props.e.date_end} />
+            <Field type="hidden" name="id" value={props.e.id} />
         </>
     )
 }

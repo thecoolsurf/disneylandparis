@@ -60,40 +60,11 @@ function selectFind(route, sql) {
   return server;
 }
 
-/* ************************************************************************************************** */
-
-function updateAttraction() {
-  server.post("/admin/update/attraction", (req, res, next) => {
+function update(route,sql) {
+  server.post(route, (req, res, next) => {
     let id = req.body.id;
-    let sql = `UPDATE attraction SET 
-    id_park = '${req.body.id_park}', 
-    id_univ = '${req.body.id_univ}', 
-    name = '${req.body.name}', 
-    slug = '${req.body.slug}', 
-    public = '${req.body.public}', 
-    description = '${req.body.description}', 
-    restriction = '${req.body.restriction}', 
-    pictures = '${req.body.pictures}', 
-    movies = '${req.body.movies}' 
-    WHERE id = ${id}`;
-    knex.raw(sql)
-      .then(([rows, columns]) => {
-        res.send(`Update ATTRACTION (${id})`);
-      })
-  });
-  return server;
-}
-
-function updateUser() {
-  server.post("/admin/update/user", (req, res, next) => {
-    let id = req.body.id;
-    let sql = `UPDATE user SET 
-    firstname = '${req.body.firstname}', 
-    lastname = '${req.body.lastname}', 
-    email = '${req.body.email}', 
-    password = '${req.body.password}' 
-    WHERE id = ${id}`;
-    knex.raw(sql)
+    let datas = [req.body.firstname, req.body.lastname, req.body.email, req.body.password, id]
+    knex.raw(sql,datas)
       .then(([rows, columns]) => {
         res.send(`Update USER (${id})`);
       })
@@ -128,31 +99,31 @@ selectFind("/all_attractions", find_attraction_by_name);
 /* ************************************************************************************************** */
 /* ADMIN */
 
-const attraction_collection = require('./Model/Admin/Attraction/AttractionCollection.js');
+const attraction_collection = require('./Model/Admin/Attraction/Collection.js');
 select("/admin/collection/attraction", attraction_collection);
-const attraction_form = require('./Model/Admin/Attraction/AttractionById.js');
+const attraction_form = require('./Model/Admin/Attraction/ById.js');
 selectWithId("/admin/form/attraction", attraction_form);
-// updateAttraction();
 
-const park_collection = require('./Model/Admin/Park/ParkCollection.js');
+const park_collection = require('./Model/Admin/Park/Collection.js');
 select("/admin/collection/park", park_collection);
-const park_form = require('./Model/Admin/Park/ParkById.js');
+const park_form = require('./Model/Admin/Park/ById.js');
 selectWithId("/admin/form/park", park_form);
 
-const univers_collection = require('./Model/Admin/Univers/UniversCollection.js');
+const univers_collection = require('./Model/Admin/Univers/Collection.js');
 select("/admin/collection/univers", univers_collection);
-const univers_form = require('./Model/Admin/Univers/UniversById.js');
+const univers_form = require('./Model/Admin/Univers/ById.js');
 selectWithId("/admin/form/univers", univers_form);
 
-const user_collection = require('./Model/Admin/User/UserCollection.js');
+const user_collection = require('./Model/Admin/User/Collection.js');
 select("/admin/collection/user", user_collection);
-const user_form = require('./Model/Admin/User/UserById.js');
+const user_form = require('./Model/Admin/User/ById.js');
 selectWithId("/admin/form/user", user_form);
-updateUser();
+const user_update = require('./Model/Admin/User/Update.js')
+update("/admin/update/user",user_update);
 
-const administrator_collection = require('./Model/Admin/Administrator/AdministratorCollection.js');
+const administrator_collection = require('./Model/Admin/Administrator/Collection.js');
 select("/admin/collection/administrator", administrator_collection);
-const administrator_form = require('./Model/Admin/Administrator/AdministratorById.js');
+const administrator_form = require('./Model/Admin/Administrator/ById.js');
 selectWithId("/admin/form/administrator", administrator_form);
 
 

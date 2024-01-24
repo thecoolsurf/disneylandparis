@@ -1,4 +1,4 @@
-import { Field } from './Field.js';
+import { Field } from '../Field.js';
 
 export const Attraction = (props) => {
     return (
