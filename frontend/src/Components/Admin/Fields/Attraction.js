@@ -12,6 +12,7 @@ export const Attraction = (props) => {
             <Field type="textarea" name="description" value={props.e.description} />
             <Field type="text" name="pictures" value={props.e.pictures} />
             <Field type="text" name="movies" value={props.e.movies} />
+            
             <Field type="hidden" name="id" value={props.e.id} />
         </>
     )
