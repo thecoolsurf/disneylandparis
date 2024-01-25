@@ -37,10 +37,20 @@ function select(route, sql) {
         .then(([rows, columns]) => {
           res.json(rows);
         })
+    } else {
+      knex.raw(sql)
+        .then(([rows, columns]) => {
+          res.json(rows);
+        })
+    }
+  });
+  return server;
+}
 
-    } else if (req.query.find) {
-      let find = req.query.find ? req.query.find : '';
-      knex.raw(sql, '%' + find + '%')
+function selectFind(route, sql) {
+  server.get(route, (req, res, next) => {
+    let find = req.query.find ? req.query.find : '';
+    knex.raw(sql, '%' + find + '%')
       .then(([rows, columns]) => {
         const result = rows.map((e) => ({
           pslug: e.pslug,
@@ -50,12 +60,6 @@ function select(route, sql) {
         }));
         res.json(result);
       })
-    } else {
-      knex.raw(sql)
-        .then(([rows, columns]) => {
-          res.json(rows);
-        })
-    }
   });
   return server;
 }
@@ -93,8 +97,8 @@ select("/attractions_by_univers", attractions_by_univers);
 const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
 select("/attraction_by_id", attraction_by_id);
 
-const find_attraction_by_name = require('./Model/Public/Attraction/FindAttractionByName.js');
-select("/all_attractions", find_attraction_by_name);
+const find_attraction = require('./Model/Public/Attraction/FindAttraction.js');
+selectFind("/find_attraction", find_attraction);
 
 /* ************************************************************************************************** */
 /* ADMIN */

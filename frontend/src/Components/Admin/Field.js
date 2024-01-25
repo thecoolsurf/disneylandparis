@@ -24,7 +24,7 @@ export const Field = (props) => {
         return (
             <p className="item">
                 <label htmlFor={props.name}>{props.name} (min 8 caracters)</label>
-                <input type="password" id={props.name} name={props.name} defaultValue={props.value} minlength="8" required />
+                <input type="password" id={props.name} name={props.name} defaultValue={props.value} minLength="8" required />
             </p>
         )
     }
