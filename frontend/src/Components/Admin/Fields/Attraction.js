@@ -15,19 +15,29 @@ export const Attraction = (props) => {
         };
         fetchData();
     }, []);
+    const id_park = (props.e) ? props.e.id_park : '';
+    const id_univ = (props.e) ? props.e.id_univ : '';
+    const slug = (props.e) ? props.e.slug : '';
+    const name = (props.e) ? props.e.name : '';
+    const publics = (props.e) ? props.e.public : '';
+    const restriction = (props.e) ? props.e.restriction : '';
+    const description = (props.e) ? props.e.description : '';
+    const pictures = (props.e) ? props.e.pictures : '';
+    const movies = (props.e) ? props.e.movies : '';
+    const id = (props.e) ? props.e.id : '';
     return (
         <>
-            <Field key="id_park" type="select" name="id_park" chooser={parkChooser} value={props.e.id_park} />
-            <Field key="id_univ" type="select" name="id_univ" chooser={universChooser} value={props.e.id_univ} />
-            <Field key="slug" type="text" name="slug" value={props.e.slug} />
-            <Field key="name" type="text" name="name" value={props.e.name} />
-            <Field key="public" type="text" name="public" value={props.e.public} />
-            <Field key="restriction" type="text" name="restriction" value={props.e.restriction} />
-            <Field key="description" type="textarea" name="description" value={props.e.description} />
-            <Field key="pictures" type="text" name="pictures" value={props.e.pictures} />
-            <Field key="movies" type="text" name="movies" value={props.e.movies} />
+            <Field key="id_park" type="select" name="id_park" chooser={parkChooser} value={id_park} />
+            <Field key="id_univ" type="select" name="id_univ" chooser={universChooser} value={id_univ} />
+            <Field key="slug" type="text" name="slug" value={slug} />
+            <Field key="name" type="text" name="name" value={name} />
+            <Field key="public" type="text" name="public" value={publics} />
+            <Field key="restriction" type="text" name="restriction" value={restriction} />
+            <Field key="description" type="textarea" name="description" value={description} />
+            <Field key="pictures" type="text" name="pictures" value={pictures} />
+            <Field key="movies" type="text" name="movies" value={movies} />
             
-            <Field key="id" type="hidden" name="id" value={props.e.id} />
+            <Field key="id" type="hidden" name="id" value={id} />
         </>
     )
 }

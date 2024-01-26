@@ -39,12 +39,18 @@
   color: #FFF;
   text-decoration: none;
   text-wrap: wrap;
-  padding: 10px 15px;
+  margin: 0 10px 0 0;
+  padding: 5px 10px;
   cursor: pointer;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
 }
 
 .admin .link:hover {
+  background: #FFF;
+  color: #000;
+}
+
+.admin .active {
   background: #FFF;
   color: #000;
 }
@@ -57,25 +63,38 @@
 .admin .title span {
   padding: 0 0 0 10px;
 }
-.admin .row {
+
+.admin .thead,
+.admin .rows {
   float: left;
   width: 100%;
   padding: 10px 0;
+}
+
+.admin .rows {
   border-top: solid 1px #555;
 }
 
-.admin .row .id,
-.admin .row .item {
+.admin .thead .id,
+.admin .thead .item,
+.admin .rows .id,
+.admin .rows .item {
   float: left;
 }
 
-.admin .row .id {
-  width: 30px;
+.admin .thead .id,
+.admin .thead .item {
+  font-weight: bold;
+}
+.admin .thead .id,
+.admin .rows .id {
+  width: 40px;
   text-align: center;
 }
-.admin .row .item {
+.admin .thead .item,
+.admin .rows .item {
+  min-width: 250px;
   text-align: left;
-  width: auto;
 }
 .admin .btn {
   float: right;

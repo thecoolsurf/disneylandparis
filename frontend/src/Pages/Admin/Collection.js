@@ -10,6 +10,7 @@ import { User } from "../../Components/Admin/Lists/User.js";
 
 export const AdminCollection = (props) => {
     const [datas, setDatas] = useState([]);
+    const link_insert = `/admin/entity/insert/${props.uri}`;
     useEffect(() => {
         const fetchData = async () => {
             const dataAdmin = await fetch(`http://localhost:80/admin/collection/${props.uri}`);
@@ -22,8 +23,12 @@ export const AdminCollection = (props) => {
         <div className="admin">
             <Navigation data={props.nav} />
             <div className="title">
-                <div className="btn"><button name="insert">Insert</button></div>
+                <div className="btn"><a href={link_insert} alt="insert">Insert</a></div>
                 <div>ADMIN:<span>{props.uri}</span></div>
+            </div>
+            <div className="thead">
+                <div className="id">id</div>
+                <div className="item">name</div>
             </div>
             <div className="list">
                 {datas.map((el) => {

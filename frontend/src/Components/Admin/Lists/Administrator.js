@@ -3,7 +3,7 @@ import { BtnUpdate } from "../BtnUpdate.js";
 
 export const Administrator = (props) => {
     return (
-        <div key={props.e.id} className="row">
+        <div className="rows">
             <div className="id">{props.e.id}</div>
             <div className="item">{props.e.firstname}</div>
             <div className="item">{props.e.lastname}</div>
