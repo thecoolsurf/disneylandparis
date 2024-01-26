@@ -8,6 +8,7 @@ export const Administrator = (props) => {
             <Field type="text" name="email" value={props.e.email} />
             <Field type="password" name="password" value={props.e.password} />
             <Field type="text" name="token" value={props.e.token} />
+            
             <Field type="hidden" name="id" value={props.e.id} />
         </>
     )
