@@ -1,6 +1,9 @@
-const update = `SELECT 
-id, slug, name, public, description, restriction, pictures, movies
-FROM attraction
+/* backend/src/Model/Admin/Attraction/Update.js */
+
+const attraction_update = `
+UPDATE attraction SET 
+id_park = ?, id_univ = ?, name = ?, slug = ?, 
+public = ?, description = ?, restricion = ?, pictures = ?, movies = ?
 WHERE id = ?`;
 
-module.exports = update;
+module.exports = attraction_update;

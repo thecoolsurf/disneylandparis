@@ -1,8 +1,10 @@
-const update = `
+/* backend/src/Model/Admin/User/Update.js */
+
+const user_update = `
 UPDATE user SET 
 firstname = ?, lastname = ?, email = ?, mobile = ?, password = ?, 
 born = ?, date_start = ?, date_end = ?, date_current = ?, 
 address = ?, zipcode = ?, city = ?, country = ?
 WHERE id = ?`;
 
-module.exports = update;
+module.exports = user_update;

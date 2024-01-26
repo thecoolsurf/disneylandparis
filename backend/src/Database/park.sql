@@ -4,7 +4,7 @@ CREATE TABLE park (
     `slug` VARCHAR (255),
     `description` TEXT,
     PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /* ******************************************************************* */
 INSERT INTO park (`id`,`name`,`slug`,`description`) VALUES

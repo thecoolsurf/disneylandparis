@@ -7,7 +7,7 @@ CREATE TABLE univers (
     PRIMARY KEY (`id`),
     CONSTRAINT FK_CategoryPark FOREIGN KEY (`id_park`)
     REFERENCES park(`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 INSERT INTO univers (`id`,`id_park`,`name`,`slug`,`description`) VALUES
 (1,1,'Adventureland','adventureland','Est aute dolore incididunt laboris proident excepteur id consectetur sit ea pariatur pariatur proident adipisicing.
