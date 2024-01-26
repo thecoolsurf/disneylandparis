@@ -11,17 +11,9 @@ import { User } from "../../Components/Admin/Fields/User.js";
 export const AdminUpdate = (props) => {
     const url = window.location.href;
     const id = url.includes('?') ? url.split('?')[1].slice(3,) : 1;
-    const [parkChooser, setParkChooser] = useState([]);
-    const [universChooser, setUniversChooser] = useState([]);
     const [datas, setDatas] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const datasParks = await fetch(`http://localhost:80/admin/collection/park`);
-            const parkChooser = await datasParks.json();
-            setParkChooser(parkChooser);
-            const datasUnivers = await fetch(`http://localhost:80/admin/collection/univers`);
-            const universChooser = await datasUnivers.json();
-            setUniversChooser(universChooser);
             const datasUpdate = await fetch(`http://localhost:80/admin/form/${props.uri}?id=${id}`);
             const datas = await datasUpdate.json();
             setDatas(datas);
@@ -39,11 +31,11 @@ export const AdminUpdate = (props) => {
                             case 'administrator':
                                 return (<Administrator key={el} e={el} />)
                             case 'attraction':
-                                return (<Attraction key={el} parks={parkChooser} univers={universChooser} e={el} />)
+                                return (<Attraction key={el} e={el} />)
                             case 'park':
                                 return (<Park key={el} e={el} />)
                             case 'univers':
-                                return (<Univers key={el} parks={parkChooser} e={el} />)
+                                return (<Univers key={el} e={el} />)
                             case 'user':
                                 return (<User key={el} e={el} />)
                         }

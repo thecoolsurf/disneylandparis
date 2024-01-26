@@ -38,6 +38,7 @@ export const Field = (props) => {
         )
     }
     if (props.type === 'select') {
+        console.log('select',props.value)
         return (
             <p key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
@@ -45,7 +46,7 @@ export const Field = (props) => {
                     <option value="">--choose an option--</option>
                     {props.chooser.map((el) => {
                         return (
-                            <option key={props.id} value={el.id}>{el.name}</option>
+                            <option key={el.id} value={el.id}>{el.name}</option>
                         )
                     })}
                 </select>
