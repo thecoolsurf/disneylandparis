@@ -142,6 +142,9 @@ const administrator_update = require('./Model/Admin/Administrator/Update.js');
 update('/admin/update/administrator', administrator_update);
 const administrator_insert = require('./Model/Admin/Administrator/Insert.js')
 insert("/admin/insert/administrator", administrator_insert);
+const administrator_delete = require('./Model/Admin/Administrator/Delete.js')
+deleting("/admin/delete/administrator", administrator_delete);
+
 
 /* attraction */
 const attraction_collection = require('./Model/Admin/Attraction/Collection.js');
@@ -152,6 +155,9 @@ const attraction_update = require('./Model/Admin/Attraction/Update.js');
 update("/admin/update/attraction", attraction_update);
 const attraction_insert = require('./Model/Admin/Attraction/Insert.js')
 insert("/admin/insert/attraction", attraction_insert);
+const attraction_delete = require('./Model/Admin/Attraction/Delete.js')
+deleting("/admin/delete/attraction", attraction_delete);
+
 
 /* park */
 const park_collection = require('./Model/Admin/Park/Collection.js');
@@ -162,6 +168,9 @@ const park_update = require('./Model/Admin/Park/Update.js');
 update('/admin/update/park', park_update);
 const park_insert = require('./Model/Admin/Park/Insert.js')
 insert("/admin/insert/park", park_insert);
+const park_delete = require('./Model/Admin/Park/Delete.js')
+deleting("/admin/delete/park", park_delete);
+
 
 /* univers */
 const univers_collection = require('./Model/Admin/Univers/Collection.js');
@@ -172,6 +181,8 @@ const univers_update = require('./Model/Admin/Univers/Update.js');
 update('/admin/update/univers', univers_update);
 const univers_insert = require('./Model/Admin/Univers/Insert.js')
 insert("/admin/insert/univers", univers_insert);
+const univers_delete = require('./Model/Admin/Univers/Delete.js')
+deleting("/admin/delete/univers", univers_delete);
 
 /* user */
 const user_collection = require('./Model/Admin/User/Collection.js');
