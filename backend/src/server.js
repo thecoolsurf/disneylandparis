@@ -30,7 +30,6 @@ function jsonToArray(json) {
 }
 
 function login(route, sql) {
-  let entity = route.split('/')[3];
   server.post(route, (req, res, next) => {
     let datas = jsonToArray(req.body);
     knex.raw(sql, datas)
