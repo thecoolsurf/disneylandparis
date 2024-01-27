@@ -29,6 +29,22 @@ function jsonToArray(json) {
   return array;
 }
 
+function login(route, sql) {
+  let entity = route.split('/')[3];
+  server.post(route, (req, res, next) => {
+    let datas = jsonToArray(req.body);
+    knex.raw(sql, datas)
+      .then(([rows, columns]) => {
+        const result = rows.map((e) => ({
+          lastname: e.lastname,
+          firstname: e.firstname,
+        }));
+        res.json(result);
+      })
+  });
+  return server;
+}
+
 function select(route, sql) {
   server.get(route, (req, res, next) => {
     if (req.query.id) {
@@ -144,6 +160,9 @@ const administrator_insert = require('./Model/Admin/Administrator/Insert.js')
 insert("/admin/insert/administrator", administrator_insert);
 const administrator_delete = require('./Model/Admin/Administrator/Delete.js')
 deleting("/admin/delete/administrator", administrator_delete);
+
+const administrator_connexion = require('./Model/Admin/Administrator/Connexion.js');
+login("/admin/connexion", administrator_connexion);
 
 
 /* attraction */
