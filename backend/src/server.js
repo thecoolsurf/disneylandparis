@@ -89,6 +89,18 @@ function insert(route, sql) {
   return server;
 }
 
+function deleting(route, sql) {
+  let entity = route.split('/')[3];
+  server.post(route, (req, res, next) => {
+    let id = req.body.id;
+    knex.raw(sql, datas)
+      .then(([rows, columns]) => {
+        res.send(`Delete: ${entity} (${id})`);
+      })
+  });
+  return server;
+}
+
 /* ************************************************************************************************** */
 /* PUBLIC */
 
@@ -128,6 +140,8 @@ const administrator_form = require('./Model/Admin/Administrator/ById.js');
 select("/admin/form/administrator", administrator_form);
 const administrator_update = require('./Model/Admin/Administrator/Update.js');
 update('/admin/update/administrator', administrator_update);
+const administrator_insert = require('./Model/Admin/Administrator/Insert.js')
+insert("/admin/insert/administrator", administrator_insert);
 
 /* attraction */
 const attraction_collection = require('./Model/Admin/Attraction/Collection.js');
@@ -136,6 +150,8 @@ const attraction_form = require('./Model/Admin/Attraction/ById.js');
 select("/admin/form/attraction", attraction_form);
 const attraction_update = require('./Model/Admin/Attraction/Update.js');
 update("/admin/update/attraction", attraction_update);
+const attraction_insert = require('./Model/Admin/Attraction/Insert.js')
+insert("/admin/insert/attraction", attraction_insert);
 
 /* park */
 const park_collection = require('./Model/Admin/Park/Collection.js');
@@ -144,6 +160,8 @@ const park_form = require('./Model/Admin/Park/ById.js');
 select("/admin/form/park", park_form);
 const park_update = require('./Model/Admin/Park/Update.js');
 update('/admin/update/park', park_update);
+const park_insert = require('./Model/Admin/Park/Insert.js')
+insert("/admin/insert/park", park_insert);
 
 /* univers */
 const univers_collection = require('./Model/Admin/Univers/Collection.js');
@@ -152,6 +170,8 @@ const univers_form = require('./Model/Admin/Univers/ById.js');
 select("/admin/form/univers", univers_form);
 const univers_update = require('./Model/Admin/Univers/Update.js');
 update('/admin/update/univers', univers_update);
+const univers_insert = require('./Model/Admin/Univers/Insert.js')
+insert("/admin/insert/univers", univers_insert);
 
 /* user */
 const user_collection = require('./Model/Admin/User/Collection.js');
@@ -162,6 +182,8 @@ const user_update = require('./Model/Admin/User/Update.js')
 update("/admin/update/user", user_update);
 const user_insert = require('./Model/Admin/User/Insert.js')
 insert("/admin/insert/user", user_insert);
+const user_delete = require('./Model/Admin/User/Delete.js')
+deleting("/admin/delete/user", user_delete);
 
 /* ************************************************************************************************** */
 

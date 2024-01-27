@@ -29,8 +29,8 @@ export const Attraction = (props) => {
         <>
             <Field key="id_park" type="select" name="id_park" chooser={parkChooser} value={id_park} />
             <Field key="id_univ" type="select" name="id_univ" chooser={universChooser} value={id_univ} />
-            <Field key="slug" type="text" name="slug" value={slug} />
             <Field key="name" type="text" name="name" value={name} />
+            <Field key="slug" type="text" name="slug" value={slug} />
             <Field key="public" type="text" name="public" value={publics} />
             <Field key="restriction" type="text" name="restriction" value={restriction} />
             <Field key="description" type="textarea" name="description" value={description} />

@@ -1,5 +1,5 @@
 CREATE TABLE univers (
-    `id` int NOT NULL,
+    `id` INT AUTO_INCREMENT, 
     `id_park` int,
     `name` VARCHAR(255),
     `slug` VARCHAR(255),

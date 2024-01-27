@@ -2,16 +2,16 @@
 
 const attraction_create = `
 CREATE TABLE IF NOT EXISTS attraction (
-    'id' int NOT NULL,
+    'id' INT AUTO_INCREMENT, 
     'id_park' int,
     'id_univ' int,
     'name' VARCHAR(255),
     'slug' VARCHAR(255),
-    'public' VARCHAR(255),
-    'description' TEXT, 
-    'restriction' VARCHAR (255), 
-    'pictures' VARCHAR (255), 
-    'movies' VARCHAR (255), 
+    'public' VARCHAR(255) NULL,
+    'description' TEXT NULL, 
+    'restriction' VARCHAR (255) NULL, 
+    'pictures' VARCHAR (255) NULL, 
+    'movies' VARCHAR (255) NULL, 
     PRIMARY KEY ('id'),
     CONSTRAINT FK_AttractionPark FOREIGN KEY ('id_park') REFERENCES park('id'),
     CONSTRAINT FK_AttractionUnivers FOREIGN KEY ('id_univ') REFERENCES univers('id')

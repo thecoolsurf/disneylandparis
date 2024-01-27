@@ -7,14 +7,14 @@ CREATE TABLE IF NOT EXISTS user (
     lastname VARCHAR (255), 
     email VARCHAR (255), 
     password VARCHAR (255), 
-    born DATE,
-    date_start DATE, 
-    date_end DATE, 
-    date_current DATE, 
-    address VARCHAR (255), 
-    zipcode VARCHAR (255), 
-    city VARCHAR (255), 
-    country VARCHAR (255), 
+    born DATE NULL,
+    date_start DATE NULL, 
+    date_end DATE NULL, 
+    date_current DATE NULL, 
+    address VARCHAR (255) NULL, 
+    zipcode VARCHAR (255) NULL, 
+    city VARCHAR (255) NULL, 
+    country VARCHAR (255) NULL, 
     PRIMARY KEY (id)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
 `;
