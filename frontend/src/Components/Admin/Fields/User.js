@@ -30,7 +30,7 @@ export const User = (props) => {
             <Field key="zipcode" type="text" name="zipcode" value={zipcode} />
             <Field key="city" type="text" name="city" value={city.toUpperCase()} />
             <Field key="country" type="text" name="country" value={country} />
-            
+
             <Field key="id" type="hidden" name="id" value={id} />
         </>
     )

@@ -115,9 +115,6 @@ function App() {
               <Route key={slug} path={'/admin/entity/collection/' + slug} element={
                 <AdminCollection key={'c'+slug} nav={Admin} uri={slug} />
               } />
-              <Route key={slug} path={'/admin/entity/form/' + slug} element={
-                <AdminUpdate key={'f'+slug} nav={Admin} uri={slug} />
-              } />
               <Route key={slug} path={'/admin/entity/update/' + slug} element={
                 <AdminUpdate key={'u'+slug} nav={Admin} uri={slug} />
               } />
