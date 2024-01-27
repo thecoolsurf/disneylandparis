@@ -1,15 +1,22 @@
 export const Navigation = (props) => {
-    const uri = window.location.href;
-    return (
-        <div className="navigation">
-            <div className="nav">
-                {props.data.map((slug) => {
-                    const active = (uri.includes(slug)) ? 'active' : '';
-                    return (
-                        <a key={slug} className={'link '+active} href={'/admin/entity/collection/' + slug}>{slug}</a>
-                    )
-                })}
+    const url = window.location.href;
+    const admin = url.includes('admin');
+    if (admin) {
+        return (
+            <div className="navigation">
+                <div className="nav">
+                    {props.data.map((slug) => {
+                        const active = (url.includes(slug)) ? 'active' : '';
+                        return (
+                            <a key={slug} className={'link '+active} href={'/admin/entity/collection/' + slug}>{slug}</a>
+                        )
+                    })}
+                </div>
             </div>
-        </div>
-    )
+        )
+    } else {
+        return (
+            <></>
+        )
+    }
 }
