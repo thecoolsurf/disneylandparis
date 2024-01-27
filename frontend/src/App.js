@@ -22,7 +22,6 @@ import { AdminConnexion } from './Pages/Admin/Connexion.js';
 import { AdminCollection } from "./Pages/Admin/Collection.js";
 import { AdminUpdate } from "./Pages/Admin/Update.js";
 import { AdminInsert } from "./Pages/Admin/Insert.js";
-import { AdminDelete } from "./Pages/Admin/Delete.js";
 
 function App() {
   const [navigation, setNavigation] = useState([]);
@@ -120,9 +119,6 @@ function App() {
               } />
               <Route key={slug} path={'/admin/entity/insert/' + slug} element={
                 <AdminInsert key={'i'+slug} nav={Admin} uri={slug} />
-              } />
-              <Route key={slug} path={'/admin/entity/delete/' + slug} element={
-                <AdminDelete key={'d'+slug} nav={Admin} uri={slug} />
               } />
               </>
             )

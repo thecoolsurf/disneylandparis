@@ -23,7 +23,7 @@ export const AdminUpdate = (props) => {
     return (
         <div className="admin">
             <Navigation data={props.nav} />
-            <form action={`http://localhost:80/admin/update/${props.uri}`} method="POST" encType="application/x-www-form-urlencoded">
+            <form className="form" action={`http://localhost:80/admin/update/${props.uri}`} method="POST" encType="application/x-www-form-urlencoded">
                 <fieldset>
                     <legend>UPDATE:<span>{props.uri}</span></legend>
                     {datas.map((el) => {

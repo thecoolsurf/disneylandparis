@@ -23,7 +23,7 @@ export const AdminInsert = (props) => {
     return (
         <div className="admin">
             <Navigation data={props.nav} />
-            <form action={`http://localhost:80/admin/insert/${props.uri}`} method="POST" encType="application/x-www-form-urlencoded">
+            <form className="form" action={`http://localhost:80/admin/insert/${props.uri}`} method="POST" encType="application/x-www-form-urlencoded">
                 <fieldset>
                     <legend>INSERT:<span>{props.uri}</span></legend>
                     {datas.map((el) => {

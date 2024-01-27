@@ -93,7 +93,7 @@ function deleting(route, sql) {
   let entity = route.split('/')[3];
   server.post(route, (req, res, next) => {
     let id = req.body.id;
-    knex.raw(sql, datas)
+    knex.raw(sql, id)
       .then(([rows, columns]) => {
         res.send(`Delete: ${entity} (${id})`);
       })

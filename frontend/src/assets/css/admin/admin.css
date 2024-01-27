@@ -4,7 +4,7 @@
 .img-attraction,
 .img-park,
 .img-univers,
-.img-user  {
+.img-user {
   display: none;
 }
 
@@ -86,18 +86,44 @@
 .admin .thead .item {
   font-weight: bold;
 }
+
 .admin .thead .id,
 .admin .rows .id {
   width: 40px;
   text-align: center;
 }
+
 .admin .thead .item,
 .admin .rows .item {
   min-width: 250px;
   text-align: left;
 }
-.admin .btn {
+
+
+.admin .btn,
+.admin .form-btn {
+  display: block;
   float: right;
-  padding: 0 0 0 20px;
   text-align: center;
+}
+
+.admin .btn .button,
+.admin .form-btn .button {
+  background: #888;
+  border: none;
+  display: block;
+  float: right;
+  width: auto;
+  margin: 0 0 0 10px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: normal;
+  color: #FFF;
+  text-align: center;
+  text-decoration: none;
+}
+
+.admin .btn .button:hover,
+.admin .form-btn .button:hover {
+  background: #353535;
 }
