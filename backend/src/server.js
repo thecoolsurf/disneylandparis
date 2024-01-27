@@ -3,6 +3,7 @@ const cors = require('cors');
 const config = require('./config');
 const express = require("express");
 const server = express();
+const bcrypt = require("bcrypt");
 
 const knex = require('knex')({
   client: 'mysql2',
@@ -18,7 +19,6 @@ const options = {
 server.use(morgan("common"));
 server.use(cors(options));
 server.use(express.urlencoded({ extended: true }));
-
 
 /* ************************************************************************************************** */
 
@@ -81,11 +81,12 @@ function selectFind(route, sql) {
 
 function update(route, sql) {
   let entity = route.split('/')[3];
-  server.post(route, (req, res, next) => {
+  server.post(route, async (req, res, next) => {
+    let token = (req.body.password) ? await bcrypt.hash(req.body.password, 10) : '';
     let datas = jsonToArray(req.body);
     knex.raw(sql, datas)
       .then(([rows, columns]) => {
-        res.send(`Update: ${entity} (${req.body.id})`);
+        res.send(`Update: ${entity} (${req.body.id} ${token})`);
       })
   });
   return server;
