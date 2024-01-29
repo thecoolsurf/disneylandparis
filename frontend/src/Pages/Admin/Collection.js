@@ -23,7 +23,7 @@ export const AdminCollection = (props) => {
         <div className="admin">
             <Navigation data={props.nav} />
             <div className="title">
-                <div className="btn"><a href={link_insert} alt="insert">Insert</a></div>
+                <div className="btn"><a href={link_insert} alt="insert">Insert row</a></div>
                 <div>ADMIN:<span>{props.uri}</span></div>
             </div>
             <div className="thead">

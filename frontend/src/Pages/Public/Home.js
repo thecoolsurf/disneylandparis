@@ -19,7 +19,7 @@ export const Home = () => {
         for (const el of home) {
             if (!map.has(el.pid)) {
                 map.set(el.pid, true);
-                park.push({ pid: el.pid, pslug: el.pslug, pname: el.pname, description: el.description });
+                park.push({ pid: el.pid, pslug: el.pslug, pname: el.pname, title: el.title, description: el.description });
             }
             for (let i = 0; i < park.length; i++) {
                 if (!map.has(el.uslug) && el.pid === i + 1) {
@@ -71,7 +71,10 @@ export const Home = () => {
                                 <li><i>Total attractions</i><div>{tt_attractions}</div></li>
                             </ul>
                         </div>
-                        <div className="description">{p.description}</div>
+                        <div className="description">
+                            <h3>{p.title}</h3>
+                            <p>{p.description}</p>
+                            </div>
                     </section>
                 )
             })}
