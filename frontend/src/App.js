@@ -1,8 +1,9 @@
-import "./App.css";
-import "./assets/css/public/parks.css";
-import "./assets/css/public/univers.css";
-import "./assets/css/public/park-disneyland.css";
-import "./assets/css/public/walt-disney-studios.css";
+import './App.css';
+import './assets/css/public/fonts.css'
+import './assets/css/public/parks.css';
+import './assets/css/public/univers.css';
+import './assets/css/public/park-disneyland.css';
+import './assets/css/public/walt-disney-studios.css';
 
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';

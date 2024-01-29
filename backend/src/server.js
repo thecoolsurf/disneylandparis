@@ -22,9 +22,24 @@ server.use(express.urlencoded({ extended: true }));
 
 /* ************************************************************************************************** */
 
+function escape(s) {
+  return ('' + s)
+      .replace(/\\/g, '\\\\')
+      .replace(/\t/g, '\\t')
+      .replace(/\n/g, '\\n')
+      .replace(/\u00A0/g, '\\u00A0')
+      .replace(/&/g, '\\x26')
+      .replace(/'/g, '\\x27')
+      .replace(/"/g, '\\x22')
+      .replace(/</g, '\\x3C')
+      .replace(/>/g, '\\x3E');
+}
+
 function jsonToArray(json) {
   let array = [];
+  // transform json to array
   let values = Object.values(json);
+  // for each element apply push in array
   Array.prototype.push.apply(array, values);
   return array;
 }

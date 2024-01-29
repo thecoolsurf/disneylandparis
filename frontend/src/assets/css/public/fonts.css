@@ -1,0 +1,49 @@
+@font-face {
+    font-family: InspireTWDC;
+    src: url("../../fonts/Inspire/InspireTWDC-Light.eot");
+    src: url("../../fonts/Inspire/InspireTWDC-Light.eot") format("eot"), 
+        url("../../fonts/Inspire/InspireTWDC-Light.woff2") format("woff2"), 
+        url("../../fonts/Inspire/InspireTWDC-Light.woff") format("woff");
+    font-weight: 200;
+    font-style: normal
+}
+
+@font-face {
+    font-family: InspireTWDC;
+    src: url("../../fonts/Inspire/InspireTWDC-Roman.eot?#iefix");
+    src: url("../../fonts/Inspire/InspireTWDC-Roman.eot?#iefix") format("eot"), 
+        url("../../fonts/Inspire/InspireTWDC-Roman.woff2") format("woff2"), 
+        url("../../fonts/Inspire/InspireTWDC-Roman.woff") format("woff");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: InspireTWDC;
+    src: url("../../fonts/Inspire/InspireTWDC-Medium.eot?#iefix");
+    src: url("../../fonts/Inspire/InspireTWDC-Medium.eot?#iefix") format("eot"), 
+        url("../../fonts/Inspire/InspireTWDC-Medium.woff2") format("woff2"), 
+        url("../../fonts/Inspire/InspireTWDC-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: InspireTWDC;
+    src: url("../../fonts/Inspire/InspireTWDC-Heavy.eot?#iefix");
+    src: url("../../fonts/Inspire/InspireTWDC-Heavy.eot?#iefix") format("eot"), 
+        url("../../fonts/Inspire/InspireTWDC-Heavy.woff2") format("woff2"), 
+        url("../../fonts/Inspire/InspireTWDC-Heavy.woff") format("woff");
+    font-weight: 700;
+    font-style: normal
+}
+
+@font-face {
+    font-family: InspireTWDC;
+    src: url("../../fonts/Inspire/InspireTWDC-Black.eot?#iefix");
+    src: url("../../fonts/Inspire/InspireTWDC-Black.eot?#iefix") format("eot"), 
+        url("../../fonts/Inspire/InspireTWDC-Black.woff2") format("woff2"), 
+        url("../../fonts/Inspire/InspireTWDC-Black.woff") format("woff");
+    font-weight: 900;
+    font-style: normal
+}
