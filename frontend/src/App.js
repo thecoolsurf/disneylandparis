@@ -55,7 +55,7 @@ function App() {
           {parkAndUnivers.map((p) => {
             return (
               <Route key={'rp'+p.pid} path={'/park-' + p.pslug} element={
-                <Parks key={'p'+p.pid} id={p.pid} slugs={params} name={p.pname} bkgNav={bkgNav} />
+                <Parks key={'p'+p.pid} id={p.pid} navigation={navigation} slugs={params} name={p.pname} bkgNav={bkgNav} />
               } />
             )
           })}

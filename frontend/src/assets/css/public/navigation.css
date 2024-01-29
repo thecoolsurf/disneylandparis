@@ -26,6 +26,7 @@
 
 .nav-parent .link,
 .nav-childs .link {
+  font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
   font-size: 1.1rem;
   text-decoration: none;
   text-wrap: wrap;

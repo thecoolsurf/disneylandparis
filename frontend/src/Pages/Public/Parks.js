@@ -2,61 +2,52 @@ import '../../assets/css/public/parks.css';
 import { useState, useEffect } from 'react';
 import { Carrousel } from '../../Components/Public/Carrousel.js';
 import { LinkToFinder } from '../../Components/Public/LinkToFinder.js';
+import { FilterParkAndUnivers } from '../../Components/Public/FilterParkAndUnivers.js';
+import { FilterAttractions } from '../../Components/Public/FilterAttractions.js';
 
 export const Parks = (props) => {
-    const [datas, setDatas] = useState([]);
+    const [parks, setParks] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
-            const datasPark = await fetch(`http://localhost:80/park_by_id?id=${props.id}`);
-            const datas = await datasPark.json();
-            setDatas(datas);
+            const datasParks = await fetch(`http://localhost:80/park_by_id?id=${props.id}`);
+            const parks = await datasParks.json();
+            setParks(parks);
         };
         fetchData();
     }, []);
-    function filterParkAndUnivers() {
-        const park = [];
-        const univers = [];
-        const map = new Map();
-        for (const el of datas) {
-            if (!map.has(el.pid)) {
-                map.set(el.pid, true);
-                park.push({ pid: el.pid, pslug: el.pslug, pname: el.pname, description: el.description });
-            }
-            if (!map.has(el.uid)) {
-                map.set(el.uid, true);
-                univers.push({ uid: el.uid, uslug: el.uslug, uname: el.uname });
-            }
-        }
-        for (let i = 0; i < park.length; i++) park[i].univers = univers[i];
-        return park;
-    }
-    const park = filterParkAndUnivers();
+    const park = FilterParkAndUnivers(parks);
+    const attractions = props.navigation;
     let legend = 'Liste des univers - ' + props.name;
-    const tt_univers = datas.length;
+    const tt_univers = parks.length;
     return (
         <div className="parks">
             <LinkToFinder />
-            <Carrousel datas={datas} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
+            <Carrousel datas={parks} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
             {park.map((p) => {
+                const tt_attractions = FilterAttractions(attractions, props.id).length + ' attractions';
                 return (
                     <section key={p.pslug} className="infos">
                         <div className="col-left">
-                            <a href={'/'} className={'logo logo-' + p.pslug} alt={p.pname}>
-                                <div className="back"><i className="fa fa-reply"></i></div>
+                            <a href={'/'} alt={p.pname}>
+                                <div className="logo icons-disneylandparis" >
+                                    <div className={'icon-' + p.pslug}></div>
+                                    <div className="back"><i className="fa fa-reply"></i></div>
+                                </div>
+                                <div className="name">{p.pname}</div>
                             </a>
                         </div>
                         <div className="col-infos">
-                            <div className="name">{p.pname}</div>
                             <ul className="list">
-                                <li><i>Nom du datas</i><div>{p.pname}</div></li>
+                                <li><i>Nom</i><div>{p.pname}</div></li>
                                 <li><i>Total des univers</i><div>{tt_univers + ' univers'}</div></li>
                                 <li><i>Liste des univers</i>
-                                    {datas.map((u) => {
+                                    {parks.map((u) => {
                                         return (
                                             <div key={u.uslug}>{u.uname}</div>
                                         )
                                     })}
                                 </li>
+                                <li><i>Total attractions</i><div>{tt_attractions}</div></li>
                             </ul>
                         </div>
                         <div className="description">{p.description}</div>

@@ -30,7 +30,9 @@
 .carrousel .legend {
     width: 100%;
     padding: 0 0 10px 10px;
+    font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
     font-size: 1.3rem;
+    font-weight: 700;
     color: #FFF;
     box-sizing: border-box;
 }
@@ -114,8 +116,8 @@
     left: 0px;
     z-index: 1;
     padding: 10px;
-    font-family: 'DisneyScript', sans-serif;
-    font-size: 2.5rem;
+    font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
+    font-size: 1.5rem;
     color: white;
     text-align: center;
     box-sizing: border-box;

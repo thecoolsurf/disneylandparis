@@ -1,8 +1,8 @@
 @font-face {
     font-family: InspireTWDC;
     src: url("../../fonts/Inspire/InspireTWDC-Light.eot");
-    src: url("../../fonts/Inspire/InspireTWDC-Light.eot") format("eot"), 
-        url("../../fonts/Inspire/InspireTWDC-Light.woff2") format("woff2"), 
+    src: url("../../fonts/Inspire/InspireTWDC-Light.eot") format("eot"),
+        url("../../fonts/Inspire/InspireTWDC-Light.woff2") format("woff2"),
         url("../../fonts/Inspire/InspireTWDC-Light.woff") format("woff");
     font-weight: 200;
     font-style: normal
@@ -11,8 +11,8 @@
 @font-face {
     font-family: InspireTWDC;
     src: url("../../fonts/Inspire/InspireTWDC-Roman.eot?#iefix");
-    src: url("../../fonts/Inspire/InspireTWDC-Roman.eot?#iefix") format("eot"), 
-        url("../../fonts/Inspire/InspireTWDC-Roman.woff2") format("woff2"), 
+    src: url("../../fonts/Inspire/InspireTWDC-Roman.eot?#iefix") format("eot"),
+        url("../../fonts/Inspire/InspireTWDC-Roman.woff2") format("woff2"),
         url("../../fonts/Inspire/InspireTWDC-Roman.woff") format("woff");
     font-weight: 400;
     font-style: normal
@@ -21,8 +21,8 @@
 @font-face {
     font-family: InspireTWDC;
     src: url("../../fonts/Inspire/InspireTWDC-Medium.eot?#iefix");
-    src: url("../../fonts/Inspire/InspireTWDC-Medium.eot?#iefix") format("eot"), 
-        url("../../fonts/Inspire/InspireTWDC-Medium.woff2") format("woff2"), 
+    src: url("../../fonts/Inspire/InspireTWDC-Medium.eot?#iefix") format("eot"),
+        url("../../fonts/Inspire/InspireTWDC-Medium.woff2") format("woff2"),
         url("../../fonts/Inspire/InspireTWDC-Medium.woff") format("woff");
     font-weight: 500;
     font-style: normal
@@ -31,8 +31,8 @@
 @font-face {
     font-family: InspireTWDC;
     src: url("../../fonts/Inspire/InspireTWDC-Heavy.eot?#iefix");
-    src: url("../../fonts/Inspire/InspireTWDC-Heavy.eot?#iefix") format("eot"), 
-        url("../../fonts/Inspire/InspireTWDC-Heavy.woff2") format("woff2"), 
+    src: url("../../fonts/Inspire/InspireTWDC-Heavy.eot?#iefix") format("eot"),
+        url("../../fonts/Inspire/InspireTWDC-Heavy.woff2") format("woff2"),
         url("../../fonts/Inspire/InspireTWDC-Heavy.woff") format("woff");
     font-weight: 700;
     font-style: normal
@@ -41,9 +41,28 @@
 @font-face {
     font-family: InspireTWDC;
     src: url("../../fonts/Inspire/InspireTWDC-Black.eot?#iefix");
-    src: url("../../fonts/Inspire/InspireTWDC-Black.eot?#iefix") format("eot"), 
-        url("../../fonts/Inspire/InspireTWDC-Black.woff2") format("woff2"), 
+    src: url("../../fonts/Inspire/InspireTWDC-Black.eot?#iefix") format("eot"),
+        url("../../fonts/Inspire/InspireTWDC-Black.woff2") format("woff2"),
         url("../../fonts/Inspire/InspireTWDC-Black.woff") format("woff");
     font-weight: 900;
     font-style: normal
+}
+
+@font-face {
+    font-family: dlp_pep_font-webfont;
+    src: url("../../fonts/Disneyland/dlp_pep_font-webfont.eot");
+    src: url("../../fonts/Disneyland/dlp_pep_font-webfont.eot?#iefix") format("embedded-opentype"),
+        url("../../fonts/Disneyland/dlp_pep_font-webfont.woff") format("woff"),
+        url("../../fonts/Disneyland/dlp_pep_font-webfont.svg#webfont") format("svg"),
+        url("../../fonts/Disneyland/dlp_pep_font-webfont.ttf") format("truetype")
+}
+
+@font-face {
+    font-family: 'DisneyScript';
+    src: url('../../fonts/All_Disney_Fonts/Disney/DisneyScript.ttf');
+}
+
+@font-face {
+    font-family: 'Waltograph42';
+    src: url('../../fonts/All_Disney_Fonts/Waltograph/Waltograph42.ttf');
 }

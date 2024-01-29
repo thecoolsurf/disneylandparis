@@ -35,14 +35,17 @@ export const Home = (props) => {
                 return (
                     <section key={p.pslug} className="infos">
                         <div className="col-left">
-                            <a href={'/park-' + p.pslug} className={'logo logo-' + p.pslug} alt={p.pname}>
-                                <div className="back"><i className="fa fa-share"></i></div>
+                            <a href={'/park-' + p.pslug} alt={p.pname}>
+                                <div className="logo icons-disneylandparis" >
+                                    <div className={'icon-' + p.pslug}></div>
+                                    <div className="back"><i className="fa fa-share"></i></div>
+                                </div>
+                                <div className="name">{p.pname}</div>
                             </a>
                         </div>
                         <div className="col-infos">
-                            <div className="name">{p.pname}</div>
                             <ul className="univers">
-                                <li><i>Name</i><div>{p.pname}</div></li>
+                                <li><i>Nom</i><div>{p.pname}</div></li>
                                 <li><i>Total univers</i><div>{tt_univers}</div></li>
                                 <li><i>Univers</i>
                                     {p.univers.map((u) => {
@@ -57,7 +60,7 @@ export const Home = (props) => {
                         <div className="description">
                             <h3>{p.title}</h3>
                             <p>{p.description}</p>
-                            </div>
+                        </div>
                     </section>
                 )
             })}
