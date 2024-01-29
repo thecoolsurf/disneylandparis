@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Components/Public/Header.js';
 import { Footer } from './Components/Public/Footer.js';
 import { Navigation } from './Components/Public/Navigation.js';
+import { FilterParkAndUnivers } from './Components/Public/FilterParkAndUnivers.js'
 /* public routes */
 import { Home } from './Pages/Public/Home.js';
 import { Parks } from './Pages/Public/Parks.js';
@@ -34,29 +35,7 @@ function App() {
     };
     fetchData();
   }, []);
-
-  function filterParkAndUnivers() {
-    const parks = [];
-    const univers = [[], []];
-    const map = new Map();
-    for (const el of navigation) {
-      /* park */
-      if (!map.has(el.pid)) {
-        map.set(el.pid, true);
-        parks.push({ pid: el.pid, pslug: el.pslug, pname: el.pname });
-      }
-      /* univers */
-      for (let i = 0; i < parks.length; i++) {
-        if (!map.has(el.uslug) && el.pid === i + 1) {
-          map.set(el.uslug, true);
-          univers[i].push({ uid: el.uid, uslug: el.uslug, uname: el.uname });
-        }
-      }
-    }
-    for (let i = 0; i < parks.length; i++) parks[i].univers = univers[i];
-    return parks;
-  }
-  const parkAndUnivers = filterParkAndUnivers();
+  const parkAndUnivers = FilterParkAndUnivers(navigation);
   const allAttractions = navigation;
   const queryString = window.location.pathname;
   const params = queryString.split('/');
@@ -71,7 +50,7 @@ function App() {
         <Navigation datas={parkAndUnivers} bkgNav={bkgNav} />
         <Routes>
           <Route path="/" element={
-            <Home />
+            <Home navigation={navigation} />
           } />
           {parkAndUnivers.map((p) => {
             return (

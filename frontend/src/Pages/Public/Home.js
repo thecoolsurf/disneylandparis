@@ -1,8 +1,10 @@
 import '../../assets/css/public/home.css';
 import { useState, useEffect } from 'react';
+import { FilterHomeDatas } from '../../Components/Public/FilterHomeDatas.js';
+import { FilterAttractions } from '../../Components/Public/FilterAttractions.js';
 import { LinkToFinder } from '../../Components/Public/LinkToFinder.js';
 
-export const Home = () => {
+export const Home = (props) => {
     const [home, setDatas] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -12,41 +14,22 @@ export const Home = () => {
         };
         fetchData();
     }, []);
-    function filterParkAndUnivers() {
-        const park = [];
-        const univers = [[], []];
-        const map = new Map();
-        for (const el of home) {
-            if (!map.has(el.pid)) {
-                map.set(el.pid, true);
-                park.push({ pid: el.pid, pslug: el.pslug, pname: el.pname, title: el.title, description: el.description });
-            }
-            for (let i = 0; i < park.length; i++) {
-                if (!map.has(el.uslug) && el.pid === i + 1) {
-                    map.set(el.uslug, true);
-                    univers[i].push({ uid: el.uid, uslug: el.uslug, uname: el.uname });
-                }
-            }
-        }
-        for (let i = 0; i < park.length; i++) park[i].univers = univers[i];
-        return park;
-    }
-    const parkAndUnivers = filterParkAndUnivers();
-    let tt_univers = '';
-    let tt_attractions = '';
-    let univers = null;
-
+    const parkAndUnivers = FilterHomeDatas(home);
+    const attractions = props.navigation;
     return (
         <div className="home">
             <LinkToFinder />
             {parkAndUnivers.map((p) => {
+                let tt_univers = '';
+                let tt_attractions = '';
+                let univers = null;
                 if (p.pid === 1) {
                     tt_univers = parkAndUnivers[0].univers.length + ' univers';
-                    tt_attractions = 0 + ' attractions';
+                    tt_attractions = FilterAttractions(attractions, p.pid).length + ' attractions';
                     univers = parkAndUnivers[0].univers;
                 } else {
                     tt_univers = parkAndUnivers[1].univers.length + ' univers';
-                    tt_attractions = 0 + ' attractions';
+                    tt_attractions = FilterAttractions(attractions, p.pid).length + ' attractions';
                     univers = parkAndUnivers[1].univers;
                 }
                 return (
