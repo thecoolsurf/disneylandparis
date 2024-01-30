@@ -40,7 +40,7 @@ export const AdminInsert = (props) => {
                                 return (<User key={el} />)
                         }
                     })}
-                    <input type="submit" defaultValue="Update" />
+                    <input type="submit" defaultValue="Insert" />
                 </fieldset>
             </form>
         </div>
