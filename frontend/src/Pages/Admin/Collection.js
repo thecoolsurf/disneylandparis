@@ -1,6 +1,6 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
-import { Navigation } from "../../Components/Admin/Navigation.js";
+import { Navigation } from "../../Components/Admin/Others/Navigation.js";
 /* entity */
 import { Administrator } from "../../Components/Admin/Lists/Administrator.js";
 import { Attraction } from "../../Components/Admin/Lists/Attraction.js";

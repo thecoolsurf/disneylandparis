@@ -1,6 +1,6 @@
 import { Field } from '../Others/Field.js';
 
-export const Park = (props) => {
+export const Sensory = (props) => {
     const slug = (props.e) ? props.e.slug : '';
     const name = (props.e) ? props.e.name : '';
     const title = (props.e) ? props.e.title : '';

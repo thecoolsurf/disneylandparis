@@ -1,7 +1,7 @@
 import '../../assets/css/admin/admin.css';
 import '../../assets/css/admin/form.css';
 import { useState, useEffect } from 'react';
-import { Navigation } from "../../Components/Admin/Navigation.js";
+import { Navigation } from "../../Components/Admin/Others/Navigation.js";
 import { Administrator } from "../../Components/Admin/Fields/Administrator.js";
 import { Attraction } from "../../Components/Admin/Fields/Attraction.js";
 import { Park } from "../../Components/Admin/Fields/Park.js";
