@@ -3,7 +3,7 @@ import '../../assets/css/admin/admin.css'
 export const AdminConnexion = () => {
     return (
         <div className="admin">
-            <form className="form" action={'http://localhost:80/admin/connexion'} method="POST" enctype="application/x-www-form-urlencoded">
+            <form className="form" action={'http://localhost:80/admin/connexion'} method="POST" encType="application/x-www-form-urlencoded">
                 <fieldset>
                     <legend>CONNEXION</legend>
                     <p className="item">

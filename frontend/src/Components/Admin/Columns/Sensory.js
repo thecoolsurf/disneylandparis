@@ -1,4 +1,4 @@
-export const Sensory = () => {
+export const HeadSensory = () => {
     return (
         <>
         </>

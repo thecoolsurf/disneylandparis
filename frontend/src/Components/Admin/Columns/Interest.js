@@ -1,4 +1,4 @@
-export const Interest = () => {
+export const HeadInterest = () => {
     return (
         <>
         </>

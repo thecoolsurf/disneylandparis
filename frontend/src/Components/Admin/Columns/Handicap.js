@@ -1,4 +1,4 @@
-export const Handicap = () => {
+export const HeadHandicap = () => {
     return (
         <>
         </>

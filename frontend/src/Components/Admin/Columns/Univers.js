@@ -1,4 +1,4 @@
-export const Univers = () => {
+export const HeadUnivers = () => {
     return (
         <>
         </>

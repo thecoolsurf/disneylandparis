@@ -1,4 +1,4 @@
-export const Attraction = () => {
+export const HeadAttraction = () => {
     return (
         <>
         </>

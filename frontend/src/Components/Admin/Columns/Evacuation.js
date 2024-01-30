@@ -1,4 +1,4 @@
-export const Evacuation = () => {
+export const HeadEvacuation = () => {
     return (
         <>
         </>

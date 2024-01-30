@@ -1,4 +1,4 @@
-export const Park = () => {
+export const HeadPark = () => {
     return (
         <>
         </>
