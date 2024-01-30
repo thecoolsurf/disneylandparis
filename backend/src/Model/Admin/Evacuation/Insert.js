@@ -2,7 +2,7 @@
 
 const insert = `
 INSERT INTO evacuation 
-(index, description) 
+(level, description) 
 VALUES
 (?, ?);
 `;

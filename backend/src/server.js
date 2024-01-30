@@ -39,7 +39,7 @@ function jsonToArray(json) {
   let array = [];
   // transform json to array
   let values = Object.values(json);
-  // for each element apply push in array
+  // for each apply push in array
   Array.prototype.push.apply(array, values);
   return array;
 }
@@ -164,71 +164,18 @@ selectFind("/find_attraction", find_attraction);
 /* ************************************************************************************************** */
 /* ADMIN */
 
-/* administrator */
-const administrator_collection = require('./Model/Admin/Administrator/Collection.js');
-select("/admin/collection/administrator", administrator_collection);
-const administrator_form = require('./Model/Admin/Administrator/ById.js');
-select("/admin/form/administrator", administrator_form);
-const administrator_update = require('./Model/Admin/Administrator/Update.js');
-update('/admin/update/administrator', administrator_update);
-const administrator_insert = require('./Model/Admin/Administrator/Insert.js')
-insert("/admin/insert/administrator", administrator_insert);
-const administrator_delete = require('./Model/Admin/Administrator/Delete.js')
-deleting("/admin/delete/administrator", administrator_delete);
+const entities = ['administrator','attraction','evacuation','handicap','height','interest','park','sensory','univers','user'];
 
-const administrator_connexion = require('./Model/Admin/Administrator/Connexion.js');
-login("/admin/connexion", administrator_connexion);
+for (const entity of entities) {
+  const folder = entity.charAt(0).toUpperCase()+entity.slice(1,entity.length);
+  select(`/admin/collection/${entity}`, require(`./Model/Admin/${folder}/Collection.js`));
+  select(`/admin/form/${entity}`, require(`./Model/Admin/${folder}/ById.js`));
+  update(`/admin/update/${entity}`, require(`./Model/Admin/${folder}/Update.js`));
+  insert(`/admin/insert/${entity}`, require(`./Model/Admin/${folder}/Insert.js`));
+  deleting(`/admin/delete/${entity}`, require(`./Model/Admin/${folder}/Delete.js`));
+}
 
-
-/* attraction */
-const attraction_collection = require('./Model/Admin/Attraction/Collection.js');
-select("/admin/collection/attraction", attraction_collection);
-const attraction_form = require('./Model/Admin/Attraction/ById.js');
-select("/admin/form/attraction", attraction_form);
-const attraction_update = require('./Model/Admin/Attraction/Update.js');
-update("/admin/update/attraction", attraction_update);
-const attraction_insert = require('./Model/Admin/Attraction/Insert.js')
-insert("/admin/insert/attraction", attraction_insert);
-const attraction_delete = require('./Model/Admin/Attraction/Delete.js')
-deleting("/admin/delete/attraction", attraction_delete);
-
-
-/* park */
-const park_collection = require('./Model/Admin/Park/Collection.js');
-select("/admin/collection/park", park_collection);
-const park_form = require('./Model/Admin/Park/ById.js');
-select("/admin/form/park", park_form);
-const park_update = require('./Model/Admin/Park/Update.js');
-update('/admin/update/park', park_update);
-const park_insert = require('./Model/Admin/Park/Insert.js')
-insert("/admin/insert/park", park_insert);
-const park_delete = require('./Model/Admin/Park/Delete.js')
-deleting("/admin/delete/park", park_delete);
-
-
-/* univers */
-const univers_collection = require('./Model/Admin/Univers/Collection.js');
-select("/admin/collection/univers", univers_collection);
-const univers_form = require('./Model/Admin/Univers/ById.js');
-select("/admin/form/univers", univers_form);
-const univers_update = require('./Model/Admin/Univers/Update.js');
-update('/admin/update/univers', univers_update);
-const univers_insert = require('./Model/Admin/Univers/Insert.js')
-insert("/admin/insert/univers", univers_insert);
-const univers_delete = require('./Model/Admin/Univers/Delete.js')
-deleting("/admin/delete/univers", univers_delete);
-
-/* user */
-const user_collection = require('./Model/Admin/User/Collection.js');
-select("/admin/collection/user", user_collection);
-const user_form = require('./Model/Admin/User/ById.js');
-select("/admin/form/user", user_form);
-const user_update = require('./Model/Admin/User/Update.js')
-update("/admin/update/user", user_update);
-const user_insert = require('./Model/Admin/User/Insert.js')
-insert("/admin/insert/user", user_insert);
-const user_delete = require('./Model/Admin/User/Delete.js')
-deleting("/admin/delete/user", user_delete);
+login("/admin/connexion", require('./Model/Admin/Administrator/Connexion.js'));
 
 /* ************************************************************************************************** */
 

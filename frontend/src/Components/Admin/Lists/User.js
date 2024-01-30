@@ -1,5 +1,5 @@
-import { BtnDelete } from "../BtnDelete.js";
-import { BtnUpdate } from "../BtnUpdate.js";
+import { BtnDelete } from "../Others/BtnDelete.js";
+import { BtnUpdate } from "../Others/BtnUpdate.js";
 
 export const User = (props) => {
     return (

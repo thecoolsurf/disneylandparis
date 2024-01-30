@@ -4,7 +4,12 @@ import { Navigation } from "../../Components/Admin/Navigation.js";
 /* entity */
 import { Administrator } from "../../Components/Admin/Lists/Administrator.js";
 import { Attraction } from "../../Components/Admin/Lists/Attraction.js";
+import { Evacuation } from "../../Components/Admin/Lists/Evacuation.js";
+import { Handicap } from "../../Components/Admin/Lists/Handicap.js";
+import { Height } from "../../Components/Admin/Lists/Height.js";
+import { Interest } from "../../Components/Admin/Lists/Interest.js";
 import { Park } from "../../Components/Admin/Lists/Park.js";
+import { Sensory } from "../../Components/Admin/Lists/Sensory.js";
 import { Univers } from "../../Components/Admin/Lists/Univers.js";
 import { User } from "../../Components/Admin/Lists/User.js";
 
@@ -37,8 +42,18 @@ export const AdminCollection = (props) => {
                             return (<Administrator key={el} e={el} uri={props.uri} />)
                         case 'attraction':
                             return (<Attraction key={el} e={el} uri={props.uri} />)
+                        case 'evacuation':
+                            return (<Evacuation key={el} e={el} uri={props.uri} />)
+                        case 'handicap':
+                            return (<Handicap key={el} e={el} uri={props.uri} />)
+                        case 'height':
+                            return (<Height key={el} e={el} uri={props.uri} />)
+                        case 'Interest':
+                            return (<Interest key={el} e={el} uri={props.uri} />)
                         case 'park':
                             return (<Park key={el} e={el} uri={props.uri} />)
+                        case 'sensory':
+                            return (<Sensory key={el} e={el} uri={props.uri} />)
                         case 'univers':
                             return (<Univers key={el} e={el} uri={props.uri} />)
                         case 'user':

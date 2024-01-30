@@ -42,7 +42,8 @@ function App() {
   const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
   const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
-  const Admin = ['administrator','attraction','park','univers','user'];
+  const entities = ['administrator','attraction','evacuation','handicap','height','interest','park','sensory','univers','user'];
+
   return (
     <div className="main">
       <BrowserRouter>
@@ -88,17 +89,17 @@ function App() {
           <Route key="connexion" path={'/admin/connexion'} element={
             <AdminConnexion uri={'connexion'} />
           } />
-          {Admin.map((slug) => {
+          {entities.map((slug) => {
               return (
               <>
               <Route key={slug} path={'/admin/entity/collection/' + slug} element={
-                <AdminCollection key={'c'+slug} nav={Admin} uri={slug} />
+                <AdminCollection key={'c'+slug} nav={entities} uri={slug} />
               } />
               <Route key={slug} path={'/admin/entity/update/' + slug} element={
-                <AdminUpdate key={'u'+slug} nav={Admin} uri={slug} />
+                <AdminUpdate key={'u'+slug} nav={entities} uri={slug} />
               } />
               <Route key={slug} path={'/admin/entity/insert/' + slug} element={
-                <AdminInsert key={'i'+slug} nav={Admin} uri={slug} />
+                <AdminInsert key={'i'+slug} nav={entities} uri={slug} />
               } />
               </>
             )
