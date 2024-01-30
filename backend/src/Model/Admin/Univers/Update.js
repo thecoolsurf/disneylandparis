@@ -1,8 +1,8 @@
 /* backend/src/Model/Admin/Univers/Update.js */
 
-const univers_update = `
+const update = `
 UPDATE univers SET 
 id_park = ?, name = ?, slug = ?, description = ?
 WHERE id = ?`;
 
-module.exports = univers_update;
+module.exports = update;

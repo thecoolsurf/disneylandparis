@@ -1,6 +1,6 @@
 /* backend/src/Model/Admin/Administrator/Create.js */
 
-const administrator_create = `
+const create = `
 CREATE TABLE IF NOT EXISTS administrator (
     'id' INT AUTO_INCREMENT, 
     'firstname' VARCHAR (255), 
@@ -12,4 +12,4 @@ CREATE TABLE IF NOT EXISTS administrator (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 `;
 
-module.exports = administrator_create;
+module.exports = create;

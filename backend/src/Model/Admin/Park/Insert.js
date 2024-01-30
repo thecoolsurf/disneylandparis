@@ -1,10 +1,10 @@
 /* backend/src/Model/Admin/Park/Insert.js */
 
-const park_insert = `
+const insert = `
 INSERT INTO park 
 (name, slug, title, description) 
 VALUES
 (?, ?, ?, ?);
 `;
 
-module.exports = park_insert;
+module.exports = insert;

@@ -1,11 +1,9 @@
-/* backend/src/Model/Admin/Park/Create.js */
+/* backend/src/Model/Admin/Interest/Create.js */
 
 const create = `
-CREATE TABLE IF NOT EXISTS park (
+CREATE TABLE IF NOT EXISTS interest (
     'id' INT AUTO_INCREMENT, 
     'name' VARCHAR (255), 
-    'slug' VARCHAR (255),
-    'title' TEXT NULL,
     'description' TEXT NULL,
     PRIMARY KEY ('id')
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

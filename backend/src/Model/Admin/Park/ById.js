@@ -1,3 +1,9 @@
-const park_by_id = `SELECT * FROM park WHERE id = ?`;
+/* backend/src/Model/Admin/Park/ById.js */
 
-module.exports = park_by_id;
+const by_id = `
+SELECT 
+id, name, slug, title, description 
+FROM park 
+WHERE id = ?`;
+
+module.exports = by_id;

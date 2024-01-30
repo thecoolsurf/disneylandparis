@@ -1,7 +1,7 @@
 /* backend/src/Model/Admin/Attraction/Delete */
 
-const attraction_delete = `
+const deleting = `
 DELETE FROM attraction 
 WHERE id = ?`;
 
-module.exports = attraction_delete;
+module.exports = deleting;

@@ -1,7 +1,7 @@
 /* backend/src/Model/Admin/Park/Delete */
 
-const park_delete = `
+const deleting = `
 DELETE FROM park 
 WHERE id = ?`;
 
-module.exports = park_delete;
+module.exports = deleting;

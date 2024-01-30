@@ -1,8 +1,8 @@
 /* backend/src/Model/Admin/Park/Update.js */
 
-const park_update = `
+const update = `
 UPDATE park SET 
 name = ? , slug = ?, title = ?, description = ?
 WHERE id = ?`;
 
-module.exports = park_update;
+module.exports = update;
