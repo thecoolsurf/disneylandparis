@@ -4,7 +4,12 @@ import { useState, useEffect } from 'react';
 import { Navigation } from "../../Components/Admin/Others/Navigation.js";
 import { Administrator } from "../../Components/Admin/Fields/Administrator.js";
 import { Attraction } from "../../Components/Admin/Fields/Attraction.js";
+import { Evacuation } from "../../Components/Admin/Fields/Evacuation.js";
+import { Handicap } from "../../Components/Admin/Fields/Handicap.js";
+import { Height } from "../../Components/Admin/Fields/Height.js";
+import { Interest } from "../../Components/Admin/Fields/Interest.js";
 import { Park } from "../../Components/Admin/Fields/Park.js";
+import { Sensory } from "../../Components/Admin/Fields/Sensory.js";
 import { Univers } from "../../Components/Admin/Fields/Univers.js";
 import { User } from "../../Components/Admin/Fields/User.js";
 
@@ -23,7 +28,7 @@ export const AdminInsert = (props) => {
     return (
         <div className="admin">
             <Navigation data={props.nav} />
-            <form className="form" action={`http://localhost:80/admin/insert/${props.uri}`} method="POST" encType="application/x-www-form-urlencoded">
+            <form className="form" action={`http://localhost:80/admin/insert/${props.uri}`} method="POST">
                 <fieldset>
                     <legend>INSERT:<span>{props.uri}</span></legend>
                     {datas.map((el) => {
@@ -32,8 +37,18 @@ export const AdminInsert = (props) => {
                                 return (<Administrator key={el} />)
                             case 'attraction':
                                 return (<Attraction key={el} />)
+                            case 'evacuation':
+                                return (<Evacuation key={el} />)
+                            case 'handicap':
+                                return (<Handicap key={el} />)
+                            case 'height':
+                                return (<Height key={el} />)
+                            case 'interest':
+                                return (<Interest key={el} />)
                             case 'park':
                                 return (<Park key={el} />)
+                            case 'sensory':
+                                return (<Sensory key={el} />)
                             case 'univers':
                                 return (<Univers key={el} />)
                             case 'user':
