@@ -61,7 +61,7 @@ export const Field = (props) => {
                     const checked = (props.value === el.id) ? 'checked' : '';
                     return (
                         <div className="list-checkbox">
-                            <input type="checkbox" key={el.id} id={el.name} name={el.name} value={el.id} checked={checked} />
+                            <input type="checkbox" key={el.id} id={el.name} name={props.name+'[]'} value={el.id} />
                             <label htmlFor={el.name}>{el.name}</label>
                         </div>
                     )
