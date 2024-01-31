@@ -58,10 +58,10 @@ export const Field = (props) => {
             <div key={props.name} className="item">
                 <label>{props.name}</label>
                 {props.chooser.map((el) => {
-                    const checked = (props.value === el.id) ? 'checked' : '';
+                    const checked = (props.value.includes(el.id)) ? 'checked' : '';
                     return (
                         <div className="list-checkbox">
-                            <input type="checkbox" key={el.id} id={el.name} name={props.name+'[]'} value={el.id} />
+                            <input type="checkbox" key={el.id} id={el.name} name={props.name+'[]'} value={el.id} checked={checked} />
                             <label htmlFor={el.name}>{el.name}</label>
                         </div>
                     )
