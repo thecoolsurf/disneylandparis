@@ -2,9 +2,9 @@
 
 const insert = `
 INSERT INTO handicap 
-(description) 
+(name, description) 
 VALUES
-(?);
+(?, ?);
 `;
 
 module.exports = insert;

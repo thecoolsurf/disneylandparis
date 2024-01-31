@@ -17,53 +17,11 @@ export const THead = (props) => {
                     </div>
                 );
             case 'evacuation':
-                return (
-                    <div className="thead">
-                        <div className="id">id</div>
-                        <div className="item">level</div>
-                        <div className="item">description</div>
-                    </div>
-                );
             case 'handicap':
-                return (
-                    <div className="thead">
-                        <div className="id">id</div>
-                        <div className="item">description</div>
-                    </div>
-                );
-
             case 'height':
-                return (
-                    <div className="thead">
-                        <div className="id">id</div>
-                        <div className="item">description</div>
-                    </div>
-                );
-
             case 'interest':
-                return (
-                    <div className="thead">
-                        <div className="id">id</div>
-                        <div className="item">name</div>
-                        <div className="item">description</div>
-                    </div>
-                );
             case 'park':
-                return (
-                    <div className="thead">
-                        <div className="id">id</div>
-                        <div className="item">name</div>
-                        <div className="item">description</div>
-                    </div>
-                )
             case 'sensory':
-                return (
-                    <div className="thead">
-                        <div className="id">id</div>
-                        <div className="item">level</div>
-                        <div className="item">description</div>
-                    </div>
-                )
             case 'univers':
                 return (
                     <div className="thead">

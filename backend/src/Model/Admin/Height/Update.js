@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE height SET 
-description = ?
+name = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;

@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, id_park, id_univ, slug, name, public, description, restriction, pictures, movies 
+id, id_park, id_univ, slug, name, public, description, pictures, movies 
 FROM attraction 
 WHERE id = ?`;
 

@@ -6,10 +6,9 @@ export const Interest = (props) => {
     const id = (props.e) ? props.e.id : '';
     return (
         <>
-            <Field key="name" type="text" name="name" value={name} />
-            <Field key="description" type="textarea" name="description" value={description} />
-            
-            <Field key="id" type="hidden" name="id" value={id} />
+            <Field type="text" name="name" value={name} />
+            <Field type="textarea" name="description" value={description} />
+            <Field type="hidden" name="id" value={id} />
         </>
     )
 }

@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE evacuation SET 
-level = ?, description = ?
+name = ?, level = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;

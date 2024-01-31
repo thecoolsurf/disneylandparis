@@ -2,7 +2,7 @@
 
 const insert = `
 INSERT INTO sensory 
-(level, description) 
+(name, description) 
 VALUES
 (?, ?);
 `;

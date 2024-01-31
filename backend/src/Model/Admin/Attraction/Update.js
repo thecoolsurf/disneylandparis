@@ -2,8 +2,8 @@
 
 const update = `
 UPDATE attraction SET 
-id_park = ?, id_univ = ?, name = ?, slug = ?, 
-public = ?, restriction = ?, description = ?, pictures = ?, movies = ?
+id_park = ?, id_univ = ?, name = ?, slug = ?, public = ?, 
+id_evacuation = ?, id_height = ?, id_sensory = ?, handicaps = ?, interests = ?, description = ?, pictures = ?, movies = ?
 WHERE id = ?`;
 
 module.exports = update;

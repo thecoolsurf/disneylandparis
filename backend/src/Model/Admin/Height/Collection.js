@@ -2,7 +2,7 @@
 
 const collection = `
 SELECT 
-id, description 
+id, name, description 
 FROM height`;
 
 module.exports = collection;

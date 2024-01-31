@@ -14,6 +14,8 @@ CREATE TABLE attraction (
     CONSTRAINT FK_AttractionUnivers FOREIGN KEY (`id_univ`) REFERENCES univers(`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
+ALTER TABLE `attraction` ADD FOREIGN KEY `id_evacuation` REFERENCES evacuation(`id_evacuation`);
+
 INSERT INTO attraction (`id`,`id_park`,`id_univ`,`name`,`slug`,`public`,`description`,`restriction`,`pictures`,`movies`) VALUES
 (1,1,1,'Adventure Isle','adventure-isle','public','Aventure en famille','Promenades relaxantes','adventure-isle.jpg','adventure-isle.avi'),
 (2,1,3,'Alice\'s Curious Labyrinth','alice-s-curious-labyrinth','public','Divertissement pour les plus petits','Pas de restriction', 'alice-s-curious-labyrinth.jpg', 'alice-s-curious-labyrinth.avi'),

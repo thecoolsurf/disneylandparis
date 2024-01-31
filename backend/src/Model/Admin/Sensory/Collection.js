@@ -2,7 +2,7 @@
 
 const collection = `
 SELECT 
-id, level, description 
+id, name, description 
 FROM sensory`;
 
 module.exports = collection;

@@ -2,9 +2,9 @@
 
 const insert = `
 INSERT INTO height 
-(description) 
+(name, description) 
 VALUES
-(?);
+(?, ?);
 `;
 
 module.exports = insert;

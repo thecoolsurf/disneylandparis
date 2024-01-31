@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE handicap SET 
-description = ?
+name = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;

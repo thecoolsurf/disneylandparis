@@ -7,54 +7,70 @@ export const Field = (props) => {
     }
     if (props.type === 'text') {
         return (
-            <p key={props.name} className="item">
+            <div key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
                 <input type="text" id={props.name} name={props.name} defaultValue={props.value} />
-            </p>
+            </div>
         )
     }
     if (props.type === 'tel') {
         return (
-            <p key={props.name} className="item">
+            <div key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
                 <input type="tel" id={props.name} name={props.name} pattern="[0-9]{2}(-[0-9]{2}){4}" defaultValue={props.value} />
-            </p>
+            </div>
         )
     }
     if (props.type === 'password') {
         return (
-            <p key={props.name} className="item">
+            <div key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name} (min 8 caracters)</label>
                 <input type="password" id={props.name} name={props.name} defaultValue={props.value} minLength="8" required />
-            </p>
+            </div>
         )
     }
     if (props.type === 'textarea') {
         return (
-            <p key={props.name} className="item">
+            <div key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
                 <textarea id={props.name} name={props.name} rows="15" cols="40" defaultValue={props.value} />
-            </p>
+            </div>
         )
     }
     if (props.type === 'select') {
         return (
-            <p key={props.name} className="item">
+            <div key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
                 <select id={props.name} name={props.name}>
                     <option value="">--choose an option--</option>
                     {props.chooser.map((el) => {
                         const selected = (props.value === el.id) ? 'selected' : '';
                         return (
-                            <option key={el.id} value={el.id} selected={selected}>{el.name}</option>
+                            <option key={el.id} value={el.id} selected={selected}>{props.chooser[el.id - 1].name}</option>
                         )
                     })}
                 </select>
-            </p>
+            </div>
+        )
+    }
+    if (props.type === 'checkbox') {
+        return (
+            <div key={props.name} className="item">
+                <label>{props.name}</label>
+                {props.chooser.map((el) => {
+                    const checked = (props.value === el.id) ? 'checked' : '';
+                    return (
+                        <div className="list-checkbox">
+                            <input type="checkbox" key={el.id} id={el.name} name={el.name} value={el.id} checked={checked} />
+                            <label htmlFor={el.name}>{el.name}</label>
+                        </div>
+                    )
+                })}
+            </div>
         )
     }
     if (props.type === 'date') {
-        let value = props.value.slice(0,10);
+        let value = props.value.slice(0, 10);
         return (
             <p key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
@@ -63,5 +79,5 @@ export const Field = (props) => {
 
         )
     }
-    
+
 }

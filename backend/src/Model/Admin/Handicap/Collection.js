@@ -1,7 +1,7 @@
 /* backend/src/Model/Admin/Handicap/Collection.js */
 
 const collection = `
-SELECT id, description 
+SELECT id, name, description 
 FROM handicap`;
 
 module.exports = collection;

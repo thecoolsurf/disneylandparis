@@ -1,6 +1,6 @@
 CREATE TABLE height (
     `id` INT AUTO_INCREMENT, 
-    `description` VARCHAR (255), 
+    `name` VARCHAR (255), 
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -13,3 +13,5 @@ INSERT INTO height (`id`,`description`) VALUES
 (null,'Taille: 107cm ou plus grand.'),
 (null,'Taille: 117cm ou plus grand.'),
 (null,'Taille: 137cm ou plus grand pour faire l’attraction seul(e)');
+
+ALTER TABLE `height` RENAME COLUMN `description` TO `name`;

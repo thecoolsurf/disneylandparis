@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, description
+id, name, description
 FROM height 
 WHERE id = ?`;
 

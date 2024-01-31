@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE sensory SET 
-level = ?, description = ?
+name = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;

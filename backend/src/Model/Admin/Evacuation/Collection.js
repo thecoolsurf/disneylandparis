@@ -2,7 +2,7 @@
 
 const collection = `
 SELECT 
-id, level, description 
+id, name, level, description 
 FROM evacuation`;
 
 module.exports = collection;

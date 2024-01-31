@@ -2,9 +2,9 @@
 
 const insert = `
 INSERT INTO evacuation 
-(level, description) 
+(name, level, description) 
 VALUES
-(?, ?);
+(?, ?, ?);
 `;
 
 module.exports = insert;
