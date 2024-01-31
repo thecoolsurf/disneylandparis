@@ -1,4 +1,4 @@
-import './App.css';
+import './assets/css/public/medias.css';
 import './assets/css/public/fonts.css'
 import './assets/css/public/parks.css';
 import './assets/css/public/univers.css';

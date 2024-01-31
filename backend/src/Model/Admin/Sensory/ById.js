@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, index, description
+id, level, description
 FROM sensory 
 WHERE id = ?`;
 

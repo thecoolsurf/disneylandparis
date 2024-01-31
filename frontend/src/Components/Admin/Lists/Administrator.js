@@ -1,7 +1,7 @@
 import { BtnDelete } from "../Others/BtnDelete.js";
 import { BtnUpdate } from "../Others/BtnUpdate.js";
 
-export const ListAdministrator = (props) => {
+export const Administrator = (props) => {
     return (
         props.datas.map((e) => {
             return (
@@ -12,8 +12,8 @@ export const ListAdministrator = (props) => {
                     <BtnDelete id={e.id} uri={props.uri} />
                     <BtnUpdate id={e.id} uri={props.uri} />
                 </div>
+
             )
         })
-    
     )
 }

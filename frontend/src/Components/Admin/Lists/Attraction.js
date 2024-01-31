@@ -1,7 +1,7 @@
 import { BtnDelete } from "../Others/BtnDelete.js";
 import { BtnUpdate } from "../Others/BtnUpdate.js";
 
-export const ListAttraction = (props) => {
+export const Attraction = (props) => {
     return (
         props.datas.map((e) => {
             return (

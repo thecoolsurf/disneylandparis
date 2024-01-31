@@ -1,6 +1,0 @@
-export const HeadHeight = () => {
-    return (
-        <>
-        </>
-    )
-}

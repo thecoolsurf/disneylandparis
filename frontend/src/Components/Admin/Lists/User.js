@@ -1,7 +1,7 @@
 import { BtnDelete } from "../Others/BtnDelete.js";
 import { BtnUpdate } from "../Others/BtnUpdate.js";
 
-export const ListUser = (props) => {
+export const User = (props) => {
     return (
         props.datas.map((e) => {
             return (

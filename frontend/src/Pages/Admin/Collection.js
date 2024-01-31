@@ -1,19 +1,18 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
 import { Navigation } from "../../Components/Admin/Others/Navigation.js";
+import { THead } from '../../Components/Admin/Others/THead.js';
 /* entity */
-import { HeadAdministrator } from "../../Components/Admin/Columns/Administrator.js";
-import { ListAdministrator } from "../../Components/Admin/Lists/Administrator.js";
-import { HeadAttraction } from "../../Components/Admin/Columns/Attraction.js";
-import { ListAttraction } from "../../Components/Admin/Lists/Attraction.js";
-import { ListEvacuation } from "../../Components/Admin/Lists/Evacuation.js";
-import { ListHandicap } from "../../Components/Admin/Lists/Handicap.js";
-import { ListHeight } from "../../Components/Admin/Lists/Height.js";
-import { ListInterest } from "../../Components/Admin/Lists/Interest.js";
-import { ListPark } from "../../Components/Admin/Lists/Park.js";
-import { ListSensory } from "../../Components/Admin/Lists/Sensory.js";
-import { ListUnivers } from "../../Components/Admin/Lists/Univers.js";
-import { ListUser } from "../../Components/Admin/Lists/User.js";
+import { Administrator } from "../../Components/Admin/Lists/Administrator.js";
+import { Attraction } from "../../Components/Admin/Lists/Attraction.js";
+import { Evacuation } from "../../Components/Admin/Lists/Evacuation.js";
+import { Handicap } from "../../Components/Admin/Lists/Handicap.js";
+import { Height } from "../../Components/Admin/Lists/Height.js";
+import { Interest } from "../../Components/Admin/Lists/Interest.js";
+import { Park } from "../../Components/Admin/Lists/Park.js";
+import { Sensory } from "../../Components/Admin/Lists/Sensory.js";
+import { Univers } from "../../Components/Admin/Lists/Univers.js";
+import { User } from "../../Components/Admin/Lists/User.js";
 
 export const AdminCollection = (props) => {
     const [datas, setDatas] = useState([]);
@@ -25,37 +24,29 @@ export const AdminCollection = (props) => {
         };
         fetchData();
     }, []);
-    const switchComponentHead = () => {
-        const uri = props.uri;
-        switch (uri) {
-            case 'administrator': return (<HeadAdministrator />);
-        }
-    }
     const switchComponentList = () => {
         const uri = props.uri;
         switch (uri) {
-            case 'administrator': return (<ListAdministrator datas={datas} uri={uri} />);
-            case 'attraction': return (<ListAttraction datas={datas} uri={uri} />);
-            case 'evacuation': return (<ListEvacuation datas={datas} uri={uri} />);
-            case 'handicap': return (<ListHandicap  datas={datas} uri={uri} />);
-            case 'height': return (<ListHeight datas={datas} uri={uri} />);
-            case 'interest': return (<ListInterest datas={datas} uri={uri} />);
-            case 'park': return (<ListPark datas={datas} uri={uri} />);
-            case 'sensory': return (<ListSensory datas={datas} uri={uri} />);
-            case 'univers': return (<ListUnivers datas={datas} uri={uri} />);
-            case 'user': return (<ListUser datas={datas} uri={uri} />);
+            case 'administrator': return (<Administrator datas={datas} uri={uri} />);
+            case 'attraction': return (<Attraction datas={datas} uri={uri} />);
+            case 'evacuation': return (<Evacuation datas={datas} uri={uri} />);
+            case 'handicap': return (<Handicap  datas={datas} uri={uri} />);
+            case 'height': return (<Height datas={datas} uri={uri} />);
+            case 'interest': return (<Interest datas={datas} uri={uri} />);
+            case 'park': return (<Park datas={datas} uri={uri} />);
+            case 'sensory': return (<Sensory datas={datas} uri={uri} />);
+            case 'univers': return (<Univers datas={datas} uri={uri} />);
+            case 'user': return (<User datas={datas} uri={uri} />);
         }
     }
     return (
         <div className="admin">
             <Navigation data={props.nav} />
             <div className="title">
-                <div className="btn"><a href={`/admin/entity/insert${props.uri}`} alt="insert">Insert row</a></div>
+                <div className="btn"><a href={`/admin/entity/insert/${props.uri}`} alt="insert">Insert row</a></div>
                 <div>ADMIN:<span>{props.uri}</span></div>
             </div>
-            <div className="thead">
-                {switchComponentHead()}
-            </div>
+            <THead uri={props.uri} />
             <div className="list">
                 {switchComponentList()}
             </div>
