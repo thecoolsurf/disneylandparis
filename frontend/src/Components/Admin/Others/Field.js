@@ -42,7 +42,7 @@ export const Field = (props) => {
             <div key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
                 <select id={props.name} name={props.name}>
-                    <option value="">--choose an option--</option>
+                    <option value="">-- choose option --</option>
                     {props.chooser.map((el) => {
                         const selected = (props.value === el.id) ? 'selected' : '';
                         return (
@@ -58,13 +58,23 @@ export const Field = (props) => {
             <div key={props.name} className="item">
                 <label>{props.name}</label>
                 {props.chooser.map((el) => {
-                    const checked = (props.value.includes(el.id)) ? 'checked' : '';
-                    return (
-                        <div className="list-checkbox">
-                            <input type="checkbox" key={el.id} id={el.name} name={props.name+'[]'} value={el.id} checked={checked} />
-                            <label htmlFor={el.name}>{el.name}</label>
-                        </div>
-                    )
+                    if (props.value && props.value.includes(el.id)) {
+                        return (
+                            <div key={el.name} className="list-checkbox">
+                                <input type="checkbox" key={el.id} id={el.name} name={props.name + '[]'} value={el.id} checked />
+                                <label htmlFor={el.name}>{el.name}</label>
+                            </div>
+                        )
+
+                    } else {
+                        return (
+                            <div key={el.name} className="list-checkbox">
+                                <input type="checkbox" key={el.id} id={el.name} name={props.name + '[]'} value={el.id} />
+                                <label htmlFor={el.name}>{el.name}</label>
+                            </div>
+                        )
+
+                    };
                 })}
             </div>
         )
