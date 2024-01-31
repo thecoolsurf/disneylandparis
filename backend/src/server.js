@@ -96,9 +96,27 @@ function selectFind(route, sql) {
 
 function update(route, sql) {
   let entity = route.split('/')[3];
+  let datas = [];
   server.post(route, async (req, res, next) => {
     let token = (req.body.password) ? await bcrypt.hash(req.body.password, 10) : '';
-    let datas = jsonToArray(req.body);
+    if (entity === 'attraction') {
+      datas.push(req.body.id_park);
+      datas.push(req.body.id_univ);
+      datas.push(req.body.name);
+      datas.push(req.body.slug);
+      datas.push(req.body.public);
+      datas.push(req.body.id_evacuation);
+      datas.push(req.body.id_height);
+      datas.push(req.body.id_sensory);
+      datas.push(req.body.handicaps.toString());
+      datas.push(req.body.interests.toString());
+      datas.push(req.body.description);
+      datas.push(req.body.pictures.toString());
+      datas.push(req.body.movies.toString());
+      datas.push(req.body.id);
+    } else {
+      datas = jsonToArray(req.body);
+    }
     knex.raw(sql, datas)
       .then(([rows, columns]) => {
         res.send(`Update: ${entity} (${req.body.id} ${token})`);
