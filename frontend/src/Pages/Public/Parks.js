@@ -27,19 +27,20 @@ export const Parks = (props) => {
                 const tt_attractions = FilterAttractions(attractions, props.id).length + ' attractions';
                 return (
                     <section key={p.pslug} className="infos">
-                        <div className="col-left">
-                            <a href={'/'} alt={p.pname}>
-                                <div className="logo icons-disneylandparis" >
-                                    <div className={'icon-' + p.pslug}></div>
-                                    <div className="back"><i className="fa fa-reply"></i></div>
-                                </div>
-                                <div className="name">{p.pname}</div>
-                            </a>
-                        </div>
                         <div className="col-infos">
+                            <div className="col-logo">
+                                <a href={'/'} alt={p.pname}>
+                                    <div className="logo icons-disneylandparis" >
+                                        <div className={'icon-' + p.pslug}></div>
+                                        <div className="back"><i className="fa fa-reply"></i></div>
+                                    </div>
+                                    <div className="name">{p.pname}</div>
+                                </a>
+                            </div>
                             <ul className="list">
                                 <li><i>Nom</i><div>{p.pname}</div></li>
                                 <li><i>Total des univers</i><div>{tt_univers + ' univers'}</div></li>
+                                <li><i>Total des attractions</i><div>{tt_attractions}</div></li>
                                 <li><i>Liste des univers</i>
                                     {parks.map((u) => {
                                         return (
@@ -47,7 +48,6 @@ export const Parks = (props) => {
                                         )
                                     })}
                                 </li>
-                                <li><i>Total attractions</i><div>{tt_attractions}</div></li>
                             </ul>
                         </div>
                         <div className="description">{p.description}</div>

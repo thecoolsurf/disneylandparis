@@ -25,26 +25,26 @@ export const Univers = (props) => {
             {univers.map((el) => {
                 return (
                     <section key={el.slug} className="infos">
-                        <div className="col-left">
-                            <a href={'/park-' + props.slugs[2]} alt={el.name}>
-                            <div className="logo icons-disneylandparis" >
-                                    <div className={'icon-' + el.slug}></div>
-                                    <div className="back"><i className="fa fa-reply"></i></div>
-                                </div>
-                                <div className="name">{el.name}</div>
-                            </a>
-                        </div>
                         <div className="col-infos">
+                            <div className="col-logo">
+                                <a href={'/park-' + props.slugs[2]} alt={el.name}>
+                                    <div className="logo icons-disneylandparis" >
+                                        <div className={'icon-' + el.slug}></div>
+                                        <div className="back"><i className="fa fa-reply"></i></div>
+                                    </div>
+                                    <div className="name">{el.name}</div>
+                                </a>
+                            </div>
                             <ul className="list">
                                 <li><i>Park</i><div>{props.pname}</div></li>
                                 <li><i>Univers</i><div>{el.name}</div></li>
                                 <li><i>Total attractions</i><div>{attractions.length + ' ' + str_attraction}</div></li>
-                                <li><i>Liste des attractions</i>
+                                <li className="list-attraction"><i>Liste des attractions</i>
                                     <ul>
                                         {attractions.map((e) => {
                                             return (
                                                 <li key={e.slug} className="item">
-                                                    <i className="fa fa-point"></i>{e.name} {e.id}
+                                                    {e.name}
                                                 </li>
                                             )
                                         })}

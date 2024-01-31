@@ -34,16 +34,16 @@ export const Home = (props) => {
                 }
                 return (
                     <section key={p.pslug} className="infos">
-                        <div className="col-left">
-                            <a href={'/park-' + p.pslug} alt={p.pname}>
-                                <div className="logo icons-disneylandparis" >
-                                    <div className={'icon-' + p.pslug}></div>
-                                    <div className="back"><i className="fa fa-share"></i></div>
-                                </div>
-                                <div className="name">{p.pname}</div>
-                            </a>
-                        </div>
                         <div className="col-infos">
+                            <div className="col-logo">
+                                <a href={'/park-' + p.pslug} alt={p.pname}>
+                                    <div className="logo icons-disneylandparis" >
+                                        <div className={'icon-' + p.pslug}></div>
+                                        <div className="back"><i className="fa fa-share"></i></div>
+                                    </div>
+                                    <div className="name">{p.pname}</div>
+                                </a>
+                            </div>
                             <ul className="univers">
                                 <li><i>Nom</i><div>{p.pname}</div></li>
                                 <li><i>Total univers</i><div>{tt_univers}</div></li>

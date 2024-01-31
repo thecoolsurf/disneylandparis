@@ -75,6 +75,7 @@ body {
 .finder {
   background-color: #F7F7F7;
   font-weight: 200;
+  float: left;
   width: 100%;
 }
 
@@ -109,31 +110,30 @@ body {
   float: left;
   width: 100%;
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 30px;
+  margin: 30px auto;
   box-sizing: border-box;
   font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
 }
 
-.col-left {
+.col-logo {
   float: left;
-  max-width: 120px;
-  margin: 0 30px 30px 0;
-  text-align: center;
+  width: 100%;
+  margin: 0;
 }
 
-.col-left a {
+.col-logo a {
   color: #000;
   text-decoration: none;
 }
 
-.col-left .logo,
-.col-left .back {
+.col-logo .logo,
+.col-logo .back {
   width: 100px;
   height: 100px;
 }
 
-.col-left .logo {
+.col-logo .logo {
+  display: block;
   position: relative;
   background-color: #FFF;
   background-position: center center;
@@ -141,21 +141,21 @@ body {
   font-size: 5rem;
   line-height: 1.4;
   color: #000;
-  margin: 0 auto 10px auto;
+  margin: 0 0 10px auto;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
   overflow: hidden;
 }
 
-.col-left .logo:hover {
+.col-logo .logo:hover {
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
 }
 
-.col-left .logo:hover .back {
+.col-logo .logo:hover .back {
   display: block;
 }
 
-.col-left .back {
+.col-logo .back {
   background: rgb(0, 0, 0, 0.5);
   position: absolute;
   bottom: 0px;
@@ -168,23 +168,18 @@ body {
   display: none;
 }
 
-.col-left .name {
-  font-size: 1.2rem;
-  line-height: 1;
-  font-weight: 700;
-  text-align: center;
-}
 .col-infos {
   float: left;
-  width: 230px;
-  margin: 0 30px 30px 0;
+  width: 300px;
+  margin: 0 60px 30px 60px;
+  text-align: right;
 }
 
 .col-infos .name {
   font-size: 1.6rem;
   font-weight: 900;
   line-height: 1;
-  text-transform:uppercase;
+  margin: 0 0 20px 0;
 }
 
 .col-infos .list-infos {
@@ -193,13 +188,14 @@ body {
   padding: 0;
 }
 
-.col-infos ul {
+.col-infos .list {
+  float: left;
   margin: 0;
   padding: 0;
 }
 
-.col-infos ul li {
-  margin: 0 0 20px 0;
+.col-infos .list li {
+  margin: 0 0 10px 0;
   padding: 0;
   list-style: none;
 }
@@ -210,13 +206,7 @@ body {
 
 .col-infos ul li ul {
   margin: 0;
-  padding: 0 0 0 40px;
-}
-
-.col-infos ul li ul li {
-  font-size: 0.9rem;
-  font-style: italic;
-  list-style: outside disc;
+  padding: 0;
 }
 
 .col-infos ul li i {
@@ -226,12 +216,29 @@ body {
   color: #000;
 }
 
+.col-infos .note {
+  font-size: 0.8rem;
+}
+
+.col-infos .list-attraction {
+  margin: 20px 0 0 0;
+}
+
+.col-infos .list-attraction .item {
+  margin: 5px 0;
+  font-size: 0.9rem;
+}
 .description {
   float: left;
-  max-width: 500px;
-  margin: 0 0 30px 0;
+  max-width: 600px;
+  margin: 105px 0 30px 0;
   font-size: 1.2rem;
-  line-height: 2;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.description h3 {
+  margin: 0 0 20px 0;
 }
 
 .icons-disneylandparis {

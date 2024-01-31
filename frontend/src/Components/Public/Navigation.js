@@ -1,4 +1,5 @@
 import '../../assets/css/public/navigation.css';
+import { Logo } from './Logo.js';
 import { useState } from 'react';
 
 export const Navigation = (props) => {
@@ -11,6 +12,7 @@ export const Navigation = (props) => {
         return (
             <div className={'navigation' + ' ' + props.bkgNav} onClick={() => { setShow1('hide'); setShow2('hide') }}>
                 <div className="slider" onClick={() => { show0 === 'show' ? setShow0('hide') : setShow0('show'); }}><i className="fa fa-bars"></i></div>
+                <a className="logo" href="/" alt="Home"><Logo /></a>
                 <div className={'nav ' + show0}>
                     {props.datas.map((p) => {
                         let show = (p.pid === 1) ? show1 : show2;

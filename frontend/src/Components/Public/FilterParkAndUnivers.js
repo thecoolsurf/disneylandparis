@@ -6,7 +6,7 @@ export const FilterParkAndUnivers = (navigation) => {
       /* park */
       if (!map.has(el.pid)) {
         map.set(el.pid, true);
-        parks.push({ pid: el.pid, pslug: el.pslug, pname: el.pname });
+        parks.push({ pid: el.pid, pslug: el.pslug, pname: el.pname, description:el.description });
       }
       /* univers */
       for (let i = 0; i < parks.length; i++) {
