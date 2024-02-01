@@ -1,10 +1,9 @@
 import '../../assets/css/public/header.css';
-import { Logo } from './Logo.js';
 
 export const Header = (props) => {
     return (
         <header className={'header img-'+props.bkgHeader}>
-            <div className="block">
+            <div className="block-title">
                 <a className="title" href="/" alt="Home">
                     <div className="item1">Rencontre ta</div>
                     <div className="item2">Souris</div>

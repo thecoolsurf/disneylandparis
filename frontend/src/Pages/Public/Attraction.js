@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Carrousel } from '../../Components/Public/Carrousel.js';
+import { BlockLogo } from '../../Components/Public/BlockLogo.js';
 
 export const Attraction = (props) => {
     const [attraction, setAttraction] = useState([]);
@@ -11,21 +12,16 @@ export const Attraction = (props) => {
         };
         fetchtheData();
     }, []);
-    let legend = 'Galerie d\'images - ' + props.name;
+    let legend = 'Galerie d\'images - ' + props.aname;
     return (
         <div className="attraction">
             <Carrousel datas={attraction} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
             {attraction.map((el) => {
                 let path = '/park/' + props.slugs[2] + '/univers/' + props.slugs[4];
                 return (
-                    <section key={el.slug} className="infos">
-                        <div className="col-infos">
-                        <div className="col-logo">
-                            <a href={path} className={'logo icon-' + el.slug} title={el.name}>
-                                <div className="back"><i className="fa fa-reply"></i></div>
-                            </a>
-                            <div className="name">{el.name}</div>
-                        </div>
+                    <section key={el.aslug} className="infos">
+                        <div className="bloc-infos">
+                            <BlockLogo href={path} slug={props.slugs[4]} legend={props.name} />
                             <ul className="list">
                                 <li>
                                     <i>Park</i>

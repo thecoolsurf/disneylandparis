@@ -1,6 +1,5 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
-import { Navigation } from "../../Components/Admin/Others/Navigation.js";
 import { THead } from '../../Components/Admin/Others/THead.js';
 /* entity */
 import { Administrator } from "../../Components/Admin/Lists/Administrator.js";
@@ -41,7 +40,6 @@ export const AdminCollection = (props) => {
     }
     return (
         <div className="admin">
-            <Navigation data={props.nav} />
             <div className="title">
                 <div className="btn"><a href={`/admin/entity/insert/${props.uri}`} alt="insert">Insert row</a></div>
                 <div>ADMIN:<span>{props.uri}</span></div>

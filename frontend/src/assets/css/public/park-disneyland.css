@@ -1,7 +1,19 @@
 /* ***************************************************************************************************** */
 /* park disneyland */
 
-.icon-adventure-isle {
+.icons-disneylandparis {
+    font-family: dlp_pep_font-webfont;
+  }
+  
+  .icon-walt-disney-studios::before {
+    content: '\e415';
+  }
+  
+  .icon-park-disneyland::before {
+    content: '\e414';
+  }
+  
+  .icon-adventure-isle {
     background-image: url('../../images/attractions/park/bkg-adventure-isle.webp');
     background-size: 200%;
     background-position: top 0px left -30px;

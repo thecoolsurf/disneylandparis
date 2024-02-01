@@ -65,35 +65,6 @@ for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker c
 ```
 
 
-
-## Docker-Desktop
-
-#### Download Docker Desktop
-```
-wget https://desktop.docker.com/linux/main/amd64/docker-desktop-*-amd64.deb
-```
-
-#### Uninstall clean previous version
-```
-sudo apt remove docker-desktop
-#OR
-rm -r $HOME/.docker/desktop
-sudo rm /usr/local/bin/com.docker.cli
-sudo apt purge docker-desktop
-```
-
-#### Install Docker-Desktop
-```
-sudo apt install ./docker-desktop-*-amd64.deb
-```
-
-#### Run Docker-Desktop 
-```
-systemctl --user start docker-desktop
-```
-
-
-
 ## Docker Compose
 
 #### Install

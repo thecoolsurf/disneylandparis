@@ -2,7 +2,8 @@ import '../../assets/css/public/home.css';
 import { useState, useEffect } from 'react';
 import { FilterHomeDatas } from '../../Components/Public/FilterHomeDatas.js';
 import { FilterAttractions } from '../../Components/Public/FilterAttractions.js';
-import { LinkToFinder } from '../../Components/Public/LinkToFinder.js';
+import { BlockLogo } from '../../Components/Public/BlockLogo.js';
+import { BlockInfos } from '../../Components/Public/BlockInfos.js';
 
 export const Home = (props) => {
     const [home, setDatas] = useState([]);
@@ -15,51 +16,24 @@ export const Home = (props) => {
         fetchData();
     }, []);
     const parkAndUnivers = FilterHomeDatas(home);
-    const attractions = props.navigation;
+    const attraction = props.navigation;
     return (
         <div className="home">
-            <LinkToFinder />
             {parkAndUnivers.map((p) => {
-                let tt_univers = '';
-                let tt_attractions = '';
                 let univers = null;
+                let attractions = null;
                 if (p.pid === 1) {
-                    tt_univers = parkAndUnivers[0].univers.length + ' univers';
-                    tt_attractions = FilterAttractions(attractions, p.pid).length + ' attractions';
+                    attractions = FilterAttractions(attraction, p.pid);
                     univers = parkAndUnivers[0].univers;
                 } else {
-                    tt_univers = parkAndUnivers[1].univers.length + ' univers';
-                    tt_attractions = FilterAttractions(attractions, p.pid).length + ' attractions';
+                    attractions = FilterAttractions(attraction, p.pid);
                     univers = parkAndUnivers[1].univers;
                 }
                 return (
-                    <section key={p.pslug} className="infos">
-                        <div className="col-infos">
-                            <div className="col-logo">
-                                <a href={'/park-' + p.pslug} alt={p.pname}>
-                                    <div className="logo icons-disneylandparis" >
-                                        <div className={'icon-' + p.pslug}></div>
-                                        <div className="back"><i className="fa fa-share"></i></div>
-                                    </div>
-                                    <div className="name">{p.pname}</div>
-                                </a>
-                            </div>
-                            <ul className="univers">
-                                <li><i>Nom</i><div>{p.pname}</div></li>
-                                <li><i>Total univers</i><div>{tt_univers}</div></li>
-                                <li><i>Univers</i>
-                                    {p.univers.map((u) => {
-                                        return (
-                                            <div key={u.uname}>{u.uname}</div>
-                                        )
-                                    })}
-                                </li>
-                                <li><i>Total attractions</i><div>{tt_attractions}</div></li>
-                            </ul>
-                        </div>
-                        <div className="description">
-                            <h3>{p.title}</h3>
-                            <p>{p.description}</p>
+                    <section className="infos">
+                        <div className="bloc-infos">
+                            <BlockLogo href={'/park-'+p.pslug} slug={p.pslug} legend={p.pname} />
+                            <BlockInfos univers={p.univers} attractions={attractions} />
                         </div>
                     </section>
                 )

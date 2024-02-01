@@ -5,9 +5,9 @@ const Card = (props) => {
     /* page Univers */
     // console.log('univers', props.slugs.length);
     return (
-      <a className="card" href={path + '/attraction/' + props.item.slug} alt={props.item.name}>
-        <div className={'img img-' + props.item.slug}></div>
-        <div className="legend">{props.item.name}</div>
+      <a className="card" href={path + '/attraction/' + props.item.aslug} alt={props.item.aname}>
+        <div className={'img img-' + props.item.aslug}></div>
+        <div className="legend">{props.item.aname}</div>
       </a>
     );
   } else if (props.slugs.length === 2) {
@@ -23,8 +23,8 @@ const Card = (props) => {
     /* page attraction */
     // console.log('attraction', props.slugs.length);
     return (
-      <div key={props.item.id} className="card">
-        <div key={props.item.slug} className={'img img-' + props.item.slug}></div>
+      <div key={props.item.aid} className="card">
+        <div key={props.item.aslug} className={'img img-' + props.item.aslug}></div>
       </div>
     );
   }

@@ -1,3 +1,4 @@
+import './assets/css/public/app.css';
 import './assets/css/public/medias.css';
 import './assets/css/public/fonts.css'
 import './assets/css/public/parks.css';
@@ -12,10 +13,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Components/Public/Header.js';
 import { Footer } from './Components/Public/Footer.js';
 import { Navigation } from './Components/Public/Navigation.js';
-import { FilterParkAndUnivers } from './Components/Public/FilterParkAndUnivers.js'
+import { FilterParkAndUnivers } from './Components/Public/FilterParkAndUnivers.js';
+import { LinkToFinder } from './Components/Public/LinkToFinder.js';
+
 /* public routes */
 import { Home } from './Pages/Public/Home.js';
-import { Parks } from './Pages/Public/Parks.js';
+import { Park } from './Pages/Public/Park.js';
 import { Univers } from './Pages/Public/Univers.js';
 import { Attraction } from './Pages/Public/Attraction.js';
 import { FindAttractions } from './Pages/Public/FindAttractions.js';
@@ -48,15 +51,18 @@ function App() {
     <div className="main">
       <BrowserRouter>
         <Header bkgHeader={bkgHeader} />
-        <Navigation datas={parkAndUnivers} bkgNav={bkgNav} />
+        <Navigation datas={parkAndUnivers} entities={entities} bkgNav={bkgNav} />
+        <LinkToFinder />
         <Routes>
+          {/* PUBLIC */}
+          {/* *********************************************************** */}
           <Route path="/" element={
             <Home navigation={navigation} />
           } />
           {parkAndUnivers.map((p) => {
             return (
               <Route key={'rp'+p.pid} path={'/park-' + p.pslug} element={
-                <Parks key={'p'+p.pid} id={p.pid} navigation={navigation} slugs={params} name={p.pname} bkgNav={bkgNav} />
+                <Park key={'p'+p.pid} id={p.pid} navigation={navigation} slugs={params} name={p.pname} bkgNav={bkgNav} />
               } />
             )
           })}
@@ -80,13 +86,13 @@ function App() {
               } />
             )
           })}
-
           <Route key="rf" path={'/find/attractions'} element={
             <FindAttractions key="f" slugs={params} bkgNav={bkgNav} />
           } />
 
           {/* ADMIN */}
-          <Route key="connexion" path={'/admin/connexion'} element={
+          {/* *********************************************************** */}
+          <Route path={'/admin/connexion'} element={
             <AdminConnexion uri={'connexion'} />
           } />
           {entities.map((slug) => {

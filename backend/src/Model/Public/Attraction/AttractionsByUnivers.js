@@ -1,5 +1,5 @@
 const attractions_by_univers = `SELECT 
-a.id, a.slug, a.name 
+a.id AS aid, a.slug AS aslug, a.name AS aname 
 FROM attraction a 
 WHERE a.id_univ = ?`;
 

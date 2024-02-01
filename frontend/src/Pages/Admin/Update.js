@@ -1,7 +1,6 @@
 import '../../assets/css/admin/admin.css';
 import '../../assets/css/admin/form.css';
 import { useState, useEffect } from 'react';
-import { Navigation } from "../../Components/Admin/Others/Navigation.js";
 import { Administrator } from "../../Components/Admin/Fields/Administrator.js";
 import { Attraction } from "../../Components/Admin/Fields/Attraction.js";
 import { Evacuation } from "../../Components/Admin/Fields/Evacuation.js";
@@ -27,7 +26,6 @@ export const AdminUpdate = (props) => {
     }, []);
     return (
         <div className="admin">
-            <Navigation data={props.nav} />
             <form className="form" action={`http://localhost:80/admin/update/${props.uri}`} method="POST" encType="application/x-www-form-urlencoded">
                 <fieldset>
                     <legend>UPDATE:<span>{props.uri}</span></legend>
