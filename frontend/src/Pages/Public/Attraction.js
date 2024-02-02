@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Carrousel } from '../../Components/Public/Carrousel.js';
-import { BlockLogo } from '../../Components/Public/BlockLogo.js';
+import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
+import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 
 export const Attraction = (props) => {
     const [attraction, setAttraction] = useState([]);

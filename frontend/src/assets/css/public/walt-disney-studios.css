@@ -1,14 +1,15 @@
 /* ************************************************************************** */
 /* walt disney studio */
 
-.logo-avengers-assemble-flight-force {
-    background-image: url('../../images/attractions/studio/logo-avengers-assemble-flight-force.png');
+.icon-avengers-assemble-flight-force {
+    background-image: url('../../images/attractions/studio/icon-avengers-assemble-flight-force.png');
     background-size: cover;
 }
 
-.logo-spider-man-web-aventure {
+.icon-spider-man-web-aventure {
     background-image: url('../../images/attractions/studio/logo-spider-man-web-aventure.png');
     background-size: cover;
+    box-sizing: 100%;
 }
 
 .logo-disney-studio-1 {

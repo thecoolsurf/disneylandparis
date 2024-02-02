@@ -1,4 +1,4 @@
-import '../../assets/css/public/header.css';
+import '../../../assets/css/public/header.css';
 
 export const Header = (props) => {
     return (

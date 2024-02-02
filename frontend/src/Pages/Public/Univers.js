@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Carrousel } from '../../Components/Public/Carrousel.js';
-import { LinkToFinder } from '../../Components/Public/LinkToFinder.js';
-import { BlockLogo } from '../../Components/Public/BlockLogo.js';
-import { BlockInfos } from '../../Components/Public/BlockInfos.js';
+import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
+import { LinkToFinder } from '../../Components/Public/Document/LinkToFinder.js';
+import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
+import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
 
 export const Univers = (props) => {
     const [univers, setUnivers] = useState([]);

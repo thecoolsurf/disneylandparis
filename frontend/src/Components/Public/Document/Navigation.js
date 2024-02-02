@@ -1,4 +1,4 @@
-import '../../assets/css/public/navigation.css';
+import '../../../assets/css/public/navigation.css';
 import { Logo } from './Logo.js';
 import { useState } from 'react';
 

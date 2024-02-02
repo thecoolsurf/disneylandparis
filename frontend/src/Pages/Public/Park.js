@@ -1,10 +1,10 @@
 import '../../assets/css/public/parks.css';
 import { useState, useEffect } from 'react';
-import { FilterParkAndUnivers } from '../../Components/Public/FilterParkAndUnivers.js';
-import { FilterAttractions } from '../../Components/Public/FilterAttractions.js';
-import { Carrousel } from '../../Components/Public/Carrousel.js';
-import { BlockLogo } from '../../Components/Public/BlockLogo.js';
-import { BlockInfos } from '../../Components/Public/BlockInfos.js';
+import { FilterParkAndUnivers } from '../../Components/Public/Filters/FilterParkAndUnivers.js';
+import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
+import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
+import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
+import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
 
 export const Park = (props) => {
     const [parks, setParks] = useState([]);

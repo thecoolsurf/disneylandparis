@@ -10,11 +10,11 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 /* components */
-import { Header } from './Components/Public/Header.js';
-import { Footer } from './Components/Public/Footer.js';
-import { Navigation } from './Components/Public/Navigation.js';
-import { FilterParkAndUnivers } from './Components/Public/FilterParkAndUnivers.js';
-import { LinkToFinder } from './Components/Public/LinkToFinder.js';
+import { Header } from './Components/Public/Document/Header.js';
+import { Footer } from './Components/Public/Document/Footer.js';
+import { Navigation } from './Components/Public/Document/Navigation.js';
+import { FilterParkAndUnivers } from './Components/Public/Filters/FilterParkAndUnivers.js';
+import { LinkToFinder } from './Components/Public/Document/LinkToFinder.js';
 
 /* public routes */
 import { Home } from './Pages/Public/Home.js';
@@ -22,6 +22,7 @@ import { Park } from './Pages/Public/Park.js';
 import { Univers } from './Pages/Public/Univers.js';
 import { Attraction } from './Pages/Public/Attraction.js';
 import { FindAttractions } from './Pages/Public/FindAttractions.js';
+
 /* admin routes */
 import { AdminConnexion } from './Pages/Admin/Connexion.js';
 import { AdminCollection } from "./Pages/Admin/Collection.js";

@@ -1,4 +1,4 @@
-import '../../assets/css/public/footer.css';
+import '../../../assets/css/public/footer.css';
 
 export const Footer = () => {
     let email = 'hdouin@free.fr';

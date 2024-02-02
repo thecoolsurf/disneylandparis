@@ -1,9 +1,9 @@
 import '../../assets/css/public/home.css';
 import { useState, useEffect } from 'react';
-import { FilterHomeDatas } from '../../Components/Public/FilterHomeDatas.js';
-import { FilterAttractions } from '../../Components/Public/FilterAttractions.js';
-import { BlockLogo } from '../../Components/Public/BlockLogo.js';
-import { BlockInfos } from '../../Components/Public/BlockInfos.js';
+import { FilterHomeDatas } from '../../Components/Public/Filters/FilterHomeDatas.js';
+import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
+import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
+import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
 
 export const Home = (props) => {
     const [home, setDatas] = useState([]);
