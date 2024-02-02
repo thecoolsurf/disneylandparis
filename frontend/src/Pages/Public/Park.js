@@ -18,23 +18,23 @@ export const Park = (props) => {
     }, []);
     const park = FilterParkAndUnivers(parks);
     let legend = 'Liste des univers - ' + props.name;
-    const tt_univers = parks.length;
     return (
         <div className="park">
             <Carrousel datas={parks} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
-            {park.map((p) => {
-                const attractions = FilterAttractions(props.navigation,props.id);
-                const tt_attractions = attractions.length;
-                return (
-                    <section className="infos">
-                        <div className="bloc-infos">
-                            <BlockLogo href={'/'} slug={p.pslug} legend={p.pname} />
-                            <BlockInfos univers={parks} attractions={attractions} tt_univers={tt_univers} tt_attractions={tt_attractions} />
-                        </div>
-                        <div className="description">{p.description}</div>
-                    </section>
-                )
-            })}
+            <section className="infos">
+                {park.map((p) => {
+                    const attractions = FilterAttractions(props.navigation, props.id);
+                    return (
+                        <>
+                            <div className="bloc-infos">
+                                <BlockLogo slug={p.pslug} legend={p.pname} />
+                                <BlockInfos href={'/'} univers={parks} attractions={attractions} />
+                            </div>
+                            <div className="description">{p.description}</div>
+                        </>
+                    )
+                })}
+            </section>
         </div>
     )
 }

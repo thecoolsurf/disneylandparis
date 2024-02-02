@@ -6,10 +6,14 @@
   }
   
   .icon-walt-disney-studios::before {
+    font-size: 90px;
+    line-height: 1.4;
     content: '\e415';
   }
   
   .icon-park-disneyland::before {
+    font-size: 90px;
+    line-height: 1.4;
     content: '\e414';
   }
   

@@ -31,7 +31,16 @@ ul {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+}
+
+.home .bloc-logo .logo:hover {
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.6);
+}
+
+.home .back {
+  display: none;
+  visibility: hidden;
 }
 
 .park {
@@ -47,6 +56,14 @@ ul {
 }
 
 .univers {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.attraction {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -79,6 +96,7 @@ ul {
 
 .bloc-logo {
   text-decoration: none;
+  margin: 0 0 20px 0;
 }
 
 .bloc-logo .logo {
@@ -87,26 +105,27 @@ ul {
   background-repeat: no-repeat;
   width: 180px;
   height: 180px;
-  margin: 0 0 10px 0;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
-  font-size: 5rem;
-  line-height: 1.4;
-  color: #000;
   text-align: center;
+  color: #000;
 }
 
-.bloc-logo .logo > div {
+.bloc-logo .logo .icon {
   background-repeat: no-repeat;
   width: 100%;
-  height: 100%;
+  height: 120px;
 }
 
 .bloc-logo .legend {
+  width: 100%;
+  height: auto;
+  padding: 0 10px;
+  box-sizing: border-box;
   font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 900;
-  font-size: 25px;
+  font-size: 20px;
   line-height: 0.9;
 }
 
@@ -128,13 +147,14 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  max-width: 250px;
 }
 
 .bloc-infos .total {
   font-size: 1.6rem;
   font-weight: 900;
   line-height: 1;
-  margin: 0 0 20px 0;
+  margin: 20px 0;
 }
 
 .bloc-infos .list-infos {
@@ -147,7 +167,7 @@ ul {
   padding: 0;
 }
 
-.bloc-infos .list li {
+.bloc-infos .list .items-1 {
   margin: 0 0 10px 0;
   padding: 0;
   list-style: none;
@@ -158,6 +178,7 @@ ul {
 }
 
 .bloc-infos .list .items-2 div {
+  margin: 0 0 10px 0;
   font-size: 0.9rem;
 }
 
@@ -165,6 +186,25 @@ ul {
   font-size: 0.8rem;
 }
 
+.bloc-infos .back {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: normal;
+  justify-content: center;
+  align-items: center;
+  background: #cecece;
+  width: 40px;
+  height: 40px;
+  margin: 20px 0 0 0;
+  border-radius: 20px;
+  color: #F7F7F7;
+  text-decoration: none;
+}
+
+.bloc-infos .back:hover {
+  background: #000;
+}
 .description {
   float: left;
   max-width: 600px;

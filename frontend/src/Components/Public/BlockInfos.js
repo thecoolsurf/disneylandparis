@@ -1,7 +1,7 @@
 /*
-@params 
-univers array
-attrations array
+@params univers array
+@param attrations array
+@param href string
 */
 export const BlockInfos = (props) => {
     const univers = props.univers ? props.univers : [];
@@ -27,6 +27,9 @@ export const BlockInfos = (props) => {
                         <div key={a.aslug}>{a.aname}</div>
                     )
                 })}
+            </li>
+            <li>
+                <a className="back" href={props.href}><i className="fa fa-reply"></i></a>
             </li>
         </ul>
     )

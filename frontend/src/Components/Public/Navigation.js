@@ -28,7 +28,7 @@ export const Navigation = (props) => {
         )
     } else {
         return (
-            <div className="navigation">
+            <div className={'navigation ' + props.bkgNav}>
                 <div className="slider" onClick={() => { show0 === 'show' ? setShow0('hide') : setShow0('show'); }}>
                     <i className="fa fa-bars"></i>
                 </div>

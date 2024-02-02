@@ -23,17 +23,19 @@ export const Univers = (props) => {
         <div className="univers">
             <LinkToFinder />
             <Carrousel datas={attractions} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
-            {univers.map((el) => {
-                return (
-                    <section key={el.slug} className="infos">
-                        <div className="bloc-infos">
-                            <BlockLogo href={'/park-' + props.slugs[2]} legend={el.name} />
-                            <BlockInfos univers={univers} attractions={attractions} />
-                        </div>
-                        <div className="description">{el.description}</div>
-                    </section>
-                )
-            })}
+            <section className="infos">
+                {univers.map((el) => {
+                    return (
+                        <>
+                            <div className="bloc-infos" key={el.slug}>
+                                <BlockLogo slug={el.uslug} legend={el.uname} />
+                                <BlockInfos href={'/park-' + props.slugs[2]} univers={univers} attractions={attractions} />
+                            </div>
+                            <div className="description">{el.description}</div>
+                        </>
+                    )
+                })}
+            </section>
         </div>
     )
 }

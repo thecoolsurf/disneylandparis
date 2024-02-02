@@ -35,31 +35,31 @@
 
 .icon-adventureland {
   background-image: url('../../images/univers/park/logo-adventureland.png');
-  background-size: 100%;
+  background-size: 70%;
   background-position: center center;
 }
 
 .icon-discoveryland {
   background-image: url('../../images/univers/park/logo-discoveryland.png');
-  background-size: 100%;
+  background-size: 70%;
   background-position: center center;
 }
 
 .icon-fantasyland {
   background-image: url('../../images/univers/park/logo-fantasyland.png');
-  background-size: 100%;
+  background-size: 70%;
   background-position: center center;
 }
 
 .icon-frontierland {
   background-image: url('../../images/univers/park/logo-frontierland.png');
-  background-size: 100%;
+  background-size: 70%;
   background-position: center center;
 }
 
 .icon-main-street-usa {
   background-image: url('../../images/univers/park/logo-main-street-usa.png');
-  background-size: 80%;
+  background-size: 50%;
   background-position: center center;
 }
 

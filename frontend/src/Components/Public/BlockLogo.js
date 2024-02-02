@@ -1,19 +1,17 @@
 /*
-@params href slug legend
+@param slug
+@param legend
 */
 export const BlockLogo = (props) => {
     const uri = window.location.href;
     if (uri.includes('park') | uri.includes('walt')) {
-        /* all pages */
+        /* park | univers */
         return (
             <div className="bloc-logo">
-                <div className="logo icon-disneylandparis">
-                    <div className="logo icons-disneylandparis" >
-                        <div className={'icon-' + props.slug}></div>
-                        <div className="legend">{props.legend}</div>
-                    </div>
+                <div className="logo icons-disneylandparis">
+                    <div className={'icon icon-' + props.slug}></div>
+                    <div className="legend">{props.legend}</div>
                 </div>
-                <a className="back" href={props.href}><i className="fa fa-reply"></i></a>
             </div>
         )
     } else {
@@ -21,8 +19,8 @@ export const BlockLogo = (props) => {
         return (
             <a className="bloc-logo" href={props.href} alt={props.legend}>
                 <div className="logo icon-disneylandparis">
-                    <div className="logo icons-disneylandparis" >
-                        <div className={'icon-' + props.slug}></div>
+                    <div className="logo icons-disneylandparis">
+                        <div className={'icon icon-' + props.slug}></div>
                         <div className="legend">{props.legend}</div>
                     </div>
                 </div>

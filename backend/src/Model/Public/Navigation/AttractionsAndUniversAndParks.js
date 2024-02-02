@@ -1,4 +1,5 @@
-const navigation = `SELECT 
+const navigation = `
+SELECT 
 a.id AS aid, a.slug AS aslug, a.name AS aname,
 u.id AS uid, u.slug AS uslug, u.name AS uname,
 p.id AS pid, p.slug AS pslug, p.name AS pname 
