@@ -11,7 +11,7 @@ export const Footer = () => {
     return (
         <footer className="footer">
             <ul>
-                <li>Hubert DOUIN - Webmaster</li>
+                <li>Hubert DOUIN - Developper Frontend Backend</li>
                 <li>
                     <i className="fa fa-map-marker"></i>
                     {address}
@@ -20,8 +20,6 @@ export const Footer = () => {
                     <i className="fa fa fa-phone" aria-hidden="true"></i>
                     <a href={'tel:'+mobile} alt="Mobile">{mobile}</a>
                 </li>
-            </ul>
-            <ul>
                 <li>
                     <i className="fa fa-envelope" aria-hidden="true"></i>
                     <a href={'mailto:'+email+'?object=Demande infos'} alt="email">{email}</a>
