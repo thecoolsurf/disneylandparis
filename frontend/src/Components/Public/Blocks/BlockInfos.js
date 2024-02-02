@@ -1,52 +1,54 @@
 import { BlockLabelName } from './BlockLabelName.js';
+import { BlockCollection } from './BlockCollection.js';
+import { BlockTotal } from './BlockTotal.js';
+import { BlockBack } from './BlockBack.js';
+
 /*
-@params univers array
-@param attrations array
-@param href string
+@props univers array
+@props attrations array
+@props href string
 */
 export const BlockInfos = (props) => {
     const uri = window.location.href;
     const univers = props.univers ? props.univers : [];
     const attractions = props.attractions ? props.attractions : [];
-    return (
-        <ul className="list">
-            <li className="total">
-                <div>{univers.length + ' univers'}</div>
-            </li>
-            <li className="items-1">
-                {univers.map((u) => {
+    if (uri.includes('attraction')) {
+        return (
+            <ul className="list">
+                {attractions.map((a) => {
                     return (
-                        <div key={u.uslug}>{u.uname}</div>
+                        <li className="items-2">
+                            <BlockLabelName label="Nom" name={a.aname} />
+                            <BlockLabelName label="Public" name={a.public} />
+                            <BlockLabelName label="Interet" name={a.idescription} />
+                            <BlockLabelName label="Restriction" name={a.hdescription} />
+                            <BlockLabelName label="Securite" name={a.edescription} />
+                            <BlockLabelName label="Sensation" name={a.sdescription} />
+                            <BlockLabelName label="Handicap" name={a.hhdescription} />
+                        </li>
                     )
                 })}
-            </li>
-            <li className="total">
-                <div>{attractions.length + ' attractions'}</div>
-            </li>
-            <li className="items-2">
-                {attractions.map((a) => {
-                    if (uri.includes('attraction')) {
-                        return (
-                            <>
-                                <BlockLabelName label="Nom" name={a.aname} />
-                                <BlockLabelName label="Public" name={a.public} />
-                                <BlockLabelName label="Interet" name={a.idescription} />
-                                <BlockLabelName label="Restriction" name={a.hdescription} />
-                                <BlockLabelName label="Securite" name={a.edescription} />
-                                <BlockLabelName label="Sensation" name={a.sdescription} />
-                                <BlockLabelName label="Handicap" name={a.hhdescription} />
-                            </>
-                        )
-                    } else {
-                        return (
-                            <div key={a.aslug}>{a.aname}</div>
-                        )
-                    }
-                })}
-            </li>
-            <li>
-                <a className="back" href={props.href}><i className="fa fa-reply"></i></a>
-            </li>
-        </ul>
-    )
+                <BlockBack href={props.href} />
+            </ul>
+        )
+    } else if (uri.includes('park') || uri.includes('univers')) {
+        return (
+            <ul className="list">
+                <BlockTotal label="univers" total={univers.length} />
+                <BlockCollection label="univers" datas={univers} />
+                <BlockTotal label="attractions" total={attractions.length} />
+                <BlockCollection label="attraction" datas={attractions} />
+                <BlockBack href={props.href} />
+            </ul>
+        )
+    } else {
+        return (
+            <ul className="list">
+                <BlockTotal label="univers" total={univers.length} />
+                <BlockCollection label="univers" datas={univers} />
+                <BlockTotal label="attractions" total={attractions.length} />
+                <BlockBack href={props.href} />
+            </ul>
+        )
+    }
 }

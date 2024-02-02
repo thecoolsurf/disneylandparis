@@ -25,37 +25,6 @@ export const Attraction = (props) => {
                     <BlockInfos href={path} univers={[1]} attractions={attraction} />
                 </div>
                 <div className="description">{description}</div>
-                    {/*
-                    <li>
-                        <i>Public</i>
-                        <div>{el.public}</div>
-                    </li>
-                    <li>
-                        <i>Interet</i>
-                        <div>{el.iname}</div>
-                        <div className="note">{el.idescription}</div>
-                    </li>
-                    <li>
-                        <i>Restriction</i>
-                        <div>{el.hname}</div>
-                        <div className="note">{el.hdescription}</div>
-                    </li>
-                    <li>
-                        <i>Securite</i>
-                        <div>{el.ename}</div>
-                        <div className="note">{el.edescription}</div>
-                    </li>
-                    <li>
-                        <i>Sensation</i>
-                        <div>{el.sname}</div>
-                        <div className="note">{el.sdescription}</div>
-                    </li>
-                    <li>
-                        <i>Handicap</i>
-                        <div>{el.hhname}</div>
-                        <div className="note">{el.hhdescription}</div>
-                    </li>
-                    */}
             </section>
         </div>
     )

@@ -147,7 +147,8 @@ ul {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  max-width: 250px;
+  max-width: 230px;
+  margin: 0 50px 0 0;
 }
 
 .bloc-infos .total {
@@ -173,16 +174,24 @@ ul {
   list-style: none;
 }
 
-.bloc-infos .list .items-1 div {
+.bloc-infos .list .items-1 .item {
   font-size: 1.2rem;
 }
 
-.bloc-infos .list .items-2 div {
+.bloc-infos .list .items-2 .item {
   margin: 0 0 10px 0;
   font-size: 0.9rem;
 }
 
-.bloc-infos .note {
+.bloc-infos .list .items-2 .label {
+  font-weight: 700;
+}
+
+.bloc-infos .list .items-2 .name {
+  font-weight: normal;
+}
+
+.bloc-infos .list .items-2 .note {
   font-size: 0.8rem;
 }
 
