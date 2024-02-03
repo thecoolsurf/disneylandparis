@@ -4,9 +4,9 @@ import { BlockTotal } from './BlockTotal.js';
 import { BlockBack } from './BlockBack.js';
 
 /*
+@props href string
 @props univers array
 @props attrations array
-@props href string
 */
 export const BlockInfos = (props) => {
     const uri = window.location.href;
@@ -51,12 +51,11 @@ export const BlockInfos = (props) => {
                 <BlockBack href={props.href} />
             </ul>
         )
-        
     } else {
         return (
             <ul className="list">
                 <BlockTotal label="univers" total={univers.length} />
-                <BlockCollection label="univers" datas={univers} />
+                <BlockCollection label="univers-link" datas={univers} />
                 <BlockTotal label="attractions" total={attractions.length} />
                 <BlockBack href={props.href} />
             </ul>

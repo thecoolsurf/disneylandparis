@@ -1,3 +1,8 @@
+/*
+@props label string
+@props datas array
+*/
+
 export const BlockCollection = (props) => {
     if (props.label === 'univers') {
         return (
@@ -16,10 +21,9 @@ export const BlockCollection = (props) => {
         return (
             <li className="items-1">
                 {props.datas.map((u) => {
-                    const href = '/park/' + u.pslug + '/univers/' + u.uslug;
                     return (
                         <div className="item" key={u.uslug}>
-                            <a href={href} alt={u.uname}>{u.uname}</a>
+                            <a href={'/park/' + u.pslug + '/univers/' + u.uslug} alt={u.uname}>{u.uname}</a>
                         </div>
                     )
                 })}
@@ -31,10 +35,9 @@ export const BlockCollection = (props) => {
         return (
             <li className="items-2">
                 {props.datas.map((a) => {
-                    const href = parent_href + '/attraction/' + a.aslug;
                     return (
                         <div className="item" key={a.aslug}>
-                            <a href={href} alt={a.aname}>{a.aname}</a>
+                            <a href={parent_href + '/attraction/' + a.aslug} alt={a.aname}>{a.aname}</a>
                         </div>
                     )
                 })}
