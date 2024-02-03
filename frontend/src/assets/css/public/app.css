@@ -3,10 +3,6 @@ body {
   padding: 0;
 }
 
-ul {
-  list-style-type: none;
-}
-
 .main {
   position: relative;
   background-color: #F7F7F7;
@@ -155,6 +151,7 @@ ul {
   font-size: 1.6rem;
   font-weight: 900;
   line-height: 1;
+  color: #444444;
   margin: 20px 0;
 }
 
@@ -166,6 +163,14 @@ ul {
 .bloc-infos .list {
   margin: 0;
   padding: 0;
+  list-style: none;
+}
+
+.bloc-infos .list .items-1 .item,
+.bloc-infos .list .items-2 .item,
+.bloc-infos .list .items-1 .item a,
+.bloc-infos .list .items-2 .item a {
+  color: #666666;
 }
 
 .bloc-infos .list .items-1 {
@@ -181,6 +186,7 @@ ul {
 .bloc-infos .list .items-2 .item {
   margin: 0 0 10px 0;
   font-size: 0.9rem;
+  /* font-weight: 700; */
 }
 
 .bloc-infos .list .items-2 .label {
@@ -195,6 +201,15 @@ ul {
   font-size: 0.8rem;
 }
 
+.bloc-infos .list .items-1 .item a,
+.bloc-infos .list .items-2 .item a {
+  text-decoration: none;
+}
+
+.bloc-infos .list .items-1 .item a:hover,
+.bloc-infos .list .items-2 .item a:hover {
+  color: #000;
+}
 .bloc-infos .back {
   display: flex;
   flex-direction: column;
@@ -225,6 +240,7 @@ ul {
 
 .description h3 {
   margin: 0 0 20px 0;
+  color: #444444;
 }
 
 

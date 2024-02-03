@@ -31,7 +31,7 @@ export const BlockInfos = (props) => {
                 <BlockBack href={props.href} />
             </ul>
         )
-    } else if (uri.includes('park') || uri.includes('univers')) {
+    } else if (uri.includes('univers')) {
         return (
             <ul className="list">
                 <BlockTotal label="univers" total={univers.length} />
@@ -41,6 +41,17 @@ export const BlockInfos = (props) => {
                 <BlockBack href={props.href} />
             </ul>
         )
+    } else if (uri.includes('park')) {
+        return(
+            <ul className="list">
+                <BlockTotal label="univers" total={univers.length} />
+                <BlockCollection label="univers-link" datas={univers} />
+                <BlockTotal label="attractions" total={attractions.length} />
+                <BlockCollection label="attraction" datas={attractions} />
+                <BlockBack href={props.href} />
+            </ul>
+        )
+        
     } else {
         return (
             <ul className="list">
