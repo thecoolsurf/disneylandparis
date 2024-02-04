@@ -94,4 +94,7 @@ docker compose version
 => Docker Compose version v2.19.1
 ```
 
-
+#### Backup MySQL
+```
+docker exec CONTAINER_ID /usr/bin/mysqldump -u root --password=PASS DBNAME > backup.sql
+```
