@@ -2,7 +2,7 @@
 
 const collection = `
 SELECT 
-id, name, slug, title, description
+id, name, url
 FROM park`;
 
 module.exports = collection;

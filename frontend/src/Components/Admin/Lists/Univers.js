@@ -8,7 +8,7 @@ export const Univers = (props) => {
                 <div key={e.id} className="rows">
                     <div className="id">{e.id}</div>
                     <div className="item">{e.name}</div>
-                    <div className="item">{e.description.slice(0,30)+'...'}</div>
+                    <div className="item">{e.url}</div>
                     <BtnDelete id={e.id} uri={props.uri} />
                     <BtnUpdate id={e.id} uri={props.uri} />
                 </div>

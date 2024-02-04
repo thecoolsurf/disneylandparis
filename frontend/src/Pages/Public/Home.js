@@ -20,12 +20,15 @@ export const Home = (props) => {
     return (
         <div className="home">
             {parkAndUnivers.map((p) => {
+                let park = null;
                 let univers = null;
                 let attractions = null;
                 if (p.pid === 1) {
+                    park = parkAndUnivers[0];
                     attractions = FilterAttractions(attraction, p.pid);
                     univers = parkAndUnivers[0].univers;
                 } else {
+                    park = parkAndUnivers[1];
                     attractions = FilterAttractions(attraction, p.pid);
                     univers = parkAndUnivers[1].univers;
                 }
@@ -33,7 +36,7 @@ export const Home = (props) => {
                     <section className="infos">
                         <div className="bloc-infos">
                             <BlockLogo href={'/park-'+p.pslug} slug={p.pslug} legend={p.pname} />
-                            <BlockInfos univers={p.univers} attractions={attractions} />
+                            <BlockInfos univers={univers} attractions={attractions} />
                         </div>
                     </section>
                 )

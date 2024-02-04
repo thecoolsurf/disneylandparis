@@ -38,6 +38,7 @@ export const Attraction = (props) => {
     const id_park = (props.e) ? props.e.id_park : '';
     const id_univ = (props.e) ? props.e.id_univ : '';
     const slug = (props.e) ? props.e.slug : '';
+    const url = (props.e) ? props.e.url : '';
     const name = (props.e) ? props.e.name : '';
     const publics = (props.e) ? props.e.public : '';
     const description = (props.e) ? props.e.description : '';
@@ -55,6 +56,7 @@ export const Attraction = (props) => {
             <Field type="select" name="id_univ" chooser={universChooser} value={id_univ} />
             <Field type="text" name="name" value={name} />
             <Field type="text" name="slug" value={slug} />
+            <Field type="text" name="url" value={url} />
             <Field type="text" name="public" value={publics} />
             <Field type="select" name="id_evacuation" value={id_evacuation} chooser={evacuationChooser} />
             <Field type="select" name="id_height" value={id_height} chooser={heightChooser} />
@@ -64,7 +66,6 @@ export const Attraction = (props) => {
             <Field type="textarea" name="description" value={description} />
             <Field type="text" name="pictures" value={pictures} />
             <Field type="text" name="movies" value={movies} />
-            
             <Field key="id" type="hidden" name="id" value={id} />
         </>
     )

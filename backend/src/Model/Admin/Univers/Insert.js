@@ -2,9 +2,9 @@
 
 const univers_insert = `
 INSERT INTO univers 
-(id_park, name, slug, description) 
+(id_park, name, slug, url, description) 
 VALUES
-(?, ?, ?, ?);
+(?, ?, ?, ?, ?);
 `;
 
 module.exports = univers_insert;

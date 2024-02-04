@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE univers SET 
-id_park = ?, name = ?, slug = ?, description = ?
+id_park = ?, name = ?, slug = ?, url = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;

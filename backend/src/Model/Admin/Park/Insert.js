@@ -2,9 +2,9 @@
 
 const insert = `
 INSERT INTO park 
-(name, slug, title, description) 
+(name, slug, url, title, description) 
 VALUES
-(?, ?, ?, ?);
+(?, ?, ?, ?, ?);
 `;
 
 module.exports = insert;

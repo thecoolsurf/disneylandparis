@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, id_park, slug, name, description
+id, id_park, slug, url, name, description
 FROM univers
 WHERE id = ?`;
 

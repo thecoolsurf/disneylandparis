@@ -104,14 +104,15 @@ function update(route, sql) {
       datas.push(req.body.id_univ);
       datas.push(req.body.name);
       datas.push(req.body.slug);
+      datas.push(req.body.url);
       datas.push(req.body.public);
       datas.push(req.body.id_evacuation);
       datas.push(req.body.id_height);
       datas.push(req.body.id_sensory);
       datas.push(req.body.handicaps.toString());
       datas.push(req.body.interests.toString());
-      datas.push(req.body.description.replace(/(')/g, "\ʼ"));
-      // datas.push(req.body.description);
+      // datas.push(req.body.description.replace("'", "ʼ"));
+      datas.push(req.body.description);
       datas.push(req.body.pictures.toString());
       datas.push(req.body.movies.toString());
       datas.push(req.body.id);
