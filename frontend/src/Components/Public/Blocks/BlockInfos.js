@@ -13,6 +13,7 @@ export const BlockInfos = (props) => {
     const univers = props.univers ? props.univers : [];
     const attractions = props.attractions ? props.attractions : [];
     if (uri.includes('attraction')) {
+        /* page attraction */
         return (
             <ul className="list">
                 {attractions.map((a) => {
@@ -31,7 +32,9 @@ export const BlockInfos = (props) => {
                 <BlockBack href={props.href} />
             </ul>
         )
+
     } else if (uri.includes('univers')) {
+        /* page univers */
         return (
             <ul className="list">
                 <BlockTotal label="univers" total={univers.length} />
@@ -42,6 +45,7 @@ export const BlockInfos = (props) => {
             </ul>
         )
     } else if (uri.includes('park')) {
+        /* page park */
         return(
             <ul className="list">
                 <BlockTotal label="univers" total={univers.length} />
@@ -52,6 +56,7 @@ export const BlockInfos = (props) => {
             </ul>
         )
     } else {
+        /* page home */
         return (
             <ul className="list">
                 <BlockTotal label="univers" total={univers.length} />
