@@ -61,7 +61,7 @@ function App() {
           } />
           {parkAndUnivers.map((p) => {
             return (
-              <Route key={'rp'+p.pid} path={'/park-' + p.pslug} element={
+              <Route key={'rp'+p.pid} path={p.proute} element={
                 <Park key={'p'+p.pid} id={p.pid} navigation={navigation} slugs={params} name={p.pname} bkgNav={bkgNav} />
               } />
             )
@@ -69,9 +69,8 @@ function App() {
           {parkAndUnivers.map((m) => {
             return (
               m.univers.map((u) => {
-                let route = '/park/' + m.pslug + '/univers/' + u.uslug;
                 return (
-                  <Route key={'ru'+u.uid} path={route} element={
+                  <Route key={'ru'+u.uid} path={u.uroute} element={
                     <Univers key={'u'+u.uid} id={u.uid} slugs={params} pname={m.pname} uname={u.uname} bkgNav={bkgNav} />
                   } />
                 )
@@ -79,9 +78,8 @@ function App() {
             )
           })}
           {allAttractions.map((a) => {
-            let route = '/park/' + a.pslug + '/univers/' + a.uslug + '/attraction/' + a.aslug;
             return (
-              <Route key={'ra'+a.aid} path={route} element={
+              <Route key={'ra'+a.aid} path={a.aroute} element={
                 <Attraction key={'a'+a.aid} id={a.aid} slugs={params} pname={a.pname} uname={a.uname} name={a.aname} bkgNav={bkgNav} />
               } />
             )

@@ -8,6 +8,7 @@ export const FilterAttractions = (attractions, pid) => {
                 pslug: el.pslug,
                 uslug: el.uslug,
                 aid: el.aid, 
+                aroute: el.aroute,
                 aslug: el.aslug, 
                 aname: el.aname, 
                 description: el.description

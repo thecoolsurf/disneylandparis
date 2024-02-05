@@ -6,13 +6,23 @@ export const FilterParkAndUnivers = (navigation) => {
       /* park */
       if (!map.has(el.pid)) {
         map.set(el.pid, true);
-        parks.push({ pid: el.pid, pslug: el.pslug, pname: el.pname, description:el.description });
+        parks.push({
+          pid: el.pid, 
+          pslug: el.pslug, 
+          pname: el.pname,
+          proute: el.proute, 
+        });
       }
       /* univers */
       for (let i = 0; i < parks.length; i++) {
-        if (!map.has(el.uslug) && el.pid === i + 1) {
-          map.set(el.uslug, true);
-          univers[i].push({ uid: el.uid, uslug: el.uslug, uname: el.uname });
+        if (!map.has(el.uid) && el.pid === i + 1) {
+          map.set(el.uid, true);
+          univers[i].push({ 
+            uid: el.uid, 
+            uslug: el.uslug, 
+            uname: el.uname,
+            uroute: el.uroute,
+          });
         }
       }
     }

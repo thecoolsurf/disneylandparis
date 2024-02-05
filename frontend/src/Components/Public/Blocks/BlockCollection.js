@@ -25,7 +25,7 @@ export const BlockCollection = (props) => {
                 {props.datas.map((u) => {
                     return (
                         <div className="item" key={u.uslug}>
-                            <a href={'/park/' + u.pslug + '/univers/' + u.uslug} alt={u.uname}>{u.uname}</a>
+                            <a href={u.uroute} alt={u.uname}>{u.uname}</a>
                         </div>
                     )
                 })}
@@ -40,7 +40,7 @@ export const BlockCollection = (props) => {
                 {props.datas.map((a) => {
                     return (
                         <div className="item" key={a.aslug}>
-                            <a href={parent_href + '/attraction/' + a.aslug} alt={a.aname}>{a.aname}</a>
+                            <a href={a.aroute} alt={a.aname}>{a.aname}</a>
                         </div>
                     )
                 })}

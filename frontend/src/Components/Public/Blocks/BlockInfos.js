@@ -22,7 +22,7 @@ export const BlockInfos = (props) => {
             </ul>
         )
     }
-    /* park pahe */
+    /* park page */
     if (uri.includes('park')) {
         return(
             <ul className="list">

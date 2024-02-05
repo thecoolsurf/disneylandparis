@@ -36,18 +36,16 @@ export const Navigation = (props) => {
                 <div className={'nav ' + show0}>
                     {props.datas.map((p) => {
                         let show = (p.pid === 1) ? show1 : show2;
-                        const href = '/park-' + p.pslug;
                         return (
                             <div key={'parent' + p.pid} className="nav-parent">
-                                <a key={'p' + p.pid} id={p.pid} href={href} alt={p.pname} className={'link show ' + props.bkgNav} onMouseOver={(e) => {
+                                <a key={'p' + p.pid} id={p.pid} href={p.proute} alt={p.pname} className={'link show ' + props.bkgNav} onMouseOver={(e) => {
                                     if (e.target.id === '1') { setShow1('show'); setShow2('hide') }
                                     if (e.target.id === '2') { setShow2('show'); setShow1('hide') }
                                 }}>{p.pname}
                                 </a>
                                 <div key={'child' + p.pid} className={'nav-childs ' + show}>
                                     {p.univers.map((u) => {
-                                        const href = '/park/' + p.pslug + '/univers/' + u.uslug;
-                                        return (<a key={'c' + u.uid} className="link" href={href}>{u.uname}</a>)
+                                        return (<a key={'c' + u.uid} className="link" href={u.uroute}>{u.uname}</a>)
                                     })}
                                 </div>
                             </div>
