@@ -93,8 +93,3 @@ docker run hello-world
 docker compose version
 => Docker Compose version v2.19.1
 ```
-
-#### Backup MySQL
-```
-docker exec CONTAINER_ID /usr/bin/mysqldump -u root --password=PASS DBNAME > 2024-02-05-backup.sql
-```
