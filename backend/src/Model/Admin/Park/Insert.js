@@ -2,7 +2,7 @@
 
 const insert = `
 INSERT INTO park 
-(name, slug, url, title, description) 
+(name, slug, route, title, description) 
 VALUES
 (?, ?, ?, ?, ?);
 `;

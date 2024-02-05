@@ -2,7 +2,7 @@
 
 const univers_insert = `
 INSERT INTO univers 
-(id_park, name, slug, url, description) 
+(id_park, name, slug, route, description) 
 VALUES
 (?, ?, ?, ?, ?);
 `;

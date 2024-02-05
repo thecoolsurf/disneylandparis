@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS attraction (
     'id_univ' int,
     'name' VARCHAR(255),
     'slug' VARCHAR(255),
+    'route' VARCHAR(255),
     'public' VARCHAR(255) NULL,
     'description' TEXT NULL, 
     'restriction' VARCHAR (255) NULL, 

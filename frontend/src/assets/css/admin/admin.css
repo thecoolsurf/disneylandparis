@@ -100,13 +100,13 @@
 
 .admin .thead .id,
 .admin .rows .id {
-  width: 40px;
-  text-align: center;
+  width: 30px;
+  text-align: left;
 }
 
 .admin .thead .item,
 .admin .rows .item {
-  min-width: 250px;
+  min-width: 300px;
   text-align: left;
 }
 

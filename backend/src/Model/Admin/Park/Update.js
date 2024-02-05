@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE park SET 
-name = ? , slug = ?, url = ?, title = ?, description = ?
+name = ? , slug = ?, route = ?, title = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;
