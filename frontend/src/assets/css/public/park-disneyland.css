@@ -3,22 +3,22 @@
 
 .icons-disneylandparis {
     font-family: dlp_pep_font-webfont;
-  }
-  
-  .icon-walt-disney-studios::before {
+}
+
+.icon-walt-disney-studios::before {
     font-size: 90px;
     line-height: 1.4;
     content: '\e415';
-  }
-  
-  .icon-park-disneyland::before {
+}
+
+.icon-park-disneyland::before {
     font-size: 90px;
     line-height: 1.4;
     content: '\e414';
-  }
-  
-  .icon-adventure-isle {
-    background-image: url('../../images/attractions/park/bkg-adventure-isle.webp');
+}
+
+.icon-adventure-isle {
+    background-image: url('../../images/attractions/park/adventure-isle/bkg-adventure-isle.webp');
     background-size: 200%;
     background-position: top 0px left -30px;
 }
@@ -266,7 +266,7 @@
 /* ***************************************************************************************************** */
 
 .img-adventure-isle {
-    background-image: url('../../images/attractions/park/img-adventure-isle.jpeg');
+    background-image: url('../../images/attractions/park/adventure-isle/img/adventure-isle-1.jpeg');
 }
 
 .img-indiana-jones-et-le-temple-du-peril {
@@ -428,4 +428,3 @@
 .img-main-street-vehicles {
     background-image: url('../../images/attractions/park/img-main-street-vehicles.jpg');
 }
-

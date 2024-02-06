@@ -5,8 +5,7 @@ import { useState } from "react";
 /*
 @require bkgNav
 @requre legend
-@require slugs
-@require datas {id,slug,name}
+@require datas {id,name,slug,route}
 */
 
 export const Carrousel = (props) => {
@@ -30,7 +29,7 @@ export const Carrousel = (props) => {
         setIndex(index + 1);
         setMargX(margX + (incr + marg));
         if (margX > (incr + marg)) { setShowPrev('show'); setShowNext('hide'); }
-        if (index === total - 1 || total < 4) { setShowNext('hide'); }
+        if (index === total - 1 || total < 6) { setShowNext('hide'); }
       }}>
         <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
       </div>

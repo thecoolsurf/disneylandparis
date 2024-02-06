@@ -105,6 +105,20 @@
     transform: scale(1.2);
 }
 
+.img-collection {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    width: 100%;
+    height: 200px;
+}
+
+.img-collection img {
+    width: 300px;
+    height: auto;
+}
+
 .card .legend {
     background: rgb(0, 0, 0, 0.6);
     position: absolute;
