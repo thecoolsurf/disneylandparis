@@ -40,6 +40,14 @@ body {
 /* **************************************************************** */
 
 @media screen and (max-width: 600px) {
+  .header .block-title {
+    margin: 20px 0 20px 20px;
+  }
+
+  .bloc-infos {
+    margin: 0;
+  }
+
   .footer {
     flex-wrap: wrap;
     flex-direction: column;
@@ -57,6 +65,14 @@ body {
     height: clamp(300px, 50vh, 500px);
   }
 
+  .header .block-title {
+    margin: 100px 0 0 60px;
+  }
+
+  .bloc-infos {
+    margin: 0 50px 0 0;
+  }
+  
   .footer {
     flex-wrap: nowrap;
     flex-direction: row;
@@ -89,7 +105,7 @@ body {
 .home {
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: flex-start;
 }
@@ -153,6 +169,9 @@ body {
 
 .infos {
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
   margin: 0;
   padding: 30px;
   box-sizing: border-box;
@@ -212,7 +231,6 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   max-width: 230px;
-  margin: 0 50px 0 0;
 }
 
 .bloc-infos .total {
@@ -287,7 +305,7 @@ body {
   background: #cecece;
   width: 40px;
   height: 40px;
-  margin: 20px 0 0 0;
+  margin: 20px 0;
   border-radius: 20px;
   color: #F7F7F7;
   text-decoration: none;
