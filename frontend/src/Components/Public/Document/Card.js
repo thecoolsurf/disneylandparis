@@ -20,10 +20,11 @@ const Card = (props) => {
   }
   if (uri.includes('attraction')) {
     /* page attraction */
-    const parent = uri.includes('wal') ? 'studio' : 'park';
+    const parent = uri.includes('walt') ? 'studio' : 'park';
     const folder = props.item.aslug;
-    const images = require.context(`../../../assets/images/attractions/`, true, /[park/adventure-isle/img]/) ;
+    const images = require.context(`../../../assets/images/attractions/park/`, true, /[adventureland/img]/) ;
     const imageList = images.keys().map(image => images(image));
+    console.log(imageList.length)
     return (
       <div className="img-collection">
         {imageList.map((src) => {
