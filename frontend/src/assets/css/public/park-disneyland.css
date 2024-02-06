@@ -36,7 +36,7 @@
 }
 
 .icon-big-thunder-mountain {
-    background-image: url('../../images/attractions/park/img-big-thunder-mountain.jpg');
+    background-image: url('../../images/attractions/park/big-thunder-mountain/img-big-thunder-mountain.jpg');
     background-size: cover;
     background-position: center center;
 }
@@ -277,6 +277,10 @@
     background-image: url('../../images/attractions/park/autopia/img-autopia.jpg');
 }
 
+.img-big-thunder-mountain {
+    background-image: url('../../images/attractions/park/big-thunder-mountain/img-big-thunder-mountain.jpg');
+}
+
 .img-indiana-jones-et-le-temple-du-peril {
     background-image: url('../../images/attractions/park/indiana-jones-et-le-temple-du-peril.avif');
 }
@@ -383,10 +387,6 @@
 
 .img-casy-jr-le-petit-train-du-cirque {
     background-image: url('../../images/attractions/park/img-casy-jr-le-petit-train-du-cirque.jpg');
-}
-
-.img-big-thunder-mountain {
-    background-image: url('../../images/attractions/park/img-big-thunder-mountain.jpg');
 }
 
 .img-frontierland-playground {

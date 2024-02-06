@@ -22,13 +22,12 @@ const Card = (props) => {
   }
   if (uri.includes('attraction')) {
     /* page attraction */
-    // const collection = require.context('../../../assets/images/attractions/park/adventure-isle/img', true);
     const collection = ImgCollection(uri)
     const images = collection.keys().map(image => collection(image));
     return (
       <div className="img-collection">
         {images.map((src) => {
-          return (<img src={'../../../assets/images/attractions/park/adventure-isle/img/adventure-isle-1.jpg'} />)
+          return (<img src={src} />)
         })}
       </div>
     );

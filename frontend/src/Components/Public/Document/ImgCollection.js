@@ -8,4 +8,7 @@ export const ImgCollection = (uri) => {
     if (uri.includes('autopia')) {
         return require.context('../../../assets/images/attractions/park/autopia/img',true);
     }
+    if (uri.includes('big-thunder-mountain')) {
+        return require.context('../../../assets/images/attractions/park/big-thunder-mountain/img',true);
+    }
 }
