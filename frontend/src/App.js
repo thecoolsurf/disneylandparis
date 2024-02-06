@@ -54,8 +54,6 @@ function App() {
         <Navigation datas={parkAndUnivers} entities={entities} bkgNav={bkgNav} />
         <LinkToFinder />
         <Routes>
-          {/* PUBLIC */}
-          {/* *********************************************************** */}
           <Route path="/" element={
             <Home navigation={navigation} />
           } />
@@ -87,9 +85,6 @@ function App() {
           <Route key="rf" path={'/find/attractions'} element={
             <FindAttractions key="f" bkgNav={bkgNav} />
           } />
-
-          {/* ADMIN */}
-          {/* *********************************************************** */}
           <Route path={'/admin/connexion'} element={
             <AdminConnexion uri={'connexion'} />
           } />

@@ -18,9 +18,15 @@
 }
 
 .icon-adventure-isle {
-    background-image: url('../../images/attractions/park/adventure-isle/bkg-adventure-isle.webp');
+    background-image: url('../../images/attractions/park/adventure-isle/icon-adventure-isle.webp');
     background-size: 200%;
     background-position: top 0px left -30px;
+}
+
+.icon-alice-s-curious-labyrinth {
+    background-image: url('../../images/attractions/park/alice-s-curious-labyrinth/icon-alice-s-curious-labyrinth.jpg');
+    background-size: cover;
+    background-position: center center;
 }
 
 .icon-big-thunder-mountain {
@@ -109,12 +115,6 @@
 
 .icon-startport {
     background-image: url('../../images/attractions/park/img-startport.webp');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-alice-s-curious-labyrinth {
-    background-image: url('../../images/attractions/park/img-alice-s-curious-labyrinth.jpg');
     background-size: cover;
     background-position: center center;
 }
@@ -326,7 +326,7 @@
 }
 
 .img-alice-s-curious-labyrinth {
-    background-image: url('../../images/attractions/park/img-alice-s-curious-labyrinth.jpg');
+    background-image: url('../../images/attractions/park/alice-s-curious-labyrinth/img-alice-s-curious-labyrinth.jpg');
 }
 
 .img-blanche-neige-et-les-sept-nains {

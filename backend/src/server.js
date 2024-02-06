@@ -109,8 +109,8 @@ function update(route, sql) {
       datas.push(req.body.id_sensory);
       datas.push(req.body.handicaps.toString());
       datas.push(req.body.interests.toString());
-      // datas.push(req.body.description.replace("'", "ʼ"));
-      datas.push(req.body.description);
+      datas.push(req.body.description.replace("'", "ʼ"));
+      // datas.push(req.body.description);
       datas.push(req.body.pictures.toString());
       datas.push(req.body.movies.toString());
       datas.push(req.body.id);
@@ -156,25 +156,20 @@ function deleting(route, sql) {
 /* menus */
 const nav_attractions_univers_parks = require('./Model/Public/Navigation/AttractionsAndUniversAndParks.js');
 select("/navigation", nav_attractions_univers_parks);
-
 /* home page */
 const home = require('./Model/Public/Home/Datas.js');
 select("/home", home);
-
 /* park page */
 const park_by_id = require('./Model/Public/Park/ParkById.js');
 select("/park_by_id", park_by_id);
-
 /* univers page */
 const univers_by_id = require('./Model/Public/Univers/UniversById.js');
 select("/univers_by_id", univers_by_id);
 const attractions_by_univers = require('./Model/Public/Attraction/AttractionsByUnivers.js');
 select("/attractions_by_univers", attractions_by_univers);
-
 /* attraction page */
 const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
 select("/attraction_by_id", attraction_by_id);
-
 /* find attraction page */
 const find_attraction = require('./Model/Public/Attraction/FindAttraction.js');
 selectFind("/find_attraction", find_attraction);
