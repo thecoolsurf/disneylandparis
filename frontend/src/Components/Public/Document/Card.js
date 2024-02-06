@@ -1,3 +1,5 @@
+import { ImgCollection } from "./ImgCollection";
+
 const Card = (props) => {
   const uri = window.location.href;
   if (uri.includes('park') && !uri.includes('univers')) {
@@ -20,14 +22,12 @@ const Card = (props) => {
   }
   if (uri.includes('attraction')) {
     /* page attraction */
-    const parent = uri.includes('walt') ? 'studio' : 'park';
-    const folder = props.item.aslug;
-    const images = require.context(`../../../assets/images/attractions/park/`, true, /[adventureland/img]/) ;
-    const imageList = images.keys().map(image => images(image));
-    console.log(imageList.length)
+    // const collection = require.context('../../../assets/images/attractions/park/adventure-isle/img', true);
+    const collection = ImgCollection(uri)
+    const images = collection.keys().map(image => collection(image));
     return (
       <div className="img-collection">
-        {imageList.map((src) => {
+        {images.map((src) => {
           return (<img src={src} />)
         })}
       </div>
