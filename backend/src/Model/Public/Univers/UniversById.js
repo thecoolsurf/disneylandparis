@@ -1,7 +1,8 @@
 const univers_by_id = `
 SELECT 
-id AS uid, slug AS uslug, name AS uname, description 
+id AS uid, name AS uname, slug AS uslug, route AS uroute, description 
 FROM univers 
-WHERE id = ?`;
+WHERE id = ?
+`;
 
 module.exports = univers_by_id;

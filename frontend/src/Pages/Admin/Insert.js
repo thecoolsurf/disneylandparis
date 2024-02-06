@@ -56,6 +56,9 @@ export const AdminInsert = (props) => {
                     <input type="submit" defaultValue="Insert" />
                 </fieldset>
             </form>
+            <a className="back" href={`/admin/entity/collection/${props.uri}`} alt="back">
+                <i className="fa fa-reply"></i>
+            </a>
         </div>
     )
 }

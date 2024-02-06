@@ -1,10 +1,14 @@
+/*
+@model backend/src/Model/Public/Home/Datas.js
+*/
+
 export const FilterHomeDatas = (home) => {
     const park = [];
     const univers = [[], []];
     const map = new Map();
     for (const el of home) {
-        if (!map.has(el.pid)) {
-            map.set(el.pid, true);
+        if (!map.has(el.pslug)) {
+            map.set(el.pslug, true);
             park.push({
                 pid: el.pid,
                 pslug: el.pslug,
@@ -13,18 +17,17 @@ export const FilterHomeDatas = (home) => {
             });
         }
         for (let i = 0; i < park.length; i++) {
-            if (!map.has(el.uid) && el.pid === i+1) {
-                map.set(el.uid, true);
+            if (!map.has(el.uslug) && el.pid === i+1) {
+                map.set(el.uslug, true);
                 univers[i].push({
                     uid: el.uid, 
-                    uslug: el.uslug, 
                     uname: el.uname, 
+                    uslug: el.uslug, 
                     uroute: el.uroute, 
                 });
             }
         }
     }
-    console.log(univers);
     for (let i = 0; i < park.length; i++) {
         park[i].univers = univers[i];
     }

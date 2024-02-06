@@ -40,10 +40,10 @@ function App() {
   }, []);
   const parkAndUnivers = FilterParkAndUnivers(navigation);
   const allAttractions = navigation;
-  const queryString = window.location.pathname;
-  const params = queryString.split('/');
-  const bkgHeader = params[4] ? params[4] : params[1] ? params[1] : 'default-header';
-  const bkgNav = queryString.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
+  const uri = window.location.href;
+  const params = uri.split('/');
+  const bkgHeader = params[5] ? params[5] : params[3] ? params[3] : 'default-header';
+  const bkgNav = uri.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
   const entities = ['administrator','attraction','evacuation','handicap','height','interest','park','sensory','univers','user'];
 
@@ -62,7 +62,7 @@ function App() {
           {parkAndUnivers.map((p) => {
             return (
               <Route key={'rp'+p.pid} path={p.proute} element={
-                <Park key={'p'+p.pid} id={p.pid} navigation={navigation} slugs={params} name={p.pname} bkgNav={bkgNav} />
+                <Park key={'p'+p.pid} id={p.pid} navigation={navigation} name={p.pname} bkgNav={bkgNav} />
               } />
             )
           })}
@@ -71,7 +71,7 @@ function App() {
               m.univers.map((u) => {
                 return (
                   <Route key={'ru'+u.uid} path={u.uroute} element={
-                    <Univers key={'u'+u.uid} id={u.uid} slugs={params} pname={m.pname} uname={u.uname} bkgNav={bkgNav} />
+                    <Univers key={'u'+u.uid} id={u.uid} pname={m.pname} uname={u.uname} bkgNav={bkgNav} />
                   } />
                 )
               })
@@ -80,12 +80,12 @@ function App() {
           {allAttractions.map((a) => {
             return (
               <Route key={'ra'+a.aid} path={a.aroute} element={
-                <Attraction key={'a'+a.aid} id={a.aid} slugs={params} pname={a.pname} uname={a.uname} name={a.aname} bkgNav={bkgNav} />
+                <Attraction key={'a'+a.aid} id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} bkgNav={bkgNav} />
               } />
             )
           })}
           <Route key="rf" path={'/find/attractions'} element={
-            <FindAttractions key="f" slugs={params} bkgNav={bkgNav} />
+            <FindAttractions key="f" bkgNav={bkgNav} />
           } />
 
           {/* ADMIN */}

@@ -23,26 +23,24 @@ export const BlockInfos = (props) => {
         )
     }
     /* park page */
-    if (uri.includes('park')) {
+    if (uri.includes('park') && !uri.includes('univers')) {
         return(
             <ul className="list">
                 <BlockTotal label="univers" total={univers.length} />
                 <BlockCollection label="univers-link" datas={univers} />
                 <BlockTotal label="attractions" total={attractions.length} />
-                <BlockCollection label="attraction" datas={attractions} />
-                <BlockBack href={props.href} />
+                <BlockCollection label="attraction-link" datas={attractions} />
+                <BlockBack back={props.back} />
             </ul>
         )
     }
     /* univers page */
-    if (uri.includes('univers')) {
+    if (uri.includes('univers') && !uri.includes('attraction')) {
         return (
             <ul className="list">
-                <BlockTotal label="univers" total={univers.length} />
-                <BlockCollection label="attraction-link" datas={univers} />
                 <BlockTotal label="attractions" total={attractions.length} />
-                <BlockCollection label="attraction" datas={attractions} />
-                <BlockBack href={props.href} />
+                <BlockCollection label="attraction-link" datas={attractions} />
+                <BlockBack back={props.back} />
             </ul>
         )
     }
@@ -53,17 +51,16 @@ export const BlockInfos = (props) => {
                 {attractions.map((a) => {
                     return (
                         <>
-                            <BlockLabelName label="Nom" name={a.aname} />
                             <BlockLabelName label="Public" name={a.public} />
                             <BlockLabelName label="Interet" name={a.idescription} />
-                            <BlockLabelName label="Restriction" name={a.hdescription} />
-                            <BlockLabelName label="Securite" name={a.edescription} />
+                            <BlockLabelName label="Taille" name={a.hdescription} />
+                            <BlockLabelName label="Evacuation" name={a.edescription} />
                             <BlockLabelName label="Sensation" name={a.sdescription} />
                             <BlockLabelName label="Handicap" name={a.hhdescription} />
                         </>
                     )
                 })}
-                <BlockBack href={props.href} />
+                <BlockBack back={props.back} />
             </ul>
         )
 

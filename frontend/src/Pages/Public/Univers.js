@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
+import { FilterRoute } from '../../Components/Public/Filters/FilterRoute.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
-import { LinkToFinder } from '../../Components/Public/Document/LinkToFinder.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
 
@@ -18,20 +18,23 @@ export const Univers = (props) => {
         };
         fetchData();
     }, []);
-    let legend = 'Liste des attractions - ' + props.uname + ' - ' + props.pname;
+    let legend = univers[0] ? 'Liste des attractions - ' + univers[0].uname : '';
     return (
         <div className="univers">
-            <LinkToFinder />
-            <Carrousel datas={attractions} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
+            <Carrousel datas={attractions} bkgNav={props.bkgNav} legend={legend} />
             <section className="infos">
                 {univers.map((el) => {
+                    const back = FilterRoute(el.uroute, 'univers');
                     return (
                         <>
-                            <div className="bloc-infos" key={el.slug}>
+                            <div className="bloc-infos" key={el.uslug}>
                                 <BlockLogo slug={el.uslug} legend={el.uname} />
-                                <BlockInfos href={'/park-' + props.slugs[2]} univers={univers} attractions={attractions} />
+                                <BlockInfos back={back} univers={univers} attractions={attractions} />
                             </div>
-                            <div className="description">{el.description}</div>
+                            <div className="description">
+                                <h2>{el.uname}</h2>
+                                <p>{el.description}</p>
+                            </div>
                         </>
                     )
                 })}

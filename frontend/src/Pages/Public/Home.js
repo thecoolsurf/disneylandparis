@@ -33,7 +33,7 @@ export const Home = (props) => {
                     univers = parkAndUnivers[1].univers;
                 }
                 return (
-                    <section className="infos">
+                    <section key={p.pid} className="infos">
                         <div className="bloc-infos">
                             <BlockLogo href={'/park-'+p.pslug} slug={p.pslug} legend={p.pname} />
                             <BlockInfos univers={univers} attractions={attractions} />

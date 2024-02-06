@@ -1,7 +1,7 @@
 // Model/Public/Attraction
 
 const attraction_by_id = `SELECT 
-a.id AS aid, a.slug AS aslug, a.name AS aname, a.public, a.description, a.pictures, a.movies, 
+a.id AS aid, a.slug AS aslug, a.route AS aroute, a.name AS aname, a.public, a.description, a.pictures, a.movies, 
 e.name AS ename, e.level, e.description as edescription,
 h.name AS hname, h.description AS hdescription,
 s.name AS sname, s.description AS sdescription,

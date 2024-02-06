@@ -2,8 +2,8 @@ export const FilterAttractions = (attractions, pid) => {
     const collection = [];
     const map = new Map();
     for (const el of attractions) {
-        if (!map.has(el.aid) && el.pid === pid) {
-            map.set(el.aid, true);
+        if (!map.has(el.aslug) && el.pid === pid) {
+            map.set(el.aslug, true);
             collection.push({
                 pslug: el.pslug,
                 uslug: el.uslug,

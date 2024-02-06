@@ -56,6 +56,9 @@ export const AdminUpdate = (props) => {
                     <input type="submit" defaultValue="Update" />
                 </fieldset>
             </form>
+            <a className="back" href={`/admin/entity/collection/${props.uri}`} alt="back">
+                <i className="fa fa-reply"></i>
+            </a>
         </div>
     )
 }

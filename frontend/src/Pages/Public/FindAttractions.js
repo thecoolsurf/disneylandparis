@@ -12,6 +12,7 @@ export const FindAttractions = (props) => {
         };
         fetchtheData();
     }, [find]);
+    console.log(findAttractions)
     return (
         <div className="finder">
             <form action="/find/attractions" method="get" className={'search ' + props.bkgNav}>
@@ -24,7 +25,7 @@ export const FindAttractions = (props) => {
                     {findAttractions.map((el) => {
                         return (
                         <li key={el.slug}>
-                            <a href={'/park/'+el.pslug+'/univers/'+el.uslug+'/attraction/'+el.slug}>{el.name}</a>
+                            <a href={el.route}>{el.name}</a>
                         </li>
                         )
                     })}

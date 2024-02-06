@@ -103,6 +103,10 @@ body {
   visibility: hidden;
 }
 
+.home .bloc-infos .list {
+  text-align: center;
+}
+
 .park {
   display: flex;
   flex-direction: row;
@@ -301,7 +305,7 @@ body {
   text-align: left;
 }
 
-.description h3 {
+.description h2 {
   margin: 0 0 20px 0;
   color: #444444;
 }

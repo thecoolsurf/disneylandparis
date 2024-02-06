@@ -1,9 +1,10 @@
 import { FilterRoute } from "./FilterRoute";
+
 /*
 @model backend/src/Model/Public/Navigation/AttractionAndUniversAndPark.js
 */
 
-export const FilterParkAndUnivers = (navigation) => {
+export const FilterPark = (navigation) => {
     const parks = [];
     const univers = [[], []];
     const map = new Map();
@@ -15,7 +16,8 @@ export const FilterParkAndUnivers = (navigation) => {
           pid: el.pid, 
           pname: el.pname,
           pslug: el.pslug,
-          proute: FilterRoute(el.aroute,'univers'),
+          description: el.description,
+          proute: FilterRoute(el.uroute, 'univers'),
         });
       }
       /* univers */
@@ -26,7 +28,7 @@ export const FilterParkAndUnivers = (navigation) => {
             uid: el.uid, 
             uname: el.uname,
             uslug: el.uslug,
-            uroute: FilterRoute(el.aroute, 'attraction'),
+            uroute: el.uroute,
           });
         }
       }

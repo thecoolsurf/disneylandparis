@@ -1,8 +1,9 @@
 import '../../../assets/css/public/header.css';
 
 export const Header = (props) => {
+    const css = window.location.href.includes('admin') ? 'admin' : 'img';
     return (
-        <header className={'header img-'+props.bkgHeader}>
+        <header className={'header '+css+'-'+props.bkgHeader}>
             <div className="block-title">
                 <a className="title" href="/" alt="Home">
                     <div className="item1">Rencontre ta</div>

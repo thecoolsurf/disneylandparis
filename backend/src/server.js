@@ -82,11 +82,9 @@ function selectFind(route, sql) {
     let find = req.query.find ? req.query.find : '';
     knex.raw(sql, '%' + find + '%')
       .then(([rows, columns]) => {
-        const result = rows.map((e) => ({
-          pslug: e.pslug,
-          uslug: e.uslug,
-          slug: e.slug,
-          name: e.name
+        const result = rows.map((el) => ({
+          name: el.name,
+          route: el.route,
         }));
         res.json(result);
       })
@@ -104,7 +102,7 @@ function update(route, sql) {
       datas.push(req.body.id_univ);
       datas.push(req.body.name);
       datas.push(req.body.slug);
-      datas.push(req.body.url);
+      datas.push(req.body.route);
       datas.push(req.body.public);
       datas.push(req.body.id_evacuation);
       datas.push(req.body.id_height);

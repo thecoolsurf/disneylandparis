@@ -45,7 +45,7 @@ export const Navigation = (props) => {
                                 </a>
                                 <div key={'child' + p.pid} className={'nav-childs ' + show}>
                                     {p.univers.map((u) => {
-                                        return (<a key={'c' + u.uid} className="link" href={u.uroute}>{u.uname}</a>)
+                                        return (<a key={'c' + u.uid} className={'link link-'+p.pid} href={u.uroute}>{u.uname}</a>)
                                     })}
                                 </div>
                             </div>

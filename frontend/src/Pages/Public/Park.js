@@ -1,6 +1,6 @@
 import '../../assets/css/public/parks.css';
 import { useState, useEffect } from 'react';
-import { FilterParkAndUnivers } from '../../Components/Public/Filters/FilterParkAndUnivers.js';
+import { FilterPark } from '../../Components/Public/Filters/FilterPark.js';
 import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
@@ -16,21 +16,24 @@ export const Park = (props) => {
         };
         fetchData();
     }, []);
-    const park = FilterParkAndUnivers(parks);
+    const park = FilterPark(parks);
+    const attractions = FilterAttractions(props.navigation, props.id);
     let legend = 'Liste des univers - ' + props.name;
     return (
-        <div className="park">
-            <Carrousel datas={parks} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
+        <div key="park" className="park">
+            <Carrousel datas={parks} bkgNav={props.bkgNav} legend={legend} />
             <section className="infos">
                 {park.map((p) => {
-                    const attractions = FilterAttractions(props.navigation, props.id);
                     return (
                         <>
-                            <div className="bloc-infos">
+                            <div key={p.pid} className="bloc-infos">
                                 <BlockLogo slug={p.pslug} legend={p.pname} />
-                                <BlockInfos href={'/'} univers={parks} attractions={attractions} />
+                                <BlockInfos back={'/'} univers={parks} attractions={attractions} />
                             </div>
-                            <div className="description">{p.description}</div>
+                            <div className="description">
+                                <h2>{p.pname}</h2>
+                                <p>{p.description}</p>
+                            </div>
                         </>
                     )
                 })}

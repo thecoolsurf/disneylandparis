@@ -4,8 +4,8 @@
 */
 
 export const BlockCollection = (props) => {
-        /* page park */
-        if (props.label === 'park-link') {
+    /* page park */
+    if (props.label === 'park-link') {
         return (
             <li className="items-1">
                 {props.datas.map((u) => {
@@ -18,8 +18,8 @@ export const BlockCollection = (props) => {
             </li>
         )
     }
+    /* page univers */
     if (props.label === 'univers-link') {
-        /* page univers */
         return (
             <li className="items-1">
                 {props.datas.map((u) => {
@@ -32,9 +32,8 @@ export const BlockCollection = (props) => {
             </li>
         )
     }
-    if (props.label === 'attraction') {
-        /* page attraction */
-        const parent_href = window.location.href;
+    /* page attraction */
+    if (props.label === 'attraction-link') {
         return (
             <li className="items-2">
                 {props.datas.map((a) => {

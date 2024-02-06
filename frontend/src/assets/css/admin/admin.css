@@ -1,15 +1,8 @@
 /* hide header public */
-.img-admin,
-.img-administrator,
-.img-attraction,
-.img-evacuation,
-.img-handicap,
-.img-height,
-.img-interest,
-.img-park,
-.img-sensory,
-.img-univers,
-.img-user {
+.admin-admin,
+.admin-collection,
+.admin-update,
+.admin-insert {
   display: none;
 }
 
@@ -137,4 +130,18 @@
 .admin .btn .button:hover,
 .admin .form-btn .button:hover {
   background: #353535;
+}
+
+.admin .back {
+  display: block;
+  float: left;
+  border-radius: 5px;
+  font-size: 30px;
+  line-height: 2;
+  color: #868686;
+  text-align: center;
+}
+
+.admin .back:hover {
+  color: #000;
 }

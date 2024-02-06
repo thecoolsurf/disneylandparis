@@ -3,7 +3,17 @@
 }
 
 .bkg-nav-studio {
-  background:#ddac61;
+  background:#dda44e;
+}
+
+.bkg-nav-park .link-1,
+.bkg-nav-park .link-2 {
+  background: #6077eb;
+}
+
+.bkg-nav-studio .link-1,
+.bkg-nav-studio .link-2 {
+  background:#f7c781;
 }
 
 .navigation,
@@ -101,7 +111,7 @@
   border-radius: 5px;
 }
 
-.navigation .nav-parent {
+.nav-parent {
   position: relative;
   margin: 5px 10px;
 }
@@ -110,23 +120,22 @@
   color: #FFF;
 }
 
-.nav-parent .link:hover {
-  background: #FFF;
-  color: #000;
-}
-
-.navigation .nav-childs {
-  background: rgb(0,0,0,0.8);
+.nav-childs {
+  background: none;
   flex-direction: column;
   justify-content: flex-start;
   align-content: flex-start;
-  margin: 5px 0 0 0;
+  border-radius: 5px;
 }
 
-.navigation .nav-childs .link {
-  background: rgb(255,255,255,0.3);
-  color: #FFF;
-  margin: 0 0 5px 0;
+.nav-childs .link {
+  margin: 10px 0 0 0;
+}
+
+.nav-parent .link:hover,
+.nav-childs .link:hover {
+  background: #FFF;
+  color: #000;
 }
 
 .show {
