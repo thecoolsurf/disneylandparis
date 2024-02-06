@@ -29,6 +29,12 @@
     background-position: center center;
 }
 
+.icon-autopia {
+    background-image: url('../../images/attractions/park/autopia/img-autopia.jpg');
+    background-size: cover;
+    background-position: center center;
+}
+
 .icon-big-thunder-mountain {
     background-image: url('../../images/attractions/park/img-big-thunder-mountain.jpg');
     background-size: cover;
@@ -73,12 +79,6 @@
 
 .icon-start-tours {
     background-image: url('../../images/attractions/park/img-start-tours.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-autopia {
-    background-image: url('../../images/attractions/park/img-autopia.jpg');
     background-size: cover;
     background-position: center center;
 }
@@ -269,6 +269,14 @@
     background-image: url('../../images/attractions/park/adventure-isle/img/adventure-isle-1.jpeg');
 }
 
+.img-alice-s-curious-labyrinth {
+    background-image: url('../../images/attractions/park/alice-s-curious-labyrinth/img-alice-s-curious-labyrinth.jpg');
+}
+
+.img-autopia {
+    background-image: url('../../images/attractions/park/autopia/img-autopia.jpg');
+}
+
 .img-indiana-jones-et-le-temple-du-peril {
     background-image: url('../../images/attractions/park/indiana-jones-et-le-temple-du-peril.avif');
 }
@@ -278,7 +286,7 @@
 }
 
 .img-le-galion-des-pirates {
-    background-image: url('../../images/attractions/park/img-le-galion-des-pirates.webp');
+    background-image: url('../../images/attractions/park/img-la-plage-des-pirates.jpg');
 }
 
 .img-la-plage-des-pirates {
@@ -295,10 +303,6 @@
 
 .img-start-tours {
     background-image: url('../../images/attractions/park/img-start-tours.jpg');
-}
-
-.img-autopia {
-    background-image: url('../../images/attractions/park/img-autopia.jpg');
 }
 
 .img-buzz-lightyear-last-blast {
@@ -323,10 +327,6 @@
 
 .img-startport {
     background-image: url('../../images/attractions/park/img-startport.webp');
-}
-
-.img-alice-s-curious-labyrinth {
-    background-image: url('../../images/attractions/park/alice-s-curious-labyrinth/img-alice-s-curious-labyrinth.jpg');
 }
 
 .img-blanche-neige-et-les-sept-nains {

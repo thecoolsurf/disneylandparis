@@ -5,4 +5,7 @@ export const ImgCollection = (uri) => {
     if (uri.includes('alice-s-curious-labyrinth')) {
         return require.context('../../../assets/images/attractions/park/alice-s-curious-labyrinth/img',true);
     }
+    if (uri.includes('autopia')) {
+        return require.context('../../../assets/images/attractions/park/autopia/img',true);
+    }
 }

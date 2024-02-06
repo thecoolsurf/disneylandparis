@@ -28,7 +28,7 @@ const Card = (props) => {
     return (
       <div className="img-collection">
         {images.map((src) => {
-          return (<img src={src} />)
+          return (<img src={'../../../assets/images/attractions/park/adventure-isle/img/adventure-isle-1.jpg'} />)
         })}
       </div>
     );
