@@ -1,5 +1,5 @@
 /* ***************************************************************************************************** */
-/* park disneyland */
+/* icon */
 
 .icons-disneylandparis {
     font-family: dlp_pep_font-webfont;
@@ -18,413 +18,169 @@
 }
 
 .icon-adventure-isle {
-    background-image: url('../../images/attractions/park/adventure-isle/icon-adventure-isle.webp');
-    background-size: 200%;
-    background-position: top 0px left -30px;
+    background-image: url('../../images/attractions/park/adventure-isle/icon/adventure-isle.webp');
 }
 
 .icon-alice-s-curious-labyrinth {
-    background-image: url('../../images/attractions/park/alice-s-curious-labyrinth/icon-alice-s-curious-labyrinth.jpg');
-    background-size: cover;
-    background-position: center center;
+    background-image: url('../../images/attractions/park/alice-s-curious-labyrinth/icon/alice-s-curious-labyrinth.jpg');
 }
 
 .icon-autopia {
-    background-image: url('../../images/attractions/park/autopia/img-autopia.jpg');
-    background-size: cover;
-    background-position: center center;
+    background-image: url('../../images/attractions/park/autopia/icon/autopia.jpg');
 }
 
 .icon-big-thunder-mountain {
-    background-image: url('../../images/attractions/park/big-thunder-mountain/img-big-thunder-mountain.jpg');
-    background-size: cover;
-    background-position: center center;
+    background-image: url('../../images/attractions/park/big-thunder-mountain/icon/big-thunder-mountain.jpg');
 }
 
-.icon-indiana-jones-et-le-temple-du-peril {
-    background-image: url('../../images/attractions/park/indiana-jones-et-le-temple-du-peril.avif');
-    background-size: cover;
-    background-position: center center;
+.icon-blanche-neige-et-les-sept-nains {
+    background-image: url('../../images/attractions/park/blanche-neige-et-les-sept-nains/icon/blanche-neige-et-les-sept-nains.jpg');
+}
+
+.icon-buzz-lightyear-last-blast {
+    background-image: url('../../images/attractions/park/buzz-lightyear-last-blast/icon/buzz-lightyear-last-blast.webp');
+}
+
+.icon-casy-jr-le-petit-train-du-cirque {
+    background-image: url('../../images/attractions/park/casy-jr-le-petit-train-du-cirque/icon/casy-jr-le-petit-train-du-cirque.jpg');
+}
+
+.icon-discovery-arcade-main-street-usa {
+    background-image: url('../../images/attractions/park/discovery-arcade-main-street-usa/icon/discovery-arcade-main-street-usa.jpg');
+}
+
+.icon-disneyland-railroad {
+    background-image: url('../../images/attractions/park/disneyland-railroad/icon/disneyland-railroad.jpg');
+}
+
+.icon-dumbo-the-flying-elephant {
+    background-image: url('../../images/attractions/park/dumbo-the-flying-elephant/icon/dumbo-the-flying-elephant.jpg');
+}
+
+.icon-frontierland-playground {
+    background-image: url('../../images/attractions/park/frontierland-playground/icon/frontierland-playground.jpg');
+}
+
+.icon-horse-drawn-streetcarts {
+    background-image: url('../../images/attractions/park/horse-drawn-streetcarts/icon/horse-drawn-streetcarts.jpg');
+}
+
+.icon-its-a-small-world {
+    background-image: url('../../images/attractions/park/its-a-small-world/icon/its-a-small-world.jpg');
 }
 
 .icon-la-cabane-des-robinson {
-    background-image: url('../../images/attractions/park/img-la-cabane-des-robinson.jpg');
-    background-size: cover;
-    background-position: center center;
+    background-image: url('../../images/attractions/park/la-cabane-des-robinson/icon/la-cabane-des-robinson.jpg');
 }
 
-.icon-le-galion-des-pirates {
-    background-image: url('../../images/attractions/park/img-le-galion-des-pirates.webp');
-    background-size: cover;
-    background-position: center center;
+.icon-la-galerie-de-la-belle-au-bois-dormant {
+    background-image: url('../../images/attractions/park/la-galerie-de-la-belle-au-bois-dormant/icon/la-galerie-de-la-belle-au-bois-dormant.jpg');
 }
 
 .icon-la-plage-des-pirates {
-    background-image: url('../../images/attractions/park/img-la-plage-des-pirates.jpg');
-    background-size: cover;
-    background-position: center center;
+    background-image: url('../../images/attractions/park/la-plage-des-pirates/icon/la-plage-des-pirates.jpg');
+}
+
+.icon-la-taniere-du-dragon {
+    background-image: url('../../images/attractions/park/la-taniere-du-dragon/icon/la-taniere-du-dragon.jpg');
+}
+
+.icon-le-carrousel-de-lancelot {
+    background-image: url('../../images/attractions/park/le-carrousel-de-lancelot/icon/le-carrousel-de-lancelot.jpg');
+}
+
+.icon-le-chateau-de-la-belle-au-bois-dormant {
+    background-image: url('../../images/attractions/park/le-chateau-de-la-belle-au-bois-dormant/icon/le-chateau-de-la-belle-au-bois-dormant.jpg');
+}
+
+.icon-le-galion-des-pirates {
+    background-image: url('../../images/attractions/park/le-galion-des-pirates/icon/le-galion-des-pirates.jpg');
 }
 
 .icon-le-passage-enchant-d-aladdin {
-    background-image: url('../../images/attractions/park/img-le-passage-enchant-d-aladdin.webp');
-    background-size: cover;
-    background-position: center center;
+    background-image: url('../../images/attractions/park/le-passage-enchant-d-aladdin/icon/le-passage-enchant-d-aladdin.jpg');
+}
+
+.icon-le-pays-des-contes-de-fees {
+    background-image: url('../../images/attractions/park/le-pays-des-contes-de-fees/icon/le-pays-des-contes-de-fees.jpg');
+}
+
+.icon-les-jardins-feeriques-de-main-street-usa {
+    background-image: url('../../images/attractions/park/les-jardins-feeriques-de-main-street-usa/icon/les-jardins-feeriques-de-main-street-usa.jpg');
+}
+
+.icon-les-mysteres-du-nautilus {
+    background-image: url('../../images/attractions/park/les-mysteres-du-nautilus/icon/les-mysteres-du-nautilus.jpg');
+}
+
+.icon-les-voyages-de-pinocchio {
+    background-image: url('../../images/attractions/park/les-voyages-de-pinocchio/icon/les-voyages-de-pinocchio.jpg');
+}
+
+.icon-liberty-arcade {
+    background-image: url('../../images/attractions/park/liberty-arcade/icon/liberty-arcade.jpg');
+}
+
+.icon-mad-hatter-s-tea-cups {
+    background-image: url('../../images/attractions/park/mad-hatter-s-tea-cups/icon/mad-hatter-s-tea-cups.jpg');
+}
+
+.icon-main-street-vehicles {
+    background-image: url('../../images/attractions/park/main-street-vehicles/icon/main-street-vehicles.jpg');
+}
+
+.icon-mickey-et-son-orchestre-philharmagique {
+    background-image: url('../../images/attractions/park/mickey-et-son-orchestre-philharmagique/icon/mickey-et-son-orchestre-philharmagique.jpg');
+}
+
+
+
+
+.icon-indiana-jones-et-le-temple-du-peril {
+    background-image: url('../../images/attractions/park/indiana-jones-et-le-temple-du-peril.avif');
 }
 
 .icon-pirates-of-caribbean {
     background-image: url('../../images/attractions/park/img-pirates-of-caribbean.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-start-tours {
     background-image: url('../../images/attractions/park/img-start-tours.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-buzz-lightyear-last-blast {
-    background-image: url('../../images/attractions/park/img-buzz-lightyear-last-blast.webp');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-les-mysteres-du-nautilus {
-    background-image: url('../../images/attractions/park/img-les-mysteres-du-nautilus.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-mickey-et-son-orchestre-philharmagique {
-    background-image: url('../../images/attractions/park/img-mickey-et-son-orchestre-philharmagique.webp');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-orbitron {
     background-image: url('../../images/attractions/park/img-orbitron.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-star-wars-hyperspace-mountain {
     background-image: url('../../images/attractions/park/img-star-wars-hyperspace-mountain.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-startport {
     background-image: url('../../images/attractions/park/img-startport.webp');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-blanche-neige-et-les-sept-nains {
-    background-image: url('../../images/attractions/park/img-blanche-neige-et-les-sept-nains.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-dumbo-the-flying-elephant {
-    background-image: url('../../images/attractions/park/img-dumbo-the-flying-elephant.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-its-a-small-world {
-    background-image: url('../../images/attractions/park/img-its-a-small-world.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-la-galerie-de-la-belle-au-bois-dormant {
-    background-image: url('../../images/attractions/park/img-la-galerie-de-la-belle-au-bois-dormant.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-la-taniere-du-dragon {
-    background-image: url('../../images/attractions/park/img-la-taniere-du-dragon.webp');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-le-carrousel-de-lancelot {
-    background-image: url('../../images/attractions/park/img-le-carrousel-de-lancelot.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-le-chateau-de-la-belle-au-bois-dormant {
-    background-image: url('../../images/attractions/park/img-le-chateau-de-la-belle-au-bois-dormant.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-le-pays-des-contes-de-fees {
-    background-image: url('../../images/attractions/park/img-le-pays-des-contes-de-fees.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-les-voyages-de-pinocchio {
-    background-image: url('../../images/attractions/park/img-les-voyages-de-pinocchio.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-mad-hatter-s-tea-cups {
-    background-image: url('../../images/attractions/park/img-mad-hatter-s-tea-cups.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-pavillon-des-princesses {
     background-image: url('../../images/attractions/park/img-pavillon-des-princesses.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-peter-pan-s-flight {
     background-image: url('../../images/attractions/park/img-peter-pan-s-flight.webp');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-rencontre-avec-myckey {
     background-image: url('../../images/attractions/park/img-rencontre-avec-myckey.webp');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-casy-jr-le-petit-train-du-cirque {
-    background-image: url('../../images/attractions/park/img-casy-jr-le-petit-train-du-cirque.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-frontierland-playground {
-    background-image: url('../../images/attractions/park/img-frontierland-playground.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-phantom-manor {
     background-image: url('../../images/attractions/park/img-phantom-manor.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-rustler-roundup-shootin {
     background-image: url('../../images/attractions/park/img-rustler-roundup-shootin.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
 .icon-thunder-mesa-riverboat-landing {
     background-image: url('../../images/attractions/park/img-thunder-mesa-riverboat-landing.jpg');
-    background-size: cover;
-    background-position: center center;
 }
 
-.icon-discovery-arcade-main-street-usa {
-    background-image: url('../../images/attractions/park/img-discovery-arcade-main-street-usa.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-disneyland-railroad {
-    background-image: url('../../images/attractions/park/img-disneyland-railroad.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-horse-drawn-streetcarts {
-    background-image: url('../../images/attractions/park/img-horse-drawn-streetcarts.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-les-jardins-feeriques-de-main-street-usa {
-    background-image: url('../../images/attractions/park/img-les-jardins-feeriques-de-main-street-usa.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-liberty-arcade {
-    background-image: url('../../images/attractions/park/img-liberty-arcade.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-.icon-main-street-vehicles {
-    background-image: url('../../images/attractions/park/img-main-street-vehicles.jpg');
-    background-size: cover;
-    background-position: center center;
-}
-
-/* ***************************************************************************************************** */
-
-.img-adventure-isle {
-    background-image: url('../../images/attractions/park/adventure-isle/img/adventure-isle-1.jpeg');
-}
-
-.img-alice-s-curious-labyrinth {
-    background-image: url('../../images/attractions/park/alice-s-curious-labyrinth/img-alice-s-curious-labyrinth.jpg');
-}
-
-.img-autopia {
-    background-image: url('../../images/attractions/park/autopia/img-autopia.jpg');
-}
-
-.img-big-thunder-mountain {
-    background-image: url('../../images/attractions/park/big-thunder-mountain/img-big-thunder-mountain.jpg');
-}
-
-.img-indiana-jones-et-le-temple-du-peril {
-    background-image: url('../../images/attractions/park/indiana-jones-et-le-temple-du-peril.avif');
-}
-
-.img-la-cabane-des-robinson {
-    background-image: url('../../images/attractions/park/img-la-cabane-des-robinson.jpg');
-}
-
-.img-le-galion-des-pirates {
-    background-image: url('../../images/attractions/park/img-la-plage-des-pirates.jpg');
-}
-
-.img-la-plage-des-pirates {
-    background-image: url('../../images/attractions/park/img-la-plage-des-pirates.jpg');
-}
-
-.img-le-passage-enchant-d-aladdin {
-    background-image: url('../../images/attractions/park/img-le-passage-enchant-d-aladdin.webp');
-}
-
-.img-pirates-of-caribbean {
-    background-image: url('../../images/attractions/park/img-pirates-of-caribbean.jpg');
-}
-
-.img-start-tours {
-    background-image: url('../../images/attractions/park/img-start-tours.jpg');
-}
-
-.img-buzz-lightyear-last-blast {
-    background-image: url('../../images/attractions/park/img-buzz-lightyear-last-blast.webp');
-}
-
-.img-les-mysteres-du-nautilus {
-    background-image: url('../../images/attractions/park/img-les-mysteres-du-nautilus.jpg');
-}
-
-.img-mickey-et-son-orchestre-philharmagique {
-    background-image: url('../../images/attractions/park/img-mickey-et-son-orchestre-philharmagique.webp');
-}
-
-.img-orbitron {
-    background-image: url('../../images/attractions/park/img-orbitron.jpg');
-}
-
-.img-star-wars-hyperspace-mountain {
-    background-image: url('../../images/attractions/park/img-star-wars-hyperspace-mountain.jpg');
-}
-
-.img-startport {
-    background-image: url('../../images/attractions/park/img-startport.webp');
-}
-
-.img-blanche-neige-et-les-sept-nains {
-    background-image: url('../../images/attractions/park/img-blanche-neige-et-les-sept-nains.jpg');
-}
-
-.img-dumbo-the-flying-elephant {
-    background-image: url('../../images/attractions/park/img-dumbo-the-flying-elephant.jpg');
-}
-
-.img-its-a-small-world {
-    background-image: url('../../images/attractions/park/img-its-a-small-world.jpg');
-}
-
-.img-la-galerie-de-la-belle-au-bois-dormant {
-    background-image: url('../../images/attractions/park/img-la-galerie-de-la-belle-au-bois-dormant.jpg');
-}
-
-.img-la-taniere-du-dragon {
-    background-image: url('../../images/attractions/park/img-la-taniere-du-dragon.webp');
-}
-
-.img-le-carrousel-de-lancelot {
-    background-image: url('../../images/attractions/park/img-le-carrousel-de-lancelot.jpg');
-}
-
-.img-le-chateau-de-la-belle-au-bois-dormant {
-    background-image: url('../../images/attractions/park/img-le-chateau-de-la-belle-au-bois-dormant.jpg');
-}
-
-.img-le-pays-des-contes-de-fees {
-    background-image: url('../../images/attractions/park/img-le-pays-des-contes-de-fees.jpg');
-}
-
-.img-les-voyages-de-pinocchio {
-    background-image: url('../../images/attractions/park/img-les-voyages-de-pinocchio.jpg');
-}
-
-.img-mad-hatter-s-tea-cups {
-    background-image: url('../../images/attractions/park/img-mad-hatter-s-tea-cups.jpg');
-}
-
-.img-pavillon-des-princesses {
-    background-image: url('../../images/attractions/park/img-pavillon-des-princesses.jpg');
-}
-
-.img-peter-pan-s-flight {
-    background-image: url('../../images/attractions/park/img-peter-pan-s-flight.webp');
-}
-
-.img-rencontre-avec-myckey {
-    background-image: url('../../images/attractions/park/img-rencontre-avec-myckey.webp');
-}
-
-.img-casy-jr-le-petit-train-du-cirque {
-    background-image: url('../../images/attractions/park/img-casy-jr-le-petit-train-du-cirque.jpg');
-}
-
-.img-frontierland-playground {
-    background-image: url('../../images/attractions/park/img-frontierland-playground.jpg');
-}
-
-.img-phantom-manor {
-    background-image: url('../../images/attractions/park/img-phantom-manor.jpg');
-}
-
-.img-rustler-roundup-shootin {
-    background-image: url('../../images/attractions/park/img-rustler-roundup-shootin.jpg');
-}
-
-.img-thunder-mesa-riverboat-landing {
-    background-image: url('../../images/attractions/park/img-thunder-mesa-riverboat-landing.jpg');
-}
-
-.img-discovery-arcade-main-street-usa {
-    background-image: url('../../images/attractions/park/img-discovery-arcade-main-street-usa.jpg');
-}
-
-.img-disneyland-railroad {
-    background-image: url('../../images/attractions/park/img-disneyland-railroad.jpg');
-}
-
-.img-horse-drawn-streetcarts {
-    background-image: url('../../images/attractions/park/img-horse-drawn-streetcarts.jpg');
-}
-
-.img-les-jardins-feeriques-de-main-street-usa {
-    background-image: url('../../images/attractions/park/img-les-jardins-feeriques-de-main-street-usa.jpg');
-}
-
-.img-liberty-arcade {
-    background-image: url('../../images/attractions/park/img-liberty-arcade.jpg');
-}
-
-.img-main-street-vehicles {
-    background-image: url('../../images/attractions/park/img-main-street-vehicles.jpg');
-}
