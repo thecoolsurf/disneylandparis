@@ -1,4 +1,4 @@
-export const RequireContext = () => {
+export const RequireContextPark = () => {
     const uri = window.location.href;
     if (uri.includes('adventure-isle')) {
         return require.context('../../../assets/images/attractions/park/adventure-isle/img', true);
@@ -35,6 +35,9 @@ export const RequireContext = () => {
     }
     if (uri.includes('horse-drawn-streetcarts')) {
         return require.context('../../../assets/images/attractions/park/horse-drawn-streetcarts/img',true);
+    }
+    if (uri.includes('indiana-jones-et-le-temple-du-peril')) {
+        return require.context('../../../assets/images/attractions/park/indiana-jones-et-le-temple-du-peril/img',true);
     }
     if (uri.includes('its-a-small-world')) {
         return require.context('../../../assets/images/attractions/park/its-a-small-world/img',true);
@@ -114,8 +117,16 @@ export const RequireContext = () => {
     if (uri.includes('star-tours')) {
         return require.context('../../../assets/images/attractions/park/star-tours/img',true);
     }
+    if (uri.includes('starport')) {
+        return require.context('../../../assets/images/attractions/park/starport/img',true);
+    }
+    if (uri.includes('thunder-mesa-riverboat-landing')) {
+        return require.context('../../../assets/images/attractions/park/thunder-mesa-riverboat-landing/img',true);
+    }
 
 }
+
+
 
 
 

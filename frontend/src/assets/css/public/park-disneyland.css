@@ -65,6 +65,10 @@
     background-image: url('../../images/attractions/park/horse-drawn-streetcarts/icon/horse-drawn-streetcarts.jpg');
 }
 
+.icon-indiana-jones-et-le-temple-du-peril {
+    background-image: url('../../images/attractions/park/indiana-jones-et-le-temple-du-peril/icon/indiana-jones-et-le-temple-du-peril.jpg');
+}
+
 .icon-its-a-small-world {
     background-image: url('../../images/attractions/park/its-a-small-world/icon/its-a-small-world.jpg');
 }
@@ -169,18 +173,13 @@
     background-image: url('../../images/attractions/park/star-tours/icon/star-tours.jpg');
 }
 
-
-
-
-.icon-indiana-jones-et-le-temple-du-peril {
-    background-image: url('../../images/attractions/park/indiana-jones-et-le-temple-du-peril.avif');
-}
-
-.icon-startport {
-    background-image: url('../../images/attractions/park/img-startport.webp');
+.icon-starport {
+    background-image: url('../../images/attractions/park/starport/icon/starport.jpg');
 }
 
 .icon-thunder-mesa-riverboat-landing {
-    background-image: url('../../images/attractions/park/img-thunder-mesa-riverboat-landing.jpg');
+    background-image: url('../../images/attractions/park/thunder-mesa-riverboat-landing/icon/thunder-mesa-riverboat-landing.jpg');
 }
+
+
 
