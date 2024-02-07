@@ -1,4 +1,4 @@
-import { ImgCollection } from "./ImgCollection";
+import { RequireContext } from "../Files/RequireContext.js";
 
 const Card = (props) => {
   const uri = window.location.href;
@@ -22,12 +22,13 @@ const Card = (props) => {
   }
   if (uri.includes('attraction')) {
     /* page attraction */
-    const collection = ImgCollection(uri)
-    const images = collection.keys().map(image => collection(image));
+    const collection = RequireContext();
+    const files = collection.keys().map(image => collection(image));
+    const pictures = props.item.pictures.split(',');
     return (
       <div className="img-collection">
-        {images.map((src) => {
-          return (<img src={src} />)
+        {files.map((src, i) => {
+          return (<img src={src} title={pictures[i]} />)
         })}
       </div>
     );

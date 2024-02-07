@@ -1,4 +1,5 @@
-export const ImgCollection = (uri) => {
+export const RequireContext = () => {
+    const uri = window.location.href;
     if (uri.includes('adventure-isle')) {
         return require.context('../../../assets/images/attractions/park/adventure-isle/img', true);
     }
