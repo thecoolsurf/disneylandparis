@@ -12,46 +12,43 @@
     background-image: url('../../images/attractions/studio/cars-quatre-roues-rally/icon/cars-quatre-roues-rally.jpg');
 }
 
-
-
-
-.icon-spider-man-web-aventure {
-    background-image: url('../../images/attractions/studio/logo-spider-man-web-aventure.png');
-}
-
-.icon-disney-studio-1 {
-    background-image: url('../../images/attractions/studio/img-disney-studio-1.jpg');
-}
-
-.icon-the-twilight-zone-tower-of-terror {
-    background-image: url('../../images/attractions/studio/img-the-twilight-zone-tower-of-terror.webp');
-}
-
-.icon-les-tapis-volants {
-    background-image: url('../../images/attractions/studio/img-les-tapis-volants.jpg');
-}
-
 .icon-cars-road-trip {
-    background-image: url('../../images/attractions/studio/img-cars-road-trip.jpg');
+    background-image: url('../../images/attractions/studio/cars-road-trip/icon/cars-road-trip.jpg');
 }
 
 .icon-crush-s-coaster {
-    background-image: url('../../images/attractions/studio/img-crush-s-coaster.jpg');
+    background-image: url('../../images/attractions/studio/crush-s-coaster/icon/crush-s-coaster.jpg');
 }
 
-.icon-rc-racer {
-    background-image: url('../../images/attractions/studio/img-rc-racer.webp');
+.icon-disney-studio-1 {
+    background-image: url('../../images/attractions/studio/disney-studio-1/icon/disney-studio-1.webp');
+}
+
+.icon-les-tapis-volants {
+    background-image: url('../../images/attractions/studio/les-tapis-volants/icon/les-tapis-volants.jpg');
 }
 
 .icon-ratatouille {
-    background-image: url('../../images/attractions/studio/img-ratatouille.jpg');
+    background-image: url('../../images/attractions/studio/ratatouille/icon/ratatouille.jpg');
+}
+
+.icon-rc-racer {
+    background-image: url('../../images/attractions/studio/rc-racer/icon/rc-racer.jpg');
 }
 
 .icon-slinky-dog-zigzag-spin {
-    background-image: url('../../images/attractions/studio/img-slinky-dog-zigzag-spin.jpg');
+    background-image: url('../../images/attractions/studio/slinky-dog-zigzag-spin/icon/slinky-dog-zigzag-spin.jpg');
+}
+
+.icon-spider-man-web-aventure {
+    background-image: url('../../images/attractions/studio/spider-man-web-aventure/icon/spider-man-web-adventure.webp');
+}
+
+.icon-the-twilight-zone-tower-of-terror {
+    background-image: url('../../images/attractions/studio/the-twilight-zone-tower-of-terror/icon/the-twilight-zone-of-tower-of-terror.webp');
 }
 
 .icon-toy-soldiers-parachutes-drop {
-    background-image: url('../../images/attractions/studio/img-toy-soldiers-parachutes-drop.png');
+    background-image: url('../../images/attractions/studio/toy-soldiers-parachutes-drop/icon/toy-soldiers-parachutes-drop.jpg');
 }
 
