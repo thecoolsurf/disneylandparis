@@ -133,6 +133,42 @@
     background-image: url('../../images/attractions/park/mickey-et-son-orchestre-philharmagique/icon/mickey-et-son-orchestre-philharmagique.jpg');
 }
 
+.icon-orbitron {
+    background-image: url('../../images/attractions/park/orbitron/icon/orbitron.jpg');
+}
+
+.icon-pavillon-des-princesses {
+    background-image: url('../../images/attractions/park/pavillon-des-princesses/icon/pavillon-des-princesses.jpg');
+}
+
+.icon-peter-pan-s-flight {
+    background-image: url('../../images/attractions/park/peter-pan-s-flight/icon/peter-pan-s-flight.jpg');
+}
+
+.icon-phantom-manor {
+    background-image: url('../../images/attractions/park/phantom-manor/icon/phantom-manor.jpg');
+}
+
+.icon-pirates-of-caribbean {
+    background-image: url('../../images/attractions/park/pirates-of-caribbean/icon/pirates-of-caribbean.jpg');
+}
+
+.icon-rencontre-avec-myckey {
+    background-image: url('../../images/attractions/park/rencontre-avec-myckey/icon/rencontre-avec-myckey.jpg');
+}
+
+.icon-rustler-roundup-shootin {
+    background-image: url('../../images/attractions/park/rustler-roundup-shootin/icon/rustler-roundup-shootin.jpg');
+}
+
+.icon-star-wars-hyperspace-mountain {
+    background-image: url('../../images/attractions/park/star-wars-hyperspace-mountain/icon/star-wars-hyperspace-mountain.jpg');
+}
+
+.icon-star-tours {
+    background-image: url('../../images/attractions/park/star-tours/icon/star-tours.jpg');
+}
+
 
 
 
@@ -140,44 +176,8 @@
     background-image: url('../../images/attractions/park/indiana-jones-et-le-temple-du-peril.avif');
 }
 
-.icon-pirates-of-caribbean {
-    background-image: url('../../images/attractions/park/img-pirates-of-caribbean.jpg');
-}
-
-.icon-start-tours {
-    background-image: url('../../images/attractions/park/img-start-tours.jpg');
-}
-
-.icon-orbitron {
-    background-image: url('../../images/attractions/park/img-orbitron.jpg');
-}
-
-.icon-star-wars-hyperspace-mountain {
-    background-image: url('../../images/attractions/park/img-star-wars-hyperspace-mountain.jpg');
-}
-
 .icon-startport {
     background-image: url('../../images/attractions/park/img-startport.webp');
-}
-
-.icon-pavillon-des-princesses {
-    background-image: url('../../images/attractions/park/img-pavillon-des-princesses.jpg');
-}
-
-.icon-peter-pan-s-flight {
-    background-image: url('../../images/attractions/park/img-peter-pan-s-flight.webp');
-}
-
-.icon-rencontre-avec-myckey {
-    background-image: url('../../images/attractions/park/img-rencontre-avec-myckey.webp');
-}
-
-.icon-phantom-manor {
-    background-image: url('../../images/attractions/park/img-phantom-manor.jpg');
-}
-
-.icon-rustler-roundup-shootin {
-    background-image: url('../../images/attractions/park/img-rustler-roundup-shootin.jpg');
 }
 
 .icon-thunder-mesa-riverboat-landing {

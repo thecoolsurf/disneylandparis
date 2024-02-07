@@ -87,6 +87,34 @@ export const RequireContext = () => {
     if (uri.includes('mickey-et-son-orchestre-philharmagique')) {
         return require.context('../../../assets/images/attractions/park/mickey-et-son-orchestre-philharmagique/img',true);
     }
+    if (uri.includes('orbitron')) {
+        return require.context('../../../assets/images/attractions/park/orbitron/img',true);
+    }
+    if (uri.includes('pavillon-des-princesses')) {
+        return require.context('../../../assets/images/attractions/park/pavillon-des-princesses/img',true);
+    }
+    if (uri.includes('peter-pan-s-flight')) {
+        return require.context('../../../assets/images/attractions/park/peter-pan-s-flight/img',true);
+    }
+    if (uri.includes('phantom-manor')) {
+        return require.context('../../../assets/images/attractions/park/phantom-manor/img',true);
+    }
+    if (uri.includes('pirates-of-caribbean')) {
+        return require.context('../../../assets/images/attractions/park/pirates-of-caribbean/img',true);
+    }
+    if (uri.includes('rencontre-avec-myckey')) {
+        return require.context('../../../assets/images/attractions/park/rencontre-avec-myckey/img',true);
+    }
+    if (uri.includes('rustler-roundup-shootin')) {
+        return require.context('../../../assets/images/attractions/park/rustler-roundup-shootin/img',true);
+    }
+    if (uri.includes('star-wars-hyperspace-mountain')) {
+        return require.context('../../../assets/images/attractions/park/star-wars-hyperspace-mountain/img',true);
+    }
+    if (uri.includes('star-tours')) {
+        return require.context('../../../assets/images/attractions/park/star-tours/img',true);
+    }
+
 }
 
 
