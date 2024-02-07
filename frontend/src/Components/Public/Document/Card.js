@@ -7,7 +7,7 @@ const Card = (props) => {
         /* page Park */
         return (
             <a className="card" href={props.item.uroute} alt={props.item.uname}>
-                <div className={'img img-' + props.item.uslug}></div>
+                <div className={'img icon-' + props.item.uslug}></div>
                 <div className="legend">{props.item.uname}</div>
             </a>
         );
@@ -16,7 +16,7 @@ const Card = (props) => {
         /* page Univers */
         return (
             <a className="card" href={props.item.aroute} alt={props.item.aname}>
-                <div className={'img img-' + props.item.aslug}></div>
+                <div className={'img icon-' + props.item.aslug}></div>
                 <div className="legend">{props.item.aname}</div>
             </a>
         );
