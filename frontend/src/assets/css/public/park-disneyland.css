@@ -19,6 +19,7 @@
 
 .icon-adventure-isle {
     background-image: url('../../images/attractions/park/adventure-isle/icon/adventure-Isle.jpg');
+    background-size: cover;
 }
 
 .icon-alice-s-curious-labyrinth {
