@@ -47,7 +47,7 @@ export const BlockInfos = (props) => {
     /* attraction page */
     if (uri.includes('attraction')) {
         return (
-            <ul className="list">
+            <ul key="list" className="list">
                 {attractions.map((a) => {
                     return (
                         <>

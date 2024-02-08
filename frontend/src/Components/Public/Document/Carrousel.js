@@ -8,29 +8,35 @@ import { useState } from "react";
 @require datas {id,name,slug,route}
 */
 
+
 export const Carrousel = (props) => {
     const incr = 300;
     const marg = 0;
-    const total = 50;
     const [index, setIndex] = useState(1);
     const [margX, setMargX] = useState(0);
     const [showPrev, setShowPrev] = useState('hide');
     const [showNext, setShowNext] = useState('show');
+    const carrousel = document.getElementById('carrousel');
+    const totalImg = document.querySelectorAll('.img').length;
+    const maxInFrame = Math.round(Math.floor(carrousel / incr));
+    const total = totalImg - maxInFrame;
     return (
-        <section className={'carrousel ' + props.bkgNav}>
+        <section className={'carrousel ' + props.bkgNav} id="carrousel">
             <div className="legend">{props.legend}</div>
             <div className="block">
                 <div className={'prev ' + showPrev} onClick={() => {
+                    setIndex(index - 1);
                     setMargX(margX - (incr + marg));
-                    if (margX < (incr + marg)) { setShowPrev('hide'); setShowNext('show'); }
+                    if (margX < (incr + marg) * 2) setShowPrev('hide');
                 }}>
                     <i className="fa fa-chevron-circle-left" aria-hidden="true"></i>
                 </div>
                 <div className={'next ' + showNext} onClick={() => {
                     setIndex(index + 1);
                     setMargX(margX + (incr + marg));
-                    if (margX > (incr + marg)) { setShowPrev('show'); }
-                    if (index === total - 1) { setShowNext('hide'); }
+                    if (margX >= (incr + marg)) setShowPrev('show');
+                    if (index === total) setShowNext('hide');
+                    console.log('index',index,'total',total);
                 }}>
                     <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                 </div>
@@ -40,6 +46,9 @@ export const Carrousel = (props) => {
                     })}
                 </div>
             </div>
+            <script>
+                
+            </script>
         </section>
     );
 };

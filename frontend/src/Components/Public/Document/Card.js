@@ -25,11 +25,10 @@ const Card = (props) => {
         /* page attraction park */
         const collection = RequireContextPark();
         const files = collection.keys().map(image => collection(image));
-        const pictures = props.item.pictures.split(',');
         return (
             <div className="card-collection">
                 {files.map((src, i) => {
-                    return (<img src={src} title={pictures[i]} />)
+                    return (<img className="img" src={src} title={props.item.aname} />)
                 })}
             </div>
         );
@@ -38,11 +37,10 @@ const Card = (props) => {
         /* page attraction studio */
         const collection = RequireContextStudio();
         const files = collection.keys().map(image => collection(image));
-        const pictures = props.item.pictures.split(',');
         return (
             <div className="card-collection">
                 {files.map((src, i) => {
-                    return (<img src={src} title={pictures[i]} />)
+                    return (<img className="img" src={src} title={props.item.aname} />)
                 })}
             </div>
         );
