@@ -8,10 +8,7 @@ export const Header = (props) => {
             
                 <a className="title" href="/" alt="Home">
                     <div className="item1">Rencontre ta</div>
-                    <div className="item2">
-                        Souris
-                        <div className="mickey"></div>
-                    </div>
+                    <div className="item2"><div className="mickey"></div>souris</div>
                     <div className="item3">à Disneyland Paris</div>
                 </a>
             </div>

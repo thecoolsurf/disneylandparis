@@ -15,19 +15,6 @@
   position: relative;
 }
 
-.block-title .mickey {
-  position: absolute;
-  bottom: 0;
-  right: -50px;
-  z-index: 1;
-  background-image: url('../../images/others/mickey_v5.png');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 100% auto;
-  width: 50px;
-  height: 70px;
-}
-
 .header .title {
   display: block;
   float: left;
@@ -51,11 +38,22 @@
 }
 
 .header .title .item2 {
-  position: relative;
   font-size: clamp(1.8rem, 15vw, 5rem);
-  line-height: 0.8;
+  line-height: 1;
   letter-spacing: -2px;
-  margin: 5px 0 0 0;
+  vertical-align:bottom;
+}
+
+.block-title .item2 .mickey {
+  background-image: url('../../images/others/mickey_v5.png');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  float: left;
+  width: 50px;
+  height: 70px;
+  text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+
 }
 
 .header .title .item3 {

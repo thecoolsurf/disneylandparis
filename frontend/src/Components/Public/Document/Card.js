@@ -27,7 +27,7 @@ const Card = (props) => {
         const files = collection.keys().map(image => collection(image));
         const pictures = props.item.pictures.split(',');
         return (
-            <div className="img-collection">
+            <div className="card-collection">
                 {files.map((src, i) => {
                     return (<img src={src} title={pictures[i]} />)
                 })}
@@ -40,7 +40,7 @@ const Card = (props) => {
         const files = collection.keys().map(image => collection(image));
         const pictures = props.item.pictures.split(',');
         return (
-            <div className="img-collection">
+            <div className="card-collection">
                 {files.map((src, i) => {
                     return (<img src={src} title={pictures[i]} />)
                 })}
