@@ -59,6 +59,9 @@
   left: 80px;
   z-index: 1;
   width: 150px;
+  font-family: 'DisneyScript', sans-serif;
+  font-size: 2rem;
+  color: #FFF;
   text-decoration: none;
 }
 

@@ -210,8 +210,8 @@ body {
   box-sizing: border-box;
   font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 900;
-  font-size: 20px;
-  line-height: 0.9;
+  font-size: 16px;
+  line-height: 1;
 }
 
 .bloc-logo .back {

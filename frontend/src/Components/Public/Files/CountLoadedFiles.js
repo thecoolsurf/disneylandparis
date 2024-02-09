@@ -6,7 +6,6 @@ export const CountLoadedFiles = () => {
     if (uri.includes('attraction') && uri.includes('park-park-disneyland')) {
         const collection = RequireContextPark();
         const files = collection.keys().map(image => collection(image));
-        // console.log(files);
         return (files.length);
     }
     if (uri.includes('attraction') && uri.includes('walt-disney-studios')) {

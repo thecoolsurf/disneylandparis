@@ -32,7 +32,7 @@ export const Navigation = (props) => {
                 <div className="slider" onClick={() => { show0 === 'show' ? setShow0('hide') : setShow0('show'); }}>
                     <i className="fa fa-bars"></i>
                 </div>
-                <a className="logo" href="/" alt="Home"><Logo /></a>
+                <a className="logo" href="/" alt="Home">DisneylandParis</a>
                 <div className={'nav ' + show0}>
                     {props.datas.map((p) => {
                         let show = (p.pid === 1) ? show1 : show2;

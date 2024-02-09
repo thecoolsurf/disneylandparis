@@ -63,8 +63,8 @@ export const RequireContextPark = () => {
     if (uri.includes('le-galion-des-pirates')) {
         return require.context('../../../assets/images/attractions/park/le-galion-des-pirates/img',true);
     }
-    if (uri.includes('le-passage-enchant-d-aladdin')) {
-        return require.context('../../../assets/images/attractions/park/le-passage-enchant-d-aladdin/img',true);
+    if (uri.includes('le-passage-enchante-d-aladdin')) {
+        return require.context('../../../assets/images/attractions/park/le-passage-enchante-d-aladdin/img',true);
     }
     if (uri.includes('le-pays-des-contes-de-fees')) {
         return require.context('../../../assets/images/attractions/park/le-pays-des-contes-de-fees/img',true);
