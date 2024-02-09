@@ -40,9 +40,14 @@ export const RequireContextStudio = () => {
     if (uri.includes('toy-soldiers-parachutes-drop')) {
         return require.context('../../../assets/images/attractions/studio/toy-soldiers-parachutes-drop/img', true);
     }
+    if (uri.includes('together-a-pixar-musical-adventure')) {
+        return require.context('../../../assets/images/attractions/studio/together-a-pixar-musical-adventure/img', true);
+    }
+    if (uri.includes('avengers-power-the-night')) {
+        return require.context('../../../assets/images/attractions/studio/avengers-power-the-night/img', true);
+    }
 
 }
-
 
 
 
