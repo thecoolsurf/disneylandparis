@@ -42,8 +42,8 @@ export const AdminCollection = (props) => {
     }
     return (
         <div className="admin">
+            <div className="insert"><a href={`/admin/entity/insert/${props.uri}`} alt="insert">Insert</a></div>
             <div className="title">
-                <div className="btn"><a href={`/admin/entity/insert/${props.uri}`} alt="insert">Insert row</a></div>
                 <div>ADMIN:<span>{props.uri}</span></div>
             </div>
             <THead uri={props.uri} />

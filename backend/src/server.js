@@ -128,6 +128,7 @@ function update(route, sql) {
 
 function insert(route, sql) {
 	let entity = route.split('/')[3];
+	let datas = [];
 	server.post(route, (req, res, next) => {
 		if (entity === 'attraction') {
 			datas.push(req.body.id_park);

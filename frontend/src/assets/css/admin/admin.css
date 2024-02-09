@@ -14,7 +14,25 @@
   font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
 }
 
-.admin .navigation {
+.admin .search {
+  display: none;
+}
+
+.insert {
+  position: fixed;
+  top: 20px;
+  right: 150px;
+  z-index: 1;
+  background-color: #666;
+  padding: 5px 10px;
+}
+
+.insert a {
+  color: #FFF;
+  text-decoration: none;
+}
+
+.nav-admin {
   background: #888;
   position: fixed;
   top: 0px;
@@ -33,7 +51,7 @@
   box-shadow: none;
 }
 
-.admin .link {
+.nav-admin .link {
   font-size: 1.1rem;
   color: #FFF;
   text-decoration: none;
@@ -44,7 +62,7 @@
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
 }
 
-.admin .link:hover {
+.nav-admin .link:hover {
   background: #FFF;
   color: #000;
 }
