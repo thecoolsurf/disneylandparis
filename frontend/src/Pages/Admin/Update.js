@@ -3,6 +3,7 @@ import '../../assets/css/admin/form.css';
 import { useState, useEffect } from 'react';
 import { Administrator } from "../../Components/Admin/Fields/Administrator.js";
 import { Attraction } from "../../Components/Admin/Fields/Attraction.js";
+import { Category } from '../../Components/Admin/Fields/Category.js';
 import { Evacuation } from "../../Components/Admin/Fields/Evacuation.js";
 import { Handicap } from "../../Components/Admin/Fields/Handicap.js";
 import { Height } from "../../Components/Admin/Fields/Height.js";
@@ -35,7 +36,9 @@ export const AdminUpdate = (props) => {
                                 return (<Administrator key={el} e={el} />)
                             case 'attraction':
                                 return (<Attraction key={el} e={el} />)
-                            case 'evacuation':
+                            case 'category':
+                                return (<Category key={el} e={el} />)
+                                case 'evacuation':
                                 return (<Evacuation key={el} e={el} />)
                             case 'handicap':
                                 return (<Handicap key={el} e={el} />)

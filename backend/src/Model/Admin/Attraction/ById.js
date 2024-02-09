@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, id_park, id_univ, slug, route, name, public, 
+id, id_park, id_univ, id_category, slug, route, name, public, 
 id_evacuation, id_height, id_sensory, handicaps, interests, 
 description, pictures, movies
 FROM attraction 

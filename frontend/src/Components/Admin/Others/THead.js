@@ -9,6 +9,14 @@ export const THead = (props) => {
                         <div className="item">firstname</div>
                     </div>
                 );
+            case 'category':
+                return (
+                    <div className="thead">
+                        <div className="id">id</div>
+                        <div className="item">name</div>
+                        <div className="item">slug</div>
+                    </div>
+                )
             case 'park':
             case 'univers':
             case 'attraction':

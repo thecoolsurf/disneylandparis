@@ -6,14 +6,14 @@ const server = express();
 const bcrypt = require("bcrypt");
 
 const knex = require('knex')({
-  client: 'mysql2',
-  connection: config.db
+	client: 'mysql2',
+	connection: config.db
 });
 
 const options = {
-  origin: 'http://localhost:3000',
-  credentials: true,
-  optionSuccessStatus: 200
+	origin: 'http://localhost:3000',
+	credentials: true,
+	optionSuccessStatus: 200
 }
 
 server.use(morgan("common"));
@@ -23,131 +23,132 @@ server.use(express.urlencoded({ extended: true }));
 /* ************************************************************************************************** */
 
 function escape(s) {
-  return ('' + s)
-      .replace(/\\/g, '\\\\')
-      .replace(/\t/g, '\\t')
-      .replace(/\n/g, '\\n')
-      .replace(/\u00A0/g, '\\u00A0')
-      .replace(/&/g, '\\x26')
-      .replace(/'/g, '\\x27')
-      .replace(/"/g, '\\x22')
-      .replace(/</g, '\\x3C')
-      .replace(/>/g, '\\x3E');
+	return ('' + s)
+		.replace(/\\/g, '\\\\')
+		.replace(/\t/g, '\\t')
+		.replace(/\n/g, '\\n')
+		.replace(/\u00A0/g, '\\u00A0')
+		.replace(/&/g, '\\x26')
+		.replace(/'/g, '\\x27')
+		.replace(/"/g, '\\x22')
+		.replace(/</g, '\\x3C')
+		.replace(/>/g, '\\x3E');
 }
 
 function jsonToArray(json) {
-  let array = [];
-  // transform json to array
-  let values = Object.values(json);
-  // for each apply push in array
-  Array.prototype.push.apply(array, values);
-  return array;
+	let array = [];
+	// transform json to array
+	let values = Object.values(json);
+	// for each apply push in array
+	Array.prototype.push.apply(array, values);
+	return array;
 }
 
 function login(route, sql) {
-  server.post(route, (req, res, next) => {
-    let datas = jsonToArray(req.body);
-    knex.raw(sql, datas)
-      .then(([rows, columns]) => {
-        const result = rows.map((e) => ({
-          lastname: e.lastname,
-          firstname: e.firstname,
-        }));
-        res.json(result);
-      })
-  });
-  return server;
+	server.post(route, (req, res, next) => {
+		let datas = jsonToArray(req.body);
+		knex.raw(sql, datas)
+			.then(([rows, columns]) => {
+				const result = rows.map((e) => ({
+					lastname: e.lastname,
+					firstname: e.firstname,
+				}));
+				res.json(result);
+			})
+	});
+	return server;
 }
 
 function select(route, sql) {
-  server.get(route, (req, res, next) => {
-    if (req.query.id) {
-      let id = req.query.id;
-      knex.raw(sql, id)
-        .then(([rows, columns]) => {
-          res.json(rows);
-        })
-    } else {
-      knex.raw(sql)
-        .then(([rows, columns]) => {
-          res.json(rows);
-        })
-    }
-  });
-  return server;
+	server.get(route, (req, res, next) => {
+		if (req.query.id) {
+			let id = req.query.id;
+			knex.raw(sql, id)
+				.then(([rows, columns]) => {
+					res.json(rows);
+				})
+		} else {
+			knex.raw(sql)
+				.then(([rows, columns]) => {
+					res.json(rows);
+				})
+		}
+	});
+	return server;
 }
 
 function selectFind(route, sql) {
-  server.get(route, (req, res, next) => {
-    let find = req.query.find ? req.query.find : '';
-    knex.raw(sql, '%' + find + '%')
-      .then(([rows, columns]) => {
-        const result = rows.map((el) => ({
-          name: el.name,
-          route: el.route,
-        }));
-        res.json(result);
-      })
-  });
-  return server;
+	server.get(route, (req, res, next) => {
+		let find = req.query.find ? req.query.find : '';
+		knex.raw(sql, '%' + find + '%')
+			.then(([rows, columns]) => {
+				const result = rows.map((el) => ({
+					name: el.name,
+					route: el.route,
+				}));
+				res.json(result);
+			})
+	});
+	return server;
 }
 
 function update(route, sql) {
-  let entity = route.split('/')[3];
-  let datas = [];
-  server.post(route, async (req, res, next) => {
-    let token = (req.body.password) ? await bcrypt.hash(req.body.password, 10) : '';
-    if (entity === 'attraction') {
-      datas.push(req.body.id_park);
-      datas.push(req.body.id_univ);
-      datas.push(req.body.name);
-      datas.push(req.body.slug);
-      datas.push(req.body.route);
-      datas.push(req.body.public);
-      datas.push(req.body.id_evacuation);
-      datas.push(req.body.id_height);
-      datas.push(req.body.id_sensory);
-      datas.push(req.body.handicaps.toString());
-      datas.push(req.body.interests.toString());
-      datas.push(req.body.description.replace("'", "ʼ"));
-      // datas.push(req.body.description);
-      datas.push(req.body.pictures.toString());
-      datas.push(req.body.movies.toString());
-      datas.push(req.body.id);
-    } else {
-      datas = jsonToArray(req.body);
-    }
-    knex.raw(sql, datas)
-      .then(([rows, columns]) => {
-        res.send(`Update: ${entity} (${req.body.id} ${token})`);
-      })
-  });
-  return server;
+	let entity = route.split('/')[3];
+	let datas = [];
+	server.post(route, async (req, res, next) => {
+		let token = (req.body.password) ? await bcrypt.hash(req.body.password, 10) : '';
+		if (entity === 'attraction') {
+			datas.push(req.body.id_park);
+			datas.push(req.body.id_univ);
+			datas.push(req.body.id_category);
+			datas.push(req.body.name);
+			datas.push(req.body.slug);
+			datas.push(req.body.route);
+			datas.push(req.body.public);
+			datas.push(req.body.id_evacuation);
+			datas.push(req.body.id_height);
+			datas.push(req.body.id_sensory);
+			datas.push(req.body.handicaps.toString());
+			datas.push(req.body.interests.toString());
+			datas.push(req.body.description.replace("'", "ʼ"));
+			// datas.push(req.body.description);
+			datas.push(req.body.pictures.toString());
+			datas.push(req.body.movies.toString());
+			datas.push(req.body.id);
+		} else {
+			datas = jsonToArray(req.body);
+		}
+		knex.raw(sql, datas)
+			.then(([rows, columns]) => {
+				res.send(`Update: ${entity} (${req.body.id} ${token})`);
+			})
+	});
+	return server;
 }
 
 function insert(route, sql) {
-  let entity = route.split('/')[3];
-  server.post(route, (req, res, next) => {
-    let datas = jsonToArray(req.body);
-    datas.pop(); // for id
-    knex.raw(sql, datas)
-      .then(([rows, columns]) => {
-        res.send(`Insert: ${entity}`);
-      })
-  });
-  return server;
+	let entity = route.split('/')[3];
+	server.post(route, (req, res, next) => {
+		let datas = jsonToArray(req.body);
+		datas.pop(); // for id
+		knex.raw(sql, datas)
+			.then(([rows, columns]) => {
+				res.send(`Insert: ${entity}`);
+			})
+	});
+	return server;
 }
 
 function deleting(route, sql) {
-  let entity = route.split('/')[3];
-  server.post(route, (req, res, next) => {
-    let id = req.body.id;
-    knex.raw(sql, id)
-      .then(([rows, columns]) => {
-        res.send(`Delete: ${entity} (${id})`);
-      })
-  });
-  return server;
+	let entity = route.split('/')[3];
+	server.post(route, (req, res, next) => {
+		let id = req.body.id;
+		knex.raw(sql, id)
+			.then(([rows, columns]) => {
+				res.send(`Delete: ${entity} (${id})`);
+			})
+	});
+	return server;
 }
 
 /* ************************************************************************************************** */
@@ -177,15 +178,15 @@ selectFind("/find_attraction", find_attraction);
 /* ************************************************************************************************** */
 /* ADMIN */
 
-const entities = ['administrator','attraction','evacuation','handicap','height','interest','park','sensory','univers','user'];
+const entities = ['administrator', 'attraction', 'category', 'evacuation', 'handicap', 'height', 'interest', 'park', 'sensory', 'univers', 'user'];
 
 for (const entity of entities) {
-  const folder = entity.charAt(0).toUpperCase()+entity.slice(1,entity.length);
-  select(`/admin/collection/${entity}`, require(`./Model/Admin/${folder}/Collection.js`));
-  select(`/admin/form/${entity}`, require(`./Model/Admin/${folder}/ById.js`));
-  update(`/admin/update/${entity}`, require(`./Model/Admin/${folder}/Update.js`));
-  insert(`/admin/insert/${entity}`, require(`./Model/Admin/${folder}/Insert.js`));
-  deleting(`/admin/delete/${entity}`, require(`./Model/Admin/${folder}/Delete.js`));
+	const folder = entity.charAt(0).toUpperCase() + entity.slice(1, entity.length);
+	select(`/admin/collection/${entity}`, require(`./Model/Admin/${folder}/Collection.js`));
+	select(`/admin/form/${entity}`, require(`./Model/Admin/${folder}/ById.js`));
+	update(`/admin/update/${entity}`, require(`./Model/Admin/${folder}/Update.js`));
+	insert(`/admin/insert/${entity}`, require(`./Model/Admin/${folder}/Insert.js`));
+	deleting(`/admin/delete/${entity}`, require(`./Model/Admin/${folder}/Delete.js`));
 }
 
 login("/admin/connexion", require('./Model/Admin/Administrator/Connexion.js'));

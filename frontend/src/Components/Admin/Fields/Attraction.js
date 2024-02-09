@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 export const Attraction = (props) => {
     const [parkChooser, setParkChooser] = useState([]);
     const [universChooser, setUniversChooser] = useState([]);
+    const [categoryChooser, setCategoryChooser] = useState([]);
     const [evacuationChooser, setEvacuationChooser] = useState([]);
     const [handicapChooser, setHandicapChooser] = useState([]);
     const [heightChooser, setHeightChooser] = useState([]);
@@ -17,6 +18,9 @@ export const Attraction = (props) => {
             const datasUnivers = await fetch(`http://localhost:80/admin/collection/univers`);
             const universChooser = await datasUnivers.json();
             setUniversChooser(universChooser);
+            const datasCategory = await fetch(`http://localhost:80/admin/collection/category`);
+            const categoryChooser = await datasCategory.json();
+            setCategoryChooser(categoryChooser);
             const dataEvacuation = await fetch(`http://localhost:80/admin/collection/evacuation`);
             const evacuationChooser = await dataEvacuation.json();
             setEvacuationChooser(evacuationChooser);
@@ -37,6 +41,7 @@ export const Attraction = (props) => {
     }, []);
     const id_park = (props.e) ? props.e.id_park : '';
     const id_univ = (props.e) ? props.e.id_univ : '';
+    const id_category = (props.e) ? props.e.id_category : '';
     const slug = (props.e) ? props.e.slug : '';
     const route = (props.e) ? props.e.route : '';
     const name = (props.e) ? props.e.name : '';
@@ -54,6 +59,7 @@ export const Attraction = (props) => {
         <>
             <Field type="select" name="id_park" chooser={parkChooser} value={id_park} />
             <Field type="select" name="id_univ" chooser={universChooser} value={id_univ} />
+            <Field type="select" name="id_category" chooser={categoryChooser} value={id_category} />
             <Field type="text" name="name" value={name} />
             <Field type="text" name="slug" value={slug} />
             <Field type="text" name="route" value={route} />

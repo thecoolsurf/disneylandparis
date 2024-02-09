@@ -4,6 +4,7 @@ import { THead } from '../../Components/Admin/Others/THead.js';
 /* entity */
 import { Administrator } from "../../Components/Admin/Lists/Administrator.js";
 import { Attraction } from "../../Components/Admin/Lists/Attraction.js";
+import { Category } from "../../Components/Admin/Lists/Category.js";
 import { Evacuation } from "../../Components/Admin/Lists/Evacuation.js";
 import { Handicap } from "../../Components/Admin/Lists/Handicap.js";
 import { Height } from "../../Components/Admin/Lists/Height.js";
@@ -28,6 +29,7 @@ export const AdminCollection = (props) => {
         switch (uri) {
             case 'administrator': return (<Administrator datas={datas} uri={uri} />);
             case 'attraction': return (<Attraction datas={datas} uri={uri} />);
+            case 'category': return (<Category datas={datas} uri={uri} />);
             case 'evacuation': return (<Evacuation datas={datas} uri={uri} />);
             case 'handicap': return (<Handicap  datas={datas} uri={uri} />);
             case 'height': return (<Height datas={datas} uri={uri} />);

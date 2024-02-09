@@ -45,7 +45,7 @@ function App() {
   const bkgHeader = params[5] ? params[5] : params[3] ? params[3] : 'default-header';
   const bkgNav = uri.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
 
-  const entities = ['administrator','attraction','evacuation','handicap','height','interest','park','sensory','univers','user'];
+  const entities = ['administrator','attraction','category','evacuation','handicap','height','interest','park','sensory','univers','user'];
 
   return (
     <div className="main">
