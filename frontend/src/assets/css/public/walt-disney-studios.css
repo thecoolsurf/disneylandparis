@@ -2,53 +2,66 @@
 
 .icon-animation-academy {
     background-image: url('../../images/attractions/studio/animation-academy/icon/animation-academy.webp');
+    background-size: cover;
 }
 
 .icon-avengers-assemble-flight-force {
     background-image: url('../../images/attractions/studio/avengers-assemble-flight-force/icon/avengers-assemble-flight-force.jpg');
+    background-size: cover;
 }
 
 .icon-cars-quatre-roues-rally {
     background-image: url('../../images/attractions/studio/cars-quatre-roues-rally/icon/cars-quatre-roues-rally.jpg');
+    background-size: cover;
 }
 
 .icon-cars-road-trip {
     background-image: url('../../images/attractions/studio/cars-road-trip/icon/cars-road-trip.jpg');
+    background-size: cover;
 }
 
 .icon-crush-s-coaster {
     background-image: url('../../images/attractions/studio/crush-s-coaster/icon/crush-s-coaster.jpg');
+    background-size: cover;
 }
 
 .icon-disney-studio-1 {
     background-image: url('../../images/attractions/studio/disney-studio-1/icon/disney-studio-1.webp');
+    background-size: cover;
 }
 
-.icon-les-tapis-volants {
-    background-image: url('../../images/attractions/studio/les-tapis-volants/icon/les-tapis-volants.jpg');
+.icon-les-tapis-volants-d-aladdin {
+    background-image: url('../../images/attractions/studio/les-tapis-volants-d-aladdin/icon/les-tapis-volants-d-aladdin.jpg');
+    background-size: cover;
 }
 
 .icon-ratatouille {
     background-image: url('../../images/attractions/studio/ratatouille/icon/ratatouille.jpg');
+    background-size: cover;
 }
 
 .icon-rc-racer {
     background-image: url('../../images/attractions/studio/rc-racer/icon/rc-racer.jpg');
+    background-size: cover;
 }
 
 .icon-slinky-dog-zigzag-spin {
     background-image: url('../../images/attractions/studio/slinky-dog-zigzag-spin/icon/slinky-dog-zigzag-spin.jpg');
+    background-size: cover;
 }
 
-.icon-spider-man-web-aventure {
+.icon-spider-man-web-adventure {
     background-image: url('../../images/attractions/studio/spider-man-web-adventure/icon/spider-man-web-adventure.webp');
+    background-size: cover;
 }
 
 .icon-the-twilight-zone-tower-of-terror {
     background-image: url('../../images/attractions/studio/the-twilight-zone-tower-of-terror/icon/the-twilight-zone-of-tower-of-terror.webp');
+    background-size: cover;
 }
 
 .icon-toy-soldiers-parachutes-drop {
     background-image: url('../../images/attractions/studio/toy-soldiers-parachutes-drop/icon/toy-soldiers-parachutes-drop.jpg');
+    background-size: cover;
 }
 

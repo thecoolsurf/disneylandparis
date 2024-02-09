@@ -20,7 +20,7 @@ export const RequireContextStudio = () => {
         return require.context('../../../assets/images/attractions/studio/disney-studio-1/img', true);
     }
     if (uri.includes('les-tapis-volants')) {
-        return require.context('../../../assets/images/attractions/studio/les-tapis-volants/img', true);
+        return require.context('../../../assets/images/attractions/studio/les-tapis-volants-d-aladdin/img', true);
     }
     if (uri.includes('ratatouille')) {
         return require.context('../../../assets/images/attractions/studio/ratatouille/img', true);
