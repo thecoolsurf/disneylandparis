@@ -10,11 +10,13 @@
 
 .img-park-park-disneyland {
   background-image: url('../../images/parks/bkg-park-disneyland.webp');
+  background-position: center center;
   background-size: cover;
 }
 
 .logo-park-disneyland {
   background-image: url('../../images/parks/logo-park-disneyland.svg');
+  background-position: center center;
   background-size: 80%;
 
 }

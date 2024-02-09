@@ -110,14 +110,6 @@
   color: #FFF;
 }
 
-.search input[type="text"] {
-  width: 250px;
-  margin: 0 10px;
-  padding: 10px;
-  font-size: 1rem;
-  border: none;
-}
-
 .search .fa-search {
   display: flex;
   flex-wrap: wrap;
@@ -131,4 +123,3 @@
   font-size: 1.2rem;
   color: #252633;
 }
-

@@ -85,6 +85,12 @@ body {
   padding: 0;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .main {
   position: relative;
   background-color: #F7F7F7;
@@ -128,17 +134,18 @@ body {
 }
 
 .home .bloc-infos .list .total {
-  font-size: 2.2rem;
+  font-size: 2rem;
 }
 
 .home .bloc-infos .list .items-1 .item {
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   margin: 10px 0;
 }
 
 .park,
 .univers,
-.attraction {
+.attraction,
+.finder {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -152,7 +159,11 @@ body {
 
 .finder .search {
   position: relative;
-  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: flex-start;
 }
 
 .finder .search button {
@@ -161,8 +172,25 @@ body {
 }
 
 .finder .search label {
-  color: #FFF;
+  color: #222;
+  margin: 0 0 10px 0;
 }
+
+.finder .search input[type="text"] {
+  width: 250px;
+  margin: 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: solid 1px #666;
+}
+
+.finder h2 {
+  margin: 0;
+}
+.finder .result {
+  margin: 0 0 0 20px;
+}
+
 
 /* ********************************************************************* */
 
