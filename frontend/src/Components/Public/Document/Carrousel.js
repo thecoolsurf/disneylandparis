@@ -37,7 +37,8 @@ export const Carrousel = (props) => {
                     setMargX(margX + (incr + marg));
                     if (uri.includes('attraction')) { setTotal(CountLoadedFiles) } else { setTotal(props.datas.length); }
                     if (margX >= (incr + marg)) setShowPrev('show');
-                    if (index === total - 1) { setShowNext('hide'); } 
+                    // if (total <= cardsByScreen) setShowNext('hide');
+                    if (index === total - 1) { setShowNext('hide'); }
                     console.log('next',index,total,cardsByScreen)
                 }}>
                     <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
