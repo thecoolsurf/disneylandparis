@@ -35,11 +35,11 @@ const Card = (props) => {
     }
     if (uri.includes('attraction') && uri.includes('walt-disney-studios')) {
         /* page attraction studio */
-        const collection = RequireContextStudio();
+        const collection = RequireContextPark();
         const files = collection.keys().map(image => collection(image));
         return (
             <div className="card-collection">
-                {files.map((src, i) => {
+                {files.map((src) => {
                     return (<img className="img" src={src} title={props.item.aname} />)
                 })}
             </div>
