@@ -51,12 +51,13 @@ export const BlockInfos = (props) => {
                 {attractions.map((a) => {
                     return (
                         <>
+                            <BlockLabelName label="Categorie" name={a.cname} />
                             <BlockLabelName label="Public" name={a.public} />
-                            <BlockLabelName label="Interet" name={a.idescription} />
-                            <BlockLabelName label="Taille" name={a.hdescription} />
-                            <BlockLabelName label="Evacuation" name={a.edescription} />
-                            <BlockLabelName label="Sensation" name={a.sdescription} />
-                            <BlockLabelName label="Handicap" name={a.hhdescription} />
+                            <BlockLabelName label="Interet" name={a.interet_description} />
+                            <BlockLabelName label="Taille" name={a.height_description} />
+                            <BlockLabelName label="Evacuation" name={a.evacuation_description} />
+                            <BlockLabelName label="Sensation" name={a.sensory_description} />
+                            <BlockLabelName label="Handicap" name={a.handicap_description} />
                         </>
                     )
                 })}
