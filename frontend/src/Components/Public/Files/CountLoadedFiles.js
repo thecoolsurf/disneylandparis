@@ -1,7 +1,7 @@
-import { RequireContextPark } from "../Files/RequireContextPark.js";
-import { RequireContextStudio } from "../Files/RequireContextStudio.js";
+import { RequireContextPark } from "./RequireContextPark.js";
+import { RequireContextStudio } from "./RequireContextStudio.js";
 
-export const CountFilesCarrousel = () => {
+export const CountLoadedFiles = () => {
     const uri = window.location.href;
     if (uri.includes('attraction') && uri.includes('park-park-disneyland')) {
         const collection = RequireContextPark();
