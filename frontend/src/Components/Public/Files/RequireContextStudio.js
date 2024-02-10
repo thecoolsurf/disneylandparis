@@ -46,12 +46,21 @@ export const RequireContextStudio = () => {
     if (uri.includes('avengers-power-the-night')) {
         return require.context('../../../assets/images/attractions/studio/avengers-power-the-night/img', true);
     }
+    if (uri.includes('animation-celebration-frozen')) {
+        return require.context('../../../assets/images/attractions/studio/animation-celebration-frozen/img', true);
+    }
+    if (uri.includes('mickey-and-the-magician')) {
+        return require.context('../../../assets/images/attractions/studio/mickey-and-the-magician/img', true);
+    }
+    if (uri.includes('stitch-live')) {
+        return require.context('../../../assets/images/attractions/studio/stitch-live/img', true);
+    }
+    if (uri.includes('the-disney-junior-dream-factory')) {
+        return require.context('../../../assets/images/attractions/studio/the-disney-junior-dream-factory/img', true);
+    }
+    if (uri.includes('hero-training-center')) {
+        return require.context('../../../assets/images/attractions/studio/hero-training-center/img', true);
+    }
 
 }
-
-
-
-
-
-
 

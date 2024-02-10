@@ -123,11 +123,21 @@ export const RequireContextPark = () => {
     if (uri.includes('thunder-mesa-riverboat-landing')) {
         return require.context('../../../assets/images/attractions/park/thunder-mesa-riverboat-landing/img',true);
     }
+    if (uri.includes('disney-dreams')) {
+        return require.context('../../../assets/images/attractions/park/disney-dreams/img',true);
+    }
+    if (uri.includes('disney-starts-on-parade')) {
+        return require.context('../../../assets/images/attractions/park/disney-starts-on-parade/img',true);
+    }
+    if (uri.includes('le-roi-lion')) {
+        return require.context('../../../assets/images/attractions/park/le-roi-lion/img',true);
+    }
+    if (uri.includes('a-million-splashes-of-colours')) {
+        return require.context('../../../assets/images/attractions/park/a-million-splashes-of-colours/img',true);
+    }
+    if (uri.includes('disney-electrical-sky-parade')) {
+        return require.context('../../../assets/images/attractions/park/disney-electrical-sky-parade/img',true);
+    }
 
 }
-
-
-
-
-
 
