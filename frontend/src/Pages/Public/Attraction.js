@@ -28,8 +28,9 @@ export const Attraction = (props) => {
                                 <BlockInfos back={back} univers={[1]} attractions={attraction} />
                             </div>
                             <div className="description">
-                                <h2>{el.aname}</h2>
-                                <p>{el.description}</p>
+                                <div className="category">{el.cname}</div>
+                                <h2 className="title">{el.aname}</h2>
+                                <p className="texte">{el.description}</p>
                             </div>
                         </>
                     )

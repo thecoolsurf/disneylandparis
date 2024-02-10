@@ -32,8 +32,9 @@ export const Univers = (props) => {
                                 <BlockInfos back={back} univers={univers} attractions={attractions} />
                             </div>
                             <div className="description">
-                                <h2>{el.uname}</h2>
-                                <p>{el.description}</p>
+                                <div className="category">Univers</div>
+                                <h2 className="title">{el.uname}</h2>
+                                <p className="texte">{el.description}</p>
                             </div>
                         </>
                     )

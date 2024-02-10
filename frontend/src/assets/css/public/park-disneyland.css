@@ -222,5 +222,22 @@
     background-size: cover;
 }
 
+.icon-disney-dreams {
+    background-image: url('../../images/attractions/park/disney-dreams/icon/disney-dreams.jpg');
+    background-size: cover;
+}
 
+.icon-disney-starts-on-parade {
+    background-image: url('../../images/attractions/park/disney-starts-on-parade/icon/disney-starts-on-parade.jpg');
+    background-size: cover;
+}
 
+.icon-a-million-splashes-of-colours {
+    background-image: url('../../images/attractions/park/a-million-splashes-of-colours/icon/a-million-splashes-of-colours.jpg');
+    background-size: cover;
+}
+
+.icon-disney-electrical-sky-parade {
+    background-image: url('../../images/attractions/park/disney-electrical-sky-parade/icon/disney-electrical-sky-parade.jpg');
+    background-size: cover;
+}

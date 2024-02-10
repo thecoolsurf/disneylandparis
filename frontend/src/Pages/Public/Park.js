@@ -31,8 +31,9 @@ export const Park = (props) => {
                                 <BlockInfos back={'/'} univers={parks} attractions={attractions} />
                             </div>
                             <div className="description">
-                                <h2>{p.pname}</h2>
-                                <p>{p.description}</p>
+                                <div className="category">Parc à thèmes</div>
+                                <h2 className="title">{p.pname}</h2>
+                                <p className="texte">{p.description}</p>
                             </div>
                         </>
                     )
