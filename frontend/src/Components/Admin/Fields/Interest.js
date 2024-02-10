@@ -1,4 +1,4 @@
-import { Field } from '../Others/Field.js';
+import { Field } from '../Items/Field.js';
 
 export const Interest = (props) => {
     const name = (props.e) ? props.e.name : '';

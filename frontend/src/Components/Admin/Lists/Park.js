@@ -1,5 +1,5 @@
-import { BtnDelete } from "../Others/BtnDelete.js";
-import { BtnUpdate } from "../Others/BtnUpdate.js";
+import { BtnDelete } from "../Items/BtnDelete.js";
+import { BtnUpdate } from "../Items/BtnUpdate.js";
 
 export const Park = (props) => {
     return (

@@ -1,4 +1,4 @@
-import { Field } from '../Others/Field.js';
+import { Field } from '../Items/Field.js';
 import { useState, useEffect } from 'react';
 
 export const Attraction = (props) => {

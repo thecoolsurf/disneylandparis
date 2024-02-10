@@ -1,6 +1,6 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
-import { THead } from '../../Components/Admin/Others/THead.js';
+import { THead } from '../../Components/Admin/Items/THead.js';
 /* entity */
 import { Administrator } from "../../Components/Admin/Lists/Administrator.js";
 import { Attraction } from "../../Components/Admin/Lists/Attraction.js";

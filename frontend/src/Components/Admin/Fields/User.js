@@ -1,4 +1,4 @@
-import { Field } from '../Others/Field.js';
+import { Field } from '../Items/Field.js';
 
 export const User = (props) => {
     const firstname = (props.e) ? props.e.firstname : '';
