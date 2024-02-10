@@ -262,7 +262,7 @@ ul {
 	display: flex;
 	flex-direction: column;
 	flex-wrap: wrap;
-	max-width: 230px;
+	width: 280px;
 }
 
 .bloc-infos .total {
@@ -292,12 +292,12 @@ ul {
 }
 
 .bloc-infos .list .items-1 {
-	margin: 0 0 10px 0;
 	padding: 0;
 	list-style: none;
 }
 
 .bloc-infos .list .items-1 .item {
+	margin: 0 0 5px 0;
 	font-size: 1.2rem;
 }
 
@@ -323,8 +323,13 @@ ul {
 	text-decoration: none;
 }
 
-.bloc-infos .list .items-1 .item a:hover,
+.bloc-infos .list .items-1 .item a:hover {
+	font-weight: bold;
+	color: #000;
+}
+
 .bloc-infos .list .items-2 .item a:hover {
+	font-weight: bold;
 	color: #000;
 }
 
