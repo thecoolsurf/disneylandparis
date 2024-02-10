@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FilterRoute } from '../../Components/Public/Filters/FilterRoute.js';
+import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
@@ -28,6 +29,7 @@ export const Attraction = (props) => {
                                 <BlockInfos back={back} univers={[1]} attractions={attraction} />
                             </div>
                             <div className="description">
+                                <BreadCrumb />
                                 <div className="category">{el.cname}</div>
                                 <h2 className="title">{el.aname}</h2>
                                 <p className="texte">{el.description}</p>

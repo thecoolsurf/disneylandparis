@@ -4,26 +4,31 @@
 .img-adventureland {
     background-image: url('../../images/univers/park/bkg-aventureland.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .img-discoveryland {
     background-image: url('../../images/univers/park/bkg-discoveryland.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .img-fantasyland {
     background-image: url('../../images/univers/park/bkg-fantasyland.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .img-frontierland {
     background-image: url('../../images/univers/park/bkg-frontierland.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .img-main-street-usa {
     background-image: url('../../images/univers/park/bkg-main-street-usa.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 /* ************************************************************************************** */
@@ -31,26 +36,31 @@
 .icon-adventureland {
     background-image: url('../../images/univers/park/logo-adventureland.png');
     background-size: 70%;
+    background-position: center center;
 }
 
 .icon-discoveryland {
     background-image: url('../../images/univers/park/logo-discoveryland.png');
     background-size: 70%;
+    background-position: center center;
 }
 
 .icon-fantasyland {
     background-image: url('../../images/univers/park/logo-fantasyland.png');
     background-size: 70%;
+    background-position: center center;
 }
 
 .icon-frontierland {
     background-image: url('../../images/univers/park/logo-frontierland.png');
     background-size: 70%;
+    background-position: center center;
 }
 
 .icon-main-street-usa {
     background-image: url('../../images/univers/park/logo-main-street-usa.png');
     background-size: 50%;
+    background-position: center center;
 }
 
 /* ************************************************************************************** */
@@ -59,49 +69,59 @@
 .img-toon-studio {
     background-image: url('../../images/univers/studio/bkg-toon-studio.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .img-avengers-campus {
     background-image: url('../../images/univers/studio/bkg-avengers-campus.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .img-worlds-of-pixar {
     background-image: url('../../images/univers/studio/bkg-world-of-Pixar.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .img-front-lot {
     background-image: url('../..//images/univers/studio/bkg-front-lot.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .img-production-courtyard {
     background-image: url('../../images/univers/studio/bkg-production-courtyard.webp');
     background-size: cover;
+    background-position: center center;
 }
 
 .icon-avengers-campus {
     background-image: url('../../images/univers/studio/logo-avengers-campus.png');
     background-size: 120%;
+    background-position: center center;
 }
 
 .icon-front-lot {
     background-image: url('../../images/univers/studio/logo-front-lot.png');
     background-size: 80%;
+    background-position: center center;
 }
 
 .icon-production-courtyard {
     background-image: url('../../images/univers/studio/logo-production-courtyard.png');
     background-size: 80%;
+    background-position: center center;
 }
 
 .icon-toon-studio {
     background-image: url('../../images/univers/studio/logo-toon-studio.png');
     background-size: 80%;
+    background-position: center center;
 }
 
 .icon-worlds-of-pixar {
     background-image: url('../../images/univers/studio/logo-worlds-of-pixar.png');
     background-size: 100%;
+    background-position: center center;
 }

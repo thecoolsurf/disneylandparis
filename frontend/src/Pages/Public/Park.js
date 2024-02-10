@@ -1,6 +1,7 @@
 import '../../assets/css/public/parks.css';
 import { useState, useEffect } from 'react';
 import { FilterPark } from '../../Components/Public/Filters/FilterPark.js';
+import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
@@ -31,6 +32,7 @@ export const Park = (props) => {
                                 <BlockInfos back={'/'} univers={parks} attractions={attractions} />
                             </div>
                             <div className="description">
+                                <BreadCrumb />
                                 <div className="category">Parc à thèmes</div>
                                 <h2 className="title">{p.pname}</h2>
                                 <p className="texte">{p.description}</p>
