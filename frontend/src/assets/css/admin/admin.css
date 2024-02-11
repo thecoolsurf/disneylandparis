@@ -1,8 +1,8 @@
 /* hide header public */
 .admin-admin,
-.admin-collection,
-.admin-update,
-.admin-insert {
+.img-collection,
+.img-update,
+.img-insert {
   display: none;
 }
 
