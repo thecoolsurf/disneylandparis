@@ -2,6 +2,7 @@ import '../../assets/css/public/parks.css';
 import { useState, useEffect } from 'react';
 import { FilterPark } from '../../Components/Public/Filters/FilterPark.js';
 import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
+import { FilterCategory } from '../../Components/Public/Filters/FilterCategory.js';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
@@ -19,6 +20,7 @@ export const Park = (props) => {
     }, []);
     const park = FilterPark(parks);
     const attractions = FilterAttractions(props.navigation, props.id);
+    const categories = FilterCategory('park',props.navigation, props.id);
     let legend = 'Liste des univers - ' + props.name;
     return (
         <div key="park" className="park">
@@ -29,7 +31,7 @@ export const Park = (props) => {
                         <>
                             <div key={p.pid} className="bloc-infos">
                                 <BlockLogo slug={p.pslug} legend={p.pname} />
-                                <BlockInfos back={'/'} univers={parks} attractions={attractions} />
+                                <BlockInfos back={'/'} univers={parks} attractions={attractions} categories={categories} />
                             </div>
                             <div className="description">
                                 <BreadCrumb />

@@ -1,5 +1,4 @@
 import { BlockLabelName } from "./BlockLabelName";
-import { BlockBack } from "./BlockBack";
 
 export const BlockAttraction = (props) => {
     return (
@@ -14,7 +13,6 @@ export const BlockAttraction = (props) => {
                     <BlockLabelName label="Evacuation" icon="fa fa-life-ring " name={a.evacuation_description} />
                     <BlockLabelName label="Sensation" icon="fa fa-heartbeat" name={a.sensory_description} />
                     <BlockLabelName label="Handicap" icon="fa fa-wheelchair" name={a.handicap_description} />
-                    <BlockBack back={props.back} />
                 </>
             )
         })

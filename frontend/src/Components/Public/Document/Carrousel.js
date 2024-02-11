@@ -40,7 +40,6 @@ export const Carrousel = (props) => {
                     if (margX >= (incr + marg)) setShowPrev('show');
                     // if (total <= cardsByScreen) setShowNext('hide');
                     if (index === total - 1) { setShowNext('hide'); }
-                    console.log('next',index,total,cardsByScreen)
                 }}>
                     <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                 </div>

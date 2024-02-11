@@ -1,18 +1,13 @@
-import { BlockLabelName } from './BlockLabelName.js';
 import { BlockCollection } from './BlockCollection.js';
-import { BlockTotal } from './BlockTotal.js';
-import { BlockBack } from './BlockBack.js';
+import { BlockCategories } from './BlockCategories.js';
 import { BlockAttraction } from './BlockAttraction.js';
+import { BlockTotal } from './BlockTotal.js';
 
-/*
-@props href string
-@props univers array
-@props attrations array
-*/
 export const BlockInfos = (props) => {
     const uri = window.location.href;
     const univers = props.univers ? props.univers : [];
     const attractions = props.attractions ? props.attractions : [];
+    const categories = props.categories ? props.categories : [];
     /* home page */
     if (!uri.includes('park') && !uri.includes('univers') && !uri.includes('attractions')) {
         return (
@@ -29,9 +24,9 @@ export const BlockInfos = (props) => {
             <ul className="list">
                 <BlockTotal label="univers" total={univers.length} />
                 <BlockCollection label="univers-link" datas={univers} />
+                <BlockCategories label="park-categories" datas={categories} />
                 <BlockTotal label="attractions" total={attractions.length} />
                 <BlockCollection label="attraction-link" datas={attractions} />
-                <BlockBack back={props.back} />
             </ul>
         )
     }
@@ -39,9 +34,9 @@ export const BlockInfos = (props) => {
     if (uri.includes('univers') && !uri.includes('attraction')) {
         return (
             <ul className="list">
+                <BlockCategories label="univers-categories" datas={categories} />
                 <BlockTotal label="attractions" total={attractions.length} />
                 <BlockCollection label="attraction-link" datas={attractions} />
-                <BlockBack back={props.back} />
             </ul>
         )
     }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FilterRoute } from '../../Components/Public/Filters/FilterRoute.js';
+import { FilterCategory } from '../../Components/Public/Filters/FilterCategory.js';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
@@ -20,6 +21,7 @@ export const Univers = (props) => {
         fetchData();
     }, []);
     let legend = univers[0] ? 'Liste des attractions - ' + univers[0].uname : '';
+    const categories = FilterCategory('univers',props.navigation, props.id);
     return (
         <div className="univers">
             <Carrousel datas={attractions} legend={legend} />
@@ -30,7 +32,7 @@ export const Univers = (props) => {
                         <>
                             <div className="bloc-infos" key={el.uslug}>
                                 <BlockLogo slug={el.uslug} legend={el.uname} />
-                                <BlockInfos back={back} univers={univers} attractions={attractions} />
+                                <BlockInfos back={back} univers={univers} attractions={attractions} categories={categories} />
                             </div>
                             <div className="description">
                                 <BreadCrumb />

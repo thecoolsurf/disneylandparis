@@ -62,7 +62,7 @@ function App() {
                             m.univers.map((u) => {
                                 return (
                                     <Route key={'ru' + u.uid} path={u.uroute} element={
-                                        <Univers key={'u' + u.uid} id={u.uid} pname={m.pname} uname={u.uname} />
+                                        <Univers key={'u' + u.uid} id={u.uid} pname={m.pname} uname={u.uname} navigation={navigation} />
                                     } />
                                 )
                             })

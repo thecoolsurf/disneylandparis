@@ -336,6 +336,18 @@ ul {
 	max-width: 240px;
 }
 
+.bloc-infos .list .items-2 .item .tt {
+	float: left;
+	width: 20px;
+	margin: 0 10px 0 0;
+	font-weight: bold;
+	text-align: right;
+}
+
+.bloc-infos .list .items-2 .item .cname {
+	float: left;
+}
+
 .bloc-infos .list .items-2 .label {
 	font-weight: 700;
 }
