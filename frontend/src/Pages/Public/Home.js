@@ -17,7 +17,6 @@ export const Home = (props) => {
     }, []);
     const parkAndUnivers = FilterHomeDatas(home);
     const attraction = props.navigation;
-    console.log('hone',attraction);
     return (
         <div className="home">
             {parkAndUnivers.map((p) => {
