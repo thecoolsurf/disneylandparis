@@ -2,6 +2,7 @@ import { BlockLabelName } from './BlockLabelName.js';
 import { BlockCollection } from './BlockCollection.js';
 import { BlockTotal } from './BlockTotal.js';
 import { BlockBack } from './BlockBack.js';
+import { BlockAttraction } from './BlockAttraction.js';
 
 /*
 @props href string
@@ -48,20 +49,7 @@ export const BlockInfos = (props) => {
     if (uri.includes('attraction')) {
         return (
             <ul key="list" className="list">
-                {attractions.map((a) => {
-                    return (
-                        <>
-                            <BlockLabelName label="Categorie" name={a.cname} />
-                            <BlockLabelName label="Public" name={a.public} />
-                            <BlockLabelName label="Interet" name={a.interet_description} />
-                            <BlockLabelName label="Taille" name={a.height_description} />
-                            <BlockLabelName label="Evacuation" name={a.evacuation_description} />
-                            <BlockLabelName label="Sensation" name={a.sensory_description} />
-                            <BlockLabelName label="Handicap" name={a.handicap_description} />
-                        </>
-                    )
-                })}
-                <BlockBack back={props.back} />
+                <BlockAttraction datas={attractions} />
             </ul>
         )
 

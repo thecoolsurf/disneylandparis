@@ -1,14 +1,12 @@
 import '../../../assets/css/public/navigation.css';
-import { Logo } from './Logo.js';
 import { useState } from 'react';
 
 export const Navigation = (props) => {
-    const url = window.location.href;
-    const admin = url.includes('admin');
+    const uri = window.location.href;
     const [show0, setShow0] = useState('hide');
     const [show1, setShow1] = useState('hide');
     const [show2, setShow2] = useState('hide');
-    if (admin) {
+    if (uri.includes('admin')) {
         return (
             <div className="nav-admin">
                 <div className="slider" onClick={() => { show0 === 'show' ? setShow0('hide') : setShow0('show'); }}>
@@ -16,7 +14,7 @@ export const Navigation = (props) => {
                 </div>
                 <div className={'nav ' + show0}>
                     {props.entities.map((slug) => {
-                        const active = (url.includes(slug)) ? 'active' : '';
+                        const active = (uri.includes(slug)) ? 'active' : '';
                         return (
                             <div className="nav-parent">
                             <a key={slug} className={'link ' + active} href={'/admin/entity/collection/' + slug}>{slug}</a>
