@@ -1,5 +1,6 @@
 import "../../../assets/css/public/carrousel.css";
 import { useState } from "react";
+import { FilterBkgColor } from "../Filters/FilterBkgColor.js";
 import Card from "./Card.js";
 import { CountLoadedFiles } from "../Files/CountLoadedFiles.js";
 import { CountCardByScreen } from "../Files/CountCardByScreen.js";
@@ -21,7 +22,7 @@ export const Carrousel = (props) => {
     const [showNext, setShowNext] = useState('show');
     const [total, setTotal] = useState(0);
     return (
-        <section className={'carrousel ' + props.bkgNav}>
+        <section className={'carrousel ' + FilterBkgColor()}>
             <div className="legend">{props.legend}</div>
             <div className="block">
                 <div className={'prev ' + showPrev} onClick={() => {

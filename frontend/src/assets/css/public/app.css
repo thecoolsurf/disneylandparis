@@ -301,7 +301,21 @@ ul {
 	font-size: 1.2rem;
 }
 
-.bloc-infos .list .items-2 {
+.park .bloc-infos .list .items-2,
+.univers .bloc-infos .list .items-2 {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-content: flex-start;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.park .bloc-infos .list .items-2 .item,
+.univers .bloc-infos .list .items-2 .item {
+	margin: 0 0 10px 0;
+}
+.attraction .bloc-infos .list .items-2 {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;

@@ -1,7 +1,6 @@
 import './assets/css/public/app.css';
 import './assets/css/public/fonts.css'
-import './assets/css/public/parks.css';
-import './assets/css/public/univers.css';
+import './assets/css/public/bkg-headers.css';
 import './assets/css/public/park-disneyland.css';
 import './assets/css/public/walt-disney-studios.css';
 
@@ -12,8 +11,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Header } from './Components/Public/Document/Header.js';
 import { Footer } from './Components/Public/Document/Footer.js';
 import { Navigation } from './Components/Public/Document/Navigation.js';
-import { FilterParkAndUnivers } from './Components/Public/Filters/FilterParkAndUnivers.js';
 import { LinkToFinder } from './Components/Public/Document/LinkToFinder.js';
+import { FilterParkAndUnivers } from './Components/Public/Filters/FilterParkAndUnivers.js';
 
 /* public routes */
 import { Home } from './Pages/Public/Home.js';
@@ -40,18 +39,13 @@ function App() {
   }, []);
   const parkAndUnivers = FilterParkAndUnivers(navigation);
   const allAttractions = navigation;
-  const uri = window.location.href;
-  const params = uri.split('/');
-  const bkgHeader = params[5] ? params[5] : params[3] ? params[3] : 'default-header';
-  const bkgNav = uri.includes('walt') ? 'bkg-nav-studio' : 'bkg-nav-park';
-
   const entities = ['administrator','attraction','category','evacuation','handicap','height','interest','park','sensory','univers','user'];
 
   return (
     <div className="main">
       <BrowserRouter>
-        <Header bkgHeader={bkgHeader} />
-        <Navigation datas={parkAndUnivers} entities={entities} bkgNav={bkgNav} />
+        <Header />
+        <Navigation datas={parkAndUnivers} entities={entities} />
         <LinkToFinder />
         <Routes>
           <Route path="/" element={
@@ -60,7 +54,7 @@ function App() {
           {parkAndUnivers.map((p) => {
             return (
               <Route key={'rp'+p.pid} path={p.proute} element={
-                <Park key={'p'+p.pid} id={p.pid} navigation={navigation} name={p.pname} bkgNav={bkgNav} />
+                <Park key={'p'+p.pid} id={p.pid} navigation={navigation} name={p.pname}  />
               } />
             )
           })}
@@ -69,7 +63,7 @@ function App() {
               m.univers.map((u) => {
                 return (
                   <Route key={'ru'+u.uid} path={u.uroute} element={
-                    <Univers key={'u'+u.uid} id={u.uid} pname={m.pname} uname={u.uname} bkgNav={bkgNav} />
+                    <Univers key={'u'+u.uid} id={u.uid} pname={m.pname} uname={u.uname} />
                   } />
                 )
               })
@@ -78,12 +72,12 @@ function App() {
           {allAttractions.map((a) => {
             return (
               <Route key={'ra'+a.aid} path={a.aroute} element={
-                <Attraction key={'a'+a.aid} id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} bkgNav={bkgNav} />
+                <Attraction key={'a'+a.aid} id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} />
               } />
             )
           })}
           <Route key="rf" path={'/find/attractions'} element={
-            <FindAttractions key="f" bkgNav={bkgNav} />
+            <FindAttractions key="f" />
           } />
           <Route path={'/admin/connexion'} element={
             <AdminConnexion uri={'connexion'} />

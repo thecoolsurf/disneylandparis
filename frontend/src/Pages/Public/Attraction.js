@@ -18,7 +18,7 @@ export const Attraction = (props) => {
     const legend = attraction[0] ? 'Galerie d\'images - ' + attraction[0].aname : '';
     return (
         <div className="attraction">
-            <Carrousel datas={attraction} slugs={props.slugs} bkgNav={props.bkgNav} legend={legend} />
+            <Carrousel datas={attraction} slugs={props.slugs} legend={legend} />
             <section className="infos">
                 {attraction.map((el) => {
                     const back = FilterRoute(el.aroute, 'attraction');

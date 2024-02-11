@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { FilterBkgColor } from '../../Components/Public/Filters/FilterBkgColor';
 
 export const FindAttractions = (props) => {
     const [find, setFind] = useState('');

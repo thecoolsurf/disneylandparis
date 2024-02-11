@@ -1,8 +1,8 @@
 import '../../assets/css/public/parks.css';
 import { useState, useEffect } from 'react';
 import { FilterPark } from '../../Components/Public/Filters/FilterPark.js';
-import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
+import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
@@ -22,7 +22,7 @@ export const Park = (props) => {
     let legend = 'Liste des univers - ' + props.name;
     return (
         <div key="park" className="park">
-            <Carrousel datas={parks} bkgNav={props.bkgNav} legend={legend} />
+            <Carrousel datas={parks} legend={legend} />
             <section className="infos">
                 {park.map((p) => {
                     return (

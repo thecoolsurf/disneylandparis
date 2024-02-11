@@ -1,5 +1,30 @@
+.img-default-header,
+.img-find {
+	background-image: url('../../images/others/bkg-disneyland-paris-v2.jpg');
+	background-size: cover;
+	background-position: center center;
+}
+
 /* ************************************************************************************** */
-/* park disneyland */
+/* header park disnelyland */
+
+.img-park-park-disneyland {
+	background-image: url('../../images/parks/bkg-park-disneyland.webp');
+	background-size: cover;
+	background-position: center center;
+}
+
+/* ************************************************************************************** */
+/* header park walt disney studio */
+
+.img-park-walt-disney-studios {
+	background-image: url('../../images/parks/bkg-walt-disney-studios.webp');
+	background-size: cover;
+	background-position: center center;
+}
+
+/* ************************************************************************************** */
+/* header univers park disneyland */
 
 .img-adventureland {
     background-image: url('../../images/univers/park/bkg-aventureland.webp');
@@ -32,6 +57,7 @@
 }
 
 /* ************************************************************************************** */
+/* icon park disneyland */
 
 .icon-adventureland {
     background-image: url('../../images/univers/park/logo-adventureland.png');
@@ -64,7 +90,7 @@
 }
 
 /* ************************************************************************************** */
-/* walt disney studio */
+/* header walt disney studio */
 
 .img-toon-studio {
     background-image: url('../../images/univers/studio/bkg-toon-studio.webp');
@@ -95,6 +121,9 @@
     background-size: cover;
     background-position: center center;
 }
+
+/* ************************************************************************************** */
+/* icon walt disney studios */
 
 .icon-avengers-campus {
     background-image: url('../../images/univers/studio/logo-avengers-campus.png');

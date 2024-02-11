@@ -22,7 +22,7 @@ export const Univers = (props) => {
     let legend = univers[0] ? 'Liste des attractions - ' + univers[0].uname : '';
     return (
         <div className="univers">
-            <Carrousel datas={attractions} bkgNav={props.bkgNav} legend={legend} />
+            <Carrousel datas={attractions} legend={legend} />
             <section className="infos">
                 {univers.map((el) => {
                     const back = FilterRoute(el.uroute, 'univers');
