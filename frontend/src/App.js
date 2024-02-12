@@ -7,6 +7,9 @@ import './assets/css/public/walt-disney-studios.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
+/* admin */
+import { Entities } from './Components/Admin/Tables/Entities.js';
+import { Selectors } from './Components/Admin/Tables/Selectors.js';
 /* components */
 import { Header } from './Components/Public/Document/Header.js';
 import { Footer } from './Components/Public/Document/Footer.js';
@@ -39,12 +42,13 @@ function App() {
     }, []);
     const parkAndUnivers = FilterParkAndUnivers(navigation);
     const allAttractions = navigation;
-    const entities = ['administrator', 'attraction', 'category', 'evacuation', 'handicap', 'height', 'interest', 'park', 'sensory', 'univers', 'user'];
+    const entities = Entities();
+    const selectors = Selectors();
     return (
         <div className="main">
             <BrowserRouter>
                 <Header />
-                <Navigation datas={parkAndUnivers} entities={entities} />
+                <Navigation datas={parkAndUnivers} entities={entities} selectors={selectors} />
                 <LinkToFinder />
                 <Routes>
                     <Route path="/" element={
@@ -78,20 +82,38 @@ function App() {
                     <Route key="rf" path={'/find/attractions'} element={
                         <FindAttractions key="f" />
                     } />
+
+                    {/* admin ******************************************************** */}
+
                     <Route path={'/admin/connexion'} element={
                         <AdminConnexion uri={'connexion'} />
                     } />
-                    {entities.map((slug) => {
+                    {entities.map((name) => {
                         return (
                             <>
-                                <Route key={slug} path={'/admin/entity/collection/' + slug} element={
-                                    <AdminCollection key={'c' + slug} nav={entities} uri={slug} />
+                                <Route key={name} path={'/admin/entity/collection/' + name} element={
+                                    <AdminCollection key={'c' + name} nav={entities} uri={name} />
                                 } />
-                                <Route key={slug} path={'/admin/entity/update/' + slug} element={
-                                    <AdminUpdate key={'u' + slug} nav={entities} uri={slug} />
+                                <Route key={name} path={'/admin/entity/update/' + name} element={
+                                    <AdminUpdate key={'u' + name} nav={entities} uri={name} />
                                 } />
-                                <Route key={slug} path={'/admin/entity/insert/' + slug} element={
-                                    <AdminInsert key={'i' + slug} nav={entities} uri={slug} />
+                                <Route key={name} path={'/admin/entity/insert/' + name} element={
+                                    <AdminInsert key={'i' + name} nav={entities} uri={name} />
+                                } />
+                            </>
+                        )
+                    })}
+                    {selectors.map((name) => {
+                        return (
+                            <>
+                                <Route key={name} path={'/admin/entity/collection/' + name} element={
+                                    <AdminCollection key={'c' + name} nav={selectors} uri={name} />
+                                } />
+                                <Route key={name} path={'/admin/entity/update/' + name} element={
+                                    <AdminUpdate key={'u' + name} nav={selectors} uri={name} />
+                                } />
+                                <Route key={name} path={'/admin/entity/insert/' + name} element={
+                                    <AdminInsert key={'i' + name} nav={selectors} uri={name} />
                                 } />
                             </>
                         )

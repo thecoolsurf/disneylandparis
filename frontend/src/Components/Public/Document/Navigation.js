@@ -15,16 +15,24 @@ export const Navigation = (props) => {
                     <i className="fa fa-bars"></i>
                 </div>
                 <div className={'nav ' + show0}>
-                    {props.entities.map((slug) => {
-                        const active = (uri.includes(slug)) ? 'active' : '';
-                        return (
-                            <div className="nav-parent">
-                            <a key={slug} className={'link ' + active} href={'/admin/entity/collection/' + slug}>{slug}</a>
-                            </div>
-                        )
-                    })}
+                    <div className="nav-parent">
+                        {props.entities.map((name) => {
+                            const active = (uri.includes(name)) ? 'active' : '';
+                            return (
+                                <a key={name} className={'link ' + active} href={'/admin/entity/collection/' + name}>{name}</a>
+                            )
+                        })}
+                    </div>
+                    <div className="nav-parent">
+                        {props.selectors.map((name) => {
+                            const active = (uri.includes(name)) ? 'active' : '';
+                            return (
+                                <a key={name} className={'link ' + active} href={'/admin/entity/collection/' + name}>{name}</a>
+                            )
+                        })}
+                    </div>
                 </div>
-            </div>
+            </div >
         )
     } else {
         return (
@@ -45,7 +53,7 @@ export const Navigation = (props) => {
                                 </a>
                                 <div key={'child' + p.pid} className={'nav-childs ' + show}>
                                     {p.univers.map((u) => {
-                                        return (<a key={'c' + u.uid} className={'link link-'+p.pid} href={u.uroute}>{u.uname}</a>)
+                                        return (<a key={'c' + u.uid} className={'link link-' + p.pid} href={u.uroute}>{u.uname}</a>)
                                     })}
                                 </div>
                             </div>

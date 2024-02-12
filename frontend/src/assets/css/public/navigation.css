@@ -16,8 +16,7 @@
   background:#f7c781;
 }
 
-.navigation,
-.nav-admin {
+.navigation {
   position: fixed;
   top: 0px;
   left: 0px;

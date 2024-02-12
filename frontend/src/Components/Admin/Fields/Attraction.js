@@ -39,6 +39,19 @@ export const Attraction = (props) => {
         };
         fetchData();
     }, []);
+    const photopassChooser = [
+        {id: 1, name: 'Disneyland PhotoPass'},
+        {id: 2, name: 'Sans photos.'},
+    ];
+    const premieraccessChooser = [
+        {id: 1, name: 'Disneyland Premier Access'},
+        {id: 2, name: 'Sans file rapide.'},
+    ];
+    const pmrChooser = [
+        {id: 1, name: 'Accès PMR (Personne à Mobilité Réduite)'},
+        {id: 2, name: 'Sans acces PMR (Personne à Mobilité Réduite)'},
+    ];
+    console.log(photopassChooser);
     const id_park = (props.e) ? props.e.id_park : '';
     const id_univ = (props.e) ? props.e.id_univ : '';
     const id_category = (props.e) ? props.e.id_category : '';
@@ -46,6 +59,14 @@ export const Attraction = (props) => {
     const route = (props.e) ? props.e.route : '';
     const name = (props.e) ? props.e.name : '';
     const publics = (props.e) ? props.e.public : '';
+    const photopass = (props.e) ? props.e.photopass : '';
+    const premieraccess = (props.e) ? props.e.premieraccess : '';
+    const pmr = (props.e) ? props.e.pmr : '';
+    const duration = (props.e) ? props.e.duration : '';
+    const height = (props.e) ? props.e.height : '';
+    const width = (props.e) ? props.e.width : '';
+    const speed = (props.e) ? props.e.speed : '';
+    const ability = (props.e) ? props.e.ability : '';
     const description = (props.e) ? props.e.description : '';
     const id_evacuation = (props.e) ? props.e.id_evacuation : '';
     const id_height = (props.e) ? props.e.id_height : '';
@@ -64,6 +85,14 @@ export const Attraction = (props) => {
             <Field type="text" name="slug" value={slug} />
             <Field type="text" name="route" value={route} />
             <Field type="text" name="public" value={publics} />
+            <Field type="select" name="photopass" chooser={photopassChooser} value={photopass} />
+            <Field type="select" name="premieraccess" chooser={premieraccessChooser} value={premieraccess} />
+            <Field type="select" name="pmr" chooser={pmrChooser} value={pmr} />
+            <Field type="text" name="duration" value={duration} />
+            <Field type="text" name="height" value={height} />
+            <Field type="text" name="width" value={width} />
+            <Field type="text" name="speed" value={speed} />
+            <Field type="text" name="ability" value={ability} />
             <Field type="select" name="id_evacuation" value={id_evacuation} chooser={evacuationChooser} />
             <Field type="select" name="id_height" value={id_height} chooser={heightChooser} />
             <Field type="select" name="id_sensory" value={id_sensory} chooser={sensoryChooser} />

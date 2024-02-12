@@ -19,12 +19,21 @@ export const THead = (props) => {
                 )
             case 'park':
             case 'univers':
-            case 'attraction':
                     return (
                     <div className="thead">
                         <div className="id">id</div>
                         <div className="item">name</div>
                         <div className="item">route</div>
+                    </div>
+                );
+            case 'attraction':
+                    return (
+                    <div className="thead">
+                        <div className="id">id</div>
+                        <div className="item">name</div>
+                        <div className="item">category</div>
+                        <div className="item">park</div>
+                        <div className="item">univers</div>
                     </div>
                 );
             case 'evacuation':

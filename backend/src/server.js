@@ -91,10 +91,18 @@ function update(route, sql) {
 			datas.push(req.body.name);
 			datas.push(req.body.slug);
 			datas.push(req.body.route);
-			datas.push(req.body.public);
-			datas.push(req.body.id_evacuation);
+			datas.push(req.body.id_public);
+			datas.push(req.body.id_photopass);
+			datas.push(req.body.id_premieracces);
+			datas.push(req.body.id_pmr);
 			datas.push(req.body.id_height);
 			datas.push(req.body.id_sensory);
+			datas.push(req.body.id_evacuation);
+			datas.push(String(req.body.duration));
+			datas.push(String(req.body.height));
+			datas.push(String(req.body.width));
+			datas.push(String(req.body.speed));
+			datas.push(String(req.body.ability));
 			datas.push(req.body.handicaps.toString());
 			datas.push(req.body.interests.toString());
 			// datas.push(req.body.description.replace("'", "ʼ"));
@@ -125,13 +133,21 @@ function insert(route, sql) {
 			datas.push(req.body.slug);
 			datas.push(req.body.route);
 			datas.push(req.body.public);
+			datas.push(req.body.photopass);
+			datas.push(req.body.premieracces);
+			datas.push(req.body.pmr);
+			datas.push(String(req.body.duration));
+			datas.push(String(req.body.height));
+			datas.push(String(req.body.width));
+			datas.push(String(req.body.speed));
+			datas.push(String(req.body.ability));
 			datas.push(req.body.id_evacuation);
 			datas.push(req.body.id_height);
 			datas.push(req.body.id_sensory);
 			datas.push(req.body.handicaps.toString());
 			datas.push(req.body.interests.toString());
 			datas.push(req.body.description.replace("'", "ʼ"));
-			// datas.push(req.body.description);
+			datas.push(req.body.description);
 			datas.push(req.body.pictures.toString());
 			datas.push(req.body.movies.toString());
 			datas.push(req.body.id);
@@ -186,18 +202,27 @@ selectFind("/find_attraction", find_attraction);
 /* ************************************************************************************************** */
 /* ADMIN */
 
-const entities = ['administrator', 'attraction', 'category', 'evacuation', 'handicap', 'height', 'interest', 'park', 'sensory', 'univers', 'user'];
-
+const entities = require('../src/Tables/Entities.js');
 for (const entity of entities) {
 	const folder = entity.charAt(0).toUpperCase() + entity.slice(1, entity.length);
-	select(`/admin/collection/${entity}`, require(`./Model/Admin/${folder}/Collection.js`));
-	select(`/admin/form/${entity}`, require(`./Model/Admin/${folder}/ById.js`));
-	update(`/admin/update/${entity}`, require(`./Model/Admin/${folder}/Update.js`));
-	insert(`/admin/insert/${entity}`, require(`./Model/Admin/${folder}/Insert.js`));
-	deleting(`/admin/delete/${entity}`, require(`./Model/Admin/${folder}/Delete.js`));
+	select(`/admin/collection/${entity}`, require(`./Model/Admin/Entity/${folder}/Collection.js`));
+	select(`/admin/form/${entity}`, require(`./Model/Admin/Entity/${folder}/ById.js`));
+	update(`/admin/update/${entity}`, require(`./Model/Admin/Entity/${folder}/Update.js`));
+	insert(`/admin/insert/${entity}`, require(`./Model/Admin/Entity/${folder}/Insert.js`));
+	deleting(`/admin/delete/${entity}`, require(`./Model/Admin/Entity/${folder}/Delete.js`));
 }
 
-login("/admin/connexion", require('./Model/Admin/Administrator/Connexion.js'));
+login("/admin/connexion", require('./Model/Admin/Entity/Administrator/Connexion.js'));
+
+const selectors = require('../src/Tables/Selectors.js');
+for (const selector of selectors) {
+	const folder = selector.charAt(0).toUpperCase() + selector.slice(1, selector.length);
+	select(`/admin/collection/${selector}`, require(`./Model/Admin/Selector/${folder}/Collection.js`));
+	select(`/admin/form/${selector}`, require(`./Model/Admin/Selector/${folder}/ById.js`));
+	update(`/admin/update/${selector}`, require(`./Model/Admin/Selector/${folder}/Update.js`));
+	insert(`/admin/insert/${selector}`, require(`./Model/Admin/Selector/${folder}/Insert.js`));
+	deleting(`/admin/delete/${selector}`, require(`./Model/Admin/Selector/${folder}/Delete.js`));
+}
 
 /* ************************************************************************************************** */
 
