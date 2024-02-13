@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Premieraccess/Update.js */
+/* backend/src/Model/Admin/Attributes/Premieraccess/Update.js */
 
 const update = `
 UPDATE premieraccess SET 

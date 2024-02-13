@@ -1,7 +1,8 @@
-/* backend/src/Model/Admin/Selector/Premieraccess/Insert.js */
+/* backend/src/Model/Admin/Attributes/Premieraccess/Insert.js */
 
 const insert = `
-INSERT INTO premieraccess (name) VALUES (?);
+INSERT INTO premieraccess 
+(name) VALUES (?);
 `;
 
 module.exports = insert;

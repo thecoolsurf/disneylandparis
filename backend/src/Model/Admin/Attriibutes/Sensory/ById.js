@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Sensory/ById.js */
+/* backend/src/Model/Admin/Attributes/Sensory/ById.js */
 
 const by_id = `
 SELECT 

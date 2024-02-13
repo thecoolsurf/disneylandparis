@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Sensory/Collection.js */
+/* backend/src/Model/Admin/Attributes/Sensory/Collection.js */
 
 const collection = `
 SELECT 

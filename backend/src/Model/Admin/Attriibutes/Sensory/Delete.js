@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Sensory/Delete */
+/* backend/src/Model/Admin/Attributes/Sensory/Delete */
 
 const deleting = `
 DELETE FROM sensory 
