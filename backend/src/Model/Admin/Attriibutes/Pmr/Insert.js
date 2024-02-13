@@ -1,7 +1,8 @@
-/* backend/src/Model/Admin/Selector/Pmr/Insert.js */
+/* backend/src/Model/Admin/Attributes/Pmr/Insert.js */
 
 const insert = `
-INSERT INTO pmr (name) VALUES (?);
+INSERT INTO pmr 
+(name) VALUES (?);
 `;
 
 module.exports = insert;

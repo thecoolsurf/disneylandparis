@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Premieraccess/Delete */
+/* backend/src/Model/Admin/Attributes/Premieraccess/Delete */
 
 const deleting = `
 DELETE FROM premieraccess 

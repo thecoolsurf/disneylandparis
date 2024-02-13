@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Pmr/Update.js */
+/* backend/src/Model/Admin/Attributes/Pmr/Update.js */
 
 const update = `
 UPDATE pmr SET 
