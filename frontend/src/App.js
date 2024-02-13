@@ -9,21 +9,19 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 /* admin */
 import { Entities } from './Components/Admin/Tables/Entities.js';
-import { Selectors } from './Components/Admin/Tables/Selectors.js';
+import { Attributes } from './Components/Admin/Tables/Attributes.js';
 /* components */
 import { Header } from './Components/Public/Document/Header.js';
 import { Footer } from './Components/Public/Document/Footer.js';
 import { Navigation } from './Components/Public/Document/Navigation.js';
 import { LinkToFinder } from './Components/Public/Document/LinkToFinder.js';
 import { FilterParkAndUnivers } from './Components/Public/Filters/FilterParkAndUnivers.js';
-
 /* public routes */
 import { Home } from './Pages/Public/Home.js';
 import { Park } from './Pages/Public/Park.js';
 import { Univers } from './Pages/Public/Univers.js';
 import { Attraction } from './Pages/Public/Attraction.js';
 import { FindAttractions } from './Pages/Public/FindAttractions.js';
-
 /* admin routes */
 import { AdminConnexion } from './Pages/Admin/Connexion.js';
 import { AdminCollection } from "./Pages/Admin/Collection.js";
@@ -43,12 +41,12 @@ function App() {
     const parkAndUnivers = FilterParkAndUnivers(navigation);
     const allAttractions = navigation;
     const entities = Entities();
-    const selectors = Selectors();
+    const attributes = Attributes();
     return (
         <div className="main">
             <BrowserRouter>
                 <Header />
-                <Navigation datas={parkAndUnivers} entities={entities} selectors={selectors} />
+                <Navigation datas={parkAndUnivers} entities={entities} attributes={attributes} />
                 <LinkToFinder />
                 <Routes>
                     <Route path="/" element={
@@ -103,17 +101,17 @@ function App() {
                             </>
                         )
                     })}
-                    {selectors.map((name) => {
+                    {attributes.map((name) => {
                         return (
                             <>
                                 <Route key={name} path={'/admin/entity/collection/' + name} element={
-                                    <AdminCollection key={'c' + name} nav={selectors} uri={name} />
+                                    <AdminCollection key={'c' + name} nav={attributes} uri={name} />
                                 } />
                                 <Route key={name} path={'/admin/entity/update/' + name} element={
-                                    <AdminUpdate key={'u' + name} nav={selectors} uri={name} />
+                                    <AdminUpdate key={'u' + name} nav={attributes} uri={name} />
                                 } />
                                 <Route key={name} path={'/admin/entity/insert/' + name} element={
-                                    <AdminInsert key={'i' + name} nav={selectors} uri={name} />
+                                    <AdminInsert key={'i' + name} nav={attributes} uri={name} />
                                 } />
                             </>
                         )

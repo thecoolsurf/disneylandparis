@@ -24,7 +24,7 @@ export const Navigation = (props) => {
                         })}
                     </div>
                     <div className="nav-parent">
-                        {props.selectors.map((name) => {
+                        {props.attributes.map((name) => {
                             const active = (uri.includes(name)) ? 'active' : '';
                             return (
                                 <a key={name} className={'link ' + active} href={'/admin/entity/collection/' + name}>{name}</a>
