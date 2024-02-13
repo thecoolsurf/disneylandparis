@@ -46,7 +46,7 @@ export const Field = (props) => {
                     {props.chooser.map((el) => {
                         const selected = (props.value === el.id) ? 'selected' : '';
                         return (
-                            <option key={el.id} value={el.id} selected={selected}>{props.chooser[el.id - 1].name}</option>
+                            <option key={el.id} value={el.id} selected={selected}>{el.name}</option>
                         )
                     })}
                 </select>

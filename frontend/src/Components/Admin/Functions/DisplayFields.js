@@ -17,7 +17,7 @@ import { Public } from '../Fields/Attributes/Public.js';
 import { Sensory } from "../Fields/Attributes/Sensory.js";
 
 export const DisplayFields = (props) => {
-    const el = props.el ? props.el : '';
+    const el = props.el ? props.el : [];
     /* Entities */
     if (props.uri === 'administrator') return (<Administrator key="administrator" e={el} />);
     if (props.uri === 'attraction') return (<Attraction key="attraction" e={el} />);
