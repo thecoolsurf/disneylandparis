@@ -11,9 +11,10 @@ import { Handicap } from "../Fields/Attributes/Handicap.js";
 import { Height } from "../Fields/Attributes/Height.js";
 import { Interest } from "../Fields/Attributes/Interest.js";
 import { Photopass } from '../Fields/Attributes/Photopass.js';
-import { Sensory } from "../Fields/Attributes/Sensory.js";
 import { Pmr } from '../Fields/Attributes/Pmr.js';
 import { Premieraccess } from '../Fields/Attributes/Premieraccess.js';
+import { Public } from '../Fields/Attributes/Public.js';
+import { Sensory } from "../Fields/Attributes/Sensory.js";
 
 export const DisplayFields = (props) => {
     const el = props.el ? props.el : '';
@@ -32,6 +33,7 @@ export const DisplayFields = (props) => {
     if (props.uri === 'photopass') return (<Photopass key="photopass" e={el} />)
     if (props.uri === 'pmr') return (<Pmr key="pmr" e={el} />)
     if (props.uri === 'premieraccess') return (<Premieraccess key="premieraccess" e={el} />)
+    if (props.uri === 'public') return (<Public key="public" e={el} />)
     if (props.uri === 'sensory') return (<Sensory key="sensory" e={el} />)
     if (props.uri === '') return (<Administrator key="administrator" e={el} />)
 }
