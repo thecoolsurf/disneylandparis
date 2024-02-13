@@ -1,3 +1,5 @@
+/* backend/src/Model/Public/Navigation/AttractionAndUniversAndPark.js */
+
 const navigation = `
 SELECT 
 a.id AS aid, a.slug AS aslug, a.route AS aroute, a.name AS aname,

@@ -1,4 +1,4 @@
-// Model/Public/Attraction
+/* backend/src/Model/Public/Attraction/AttractionById.js */
 
 const attraction_by_id = `
 SELECT 
