@@ -83,7 +83,9 @@ function update(route, sql) {
 	let entity = route.split('/')[3];
 	let datas = [];
 	server.post(route, async (req, res, next) => {
-		let token = (req.body.password) ? await bcrypt.hash(req.body.password, 10) : '';
+		if (entity === 'user' || entity === 'administrator') {
+			let token = (req.body.password) ? await bcrypt.hash(req.body.password, 10) : '';
+		}
 		if (entity === 'attraction') {
 			datas.push(req.body.id_park);
 			datas.push(req.body.id_univ);
@@ -93,7 +95,7 @@ function update(route, sql) {
 			datas.push(req.body.route);
 			datas.push(req.body.id_public);
 			datas.push(req.body.id_photopass);
-			datas.push(req.body.id_premieracces);
+			datas.push(req.body.id_premieraccess);
 			datas.push(req.body.id_pmr);
 			datas.push(req.body.id_height);
 			datas.push(req.body.id_sensory);
@@ -134,7 +136,7 @@ function insert(route, sql) {
 			datas.push(req.body.route);
 			datas.push(req.body.id_public);
 			datas.push(req.body.id_photopass);
-			datas.push(req.body.id_premieracces);
+			datas.push(req.body.id_premieraccess);
 			datas.push(req.body.id_pmr);
 			datas.push(req.body.id_height);
 			datas.push(req.body.id_evacuation);

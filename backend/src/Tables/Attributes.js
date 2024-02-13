@@ -1,3 +1,3 @@
-const selectors = ['category', 'evacuation', 'handicap', 'height', 'interest', 'photopass', 'pmr', 'premieraccess', 'sensory'];
+const attributes = ['category', 'evacuation', 'handicap', 'height', 'interest', 'photopass', 'pmr', 'premieraccess', 'sensory'];
 
-module.exports = selectors;
+module.exports = attributes;
