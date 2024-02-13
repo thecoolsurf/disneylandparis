@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Administrator/Update.js */
+/* backend/src/Model/Admin/Entity/Administrator/Update.js */
 
 const update = `
 UPDATE administrator SET 

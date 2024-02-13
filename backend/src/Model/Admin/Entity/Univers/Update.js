@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Univers/Update.js */
+/* backend/src/Model/Admin/Entity/Univers/Update.js */
 
 const update = `
 UPDATE univers SET 

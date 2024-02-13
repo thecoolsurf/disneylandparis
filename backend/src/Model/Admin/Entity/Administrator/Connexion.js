@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Administrator/Connexion.js */
+/* backend/src/Model/Admin/Entity/Administrator/Connexion.js */
 
 const connexion = `
 SELECT 

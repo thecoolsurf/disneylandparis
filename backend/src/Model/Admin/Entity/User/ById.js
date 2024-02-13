@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/User/ById.js */
+/* backend/src/Model/Admin/Entity/User/ById.js */
 
 const by_id = `
 SELECT 

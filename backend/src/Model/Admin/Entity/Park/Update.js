@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Park/Update.js */
+/* backend/src/Model/Admin/Entity/Park/Update.js */
 
 const update = `
 UPDATE park SET 

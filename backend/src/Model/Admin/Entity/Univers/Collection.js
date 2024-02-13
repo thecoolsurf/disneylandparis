@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Univers/Collection.js */
+/* backend/src/Model/Admin/Entity/Univers/Collection.js */
 
 const collection = `
 SELECT 

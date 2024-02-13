@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/User/Update.js */
+/* backend/src/Model/Admin/Entity/User/Update.js */
 
 const update = `
 UPDATE user SET 

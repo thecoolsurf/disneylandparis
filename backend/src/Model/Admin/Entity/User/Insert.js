@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/User/Insert */
+/* backend/src/Model/Admin/Entity/User/Insert */
 
 const user_insert = `
 INSERT INTO user 

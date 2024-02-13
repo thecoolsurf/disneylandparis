@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Park/ById.js */
+/* backend/src/Model/Admin/Entity/Park/ById.js */
 
 const by_id = `
 SELECT 

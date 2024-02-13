@@ -1,12 +1,11 @@
-/* backend/src/Model/Admin/Attraction/ById.js */
+/* backend/src/Model/Admin/Entity/Attraction/ById.js */
 
 const by_id = `
 SELECT 
 id, id_park, id_univ, id_category, 
-slug, route, name, public, photopass, premieraccess, pmr, 
-duration, height, width, speed, ability,
-id_evacuation, id_height, id_sensory, handicaps, interests, 
-duration, description, pictures, movies
+slug, route, name, 
+id_public, id_photopass, id_premieraccess, id_pmr, id_height, id_evacuation, id_sensory, 
+description, duration, height, width, speed, ability, handicaps, interests
 FROM attraction 
 WHERE id = ?`;
 

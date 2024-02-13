@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Univers/Insert.js */
+/* backend/src/Model/Admin/Entity/Univers/Insert.js */
 
 const univers_insert = `
 INSERT INTO univers 

@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Administrator/Insert.js */
+/* backend/src/Model/Admin/Entity/Administrator/Insert.js */
 
 const insert = `
 INSERT INTO administrator 

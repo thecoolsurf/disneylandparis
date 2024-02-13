@@ -1,9 +1,10 @@
-/* backend/src/Model/Admin/Administrator/Collection.js */
+/* backend/src/Model/Admin/Entity/Administrator/Collection.js */
 
 const collection = `
 SELECT 
 id, firstname, lastname, email, password, token
 FROM 
-administrator`;
+administrator
+`;
 
 module.exports = collection;

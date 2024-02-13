@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Univers/ById.js */
+/* backend/src/Model/Admin/Entity/Univers/ById.js */
 
 const by_id = `
 SELECT 

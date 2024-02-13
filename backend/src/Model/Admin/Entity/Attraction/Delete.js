@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Attraction/Delete */
+/* backend/src/Model/Admin/Entity/Attraction/Delete */
 
 const deleting = `
 DELETE FROM attraction 

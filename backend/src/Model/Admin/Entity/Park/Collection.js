@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Park/Collection.js */
+/* backend/src/Model/Admin/Entity/Park/Collection.js */
 
 const collection = `
 SELECT 

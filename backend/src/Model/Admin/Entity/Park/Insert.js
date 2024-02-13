@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Park/Insert.js */
+/* backend/src/Model/Admin/Entity/Park/Insert.js */
 
 const insert = `
 INSERT INTO park 

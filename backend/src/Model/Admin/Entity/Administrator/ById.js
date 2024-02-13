@@ -1,8 +1,10 @@
-/* backend/src/Model/Admin/Administrator/ById.js */
+/* backend/src/Model/Admin/Entity/Administrator/ById.js */
 
-const by_id = `SELECT 
+const by_id = `
+SELECT 
 id, firstname, lastname, email, password, token
 FROM administrator
-WHERE id = ?`;
+WHERE id = ?
+`;
 
 module.exports = by_id;

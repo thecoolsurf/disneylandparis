@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Attraction/Collection.js */
+/* backend/src/Model/Admin/Entity/Attraction/Collection.js */
 
 const collection = `
 SELECT 
