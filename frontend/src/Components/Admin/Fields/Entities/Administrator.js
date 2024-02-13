@@ -1,4 +1,4 @@
-import { Field } from '../Items/Field.js';
+import { Field } from '../../Items/Field.js';
 
 export const Administrator = (props) => {
     const firstname = (props.e) ? props.e.firstname : '';
@@ -14,7 +14,6 @@ export const Administrator = (props) => {
             <Field key="email" type="text" name="email" value={email} />
             <Field key="password" type="password" name="password" value={password} />
             <Field key="token" type="text" name="token" value={token} />
-            
             <Field key="id" type="hidden" name="id" value={id} />
         </>
     )

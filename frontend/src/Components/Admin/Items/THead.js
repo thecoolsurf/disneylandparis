@@ -2,6 +2,7 @@ export const THead = (props) => {
     const switchComponentHead = () => {
         switch (props.uri) {
             case 'administrator':
+            case 'user':
                 return (
                     <div className="thead">
                         <div className="id">id</div>
@@ -9,14 +10,6 @@ export const THead = (props) => {
                         <div className="item">firstname</div>
                     </div>
                 );
-            case 'category':
-                return (
-                    <div className="thead">
-                        <div className="id">id</div>
-                        <div className="item">name</div>
-                        <div className="item">slug</div>
-                    </div>
-                )
             case 'park':
             case 'univers':
                     return (
@@ -36,24 +29,27 @@ export const THead = (props) => {
                         <div className="item">univers</div>
                     </div>
                 );
-            case 'evacuation':
-            case 'handicap':
+            case 'category':
+            case 'public':
+            case 'photopass':
+            case 'premieraccess':
+            case 'pmr':
             case 'height':
-            case 'interest':
+            case 'evacuation':
             case 'sensory':
+            case 'handicap':
+            case 'interest':
                 return (
                     <div className="thead">
                         <div className="id">id</div>
                         <div className="item">name</div>
-                        <div className="item">description</div>
                     </div>
                 )
-            case 'user':
+            default:
                 return (
                     <div className="thead">
                         <div className="id">id</div>
-                        <div className="item">lastname</div>
-                        <div className="item">firstname</div>
+                        <div className="item">name</div>
                     </div>
                 )
         }

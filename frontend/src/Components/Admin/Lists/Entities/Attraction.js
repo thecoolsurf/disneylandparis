@@ -1,5 +1,5 @@
-import { BtnDelete } from "../Items/BtnDelete.js";
-import { BtnUpdate } from "../Items/BtnUpdate.js";
+import { BtnDelete } from "../../Items/BtnDelete.js";
+import { BtnUpdate } from "../../Items/BtnUpdate.js";
 
 export const Attraction = (props) => {
     return (

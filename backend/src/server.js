@@ -4,12 +4,10 @@ const config = require('./config');
 const express = require("express");
 const server = express();
 const bcrypt = require("bcrypt");
-
 const knex = require('knex')({
 	client: 'mysql2',
 	connection: config.db
 });
-
 const options = {
 	origin: 'http://localhost:3000',
 	credentials: true,
@@ -86,35 +84,7 @@ function update(route, sql) {
 		if (entity === 'user' || entity === 'administrator') {
 			let token = (req.body.password) ? await bcrypt.hash(req.body.password, 10) : '';
 		}
-		if (entity === 'attraction') {
-			datas.push(req.body.id_park);
-			datas.push(req.body.id_univ);
-			datas.push(req.body.id_category);
-			datas.push(req.body.name);
-			datas.push(req.body.slug);
-			datas.push(req.body.route);
-			datas.push(req.body.id_public);
-			datas.push(req.body.id_photopass);
-			datas.push(req.body.id_premieraccess);
-			datas.push(req.body.id_pmr);
-			datas.push(req.body.id_height);
-			datas.push(req.body.id_sensory);
-			datas.push(req.body.id_evacuation);
-			datas.push(String(req.body.duration));
-			datas.push(String(req.body.height));
-			datas.push(String(req.body.width));
-			datas.push(String(req.body.speed));
-			datas.push(String(req.body.ability));
-			datas.push(req.body.handicaps.toString());
-			datas.push(req.body.interests.toString());
-			// datas.push(req.body.description.replace("'", "ʼ"));
-			datas.push(req.body.description);
-			datas.push(req.body.pictures.toString());
-			datas.push(req.body.movies.toString());
-			datas.push(req.body.id);
-		} else {
-			datas = jsonToArray(req.body);
-		}
+		datas = jsonToArray(req.body);
 		knex.raw(sql, datas)
 			.then(([rows, columns]) => {
 				res.send(`Update: ${entity} (${req.body.id} ${token})`);
@@ -127,33 +97,7 @@ function insert(route, sql) {
 	let entity = route.split('/')[3];
 	let datas = [];
 	server.post(route, (req, res, next) => {
-		if (entity === 'attraction') {
-			datas.push(req.body.id_park);
-			datas.push(req.body.id_univ);
-			datas.push(req.body.id_category);
-			datas.push(req.body.name);
-			datas.push(req.body.slug);
-			datas.push(req.body.route);
-			datas.push(req.body.id_public);
-			datas.push(req.body.id_photopass);
-			datas.push(req.body.id_premieraccess);
-			datas.push(req.body.id_pmr);
-			datas.push(req.body.id_height);
-			datas.push(req.body.id_evacuation);
-			datas.push(req.body.id_sensory);
-			// datas.push(req.body.description.replace("'", "ʼ"));
-			datas.push(req.body.description);
-			datas.push(req.body.duration);
-			datas.push(req.body.height);
-			datas.push(req.body.width);
-			datas.push(req.body.speed);
-			datas.push(req.body.ability);
-			datas.push(req.body.handicaps.toString());
-			datas.push(req.body.interests.toString());
-			datas.push(req.body.id);
-		} else {
-			datas = jsonToArray(req.body);
-		}
+		datas = jsonToArray(req.body);
 		datas.pop(); // for id
 		knex.raw(sql, datas)
 			.then(([rows, columns]) => {
