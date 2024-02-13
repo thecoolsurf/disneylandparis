@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Photopass/Update.js */
+/* backend/src/Model/Admin/Attributes/Photopass/Update.js */
 
 const update = `
 UPDATE photopass SET 

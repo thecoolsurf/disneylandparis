@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Pmr/Collection.js */
+/* backend/src/Model/Admin/Attributes/Pmr/Collection.js */
 
 const collection = `
 SELECT 

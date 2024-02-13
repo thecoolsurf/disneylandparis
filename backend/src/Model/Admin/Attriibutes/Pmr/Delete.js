@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Pmr/Delete */
+/* backend/src/Model/Admin/Attributes/Pmr/Delete */
 
 const deleting = `
 DELETE FROM pmr 
