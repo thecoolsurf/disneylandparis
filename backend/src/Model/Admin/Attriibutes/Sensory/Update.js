@@ -1,4 +1,4 @@
-/* backend/src/Model/Admin/Selector/Sensory/Update.js */
+/* backend/src/Model/Admin/Attributes/Sensory/Update.js */
 
 const update = `
 UPDATE sensory SET 
