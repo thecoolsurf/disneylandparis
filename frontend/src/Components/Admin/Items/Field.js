@@ -1,4 +1,7 @@
+import { useState } from 'react';
+
 export const Field = (props) => {
+    const [state, setState] = useState(false);
 
     if (props.type === 'hidden') {
         return (
@@ -54,27 +57,26 @@ export const Field = (props) => {
         )
     }
     if (props.type === 'checkbox') {
+        let input_name = props.name.slice(0,props.name.length-1);
+        let values = '';
+        let items = document.getElementsByName('values');
+        for (const el of items) {
+            if (el.checked) values += el.id + ',';
+        }
+        console.log(values);
         return (
             <div key={props.name} className="item">
                 <label>{props.name}</label>
                 {props.chooser.map((el) => {
-                    if (props.value && props.value.includes(el.id)) {
-                        return (
-                            <div key={el.name} className="list-checkbox">
-                                <input type="checkbox" key={el.id} id={el.name} name={props.name + '[]'} value={el.id} checked />
-                                <label htmlFor={el.name}>{el.name}</label>
-                            </div>
-                        )
-
-                    } else {
-                        return (
-                            <div key={el.name} className="list-checkbox">
-                                <input type="checkbox" key={el.id} id={el.name} name={props.name + '[]'} value={el.id} />
-                                <label htmlFor={el.name}>{el.name}</label>
-                            </div>
-                        )
-                    };
+                    const checked = (props.value === el.id) ? 'checked' : '';
+                    return (
+                        <div key={el.name} className="list-checkbox">
+                            <input type="checkbox" name={props.name} value={el.id} onChange={(e)=>{}} />
+                            <label htmlFor={el.name}>{el.name}</label>
+                        </div>
+                    )
                 })}
+                <input type="hidden" id={props.name} name={input_name} value={values} />
             </div>
         )
     }
