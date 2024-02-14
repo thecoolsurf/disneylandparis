@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export const Field = (props) => {
-    const [state, setState] = useState(false);
+    const [checked, setChecked] = useState(false);
 
     if (props.type === 'hidden') {
         return (
@@ -59,11 +59,6 @@ export const Field = (props) => {
     if (props.type === 'checkbox') {
         let input_name = props.name.slice(0,props.name.length-1);
         let values = '';
-        let items = document.getElementsByName('values');
-        for (const el of items) {
-            if (el.checked) values += el.id + ',';
-        }
-        console.log(values);
         return (
             <div key={props.name} className="item">
                 <label>{props.name}</label>
@@ -71,7 +66,7 @@ export const Field = (props) => {
                     const checked = (props.value === el.id) ? 'checked' : '';
                     return (
                         <div key={el.name} className="list-checkbox">
-                            <input type="checkbox" name={props.name} value={el.id} onChange={(e)=>{}} />
+                            <input type="checkbox" name={props.name} value={el.id} checked={checked} onChange={e =>{setChecked(true)}} />
                             <label htmlFor={el.name}>{el.name}</label>
                         </div>
                     )
