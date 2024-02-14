@@ -6,7 +6,7 @@ id_park = ?, id_univ = ?, id_category = ?,
 name = ?, slug = ?, route = ?, 
 id_public = ?, id_photopass = ?, id_premieraccess = ?, id_pmr = ?, 
 duration = ?, height = ?, width = ?, speed = ?, ability = ?, 
-id_height = ?, id_evacuation = ?, id_sensory = ?, 
+id_evacuation = ?, id_height = ?, id_sensory = ?, 
 handicaps = ?, interests = ?,
 description = ?
 WHERE id = ?`;

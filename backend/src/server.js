@@ -81,39 +81,13 @@ function update(route, sql) {
 	let entity = route.split('/')[3];
 	let datas = [];
 	server.post(route, async (req, res, next) => {
-		if (entity === 'user' || entity === 'administrator') {
+		if (entity === 'administrator') {
 			let token = (req.body.password) ? await bcrypt.hash(req.body.password, 10) : '';
 		}
-		if (entity === 'attraction') {
-			datas.push(req.body.id_park);
-			datas.push(req.body.id_univ);
-			datas.push(req.body.id_category);
-			datas.push(req.body.name);
-			datas.push(req.body.slug);
-			datas.push(req.body.route);
-			datas.push(req.body.id_public);
-			datas.push(req.body.id_photopass);
-			datas.push(req.body.id_premieracces);
-			datas.push(req.body.id_pmr);
-			datas.push(req.body.duration);
-			datas.push(req.body.height);
-			datas.push(req.body.width);
-			datas.push(req.body.speed);
-			datas.push(req.body.ability);
-			datas.push(req.body.id_height);
-			datas.push(req.body.id_evacuation);
-			datas.push(req.body.id_sensory);
-			// datas.push(req.body.description.replace("'", "ʼ"));
-			datas.push(req.body.description);
-			datas.push(req.body.handicaps.toString());
-			datas.push(req.body.interests.toString());
-			datas.push(req.body.id);
-		} else {
-			datas = jsonToArray(req.body);
-		}
+		datas = jsonToArray(req.body);
 		knex.raw(sql, datas)
 			.then(([rows, columns]) => {
-				res.send(`Update: ${entity} (${req.body.id} ${token})`);
+				res.send(`Update: ${entity} (${req.body.id})`);
 			})
 	});
 	return server;
