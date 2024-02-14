@@ -73,7 +73,6 @@ export const Field = (props) => {
                                 <label htmlFor={el.name}>{el.name}</label>
                             </div>
                         )
-
                     };
                 })}
             </div>
