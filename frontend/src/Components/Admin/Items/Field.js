@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
 export const Field = (props) => {
-    const [checked, setChecked] = useState(false);
+    const [checkedValues, setCheckedalues] = useState();
 
     if (props.type === 'hidden') {
         return (
@@ -57,21 +57,29 @@ export const Field = (props) => {
         )
     }
     if (props.type === 'checkbox') {
-        let input_name = props.name.slice(0,props.name.length-1);
-        let values = '';
+        let inputName = props.name.slice(0, props.name.length - 1);
+        let values = props.value.split(',');
         return (
             <div key={props.name} className="item">
                 <label>{props.name}</label>
                 {props.chooser.map((el) => {
-                    const checked = (props.value === el.id) ? 'checked' : '';
                     return (
                         <div key={el.name} className="list-checkbox">
-                            <input type="checkbox" name={props.name} value={el.id} checked={checked} onChange={e =>{setChecked(true)}} />
+                            <input type="checkbox" name={inputName} value={el.id} onChange={(e) => {
+                                if (e.target.checked === true) {
+                                    values.push(String(el.id));
+                                    console.log(values);
+                                } else {
+                                    values.splice(values.indexOf(el.id), 1);
+                                    console.log(values);
+                                }
+                                return values;
+                            }} />
                             <label htmlFor={el.name}>{el.name}</label>
                         </div>
                     )
                 })}
-                <input type="hidden" id={props.name} name={input_name} value={values} />
+                <input type="hidden" id={props.name} name={props.name} value={values.join(',')} />
             </div>
         )
     }
