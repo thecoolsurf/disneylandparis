@@ -66,20 +66,20 @@ export const Field = (props) => {
                     return (
                         <div key={el.name} className="list-checkbox">
                             <input type="checkbox" name={inputName} value={el.id} onChange={(e) => {
+                                let target = document.getElementById(props.name);
                                 if (e.target.checked === true) {
                                     values.push(String(el.id));
-                                    console.log(values);
+                                    target.value = values.join(',');
                                 } else {
                                     values.splice(values.indexOf(el.id), 1);
-                                    console.log(values);
+                                    target.value = values.join(',');
                                 }
-                                return values;
                             }} />
                             <label htmlFor={el.name}>{el.name}</label>
                         </div>
                     )
                 })}
-                <input type="hidden" id={props.name} name={props.name} value={values.join(',')} />
+                <input type="hidden" id={props.name} name={props.name} value={props.value} />
             </div>
         )
     }
