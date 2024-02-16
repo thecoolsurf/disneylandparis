@@ -1,7 +1,9 @@
 import { useState } from 'react';
 
 export const Field = (props) => {
-    const [checkedValues, setCheckedalues] = useState();
+    const collection = props.type === 'select' ? props.chooser : '';
+    console.log(collection);
+    const [chooser, setChooser] = useState();
 
     if (props.type === 'hidden') {
         return (
