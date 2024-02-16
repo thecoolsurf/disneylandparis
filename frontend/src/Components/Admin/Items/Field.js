@@ -63,9 +63,10 @@ export const Field = (props) => {
             <div key={props.name} className="item">
                 <label>{props.name}</label>
                 {props.chooser.map((el) => {
+                    const checked = props.value.includes(el.id) ? true : false;
                     return (
                         <div key={el.name} className="list-checkbox">
-                            <input type="checkbox" name={inputName} value={el.id} onChange={(e) => {
+                            <input type="checkbox" name={inputName} defaultValue={el.id} checked={checked} onChange={(e) => {
                                 let target = document.getElementById(props.name);
                                 if (e.target.checked === true) {
                                     values.push(String(el.id));
@@ -79,7 +80,7 @@ export const Field = (props) => {
                         </div>
                     )
                 })}
-                <input type="hidden" id={props.name} name={props.name} value={props.value} />
+                <input type="hidden" id={props.name} name={props.name} value={values.join(',')} />
             </div>
         )
     }

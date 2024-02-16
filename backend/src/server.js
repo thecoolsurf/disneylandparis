@@ -68,9 +68,12 @@ function update(route, sql) {
 	let datas = [];
 	server.post(route, (req, res, next) => {
 		datas = jsonToArray(req.body);
-		knex.raw(sql, datas).then(([rows, columns]) => {
-			res.redirect(url)
-		})
+		datas.splice(datas.indexOf('handicap'), 1);
+		datas.splice(datas.indexOf('interest'), 1);
+		console.log(datas);
+		// knex.raw(sql, datas).then(([rows, columns]) => {
+		// 	res.redirect(url)
+		// })
 	});
 	return server;
 }
