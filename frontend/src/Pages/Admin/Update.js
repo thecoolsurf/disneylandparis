@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { DisplayFields } from '../../Components/Admin/Functions/DisplayFields';
 
 export const AdminUpdate = (props) => {
+    const entity = document.getElementById('entity');
     const url = window.location.href;
     const id = url.includes('?') ? url.split('?')[1].slice(3,) : 1;
     const [datas, setDatas] = useState([]);
@@ -21,6 +22,7 @@ export const AdminUpdate = (props) => {
                 <fieldset>
                     <legend>UPDATE:<span>{props.uri}</span></legend>
                     {datas.map((el) => {
+                        entity.textContent = props.uri.toUpperCase() + ' - ' + el.name;
                         return (
                             <DisplayFields key={props.uri} uri={props.uri} el={el} />
                         )

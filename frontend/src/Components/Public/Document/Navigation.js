@@ -14,6 +14,7 @@ export const Navigation = (props) => {
                 <div className="slider" onClick={() => { show0 === 'show' ? setShow0('hide') : setShow0('show'); }}>
                     <i className="fa fa-bars"></i>
                 </div>
+                <div className="entity" id="entity"></div>
                 <div className={'nav ' + show0}>
                     <div className="nav-parent">
                         {props.entities.map((name) => {
