@@ -1,10 +1,12 @@
 /* backend/src/Model/Admin/Entity/Attraction/Update.js */
+/* 22 rows */
 
 const update = `
 UPDATE attraction SET 
 id_park = ?, id_univ = ?, id_category = ?, 
 name = ?, slug = ?, route = ?, 
-id_public = ?, id_photopass = ?, id_premieraccess = ?, id_pmr = ?, 
+id_public = ?, id_photopass = ?, id_pmr = ?, 
+premieraccess = ?,  
 duration = ?, height = ?, width = ?, speed = ?, ability = ?, 
 id_evacuation = ?, id_height = ?, id_sensory = ?, 
 handicaps = ?, interests = ?,

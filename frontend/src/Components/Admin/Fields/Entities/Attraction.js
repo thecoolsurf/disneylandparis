@@ -63,8 +63,8 @@ export const Attraction = (props) => {
     const name = (props.e) ? props.e.name : '';
     const id_public = (props.e) ? props.e.id_public : '';
     const id_photopass = (props.e) ? props.e.id_photopass : '';
-    const id_premieraccess = (props.e) ? props.e.id_premieraccess : '';
     const id_pmr = (props.e) ? props.e.id_pmr : '';
+    const premieraccess = (props.e) ? props.e.premieraccess : '';
     const duration = (props.e) ? props.e.duration : '';
     const height = (props.e) ? props.e.height : '';
     const width = (props.e) ? props.e.width : '';
@@ -87,8 +87,8 @@ export const Attraction = (props) => {
             <Field type="text" name="route" value={route} />
             <Field type="select" name="id_public" chooser={publicChooser} value={id_public} />
             <Field type="select" name="id_photopass" chooser={photopassChooser} value={id_photopass} />
-            <Field type="select" name="id_premieraccess" chooser={premieraccessChooser} value={id_premieraccess} />
             <Field type="select" name="id_pmr" chooser={pmrChooser} value={id_pmr} />
+            <Field type="checkbox" name="premieraccess" chooser={premieraccessChooser} value={premieraccess} />
             <Field type="text" name="duration" value={duration} />
             <Field type="text" name="height" value={height} />
             <Field type="text" name="width" value={width} />

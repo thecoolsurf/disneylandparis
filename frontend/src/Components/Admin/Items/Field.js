@@ -1,9 +1,4 @@
-import { useState } from 'react';
-
 export const Field = (props) => {
-    const collection = props.type === 'select' ? props.chooser : '';
-    console.log(collection);
-    const [chooser, setChooser] = useState();
 
     if (props.type === 'hidden') {
         return (
@@ -59,40 +54,41 @@ export const Field = (props) => {
         )
     }
     if (props.type === 'checkbox') {
-        let inputName = props.name.slice(0, props.name.length - 1);
-        let values = props.value.split(',');
+        const inputName = props.name.slice(0, props.name.length - 1);
+        const target = document.getElementById(props.name);
+        const values = props.value.split(',');
         return (
             <div key={props.name} className="item">
                 <label>{props.name}</label>
                 {props.chooser.map((el) => {
-                    const checked = props.value.includes(el.id) ? true : false;
+                    const active = props.value.includes(el.id) ? 'active-check' : 'default';
                     return (
                         <div key={el.name} className="list-checkbox">
-                            <input type="checkbox" name={inputName} defaultValue={el.id} checked={checked} onChange={(e) => {
-                                let target = document.getElementById(props.name);
-                                if (e.target.checked === true) {
-                                    values.push(String(el.id));
-                                    target.value = values.join(',');
-                                } else {
+                            <input type="checkbox" name={inputName} defaultValue={el.id} onClick={(e) => {
+                                if (values.includes(e.target.value)) {
                                     values.splice(values.indexOf(el.id), 1);
-                                    target.value = values.join(',');
+                                    e.target.checked = false;
+                                } else {
+                                    values.push(String(el.id));
+                                    e.target.checked = true;
                                 }
+                                target.value = values.join(',');
                             }} />
-                            <label htmlFor={el.name}>{el.name}</label>
+                            <label htmlFor={el.name} className={active}>{el.name} ({el.id})</label>
                         </div>
                     )
                 })}
-                <input type="hidden" id={props.name} name={props.name} value={values.join(',')} />
+                <input className="control" type="text" id={props.name} name={props.name} value={values} />
             </div>
         )
     }
     if (props.type === 'date') {
         let value = props.value.slice(0, 10);
         return (
-            <p key={props.name} className="item">
+            <div key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
                 <input type="date" id={props.name} name={props.name} defaultValue={value} />
-            </p>
+            </div>
 
         )
     }

@@ -45,6 +45,16 @@
     float: none;
     font-weight: normal;
 }
+
+.admin .form .list-checkbox .active-check {
+    background-color: #bebebe;
+}
+
+.admin .form input[type="text"].control {
+    border: none;
+    color: #888;
+}
+
 .admin .form select {
     padding: 5px;
 }

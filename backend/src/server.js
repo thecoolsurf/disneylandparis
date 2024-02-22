@@ -55,25 +55,30 @@ function selectFind(route, sql) {
 /* ************************************************************************************************** */
 
 function jsonToArray(body) {
+	/* convert json to array */
 	let array = [];
 	let values = Object.values(body);
 	Array.prototype.push.apply(array, values);
-	console.log(values);
 	return array;
+}
+
+function cleanInputs(object) {
+	/* delete fields with checkbox */
+	delete object.interest;
+	delete object.handicap;
+	delete object.premieracces;
+	return object;
 }
 
 function update(route, sql) {
 	let entity = route.split('/')[3];
 	let url = `http://localhost:3000/admin/entity/collection/${entity}`;
-	let datas = [];
 	server.post(route, (req, res, next) => {
-		datas = jsonToArray(req.body);
-		datas.splice(datas.indexOf('handicap'), 1);
-		datas.splice(datas.indexOf('interest'), 1);
-		console.log(datas);
-		// knex.raw(sql, datas).then(([rows, columns]) => {
-		// 	res.redirect(url)
-		// })
+		let postDatas = cleanInputs(req.body);
+		let datas = jsonToArray(postDatas);
+		knex.raw(sql, datas).then(([rows, columns]) => {
+			res.redirect(url);
+		})
 	});
 	return server;
 }
@@ -81,9 +86,9 @@ function update(route, sql) {
 function insert(route, sql) {
 	let entity = route.split('/')[3];
 	let url = `http://localhost:3000/admin/entity/collection/${entity}`;
-	let datas = [];
 	server.post(route, (req, res, next) => {
-		datas = jsonToArray(req.body);
+		let postDatas = cleanInputs(req.body);
+		let datas = jsonToArray(postDatas);
 		datas.pop(); // for id
 		knex.raw(sql, datas).then(([rows, columns]) => {
 			res.redirect(url);
