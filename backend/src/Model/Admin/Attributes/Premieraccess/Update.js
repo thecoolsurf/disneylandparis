@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE premieraccess SET 
-name = ?
+name = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;

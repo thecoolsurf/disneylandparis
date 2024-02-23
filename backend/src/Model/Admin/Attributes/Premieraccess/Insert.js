@@ -2,7 +2,7 @@
 
 const insert = `
 INSERT INTO premieraccess 
-(name) VALUES (?);
+(name, description) VALUES (?, ?);
 `;
 
 module.exports = insert;

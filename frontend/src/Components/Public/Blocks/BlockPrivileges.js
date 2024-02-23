@@ -5,9 +5,7 @@ export const BlockPrivileges = (props) => {
                 <div className="picto">
                     <i class="fa fa-camera"></i>{props.name}
                 </div>
-                <div className="note">Service de photographes Disney PhotoPass
-                    ou de photos dans les attractions équipées.
-                </div>
+                <div className="note">{props.description}</div>
             </li>
         )
     }
@@ -21,10 +19,7 @@ export const BlockPrivileges = (props) => {
                     </span>
                     {props.name}
                 </div>
-                <div className="note">
-                    Accès spécial dédié aux Personnes à mobilité réduite.<br />
-                    Rampe d'accès fauteuil.
-                </div>
+                <div className="note">{props.description}</div>
             </li>
         )
     }
@@ -38,9 +33,7 @@ export const BlockPrivileges = (props) => {
                     </span>
                     {props.name}
                 </div>
-                <div className="note">Service de photographes Disney PhotoPass
-                    ou de photos dans les attractions équipées.
-                </div>
+                <div className="note">{props.description}</div>
             </li>
         )
     }

@@ -6,9 +6,9 @@ export const BlockAttraction = (props) => {
         props.datas.map((a) => {
             return (
                 <>
-                    <BlockPrivileges label="photopass" name={a.photopass} />
-                    <BlockPrivileges label="pmr" name={a.pmr} />
-                    <BlockPrivileges label="premieraccess" name={a.premieraccess} />
+                    <BlockPrivileges label="photopass" name={a.photopass} description={a.photopass_description} />
+                    <BlockPrivileges label="pmr" name={a.pmr} description={a.pmr_description} />
+                    <BlockPrivileges label="premieraccess" name={a.premieraccess} description={a.premieraccess_description} />
                     <BlockLabel label="Categorie" icon="fa fa-cogs" name={a.cname} />
                     <BlockLabel label="Public" icon="fa fa-users" name={a.public} />
                     <BlockLabel label="Durée" icon="fa fa-clock-o" name={a.duration} />

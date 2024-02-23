@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE photopass SET 
-name = ?
+name = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;

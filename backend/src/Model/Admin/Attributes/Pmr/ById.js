@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, name
+id, name, description
 FROM pmr
 WHERE id = ?`;
 

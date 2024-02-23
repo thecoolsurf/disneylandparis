@@ -2,7 +2,7 @@
 
 const insert = `
 INSERT INTO photopass 
-(name) VALUES (?);
+(name, description) VALUES (?, ?);
 `;
 
 module.exports = insert;

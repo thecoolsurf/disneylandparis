@@ -2,7 +2,7 @@
 
 const insert = `
 INSERT INTO pmr 
-(name) VALUES (?);
+(name, description) VALUES (?, ?);
 `;
 
 module.exports = insert;
