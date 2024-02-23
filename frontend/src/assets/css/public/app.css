@@ -301,6 +301,50 @@ ul {
 	font-size: 1.2rem;
 }
 
+.bloc-infos .list .photopass,
+.bloc-infos .list .pmr,
+.bloc-infos .list .premieraccess {
+	margin: 0 0 20px 0;
+}
+
+.bloc-infos .list .photopass .picto,
+.bloc-infos .list .pmr .picto,
+.bloc-infos .list .premieraccess .picto {
+	display: inline-block;
+	border: solid 1px #b3b3b3;
+	border-radius: 5px;
+	margin: 0 0 5px 0;
+	font-size: 1rem;
+
+}
+
+.bloc-infos .list .photopass .note,
+.bloc-infos .list .pmr .note,
+.bloc-infos .list .premieraccess .note {
+	font-size: 0.7rem;
+}
+
+.bloc-infos .list .photopass .picto {
+	padding: 5px;
+}
+
+.bloc-infos .list .pmr .picto,
+.bloc-infos .list .premieraccess .picto {
+	margin: 0 0 5px 0;
+	padding: 2px 10px 2px 3px;
+}
+
+.bloc-infos .list .photopass .fa {
+	margin: 0 10px 0 0;
+	font-size: 20px;
+}
+
+.bloc-infos .list .pmr .fa-stack,
+.bloc-infos .list .premieraccess .fa-stack {
+	margin: 0 5px 0 0;
+	font-size: 12px;
+}
+
 .park .bloc-infos .list .items-2,
 .univers .bloc-infos .list .items-2 {
 	display: flex;
