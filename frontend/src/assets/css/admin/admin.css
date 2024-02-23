@@ -1,9 +1,6 @@
 /* hide header public */
-.admin-admin,
-.img-collection,
-.img-update,
-.img-insert,
-.search {
+.administration header,
+.administration .search {
   display: none;
 }
 

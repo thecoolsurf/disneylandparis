@@ -29,6 +29,8 @@ import { AdminUpdate } from "./Pages/Admin/Update.js";
 import { AdminInsert } from "./Pages/Admin/Insert.js";
 
 function App() {
+    const uri = window.location.href;
+    const main = uri.includes('admin') ? 'main administration' : 'main public';
     const [navigation, setNavigation] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -43,7 +45,7 @@ function App() {
     const entities = Entities();
     const attributes = Attributes();
     return (
-        <div className="main">
+        <div className={main}>
             <BrowserRouter>
                 <Header />
                 <Navigation datas={parkAndUnivers} entities={entities} attributes={attributes} />
