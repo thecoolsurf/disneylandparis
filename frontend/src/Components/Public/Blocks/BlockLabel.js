@@ -1,4 +1,4 @@
-export const BlockLabelName = (props) => {
+export const BlockLabel = (props) => {
     if (props.icon) {
         return (
         <li className="items-2">
