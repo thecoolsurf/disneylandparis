@@ -1,40 +1,38 @@
 export const BlockPrivileges = (props) => {
-    if (props.label === 'photopass') {
-        return (
-            <li className="photopass">
-                <div className="picto">
-                    <i class="fa fa-camera"></i>{props.name}
-                </div>
-                <div className="note">{props.description}</div>
-            </li>
-        )
-    }
-    if (props.label === 'pmr') {
-        return (
-            <li className="pmr">
-                <div className="picto">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-square fa-stack-2x"></i>
-                        <i class="fa fa-wheelchair fa-stack-1x fa-inverse"></i>
-                    </span>
-                    {props.name}
-                </div>
-                <div className="note">{props.description}</div>
-            </li>
-        )
-    }
-    if (props.label === 'premieraccess') {
-        return (
-            <li className="premieraccess">
-                <div className="picto">
-                    <span class="fa-stack fa-lg">
-                        <i class="fa fa-square fa-stack-2x"></i>
-                        <i class="fa fa-rocket fa-stack-1x fa-inverse"></i>
-                    </span>
-                    {props.name}
-                </div>
-                <div className="note">{props.description}</div>
-            </li>
-        )
+    const picto = props.name.includes('Sans') ? 'picto disable' : 'picto';
+    switch (props.label) {
+        case 'photopass':
+            return (
+                <li className={props.label}>
+                    <div className={picto}>
+                        <i class={'fa ' + props.icon}></i>{props.name}
+                    </div>
+                    <div className="note">{props.description}</div>
+                </li>
+            )
+        case 'pmr':
+        case 'singlerider':
+        case 'premieraccess':
+            return (
+                <li className={props.label}>
+                    <div className={picto}>
+                        <span class="fa-stack fa-lg">
+                            <i class="fa fa-square fa-stack-2x"></i>
+                            <i class={'fa ' + props.icon + ' fa-stack-1x fa-inverse'}></i>
+                        </span>
+                        {props.name}
+                    </div>
+                    <div className="note">{props.description}</div>
+                </li>
+            )
+        default:
+            return (
+                <li className={props.label}>
+                    <div className="picto">
+                        <i class={'fa ' + props.icon}></i>{props.name}
+                    </div>
+                    <div className="note">{props.description}</div>
+                </li>
+            )
     }
 }

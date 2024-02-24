@@ -7,23 +7,25 @@ a.description, a.duration, a.height, a.width, a.speed, a.ability,
 c.name AS cname, 
 ph.name AS photopass, ph.description AS photopass_description, 
 pm.name AS pmr, pm.description AS pmr_description, 
-pa.name AS premieraccess, pa.description AS premieraccess_description, 
-p.name AS public,
-e.name AS ename, e.level, e.description as evacuation_description,
-h.name AS hname, h.description AS height_description,
-s.name AS sname, s.description AS sensory_description,
-hh.name AS hhname, hh.description AS handicap_description,
-i.name AS iname, i.description AS interet_description
+si.name AS singlerider, si.description AS singlerider_description, 
+pr.name AS premieraccess, pr.description AS premieraccess_description, 
+pu.name AS public,
+ev.name AS evacuation_name, ev.level, ev.description as evacuation_description,
+he.name AS height_name, he.description AS height_description,
+se.name AS sensory_name, se.description AS sensory_description,
+ha.name AS handicap_name, ha.description AS handicap_description,
+i.name AS interest_name, i.description AS interet_description
 FROM attraction a
 JOIN category c ON c.id = a.id_category
 JOIN photopass ph ON ph.id = a.id_photopass 
 JOIN pmr pm ON pm.id = a.id_pmr
-LEFT JOIN premieraccess pa ON pa.id IN(a.premieraccess)
-LEFT JOIN public p ON p.id = a.id_public
-LEFT JOIN evacuation e ON e.id = a.id_evacuation
-LEFT JOIN height h ON h.id = a.id_height
-LEFT JOIN sensory s ON s.id = a.id_sensory
-LEFT JOIN handicap hh ON hh.id IN(a.handicaps)
+JOIN singlerider si ON si.id = a.id_singlerider
+LEFT JOIN premieraccess pr ON pr.id IN(a.premieraccess)
+LEFT JOIN public pu ON pu.id = a.id_public
+LEFT JOIN evacuation ev ON ev.id = a.id_evacuation
+LEFT JOIN height he ON he.id = a.id_height
+LEFT JOIN sensory se ON se.id = a.id_sensory
+LEFT JOIN handicap ha ON ha.id IN(a.handicaps)
 LEFT JOIN interest i ON i.id IN(a.interests)
 WHERE a.id = ?
 `;
