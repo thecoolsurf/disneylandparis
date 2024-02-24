@@ -1,4 +1,4 @@
-import { Field } from '../../Items/Field.js';
+import { Field } from '../../Form/Field.js';
 
 export const Park = (props) => {
     const name = (props.e) ? props.e.name : '';

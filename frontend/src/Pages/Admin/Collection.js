@@ -1,8 +1,8 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
-import { THead } from '../../Components/Admin/Items/THead.js';
-import { Entities } from '../../Components/Admin/Lists/Entities.js';
-import { Attributes } from '../../Components/Admin/Lists/Attributes.js';
+import { THead } from '../../Components/Admin/Collection/THead.js';
+import { Entities } from '../../Components/Admin/Collection/Entities.js';
+import { Attributes } from '../../Components/Admin/Collection/Attributes.js';
 
 export const AdminCollection = (props) => {
     const [datas, setDatas] = useState([]);

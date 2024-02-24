@@ -1,5 +1,5 @@
-import { BtnDelete } from "../Items/BtnDelete.js";
-import { BtnUpdate } from "../Items/BtnUpdate.js";
+import { BtnDelete } from "../Form/BtnDelete.js";
+import { BtnUpdate } from "../Form/BtnUpdate.js";
 
 export const Entities = (props) => {
 
@@ -10,7 +10,7 @@ export const Entities = (props) => {
                 props.datas.map((e, index) => {
                     return (
                         <div className="rows">
-                            <div className="id">{index}</div>
+                            <div className="id">{index+1}</div>
                             <div className="item">{e.firstname} ({e.id})</div>
                             <div className="item">{e.lastname}</div>
                             <BtnDelete id={e.id} uri={props.uri} />
@@ -24,7 +24,7 @@ export const Entities = (props) => {
                 props.datas.map((e, index) => {
                     return (
                         <div className="rows">
-                            <div className="id">{index}</div>
+                            <div className="id">{index+1}</div>
                             <div className="item">{e.name} ({e.id})</div>
                             <div className="item">{e.cname}</div>
                             <div className="item">{e.pname}</div>
@@ -41,7 +41,7 @@ export const Entities = (props) => {
                 props.datas.map((e, index) => {
                     return (
                         <div key={e.id} className="rows">
-                            <div className="id">{index}</div>
+                            <div className="id">{index+1}</div>
                             <div className="item">{e.name} ({e.id})</div>
                             <div className="item">{e.route}</div>
                             <BtnDelete id={e.id} uri={props.uri} />

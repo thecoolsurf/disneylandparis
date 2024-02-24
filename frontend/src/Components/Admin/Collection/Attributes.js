@@ -1,5 +1,5 @@
-import { BtnDelete } from "../Items/BtnDelete.js";
-import { BtnUpdate } from "../Items/BtnUpdate.js";
+import { BtnDelete } from "../Form/BtnDelete.js";
+import { BtnUpdate } from "../Form/BtnUpdate.js";
 
 export const Attributes = (props) => {
 
