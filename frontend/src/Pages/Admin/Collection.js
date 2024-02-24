@@ -1,7 +1,8 @@
 import '../../assets/css/admin/admin.css'
 import { useState, useEffect } from 'react';
 import { THead } from '../../Components/Admin/Items/THead.js';
-import { DisplayLists } from '../../Components/Admin/Functions/DisplayLists.js';
+import { Entities } from '../../Components/Admin/Lists/Entities.js';
+import { Attributes } from '../../Components/Admin/Lists/Attributes.js';
 
 export const AdminCollection = (props) => {
     const [datas, setDatas] = useState([]);
@@ -21,7 +22,8 @@ export const AdminCollection = (props) => {
             </div>
             <div className="list">
                 <THead uri={props.uri} />
-                <DisplayLists datas={datas} uri={props.uri} />
+                <Entities datas={datas} uri={props.uri} />
+                <Attributes datas={datas} uri={props.uri} />
             </div>
         </div>
     )

@@ -9,6 +9,7 @@ export const Attraction = (props) => {
     const [photopassChooser, setPhotopassChooser] = useState([]);
     const [premieraccessChooser, setPremieraccessChooser] = useState([]);
     const [pmrChooser, setPmrChooser] = useState([]);
+    const [singleriderChooser, setSingleriderChooser] = useState([]);
     const [evacuationChooser, setEvacuationChooser] = useState([]);
     const [handicapChooser, setHandicapChooser] = useState([]);
     const [heightChooser, setHeightChooser] = useState([]);
@@ -37,6 +38,9 @@ export const Attraction = (props) => {
             const datasPmr = await fetch(`http://localhost:80/admin/collection/pmr`);
             const pmrChooser = await datasPmr.json();
             setPmrChooser(pmrChooser);
+            const datasSinglerider = await fetch(`http://localhost:80/admin/collection/singlerider`);
+            const singleriderChooser = await datasSinglerider.json();
+            setSingleriderChooser(singleriderChooser);
             const dataEvacuation = await fetch(`http://localhost:80/admin/collection/evacuation`);
             const evacuationChooser = await dataEvacuation.json();
             setEvacuationChooser(evacuationChooser);
@@ -64,6 +68,7 @@ export const Attraction = (props) => {
     const id_public = (props.e) ? props.e.id_public : '';
     const id_photopass = (props.e) ? props.e.id_photopass : '';
     const id_pmr = (props.e) ? props.e.id_pmr : '';
+    const id_singlerider = (props.e) ? props.e.id_singlerider : '';
     const premieraccess = (props.e) ? props.e.premieraccess : '';
     const duration = (props.e) ? props.e.duration : '';
     const height = (props.e) ? props.e.height : '';
@@ -88,6 +93,7 @@ export const Attraction = (props) => {
             <Field type="select" name="id_public" chooser={publicChooser} value={id_public} />
             <Field type="select" name="id_photopass" chooser={photopassChooser} value={id_photopass} />
             <Field type="select" name="id_pmr" chooser={pmrChooser} value={id_pmr} />
+            <Field type="select" name="id_singlerider" chooser={singleriderChooser} value={id_singlerider} />
             <Field type="checkbox" name="premieraccess" chooser={premieraccessChooser} value={premieraccess} />
             <Field type="text" name="duration" value={duration} />
             <Field type="text" name="height" value={height} />
