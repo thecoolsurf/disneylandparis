@@ -115,20 +115,29 @@ function deleting(route, sql) {
 /* menus */
 const nav_attractions_univers_parks = require('./Model/Public/Navigation/AttractionsAndUniversAndParks.js');
 select("/navigation", nav_attractions_univers_parks);
+
 /* home page */
 const home = require('./Model/Public/Home/Datas.js');
 select("/home", home);
+
 /* park page */
 const park = require('./Model/Public/Park/ParkById.js');
 select("/park_by_id", park);
+
 /* univers page */
 const univers = require('./Model/Public/Univers/UniversById.js');
 select("/univers_by_id", univers);
 const attractions_by_univers = require('./Model/Public/Attraction/AttractionsByUnivers.js');
 select("/attractions_by_univers", attractions_by_univers);
+
 /* attraction page */
 const attraction = require('./Model/Public/Attraction/AttractionById.js');
 select("/attraction_by_id", attraction);
+const handicaps = require('./Model/Public/Attraction/HandicapsByAttraction.js');
+select("/handicaps_by_attraction", handicaps);
+const interests = require('./Model/Public/Attraction/InterestsByAttraction.js');
+select("/interests_by_attraction", interests);
+
 /* find attraction page */
 const attraction_find = require('./Model/Public/Attraction/FindAttraction.js');
 selectFind("/find_attraction", attraction_find);

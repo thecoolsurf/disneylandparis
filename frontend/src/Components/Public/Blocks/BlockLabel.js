@@ -1,4 +1,7 @@
+import { useState, useEffect } from 'react';
+
 export const BlockLabel = (props) => {
+    const datas = props.datas ? props.datas : [];
     switch (props.label) {
         case 'Categorie':
         case 'Public':
@@ -17,13 +20,20 @@ export const BlockLabel = (props) => {
                     </div>
                 </li>
             )
-        case 'Interet':
+        case 'Interets':
+        case 'Handicaps':
             return (
                 <li className="items-2">
                     <i class={'icon ' + props.icon} aria-hidden="true"></i>
                     <div className="item">
                         <div className="label">{props.label}</div>
-                        <div className="name">{props.description}</div>
+                        <ul className="collection">
+                            {datas.map((el) => {
+                                return (
+                                    <li className="name">{el.description}</li>
+                                )
+                            })}
+                        </ul>
                     </div>
                 </li>
             )

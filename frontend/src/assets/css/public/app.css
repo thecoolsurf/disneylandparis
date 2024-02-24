@@ -397,6 +397,18 @@ ul {
 	max-width: 240px;
 }
 
+.bloc-infos .list .items-2 .collection {
+	list-style-type: circle;
+	list-style: inside;
+	margin: 0;
+	padding: 0;
+}
+
+.bloc-infos .list .items-2 .collection li {
+	margin: 0 0 5xp 0;
+	padding: 0;
+}
+
 .bloc-infos .list .items-2 .item .tt {
 	float: left;
 	width: 20px;

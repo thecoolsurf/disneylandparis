@@ -3,7 +3,7 @@
 const attraction_by_id = `
 SELECT 
 a.id AS aid, a.slug AS aslug, a.route AS aroute, a.name AS aname, 
-a.description, a.duration, a.height, a.width, a.speed, a.ability, 
+a.description, a.duration, a.height, a.width, a.speed, a.ability, a.interests, a.handicaps, 
 c.name AS cname, 
 ph.name AS photopass, ph.description AS photopass_description, 
 pm.name AS pmr, pm.description AS pmr_description, 
@@ -12,9 +12,7 @@ pr.name AS premieraccess, pr.description AS premieraccess_description,
 pu.name AS public,
 ev.name AS evacuation_name, ev.level, ev.description as evacuation_description,
 he.name AS height_name, he.description AS height_description,
-se.name AS sensory_name, se.description AS sensory_description,
-ha.name AS handicap_name, ha.description AS handicap_description,
-i.name AS interest_name, i.description AS interet_description
+se.name AS sensory_name, se.description AS sensory_description
 FROM attraction a
 JOIN category c ON c.id = a.id_category
 JOIN photopass ph ON ph.id = a.id_photopass 
@@ -25,8 +23,6 @@ LEFT JOIN public pu ON pu.id = a.id_public
 LEFT JOIN evacuation ev ON ev.id = a.id_evacuation
 LEFT JOIN height he ON he.id = a.id_height
 LEFT JOIN sensory se ON se.id = a.id_sensory
-LEFT JOIN handicap ha ON ha.id IN(a.handicaps)
-LEFT JOIN interest i ON i.id IN(a.interests)
 WHERE a.id = ?
 `;
 
