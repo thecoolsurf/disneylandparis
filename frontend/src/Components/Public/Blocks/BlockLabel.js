@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
-
 export const BlockLabel = (props) => {
+
     const datas = props.datas ? props.datas : [];
     switch (props.label) {
         case 'Categorie':
@@ -58,4 +57,5 @@ export const BlockLabel = (props) => {
                 </li>
             )
     }
+    
 }
