@@ -30,16 +30,17 @@ export const THead = (props) => {
                     </div>
                 );
             case 'category':
-            case 'public':
-            case 'photopass':
-            case 'premieraccess':
-            case 'pmr':
-            case 'height':
             case 'evacuation':
-            case 'sensory':
             case 'handicap':
+            case 'height':
             case 'interest':
-                return (
+            case 'photopass':
+            case 'pmr':
+            case 'premieraccess':
+            case 'public':
+            case 'sensory':
+            case 'singlerider':
+                    return (
                     <div className="thead">
                         <div className="id">id</div>
                         <div className="item">name</div>

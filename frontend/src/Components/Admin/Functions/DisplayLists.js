@@ -15,6 +15,7 @@ import { Pmr } from '../Lists/Attributes/Pmr.js';
 import { Premieraccess } from '../Lists/Attributes/Premieraccess.js';
 import { Public } from '../Lists/Attributes/Public.js';
 import { Sensory } from "../Lists/Attributes/Sensory.js";
+import { Singlerider } from "../Lists/Attributes/Singlerider.js";
 
 export const DisplayLists = (props) => {
     const uri = props.uri;
@@ -36,4 +37,5 @@ export const DisplayLists = (props) => {
     if (props.uri === 'premieraccess') return (<Premieraccess datas={datas} uri={uri} />);
     if (props.uri === 'public') return (<Public datas={datas} uri={uri} />);
     if (props.uri === 'sensory') return (<Sensory datas={datas} uri={uri} />);
+    if (props.uri === 'singlerider') return (<Singlerider datas={datas} uri={uri} />);
 }

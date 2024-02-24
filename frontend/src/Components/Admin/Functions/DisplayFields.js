@@ -15,6 +15,7 @@ import { Pmr } from '../Fields/Attributes/Pmr.js';
 import { Premieraccess } from '../Fields/Attributes/Premieraccess.js';
 import { Public } from '../Fields/Attributes/Public.js';
 import { Sensory } from "../Fields/Attributes/Sensory.js";
+import { Singlerider } from "../Fields/Attributes/Singlerider.js";
 
 export const DisplayFields = (props) => {
     const el = props.el ? props.el : [];
@@ -35,5 +36,6 @@ export const DisplayFields = (props) => {
     if (props.uri === 'premieraccess') return (<Premieraccess key="premieraccess" e={el} />)
     if (props.uri === 'public') return (<Public key="public" e={el} />)
     if (props.uri === 'sensory') return (<Sensory key="sensory" e={el} />)
+    if (props.uri === 'singlerider') return (<Singlerider key="singlerider" e={el} />)
     if (props.uri === '') return (<Administrator key="administrator" e={el} />)
 }
