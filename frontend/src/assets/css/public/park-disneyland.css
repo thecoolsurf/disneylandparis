@@ -241,3 +241,8 @@
     background-image: url('../../images/attractions/park/disney-electrical-sky-parade/icon/disney-electrical-sky-parade.jpg');
     background-size: cover;
 }
+
+.icon-le-roi-lion {
+    background-image: url('../../images/attractions/park/le-roi-lion/icon/le-roi-lion.jpg');
+    background-size: cover;
+}
