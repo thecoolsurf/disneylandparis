@@ -137,6 +137,8 @@ const handicaps = require('./Model/Public/Attraction/HandicapsByAttraction.js');
 select("/handicaps_by_attraction", handicaps);
 const interests = require('./Model/Public/Attraction/InterestsByAttraction.js');
 select("/interests_by_attraction", interests);
+const premieraccess = require('./Model/Public/Attraction/PremieraccessByAttraction.js');
+select("/premieraccess_by_attraction", premieraccess);
 
 /* find attraction page */
 const attraction_find = require('./Model/Public/Attraction/FindAttraction.js');

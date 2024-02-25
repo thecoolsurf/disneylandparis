@@ -19,7 +19,7 @@ export const BlockLabel = (props) => {
                     </div>
                 </li>
             )
-        case 'Interets':
+        case 'Intérets':
         case 'Handicaps':
             return (
                 <li className="items-2">

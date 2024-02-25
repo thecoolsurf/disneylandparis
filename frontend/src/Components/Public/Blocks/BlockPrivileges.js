@@ -1,18 +1,30 @@
 export const BlockPrivileges = (props) => {
-    const picto = props.name.includes('Sans') ? 'picto disable' : 'picto';
+    let picto = 'picto';
+    let note = '';
+    if (props.name && props.name.includes('Sans')) picto = 'picto disable';
     switch (props.label) {
-        case 'photopass':
+        case 'premieraccess':
             return (
                 <li className={props.label}>
-                    <div className={picto}>
-                        <i class={'fa ' + props.icon}></i>{props.name}
-                    </div>
-                    <div className="note">{props.description}</div>
+                    {props.datas.map((el) => {
+                        note = el.description;
+                        return (
+                            <>
+                                <div className={picto}>
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-square fa-stack-2x"></i>
+                                        <i class={'fa ' + props.icon + ' fa-stack-1x fa-inverse'}></i>
+                                    </span>
+                                    {el.name}
+                                </div>
+                            </>
+                        )
+                    })}
+                    <div className="note">{note}</div>
                 </li>
             )
         case 'pmr':
         case 'singlerider':
-        case 'premieraccess':
             return (
                 <li className={props.label}>
                     <div className={picto}>
@@ -25,6 +37,7 @@ export const BlockPrivileges = (props) => {
                     <div className="note">{props.description}</div>
                 </li>
             )
+        case 'photopass':
         default:
             return (
                 <li className={props.label}>
