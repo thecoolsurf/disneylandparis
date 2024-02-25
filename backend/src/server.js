@@ -27,20 +27,16 @@ function select(route, sql) {
 				.then(([rows, columns]) => {
 					res.json(rows);
 				})
-		} else {
-			knex.raw(sql)
+		} else if (req.query.ids) {
+			let entity = route.split('/')[1];
+			let ids = req.query.ids.toString();
+			knex.raw(`SELECT name, description FROM ${entity} WHERE id IN (${ids})`)
 				.then(([rows, columns]) => {
 					res.json(rows);
 				})
-		}
-	});
-	return server;
-}
-
-function selectFind(route, sql) {
-	server.get(route, (req, res, next) => {
-		let find = req.query.find ? req.query.find : '';
-		knex.raw(sql, '%' + find + '%')
+		} else if (req.query.find) {
+			let find = req.query.find ? req.query.find : '';
+			knex.raw(sql, '%' + find + '%')
 			.then(([rows, columns]) => {
 				const result = rows.map((el) => ({
 					name: el.name,
@@ -48,6 +44,12 @@ function selectFind(route, sql) {
 				}));
 				res.json(result);
 			})
+		} else {
+			knex.raw(sql)
+				.then(([rows, columns]) => {
+					res.json(rows);
+				})
+		}
 	});
 	return server;
 }
@@ -131,18 +133,15 @@ const attractions_by_univers = require('./Model/Public/Attraction/AttractionsByU
 select("/attractions_by_univers", attractions_by_univers);
 
 /* attraction page */
-const attraction = require('./Model/Public/Attraction/AttractionById.js');
-select("/attraction_by_id", attraction);
-const handicaps = require('./Model/Public/Attraction/HandicapsByAttraction.js');
-select("/handicaps_by_attraction", handicaps);
-const interests = require('./Model/Public/Attraction/InterestsByAttraction.js');
-select("/interests_by_attraction", interests);
-const premieraccess = require('./Model/Public/Attraction/PremieraccessByAttraction.js');
-select("/premieraccess_by_attraction", premieraccess);
+const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
+select("/attraction_by_id", attraction_by_id);
+select("/handicap", null);
+select("/interest", null);
+select("/premieraccess", null);
 
 /* find attraction page */
 const attraction_find = require('./Model/Public/Attraction/FindAttraction.js');
-selectFind("/find_attraction", attraction_find);
+select("/find_attraction", attraction_find);
 
 /* ************************************************************************************************** */
 /* ADMIN */

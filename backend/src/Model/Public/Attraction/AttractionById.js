@@ -3,7 +3,7 @@
 const attraction_by_id = `
 SELECT 
 a.id AS aid, a.slug AS aslug, a.route AS aroute, a.name AS aname, 
-a.description, a.duration, a.height, a.width, a.speed, a.ability, a.interests, a.handicaps, 
+a.description, a.duration, a.height, a.width, a.speed, a.ability, a.interests, a.handicaps, a.premieraccess, 
 c.name AS cname, 
 ph.name AS photopass, ph.description AS photopass_description, 
 pm.name AS pmr, pm.description AS pmr_description, 

@@ -1,21 +1,22 @@
 import { useState, useEffect } from 'react';
 
-import { BlockLabel } from "./BlockLabel";
-import { BlockPrivileges } from "./BlockPrivileges";
+import { BlockLabel } from './BlockLabel';
+import { BlockPrivileges } from './BlockPrivileges.js';
+import { FilterParams } from '../Filters/FilterParams.js';
 
 export const BlockAttraction = (props) => {
-    const [premieraccess, setPremieraccess] = useState([]);
     const [handicaps, setHandicaps] = useState([]);
     const [interests, setInterests] = useState([]);
+    const [premieraccess, setPremieraccess] = useState([]);
     useEffect(() => {
         const fetchtheData = async () => {
-            const dataPremieraccess = await fetch(`http://localhost:80/premieraccess_by_attraction`);
+            const dataPremieraccess = await fetch(`http://localhost:80/premieraccess?${FilterParams(props.datas[0].premieraccess.split(','))}`);
             const premieraccess = await dataPremieraccess.json();
             setPremieraccess(premieraccess);
-            const dataHandicaps = await fetch(`http://localhost:80/handicaps_by_attraction`);
+            const dataHandicaps = await fetch(`http://localhost:80/handicap?${FilterParams(props.datas[0].handicaps.split(','))}`);
             const handicaps = await dataHandicaps.json();
             setHandicaps(handicaps);
-            const dataInterests = await fetch(`http://localhost:80/interests_by_attraction`);
+            const dataInterests = await fetch(`http://localhost:80/interest?${FilterParams(props.datas[0].interests.split(','))}`);
             const interests = await dataInterests.json();
             setInterests(interests);
         };
