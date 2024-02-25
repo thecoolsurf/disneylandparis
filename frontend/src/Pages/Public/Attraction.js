@@ -34,7 +34,7 @@ export const Attraction = (props) => {
                                 <BreadCrumb />
                                 <div className="category">{el.cname}</div>
                                 <h2 className="title">{el.aname}</h2>
-                                <h5 className="author">{el.author}</h5>
+                                <h5 className="author">Créateur(s): {el.author}</h5>
                                 <p className="texte">{el.description}</p>
                             </div>
                         </>
