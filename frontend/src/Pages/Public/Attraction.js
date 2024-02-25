@@ -4,6 +4,7 @@ import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
+import { CreatedAt } from '../../Components/Public/Document/CreatedAt.js';
 
 export const Attraction = (props) => {
     const [attraction, setAttraction] = useState([]);
@@ -29,9 +30,11 @@ export const Attraction = (props) => {
                                 <BlockInfos back={back} univers={[1]} attractions={attraction} />
                             </div>
                             <div className="description">
+                                <CreatedAt date={el.created} />
                                 <BreadCrumb />
                                 <div className="category">{el.cname}</div>
                                 <h2 className="title">{el.aname}</h2>
+                                <h5 className="author">{el.author}</h5>
                                 <p className="texte">{el.description}</p>
                             </div>
                         </>
