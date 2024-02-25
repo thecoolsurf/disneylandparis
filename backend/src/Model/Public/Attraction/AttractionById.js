@@ -9,7 +9,7 @@ ph.name AS photopass, ph.description AS photopass_description,
 pm.name AS pmr, pm.description AS pmr_description, 
 si.name AS singlerider, si.description AS singlerider_description, 
 pu.name AS public,
-ev.name AS evacuation_name, ev.level, ev.description as evacuation_description,
+ev.name AS evacuation_name, ev.description as evacuation_description,
 he.name AS height_name, he.description AS height_description,
 se.name AS sensory_name, se.description AS sensory_description
 FROM attraction a
