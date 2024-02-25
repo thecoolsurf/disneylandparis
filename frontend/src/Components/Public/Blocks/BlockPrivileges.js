@@ -8,16 +8,15 @@ export const BlockPrivileges = (props) => {
                 <li className={props.label}>
                     {props.datas.map((el) => {
                         note = el.description;
+                        if (el.name.includes('Sans')) picto = 'picto disable';
                         return (
-                            <>
-                                <div className={picto}>
-                                    <span class="fa-stack fa-lg">
-                                        <i class="fa fa-square fa-stack-2x"></i>
-                                        <i class={'fa ' + props.icon + ' fa-stack-1x fa-inverse'}></i>
-                                    </span>
-                                    {el.name}
-                                </div>
-                            </>
+                            <div className={picto}>
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square fa-stack-2x"></i>
+                                    <i class={'fa ' + props.icon + ' fa-stack-1x fa-inverse'}></i>
+                                </span>
+                                {el.name}
+                            </div>
                         )
                     })}
                     <div className="note">{note}</div>
@@ -41,7 +40,7 @@ export const BlockPrivileges = (props) => {
         default:
             return (
                 <li className={props.label}>
-                    <div className="picto">
+                    <div className={picto}>
                         <i class={'fa ' + props.icon}></i>{props.name}
                     </div>
                     <div className="note">{props.description}</div>
