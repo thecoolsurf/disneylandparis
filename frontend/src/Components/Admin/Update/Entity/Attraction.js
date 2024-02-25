@@ -62,6 +62,8 @@ export const Attraction = (props) => {
     const id_park = (props.e) ? props.e.id_park : '';
     const id_univ = (props.e) ? props.e.id_univ : '';
     const id_category = (props.e) ? props.e.id_category : '';
+    const created= (props.e) ? props.e.created : '';
+    const author = (props.e) ? props.e.author : '';
     const slug = (props.e) ? props.e.slug : '';
     const route = (props.e) ? props.e.route : '';
     const name = (props.e) ? props.e.name : '';
@@ -87,6 +89,8 @@ export const Attraction = (props) => {
             <Field type="select" name="id_park" chooser={parkChooser} value={id_park} />
             <Field type="select" name="id_univ" chooser={universChooser} value={id_univ} />
             <Field type="select" name="id_category" chooser={categoryChooser} value={id_category} />
+            <Field type="date" name="created" value={created} />
+            <Field type="text" name="author" value={author} />
             <Field type="text" name="name" value={name} />
             <Field type="text" name="slug" value={slug} />
             <Field type="text" name="route" value={route} />

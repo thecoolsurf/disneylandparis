@@ -4,6 +4,7 @@
 const update = `
 UPDATE attraction SET 
 id_park = ?, id_univ = ?, id_category = ?, 
+created = ?, author = ?, 
 name = ?, slug = ?, route = ?, 
 id_public = ?, id_photopass = ?, id_pmr = ?, id_singlerider = ?, 
 premieraccess = ?,  

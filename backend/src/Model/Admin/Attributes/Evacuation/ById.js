@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, name, level, description
+id, name, description
 FROM evacuation 
 WHERE id = ?`;
 
