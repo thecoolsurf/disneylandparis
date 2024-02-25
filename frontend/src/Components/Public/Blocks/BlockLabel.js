@@ -29,7 +29,10 @@ export const BlockLabel = (props) => {
                         <ul className="collection">
                             {datas.map((el) => {
                                 return (
-                                    <li className="name">{el.description}</li>
+                                    <li>
+                                        <div className="name">{el.name}</div>
+                                        <div className="describe">{el.description}</div>
+                                    </li>
                                 )
                             })}
                         </ul>

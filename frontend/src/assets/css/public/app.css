@@ -398,8 +398,7 @@ ul {
 }
 
 .bloc-infos .list .items-2 .collection {
-	list-style-type: circle;
-	list-style: inside;
+	list-style-type: none;
 	margin: 0;
 	padding: 0;
 }
@@ -407,6 +406,11 @@ ul {
 .bloc-infos .list .items-2 .collection li {
 	margin: 0 0 5xp 0;
 	padding: 0;
+}
+
+.bloc-infos .list .items-2 .collection .name {
+	font-size: 0.8rem;
+	font-weight: 700;
 }
 
 .bloc-infos .list .items-2 .item .tt {
