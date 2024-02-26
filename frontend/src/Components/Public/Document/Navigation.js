@@ -49,11 +49,11 @@ export const Navigation = (props) => {
                         let show = (p.pid === 1) ? show1 : show2;
                         return (
                             <div key={'parent' + p.pid} className="nav-parent">
-                                <a key={'p' + p.pid} id={'nav' + p.pid} href={p.proute} alt={p.pname} className={'link show ' + bkgNav} onMouseOver={(e) => {
+                                <div id={p.pid} className={'link show ' + bkgNav} onClick={(e) => {
                                     if (e.target.id === '1') { setShow1('show'); setShow2('hide') }
                                     if (e.target.id === '2') { setShow2('show'); setShow1('hide') }
                                 }}>{p.pname}
-                                </a>
+                                </div>
                                 <div key={'child' + p.pid} className={'nav-childs ' + show}>
                                     {p.univers.map((u) => {
                                         return (<a key={'c' + u.uid} className={'link link-' + p.pid} href={u.uroute}>{u.uname}</a>)
