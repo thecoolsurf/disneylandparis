@@ -1,12 +1,11 @@
 import "../../../assets/css/public/carrousel.css";
 import { useState } from "react";
 import { FilterBkgColor } from "../Filters/FilterBkgColor.js";
-import Card from "./Card.js";
+import { Card } from "./Card.js";
 import { CountLoadedFiles } from "../Files/CountLoadedFiles.js";
 import { CountCardByScreen } from "../Files/CountCardByScreen.js";
 
 /*
-@require bkgNav
 @requre legend
 @require datas {id,name,slug,route}
 */

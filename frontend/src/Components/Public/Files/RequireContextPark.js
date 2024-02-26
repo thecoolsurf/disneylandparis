@@ -105,8 +105,8 @@ export const RequireContextPark = () => {
     if (uri.includes('pirates-of-caribbean')) {
         return require.context('../../../assets/images/attractions/park/pirates-of-caribbean/img',true);
     }
-    if (uri.includes('rencontre-avec-myckey')) {
-        return require.context('../../../assets/images/attractions/park/rencontre-avec-myckey/img',true);
+    if (uri.includes('meet-mickey')) {
+        return require.context('../../../assets/images/attractions/park/meet-mickey/img',true);
     }
     if (uri.includes('rustler-roundup-shootin')) {
         return require.context('../../../assets/images/attractions/park/rustler-roundup-shootin/img',true);

@@ -1,10 +1,19 @@
 import { RequireContextPark } from "../Files/RequireContextPark.js";
 import { RequireContextStudio } from "../Files/RequireContextStudio.js";
 
-const Card = (props) => {
+export const Card = (props) => {
     const uri = window.location.href;
+    if (!uri.includes('park-park-disneyland') && !uri.includes('walt-disney-studios')) {
+        /* home */
+        return (
+            <a className="card" href={props.item.aroute} alt={props.item.aname}>
+                <div className={'img icon-' + props.item.aslug}></div>
+                <div className="legend">{props.item.aname}</div>
+            </a>
+        )
+    }
     if (uri.includes('park') && !uri.includes('univers')) {
-        /* page Park */
+        /* Park & studio */
         return (
             <a className="card" href={props.item.uroute} alt={props.item.uname}>
                 <div className={'img icon-' + props.item.uslug}></div>
@@ -13,7 +22,7 @@ const Card = (props) => {
         );
     }
     if (uri.includes('univers') && !uri.includes('attraction')) {
-        /* page Univers */
+        /* Univers */
         return (
             <a className="card" href={props.item.aroute} alt={props.item.aname}>
                 <div className={'img icon-' + props.item.aslug}></div>
@@ -22,7 +31,7 @@ const Card = (props) => {
         );
     }
     if (uri.includes('attraction') && uri.includes('park-park-disneyland')) {
-        /* page attraction park */
+        /* attraction park */
         const collection = RequireContextPark();
         const files = collection.keys().map(image => collection(image));
         return (
@@ -34,7 +43,7 @@ const Card = (props) => {
         );
     }
     if (uri.includes('attraction') && uri.includes('walt-disney-studios')) {
-        /* page attraction studio */
+        /* attraction studio */
         const collection = RequireContextStudio();
         const files = collection.keys().map(image => collection(image));
         return (
@@ -47,4 +56,4 @@ const Card = (props) => {
     }
 };
 
-export default Card;
+// export default Card;

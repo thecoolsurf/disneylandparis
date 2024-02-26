@@ -4,6 +4,7 @@ import { FilterHomeDatas } from '../../Components/Public/Filters/FilterHomeDatas
 import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
+import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 
 export const Home = (props) => {
     const [home, setDatas] = useState([]);
@@ -19,6 +20,7 @@ export const Home = (props) => {
     const attraction = props.navigation;
     return (
         <div className="home">
+            <Carrousel legend={'Liste des attractions'} datas={attraction} />
             {parkAndUnivers.map((p) => {
                 let park = null;
                 let univers = null;
