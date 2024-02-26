@@ -23,37 +23,32 @@ function select(route, sql) {
 	server.get(route, (req, res, next) => {
 		if (req.query.id) {
 			let id = req.query.id;
-			knex.raw(sql, id)
-				.then(([rows, columns]) => {
-					res.json(rows);
-				})
+			knex.raw(sql, id).then(([rows, columns]) => { res.json(rows); })
 		} else if (req.query.ids) {
 			let entity = route.split('/')[1];
 			let ids = req.query.ids.toString();
-			knex.raw(`SELECT * FROM ${entity} WHERE id IN (${ids})`)
-				.then(([rows, columns]) => {
-					res.json(rows);
-				})
-		} else if (req.query.find) {
-			let find = req.query.find ? req.query.find : '';
-			knex.raw(sql, '%' + find + '%')
-			.then(([rows, columns]) => {
-				const result = rows.map((el) => ({
-					name: el.name,
-					route: el.route,
-				}));
-				res.json(result);
-			})
+			let sql = `SELECT * FROM ${entity} WHERE id IN (${ids})`;
+			knex.raw(sql).then(([rows, columns]) => { res.json(rows); })
 		} else {
-			knex.raw(sql)
-				.then(([rows, columns]) => {
-					res.json(rows);
-				})
+			knex.raw(sql).then(([rows, columns]) => { res.json(rows); })
 		}
 	});
 	return server;
 }
 
+function selectFind(route, sql) {
+	server.get(route, (req, res, next) => {
+		let find = req.query.find;
+		knex.raw(sql, '%' + find + '%').then(([rows, columns]) => {
+			const result = rows.map((el) => ({
+				name: el.name,
+				route: el.route,
+			}));
+			res.json(result);
+		})
+	});
+	return server;
+}
 /* ************************************************************************************************** */
 
 function jsonToArray(body) {
@@ -103,26 +98,26 @@ function transaction(route, sql) {
 /* menus */
 const navigation = require('./Model/Public/Navigation/AttractionsAndUniversAndParks.js');
 select("/navigation", navigation);
-/* home page */
+/* home */
 const home = require('./Model/Public/Home/Datas.js');
 select("/home", home);
-/* park page */
+/* park & studio */
 const park = require('./Model/Public/Park/ParkById.js');
 select("/park_by_id", park);
-/* univers page */
+/* univers */
 const univers = require('./Model/Public/Univers/UniversById.js');
 select("/univers_by_id", univers);
 const attractions_by_univers = require('./Model/Public/Attraction/AttractionsByUnivers.js');
 select("/attractions_by_univers", attractions_by_univers);
-/* attraction page */
+/* attraction */
 const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
 select("/attraction_by_id", attraction_by_id);
 select("/handicap", null);
 select("/interest", null);
 select("/premieraccess", null);
-/* find attraction page */
+/* find attraction */
 const attraction_find = require('./Model/Public/Attraction/FindAttraction.js');
-select("/find_attraction", attraction_find);
+selectFind("/find_attraction", attraction_find);
 
 /* ************************************************************************************************** */
 /* ADMIN */
