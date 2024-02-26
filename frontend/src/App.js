@@ -48,7 +48,7 @@ function App() {
         <div className={main}>
             <BrowserRouter>
                 <Header />
-                <Navigation datas={parkAndUnivers} entities={entities} attributes={attributes} />
+                <Navigation datas={parkAndUnivers} admin={[entities,attributes]} />
                 <LinkToFinder />
                 <Routes>
                     <Route path="/" element={

@@ -9,6 +9,7 @@ export const Navigation = (props) => {
     const bkgNav = FilterBkgColor();
     const uri = window.location.href;
     if (uri.includes('admin')) {
+        /* admin */
         return (
             <div className="nav-admin">
                 <div className="slider" onClick={() => { show0 === 'show' ? setShow0('hide') : setShow0('show'); }}>
@@ -17,7 +18,7 @@ export const Navigation = (props) => {
                 <div className="entity" id="entity"></div>
                 <div className={'nav ' + show0}>
                     <div className="nav-parent">
-                        {props.entities.map((name) => {
+                        {props.admin[0].map((name) => {
                             const active = (uri.includes(name)) ? 'active' : '';
                             return (
                                 <a key={name} className={'link ' + active} href={'/admin/entity/collection/' + name}>{name}</a>
@@ -25,7 +26,7 @@ export const Navigation = (props) => {
                         })}
                     </div>
                     <div className="nav-parent">
-                        {props.attributes.map((name) => {
+                        {props.admin[1].map((name) => {
                             const active = (uri.includes(name)) ? 'active' : '';
                             return (
                                 <a key={name} className={'link ' + active} href={'/admin/entity/collection/' + name}>{name}</a>
@@ -36,6 +37,7 @@ export const Navigation = (props) => {
             </div >
         )
     } else {
+        /* public */
         return (
             <div className={'navigation ' + bkgNav}>
                 <div className="slider" onClick={() => { show0 === 'show' ? setShow0('hide') : setShow0('show'); }}>
@@ -47,7 +49,7 @@ export const Navigation = (props) => {
                         let show = (p.pid === 1) ? show1 : show2;
                         return (
                             <div key={'parent' + p.pid} className="nav-parent">
-                                <a key={'p' + p.pid} id={p.pid} href={p.proute} alt={p.pname} className={'link show ' + bkgNav} onMouseOver={(e) => {
+                                <a key={'p' + p.pid} id={'nav' + p.pid} href={p.proute} alt={p.pname} className={'link show ' + bkgNav} onMouseOver={(e) => {
                                     if (e.target.id === '1') { setShow1('show'); setShow2('hide') }
                                     if (e.target.id === '2') { setShow2('show'); setShow1('hide') }
                                 }}>{p.pname}
