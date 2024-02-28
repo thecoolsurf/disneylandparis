@@ -2,10 +2,10 @@
 
 const navigation = `
 SELECT 
-a.id AS aid, a.slug AS aslug, a.route AS aroute, a.name AS aname,
-u.id AS uid, u.slug AS uslug, u.name AS uname,
-p.id AS pid, p.slug AS pslug, p.name AS pname, 
-c.id AS cid, c.slug AS cslug, c.name AS cname
+a.id AS aid, a.name AS aname, a.slug AS aslug, a.route AS aroute, 
+u.id AS uid, u.name AS uname, u.slug AS uslug, u.route AS uroute, 
+p.id AS pid, p.name AS pname, p.slug AS pslug, p.route AS proute, 
+c.id AS cid, c.name AS cname, c.slug AS cslug, c.route AS croute
 FROM attraction a
 JOIN univers u ON u.id = a.id_univ 
 JOIN park p ON p.id = a.id_park

@@ -7,7 +7,7 @@ export const BlockCategories = (props) => {
     if (props.label === 'home-categories') {
         return (
             <li className="items-1">
-                <div className="total">Attractions par catégories</div>
+                <div className="total">Toutes les attractions par catégories</div>
                 {props.datas.map((c) => {
                     return (
                         <div className="item">

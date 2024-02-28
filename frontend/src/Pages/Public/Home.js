@@ -39,7 +39,7 @@ export const Home = (props) => {
                     }
                     return (
                         <div className="bloc-infos">
-                            <BlockLogo href={'/park-' + p.pslug} slug={p.pslug} legend={p.pname} />
+                            <BlockLogo href={p.proute} slug={p.pslug} legend={p.pname} />
                             <BlockInfos univers={univers} attractions={attractions} />
                         </div>
                     )

@@ -11,9 +11,10 @@ export const FilterHomeDatas = (home) => {
             map.set(el.pslug, true);
             park.push({
                 pid: el.pid,
-                pslug: el.pslug,
                 pname: el.pname,
+                pslug: el.pslug,
                 title: el.title,
+                proute: el.proute,
             });
         }
         for (let i = 0; i < park.length; i++) {
