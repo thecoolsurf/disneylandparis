@@ -1,7 +1,7 @@
 const attractions_by_category = `
 SELECT 
 a.id AS aid, a.name AS aname, a.slug AS aslug, a.route AS aroute,
-p.name AS pnname, 
+p.name AS pname, 
 u.name AS uname, 
 c.name AS cname
 FROM attraction a 

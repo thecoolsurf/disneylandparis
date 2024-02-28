@@ -100,6 +100,7 @@ body {
 	background: #161616;
 	margin: 0;
 	padding: 0;
+	font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
 }
 
 ul {
@@ -122,7 +123,6 @@ ul {
 .finder {
 	font-weight: 200;
 	box-sizing: border-box;
-	font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
 }
 
 .home {
@@ -267,7 +267,6 @@ ul {
 	height: auto;
 	padding: 10px 10px 0 10px;
 	box-sizing: border-box;
-	font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
 	font-weight: 900;
 	font-size: 16px;
 	line-height: 1;
@@ -508,7 +507,7 @@ ul {
 	margin: 0 0 30px 0;
 }
 
-.description .breadcrumb {
+.breadcrumb {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -516,20 +515,20 @@ ul {
 	margin: 0 0 30px 0;
 }
 
-.description .breadcrumb a {
+.breadcrumb a {
 	font-size: 0.8rem;
 	color: #555;
 	text-transform: uppercase;
 	text-decoration: none;
 }
 
-.description .breadcrumb .fa-circle {
+.breadcrumb .fa-circle {
 	font-size: 0.5rem;
 	color: #888;
 	padding: 0 10px;
 }
 
-.description .breadcrumb a:hover {
+.breadcrumb a:hover {
 	font-weight: bold;
 	color: #000;
 }
