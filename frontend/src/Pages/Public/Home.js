@@ -2,6 +2,7 @@ import '../../assets/css/public/home.css';
 import { useState, useEffect } from 'react';
 import { FilterHomeDatas } from '../../Components/Public/Filters/FilterHomeDatas.js';
 import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
+import { FilterCategory } from '../../Components/Public/Filters/FilterCategory.js';
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
@@ -18,7 +19,9 @@ export const Home = (props) => {
     }, []);
     const parkAndUnivers = FilterHomeDatas(home);
     const attraction = props.navigation;
-    const legend = 'Liste des attractions - Park Disneyland - Walt Disney Studios'
+    const categories = FilterCategory('home',props.navigation);
+    const legend = 'Liste des attractions - Park Disneyland - Walt Disney Studios';
+    console.log(categories);
     return (
         <div className="home">
             <Carrousel legend={legend} datas={attraction} />

@@ -12,16 +12,22 @@ export const FilterCategory = (parent, attractions, id) => {
     const categories = [];
     const map = new Map();
     for (const el of attractions) {
+        if (parent === 'home') {
+            if (!map.has(el.aslug)) {
+                map.set(el.aslug, true);
+                collection.push({ cid: el.cid, cname: el.cname, cslug: el.cslug, });
+            }
+        }
         if (parent === 'park') {
             if (!map.has(el.aslug) && el.pid === id) {
                 map.set(el.aslug, true);
-                collection.push({cname: el.cname,cslug: el.cslug,});
+                collection.push({ cname: el.cname, cslug: el.cslug, });
             }
         }
         if (parent === 'univers') {
             if (!map.has(el.aslug) && el.uid === id) {
                 map.set(el.aslug, true);
-                collection.push({cname: el.cname,cslug: el.cslug,});
+                collection.push({ cname: el.cname, cslug: el.cslug, });
             }
         }
     }
@@ -36,15 +42,15 @@ export const FilterCategory = (parent, attractions, id) => {
         if (el.cslug === 'point-d-interet') point_d_interet++;
         if (el.cslug === 'spectacle') spectacle++;
     }
-    if (aire_de_jeu > 0) categories.push({cname: 'Aire de jeu', total: aire_de_jeu});
-    if (decouverte > 0) categories.push({cname: 'Découverte', total: decouverte});
-    if (jeu_d_arcade > 0) categories.push({cname: 'Jeu d\'arcade', total: jeu_d_arcade});
-    if (manege_a_theme > 0) categories.push({cname: 'Manège à thème', total: manege_a_theme});
-    if (manege_fixe > 0) categories.push({cname: 'Manège fixe', total: manege_fixe});
-    if (montagnes_russes > 0) categories.push({cname: 'Montagnes russes', total: montagnes_russes});
-    if (parcours > 0) categories.push({cname: 'Parcours', total: parcours});
-    if (point_d_interet > 0) categories.push({cname: 'Point d\'intérêt', total: point_d_interet});
-    if (spectacle > 0) categories.push({cname: 'Spectacle', total: spectacle});
+    if (aire_de_jeu > 0) categories.push({ cname: 'Aire de jeu', total: aire_de_jeu });
+    if (decouverte > 0) categories.push({ cname: 'Découverte', total: decouverte });
+    if (jeu_d_arcade > 0) categories.push({ cname: 'Jeu d\'arcade', total: jeu_d_arcade });
+    if (manege_a_theme > 0) categories.push({ cname: 'Manège à thème', total: manege_a_theme });
+    if (manege_fixe > 0) categories.push({ cname: 'Manège fixe', total: manege_fixe });
+    if (montagnes_russes > 0) categories.push({ cname: 'Montagnes russes', total: montagnes_russes });
+    if (parcours > 0) categories.push({ cname: 'Parcours', total: parcours });
+    if (point_d_interet > 0) categories.push({ cname: 'Point d\'intérêt', total: point_d_interet });
+    if (spectacle > 0) categories.push({ cname: 'Spectacle', total: spectacle });
     return categories;
 }
 
