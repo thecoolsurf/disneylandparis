@@ -45,7 +45,7 @@ export const Home = (props) => {
                     )
                 })}
                 <div className="bloc-infos">
-                    <ul key="list" className="list">
+                    <ul className="list">
                         <BlockCategories label="home-categories" datas={props.categories} />
                     </ul>
                 </div>

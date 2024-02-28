@@ -12,6 +12,15 @@ export const BreadCrumb = () => {
             </div>
         )
     }
+    if (uri.includes('categorie')) {
+        return (
+            <div className="breadcrumb">
+                <a href={'/'} alt="home">home</a>
+                <i className="fa fa-circle"></i>
+                <a href={'/categorie/'+params[4]} alt={params[4]}>{params[4].replaceAll('-',' ')}</a>
+            </div>
+        )
+    }
     if (uri.includes('univers') && !uri.includes('attraction')) {
         return (
             <div className="breadcrumb">
@@ -21,7 +30,7 @@ export const BreadCrumb = () => {
             </div>
         )
     }
-    if (!uri.includes('univers') && !uri.includes('attraction')) {
+    if (!uri.includes('categorie') && !uri.includes('univers') && !uri.includes('attraction')) {
         return (
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>

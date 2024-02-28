@@ -59,7 +59,7 @@ function App() {
                     } />
                     {categories.map((c) => {
                         return (
-                            <Route key={c} path={'/categorie/'+c.cslug} element={
+                            <Route key={c} path={c.croute} element={
                                 <Categories id={c.id} navigation={navigation} />
                             } />
                         )

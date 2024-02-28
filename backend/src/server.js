@@ -109,6 +109,9 @@ const univers = require('./Model/Public/Univers/UniversById.js');
 select("/univers_by_id", univers);
 const attractions_by_univers = require('./Model/Public/Attraction/AttractionsByUnivers.js');
 select("/attractions_by_univers", attractions_by_univers);
+/* categories */
+const attractions_by_category = require('./Model/Public/Attraction/AttractionsByCategory.js');
+select("/attractions_by_category", attractions_by_category);
 /* attraction */
 const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
 select("/attraction_by_id", attraction_by_id);
