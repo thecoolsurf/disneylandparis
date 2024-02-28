@@ -3,6 +3,7 @@ import { Field } from '../Form/Field.js';
 export const Attributes = (props) => {
     const name = (props.e) ? props.e.name : '';
     const slug = (props.e) ? props.e.slug : '';
+    const route = (props.e) ? props.e.route : '';
     const description = (props.e) ? props.e.description : '';
     const id = (props.e) ? props.e.id : '';
     switch (props.uri) {
@@ -11,6 +12,7 @@ export const Attributes = (props) => {
                 <>
                     <Field key="name" type="text" name="name" value={name} />
                     <Field key="slug" type="text" name="slug" value={slug} />
+                    <Field key="route" type="text" name="route" value={route} />
                     <Field key="id" type="hidden" name="id" value={id} />
                 </>
             )

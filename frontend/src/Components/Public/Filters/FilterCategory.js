@@ -15,19 +15,19 @@ export const FilterCategory = (parent, attractions, id) => {
         if (parent === 'home') {
             if (!map.has(el.aslug)) {
                 map.set(el.aslug, true);
-                collection.push({ cid: el.cid, cname: el.cname, cslug: el.cslug, });
+                collection.push({ cname: el.cname, cslug: el.cslug });
             }
         }
         if (parent === 'park') {
             if (!map.has(el.aslug) && el.pid === id) {
                 map.set(el.aslug, true);
-                collection.push({ cname: el.cname, cslug: el.cslug, });
+                collection.push({ cname: el.cname, cslug: el.cslug });
             }
         }
         if (parent === 'univers') {
             if (!map.has(el.aslug) && el.uid === id) {
                 map.set(el.aslug, true);
-                collection.push({ cname: el.cname, cslug: el.cslug, });
+                collection.push({ cname: el.cname, cslug: el.cslug });
             }
         }
     }

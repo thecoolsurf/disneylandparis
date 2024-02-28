@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE category SET 
-name = ?, slug = ?
+name = ?, slug = ?, route = ?
 WHERE id = ?`;
 
 module.exports = update;

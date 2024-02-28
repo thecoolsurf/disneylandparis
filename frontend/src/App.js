@@ -16,6 +16,7 @@ import { Footer } from './Components/Public/Document/Footer.js';
 import { Navigation } from './Components/Public/Document/Navigation.js';
 import { LinkToFinder } from './Components/Public/Document/LinkToFinder.js';
 import { FilterParkAndUnivers } from './Components/Public/Filters/FilterParkAndUnivers.js';
+import { FilterCategory } from './Components/Public/Filters/FilterCategory.js';
 /* public routes */
 import { Home } from './Pages/Public/Home.js';
 import { Park } from './Pages/Public/Park.js';
@@ -27,6 +28,7 @@ import { AdminConnexion } from './Pages/Admin/Connexion.js';
 import { AdminCollection } from "./Pages/Admin/Collection.js";
 import { AdminUpdate } from "./Pages/Admin/Update.js";
 import { AdminInsert } from "./Pages/Admin/Insert.js";
+import { Categories } from './Pages/Public/Categories.js';
 
 function App() {
     const uri = window.location.href;
@@ -41,6 +43,7 @@ function App() {
         fetchData();
     }, []);
     const parkAndUnivers = FilterParkAndUnivers(navigation);
+    const categories = FilterCategory('home', navigation);
     const allAttractions = navigation;
     const entities = Entities();
     const attributes = Attributes();
@@ -52,21 +55,28 @@ function App() {
                 <LinkToFinder />
                 <Routes>
                     <Route path="/" element={
-                        <Home navigation={navigation} />
+                        <Home navigation={navigation} categories={categories} />
                     } />
-                    {parkAndUnivers.map((p) => {
+                    {categories.map((c) => {
                         return (
-                            <Route key={'rp' + p.pid} path={p.proute} element={
-                                <Park key={'p' + p.pid} id={p.pid} navigation={navigation} name={p.pname} />
+                            <Route key={c} path={'/categorie/'+c.cslug} element={
+                                <Categories id={c.id} navigation={navigation} />
                             } />
                         )
                     })}
-                    {parkAndUnivers.map((m) => {
+                    {parkAndUnivers.map((p) => {
                         return (
-                            m.univers.map((u) => {
+                            <Route key={'rp' + p.pid} path={p.proute} element={
+                                <Park id={p.pid} navigation={navigation} name={p.pname} />
+                            } />
+                        )
+                    })}
+                    {parkAndUnivers.map((pu) => {
+                        return (
+                            pu.univers.map((u) => {
                                 return (
                                     <Route key={'ru' + u.uid} path={u.uroute} element={
-                                        <Univers key={'u' + u.uid} id={u.uid} pname={m.pname} uname={u.uname} navigation={navigation} />
+                                        <Univers id={u.uid} navigation={navigation} pname={pu.pname} uname={u.uname} />
                                     } />
                                 )
                             })

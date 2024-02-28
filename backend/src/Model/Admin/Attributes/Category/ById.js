@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, slug, name
+id, slug, name, route
 FROM category
 WHERE id = ?`;
 

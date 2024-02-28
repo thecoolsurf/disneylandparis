@@ -2,7 +2,7 @@
 
 const collection = `
 SELECT 
-id, slug, name
+id, name
 FROM 
 category
 `;

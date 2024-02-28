@@ -2,9 +2,9 @@
 
 const insert = `
 INSERT INTO category 
-(name, slug) 
+(name, slug, route) 
 VALUES
-(?, ?);
+(?, ?, ?);
 `;
 
 module.exports = insert;
