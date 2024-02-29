@@ -15,7 +15,7 @@ export const Categories = (props) => {
     return (
         <section className="categories">
             <BreadCrumb />
-            <h2>Liste des attractions par catégorie: {props.name}</h2>
+            <h1>Liste des attractions par catégorie: {props.name}</h1>
             <div className="list">
                 {attractions.map((el) => {
                     return (

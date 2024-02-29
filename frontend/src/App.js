@@ -51,7 +51,7 @@ function App() {
         <div className={main}>
             <BrowserRouter>
                 <Header />
-                <Navigation datas={parkAndUnivers} admin={[entities,attributes]} />
+                <Navigation datas={parkAndUnivers} admin={[entities, attributes]} />
                 <LinkToFinder />
                 <Routes>
                     <Route path="/" element={
@@ -129,6 +129,9 @@ function App() {
                         )
                     })}
                 </Routes>
+                <div id="backtop" className="backtop" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}>
+                    <i className="fa fa-arrow-circle-up"></i>
+                </div>
                 <Footer />
             </BrowserRouter>
         </div>

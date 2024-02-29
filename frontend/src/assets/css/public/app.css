@@ -110,11 +110,22 @@ ul {
 	padding: 0;
 }
 
+h1 {
+	width: 100%;
+	margin: 0 0 20px 0;
+}
 .main {
 	position: relative;
 	background-color: #F7F7F7;
 	width: 100%;
 	margin: 0 auto;
+}
+
+.backtop {
+	margin: 0 0 10px 20px;
+	font-size: 3rem;
+	color: #444;
+	cursor: pointer;
 }
 
 .home,
