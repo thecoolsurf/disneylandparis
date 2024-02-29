@@ -22,6 +22,9 @@ export const FilterCategory = (parent, attractions, id) => {
             }
         }
     }
-    return collection;
+    const categories = collection.sort(function(a, b) {
+        return a.cname.localeCompare(b.cname)
+    });
+    return categories;
 }
 

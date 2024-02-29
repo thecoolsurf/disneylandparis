@@ -58,17 +58,20 @@
 .categories .logo .park-name {
     font-size: 0.8rem;
     font-weight: normal;
+    color: #353535;
 }
 
 .categories .logo .univers-name {
     font-size: 0.8rem;
     font-weight: bold;
+    color: #353535;
     text-transform: uppercase;
 }
 
 .categories .logo .category-name {
     font-size: 0.8rem;
     font-weight: normal;
+    color: #353535;
     text-transform: uppercase;
 }
 

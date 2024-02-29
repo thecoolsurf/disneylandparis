@@ -6,9 +6,9 @@ export const BreadCrumb = () => {
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                <a href={'/'+params[3]} alt={params[3]}>{params[3]}</a>
+                <a href={'/' + params[3]} alt={params[3]}>{params[3]}</a>
                 <i className="fa fa-circle"></i>
-                <a href={'/'+params[3]+'/univers/'+params[5]} alt={params[5]}>{params[5]}</a>
+                <a href={'/' + params[3] + '/univers/' + params[5]} alt={params[5]}>{params[5]}</a>
             </div>
         )
     }
@@ -17,7 +17,9 @@ export const BreadCrumb = () => {
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                {params[4].replaceAll('-',' ')}
+                <span>Categorie</span>
+                <i className="fa fa-circle"></i>
+                <span>{params[4].replaceAll('-', ' ')}</span>
             </div>
         )
     }
@@ -26,7 +28,7 @@ export const BreadCrumb = () => {
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                <a href={'/'+params[3]} alt={params[3]}>{params[3]}</a>
+                <a href={'/' + params[3]} alt={params[3]}>{params[3]}</a>
             </div>
         )
     }

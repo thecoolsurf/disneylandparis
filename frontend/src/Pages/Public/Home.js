@@ -19,6 +19,7 @@ export const Home = (props) => {
     }, []);
     const parkAndUnivers = FilterHomeDatas(home);
     const attraction = props.navigation;
+    const categories = props.categories;
     const legend = 'Liste des attractions - Park Disneyland & Walt Disney Studios';
     return (
         <div className="home">
@@ -46,7 +47,7 @@ export const Home = (props) => {
                 })}
                 <div className="bloc-infos">
                     <ul className="list">
-                        <BlockCategories label="home-categories" datas={props.categories} />
+                        <BlockCategories label="home-categories" datas={categories} />
                     </ul>
                 </div>
             </section>
