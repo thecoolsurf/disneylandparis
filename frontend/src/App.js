@@ -60,7 +60,7 @@ function App() {
                     {categories.map((c) => {
                         return (
                             <Route key={c} path={c.croute} element={
-                                <Categories id={c.cid} />
+                                <Categories id={c.cid} name={c.cname} />
                             } />
                         )
                     })}

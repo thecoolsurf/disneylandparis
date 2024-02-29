@@ -9,50 +9,76 @@
 }
 
 .categories .list {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: flex-start;
     align-items: flex-start;
 }
-.categories .item {
-    display: block;
-    width: 180px;
-    height: auto;
-    text-decoration: none;
+
+.categories .logo {
+    background-color: #FFF;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 240px;
+    margin: 0 10px 20px 10px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
     text-align: center;
-    color: black;
-    transition: all 0.1s;
+    text-decoration: none;
+    color: #000;
 }
 
-.categories .item .logo {
+.categories .logo .icon {
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: auto;
+    height: 120px;
+}
+
+.categories .logo .img {
     width: 100%;
     height: 120px;
-    margin: 10px 0;
+    margin: 0 0 10px 0;
     overflow: hidden;
 }
 
-.categories .item .logo .img {
-    width: 100%;
-    height: 100%;
+.categories .logo .icon {
+    transition: all 0.1s;
 }
-.item:hover .logo .img  {
+
+.categories .logo:hover .img .icon {
     transform: scale(1.2);
 }
 
-.categories .item .park-name {
+.categories .logo .park-name {
     font-size: 0.8rem;
     font-weight: normal;
 }
 
-.categories .item .univers-name {
+.categories .logo .univers-name {
     font-size: 0.8rem;
     font-weight: bold;
     text-transform: uppercase;
 }
 
-.categories .item .name {
-    font-size: 1rem;
+.categories .logo .category-name {
+    font-size: 0.8rem;
     font-weight: normal;
+    text-transform: uppercase;
+}
+
+.categories .logo .legend {
+    width: 100%;
+    height: auto;
+    padding: 10px 10px 0 10px;
+    box-sizing: border-box;
+    font-weight: 900;
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1;
 }

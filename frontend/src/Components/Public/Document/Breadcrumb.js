@@ -17,7 +17,7 @@ export const BreadCrumb = () => {
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                <span>{params[4].replaceAll('-',' ')}</span>
+                {params[4].replaceAll('-',' ')}
             </div>
         )
     }

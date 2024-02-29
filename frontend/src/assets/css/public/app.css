@@ -513,13 +513,15 @@ ul {
 	flex-wrap: wrap;
 	align-items: center;
 	margin: 0 0 30px 0;
-}
-
-.breadcrumb a {
 	font-size: 0.8rem;
 	color: #555;
 	text-transform: uppercase;
+}
+
+.breadcrumb a {
 	text-decoration: none;
+	font-size: 0.8rem;
+	color: #555;
 }
 
 .breadcrumb .fa-circle {
