@@ -56,12 +56,12 @@ export const Field = (props) => {
     if (props.type === 'checkbox') {
         const inputName = props.name.slice(0, props.name.length - 1);
         const target = document.getElementById(props.name);
-        const values = props.value.split(',');
+        const values = props.value ? props.value.split(',') : props.value;
         return (
             <div key={props.name} className="item">
                 <label>{props.name}</label>
                 {props.chooser.map((el) => {
-                    const active = props.value.includes(el.id) ? 'active-check' : 'default';
+                    const active = props.value && props.value.includes(el.id) ? 'active-check' : 'default';
                     return (
                         <div key={el.name} className="list-checkbox">
                             <input type="checkbox" name={inputName} defaultValue={el.id} onClick={(e) => {
@@ -83,7 +83,7 @@ export const Field = (props) => {
         )
     }
     if (props.type === 'date') {
-        let value = props.value.slice(0, 10);
+        let value = props.value ? props.value.slice(0, 10) : '';
         return (
             <div key={props.name} className="item">
                 <label htmlFor={props.name}>{props.name}</label>
