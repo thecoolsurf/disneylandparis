@@ -61,6 +61,9 @@ export const RequireContextStudio = () => {
     if (uri.includes('hero-training-center')) {
         return require.context('../../../assets/images/attractions/studio/hero-training-center/img', true);
     }
+    if (uri.includes('buzz-lightyear')) {
+        return require.context('../../../assets/images/attractions/studio/buzz-lightyear/img', true);
+    }
 
 }
 

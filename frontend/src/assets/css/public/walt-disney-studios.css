@@ -99,3 +99,18 @@
     background-image: url('../../images/attractions/studio/hero-training-center/icon/hero-training-center.jpg');
     background-size: cover;
 }
+
+.icon-buzz-lightyear {
+    background-image: url('../../images/attractions/studio/buzz-lightyear/icon/buzz-lightyear.jpg');
+    background-size: cover;
+}
+
+.icon-daisy {
+    background-image: url('../../images/attractions/park/daisy/icon/daisy.jpg');
+    background-size: cover;
+}
+
+.icon-dingo {
+    background-image: url('../../images/attractions/studio/dingo/icon/dingo.jpg');
+    background-size: cover;
+}

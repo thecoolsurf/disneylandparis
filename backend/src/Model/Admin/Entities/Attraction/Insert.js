@@ -4,7 +4,7 @@ const insert = `
 INSERT INTO attraction 
 (id_park, id_univ, id_category, 
 created, author,
-slug, route, name, 
+name, slug, route, 
 id_public, id_photopass, id_pmr, id_singlerider, 
 premieraccess, 
 duration, height, width, speed, ability, 

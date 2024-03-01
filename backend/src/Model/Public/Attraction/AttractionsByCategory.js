@@ -9,6 +9,7 @@ JOIN park p ON p.id = a.id_park
 JOIN univers u ON u.id = a.id_univ
 JOIN category c ON c.id = a.id_category
 WHERE a.id_category = ?
+ORDER BY a.name ASC
 `;
 
 module.exports = attractions_by_category;
