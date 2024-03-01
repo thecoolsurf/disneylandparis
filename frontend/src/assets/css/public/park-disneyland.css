@@ -246,3 +246,13 @@
     background-image: url('../../images/attractions/park/le-roi-lion/icon/le-roi-lion.jpg');
     background-size: cover;
 }
+.icon-daisy {
+    background-image: url('../../images/attractions/park/daisy/icon/daisy.jpg');
+    background-size: cover;
+}
+
+.icon-donald {
+    background-image: url('../../images/attractions/park/donald/icon/donald.jpg');
+    background-size: cover;
+}
+
