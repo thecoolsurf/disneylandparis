@@ -20,7 +20,7 @@ import { Singlerider } from './Attributes/Singlerider.js';
 export const Fields = (props) => {
     const uri = props.uri;
     const el = props.e ? props.e : [];
-    switch (props.uri) {
+    switch (uri) {
 
         /* entity */
         case 'administrator':
