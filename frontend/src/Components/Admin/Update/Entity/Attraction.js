@@ -1,4 +1,10 @@
-import { Field } from '../../Form/Field.js';
+import { Select } from '../../Form/Inputs/Select.js';
+import { Checkbox } from '../../Form/Inputs/Checkbox.js';
+import { Date } from '../../Form/Inputs/Date.js';
+import { Text } from '../../Form/Inputs/Text.js';
+import { Textarea } from '../../Form/Inputs/Textarea.js';
+import { Hidden } from '../../Form/Inputs/Hidden.js';
+
 import { useState, useEffect } from 'react';
 
 export const Attraction = (props) => {
@@ -86,31 +92,31 @@ export const Attraction = (props) => {
     const id = (props.e) ? props.e.id : '';
     return (
         <>
-            <Field type="select" name="id_park" chooser={parkChooser} value={id_park} />
-            <Field type="select" name="id_univ" chooser={universChooser} value={id_univ} />
-            <Field type="select" name="id_category" chooser={categoryChooser} value={id_category} />
-            <Field type="date" name="created" value={created} />
-            <Field type="text" name="author" value={author} />
-            <Field type="text" name="name" value={name} />
-            <Field type="text" name="slug" value={slug} />
-            <Field type="text" name="route" value={route} />
-            <Field type="select" name="id_public" chooser={publicChooser} value={id_public} />
-            <Field type="select" name="id_photopass" chooser={photopassChooser} value={id_photopass} />
-            <Field type="select" name="id_pmr" chooser={pmrChooser} value={id_pmr} />
-            <Field type="select" name="id_singlerider" chooser={singleriderChooser} value={id_singlerider} />
-            <Field type="checkbox" name="premieraccess" chooser={premieraccessChooser} value={premieraccess} />
-            <Field type="text" name="duration" value={duration} />
-            <Field type="text" name="height" value={height} />
-            <Field type="text" name="width" value={width} />
-            <Field type="text" name="speed" value={speed} />
-            <Field type="text" name="ability" value={ability} />
-            <Field type="select" name="id_evacuation" value={id_evacuation} chooser={evacuationChooser} />
-            <Field type="select" name="id_height" value={id_height} chooser={heightChooser} />
-            <Field type="select" name="id_sensory" value={id_sensory} chooser={sensoryChooser} />
-            <Field type="checkbox" name="handicaps" value={handicaps} chooser={handicapChooser} />
-            <Field type="checkbox" name="interests" value={interests} chooser={interestChooser} />
-            <Field type="textarea" name="description" value={description} />
-            <Field key="id" type="hidden" name="id" value={id} />
+            <Select name="id_park" chooser={parkChooser} value={id_park} />
+            <Select name="id_univ" chooser={universChooser} value={id_univ} />
+            <Select name="id_category" chooser={categoryChooser} value={id_category} />
+            <Date name="created" value={created} />
+            <Text name="author" value={author} />
+            <Text name="name" value={name} />
+            <Text name="slug" value={slug} />
+            <Text name="route" value={route} />
+            <Select name="id_public" chooser={publicChooser} value={id_public} />
+            <Select name="id_photopass" chooser={photopassChooser} value={id_photopass} />
+            <Select name="id_pmr" chooser={pmrChooser} value={id_pmr} />
+            <Select name="id_singlerider" chooser={singleriderChooser} value={id_singlerider} />
+            <Checkbox name="premieraccess" chooser={premieraccessChooser} value={premieraccess} />
+            <Text name="duration" value={duration} />
+            <Text name="height" value={height} />
+            <Text name="width" value={width} />
+            <Text name="speed" value={speed} />
+            <Text name="ability" value={ability} />
+            <Select name="id_evacuation" value={id_evacuation} chooser={evacuationChooser} />
+            <Select name="id_height" value={id_height} chooser={heightChooser} />
+            <Select name="id_sensory" value={id_sensory} chooser={sensoryChooser} />
+            <Checkbox name="handicaps" value={handicaps} chooser={handicapChooser} />
+            <Checkbox name="interests" value={interests} chooser={interestChooser} />
+            <Textarea name="description" value={description} />
+            <Hidden name="id" value={id} />
         </>
     )
 }

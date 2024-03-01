@@ -1,4 +1,8 @@
-import { Field } from '../../Form/Field.js';
+import { Date } from '../../Form/Inputs/Date.js';
+import { Phone } from '../../Form/Inputs/Phone.js'
+import { Text } from '../../Form/Inputs/Text.js';
+import { Password } from '../../Form/Inputs/Password.js';
+import { Hidden } from '../../Form/Inputs/Hidden.js';
 
 export const User = (props) => {
     const firstname = (props.e) ? props.e.firstname : '';
@@ -17,21 +21,20 @@ export const User = (props) => {
     const id = (props.e) ? props.e.id : '';
     return (
         <>
-            <Field key="firstname" type="text" name="firstname" value={firstname.toLowerCase()} />
-            <Field key="lastname" type="text" name="lastname" value={lastname.toUpperCase()} />
-            <Field key="email" type="text" name="email" value={email} />
-            <Field key="mobile" type="tel" name="mobile" value={mobile} />
-            <Field key="password" type="password" name="password" value={password} />
-            <Field key="born" type="date" name="born" value={born} />
-            <Field key="date_start" type="date" name="date_start" value={date_start} />
-            <Field key="date_end" type="date" name="date_end" value={date_end} />
-            <Field key="date_current" type="date" name="date_current" value={date_current} />
-            <Field key="address" type="text" name="address" value={address} />
-            <Field key="zipcode" type="text" name="zipcode" value={zipcode} />
-            <Field key="city" type="text" name="city" value={city.toUpperCase()} />
-            <Field key="country" type="text" name="country" value={country} />
-
-            <Field key="id" type="hidden" name="id" value={id} />
+            <Text name="firstname" value={firstname.toLowerCase()} />
+            <Text name="lastname" value={lastname.toUpperCase()} />
+            <Text name="email" value={email} />
+            <Phone name="mobile" value={mobile} />
+            <Password name="password" value={password} />
+            <Date name="born" value={born} />
+            <Date name="date_start" value={date_start} />
+            <Date name="date_end" value={date_end} />
+            <Date name="date_current" value={date_current} />
+            <Text name="address" value={address} />
+            <Text name="zipcode" value={zipcode} />
+            <Text name="city" value={city.toUpperCase()} />
+            <Text name="country" value={country} />
+            <Hidden name="id" value={id} />
         </>
     )
 }

@@ -1,4 +1,7 @@
-import { Field } from '../../Form/Field.js';
+import { Select } from '../../Form/Inputs/Select.js';
+import { Text } from '../../Form/Inputs/Text.js';
+import { Textarea } from '../../Form/Inputs/Textarea.js';
+import { Hidden } from '../../Form/Inputs/Hidden.js';
 import { useState, useEffect } from 'react';
 
 export const Univers = (props) => {
@@ -19,12 +22,12 @@ export const Univers = (props) => {
     }, []);
     return (
         <>
-            <Field type="select" name="id_park" chooser={parkChooser} value={id_park} />
-            <Field type="text" name="name" value={name} />
-            <Field type="text" name="slug" value={slug} />
-            <Field type="text" name="route" value={route} />
-            <Field type="textarea" name="description" value={description} />
-            <Field key="id" type="hidden" name="id" value={id} />
+            <Select name="id_park" chooser={parkChooser} value={id_park} />
+            <Text name="name" value={name} />
+            <Text name="slug" value={slug} />
+            <Text name="route" value={route} />
+            <Textarea name="description" value={description} />
+            <Hidden name="id" value={id} />
         </>
     )
 }

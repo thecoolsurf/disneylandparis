@@ -1,4 +1,6 @@
-import { Field } from '../Form/Field.js';
+import { Text } from '../Form/Inputs/Text.js';
+import { Textarea } from '../Form/Inputs/Textarea.js';
+import { Hidden } from '../Form/Inputs/Hidden.js';
 
 export const Attributes = (props) => {
     const name = (props.e) ? props.e.name : '';
@@ -10,17 +12,17 @@ export const Attributes = (props) => {
         case 'category':
             return (
                 <>
-                    <Field key="name" type="text" name="name" value={name} />
-                    <Field key="slug" type="text" name="slug" value={slug} />
-                    <Field key="route" type="text" name="route" value={route} />
-                    <Field key="id" type="hidden" name="id" value={id} />
+                    <Text name="name" value={name} />
+                    <Text name="slug" value={slug} />
+                    <Text name="route" value={route} />
+                    <Hidden name="id" value={id} />
                 </>
             )
         case 'public':
             return (
                 <>
-                    <Field type="text" name="name" value={name} />
-                    <Field type="hidden" name="id" value={id} />
+                    <Text name="name" value={name} />
+                    <Hidden name="id" value={id} />
                 </>
             )
         case 'evacuation':
@@ -34,9 +36,9 @@ export const Attributes = (props) => {
         case 'singlerider':
             return (
                 <>
-                    <Field type="text" name="name" value={name} />
-                    <Field type="textarea" name="description" value={description} />
-                    <Field key="id" type="hidden" name="id" value={id} />
+                    <Text name="name" value={name} />
+                    <Textarea name="description" value={description} />
+                    <Hidden name="id" value={id} />
                 </>
             )
         default:

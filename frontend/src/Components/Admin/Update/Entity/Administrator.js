@@ -1,4 +1,6 @@
-import { Field } from '../../Form/Field.js';
+import { Text } from '../../Form/Inputs/Text.js';
+import { Password } from '../../Form/Inputs/Password.js';
+import { Hidden } from '../../Form/Inputs/Hidden.js';
 
 export const Administrator = (props) => {
     const firstname = (props.e) ? props.e.firstname : '';
@@ -9,12 +11,12 @@ export const Administrator = (props) => {
     const id = (props.e) ? props.e.id : '';
     return (
         <>
-            <Field key="firstname" type="text" name="firstname" value={firstname} />
-            <Field key="lastname" type="text" name="lastname" value={lastname} />
-            <Field key="email" type="text" name="email" value={email} />
-            <Field key="password" type="password" name="password" value={password} />
-            <Field key="token" type="text" name="token" value={token} />
-            <Field key="id" type="hidden" name="id" value={id} />
+            <Text name="firstname" value={firstname} />
+            <Text name="lastname" value={lastname} />
+            <Text name="email" value={email} />
+            <Password name="password" value={password} />
+            <Text name="token" value={token} />
+            <Hidden name="id" value={id} />
         </>
     )
 }

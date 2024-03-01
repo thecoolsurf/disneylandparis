@@ -1,5 +1,5 @@
-import { BtnDelete } from "../Form/BtnDelete.js";
-import { BtnUpdate } from "../Form/BtnUpdate.js";
+import { BtnDelete } from "../Form/Buttons/BtnDelete.js";
+import { BtnUpdate } from "../Form/Buttons/BtnUpdate.js";
 
 export const Entities = (props) => {
 

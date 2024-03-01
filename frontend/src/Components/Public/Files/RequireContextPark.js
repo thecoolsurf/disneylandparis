@@ -138,6 +138,45 @@ export const RequireContextPark = () => {
     if (uri.includes('disney-electrical-sky-parade')) {
         return require.context('../../../assets/images/attractions/park/disney-electrical-sky-parade/img',true);
     }
+    if (uri.includes('daisy')) {
+        return require.context('../../../assets/images/attractions/park/daisy/img',true);
+    }
+    if (uri.includes('dingo')) {
+        return require.context('../../../assets/images/attractions/studio/dingo/img',true);
+    }
+    if (uri.includes('donald')) {
+        return require.context('../../../assets/images/attractions/park/donald/img',true);
+    }
+    if (uri.includes('jafar')) {
+        return require.context('../../../assets/images/attractions/park/jafar/img',true);
+    }
+    if (uri.includes('les-princesses')) {
+        return require.context('../../../assets/images/attractions/park/les-princesses/img',true);
+    }
+    if (uri.includes('minnie')) {
+        return require.context('../../../assets/images/attractions/park/minnie/img',true);
+    }
+    if (uri.includes('peter-pan')) {
+        return require.context('../../../assets/images/attractions/park/peter-pan/img',true);
+    }
+    if (uri.includes('pluto')) {
+        return require.context('../../../assets/images/attractions/park/pluto/img',true);
+    }
+    if (uri.includes('stitch')) {
+        return require.context('../../../assets/images/attractions/park/stitch/img',true);
+    }
+    if (uri.includes('tic-et-tac')) {
+        return require.context('../../../assets/images/attractions/park/tic-et-tac/img',true);
+    }
+    if (uri.includes('tigrou')) {
+        return require.context('../../../assets/images/attractions/park/tigrou/img',true);
+    }
+    if (uri.includes('tweedle-dee-et-dum')) {
+        return require.context('../../../assets/images/attractions/park/tweedle-dee-et-dum/img',true);
+    }
+    if (uri.includes('winnie')) {
+        return require.context('../../../assets/images/attractions/park/winnie/img',true);
+    }
 
 }
 
