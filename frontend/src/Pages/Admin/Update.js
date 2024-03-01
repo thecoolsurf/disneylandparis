@@ -1,8 +1,7 @@
 import '../../assets/css/admin/admin.css';
 import '../../assets/css/admin/form.css';
 import { useState, useEffect } from 'react';
-import { Entities } from '../../Components/Admin/Update/Entities.js';
-import { Attributes } from '../../Components/Admin/Update/Attributes.js';
+import { Fields } from '../../Components/Admin/Update/Fields.js';
 
 export const AdminUpdate = (props) => {
     const entity = document.getElementById('entity');
@@ -25,10 +24,7 @@ export const AdminUpdate = (props) => {
                     {datas.map((el) => {
                         entity.textContent = props.uri.toUpperCase() + ' - ' + el.name;
                         return (
-                            <>
-                                <Entities key={props.uri} uri={props.uri} e={el} />
-                                <Attributes key={props.uri} uri={props.uri} e={el} />
-                            </>
+                            <Fields key={props.uri} uri={props.uri} e={el} />
                         )
                     })}
                     <input type="submit" defaultValue="Update" />
