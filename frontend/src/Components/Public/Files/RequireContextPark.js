@@ -177,6 +177,63 @@ export const RequireContextPark = () => {
     if (uri.includes('winnie')) {
         return require.context('../../../assets/images/attractions/park/winnie/img',true);
     }
-
+    if (uri.includes('jafar')) {
+        return require.context('../../../assets/images/attractions/park/jafar/img',true);
+    }
+    if (uri.includes('minnie')) {
+        return require.context('../../../assets/images/attractions/park/minnie/img',true);
+    }
+    if (uri.includes('mickey')) {
+        return require.context('../../../assets/images/attractions/park/mickey/img',true);
+    }
+    if (uri.includes('peter-pan')) {
+        return require.context('../../../assets/images/attractions/park/peter-pan/img',true);
+    }
+    if (uri.includes('pluto')) {
+        return require.context('../../../assets/images/attractions/park/pluto/img',true);
+    }
+    if (uri.includes('stitch')) {
+        return require.context('../../../assets/images/attractions/park/stitch/img',true);
+    }
+    if (uri.includes('tic-et-tac')) {
+        return require.context('../../../assets/images/attractions/park/tic-et-tac/img',true);
+    }
+    if (uri.includes('tweedle-dee-et-dum')) {
+        return require.context('../../../assets/images/attractions/park/tweedle-dee-et-dum/img',true);
+    }
+    if (uri.includes('winnie')) {
+        return require.context('../../../assets/images/attractions/park/winnie/img',true);
+    }
+    if (uri.includes('ariel')) {
+        return require.context('../../../assets/images/attractions/park/princess-ariel/img',true);
+    }
+    if (uri.includes('aurore')) {
+        return require.context('../../../assets/images/attractions/park/princess-aurore/img',true);
+    }
+    if (uri.includes('belle')) {
+        return require.context('../../../assets/images/attractions/park/princess-belle/img',true);
+    }
+    if (uri.includes('blanche-neige')) {
+        return require.context('../../../assets/images/attractions/park/princess-blanche-neige/img',true);
+    }
+    if (uri.includes('cendrillon')) {
+        return require.context('../../../assets/images/attractions/park/princess-cendrillon/img',true);
+    }
+    if (uri.includes('merida')) {
+        return require.context('../../../assets/images/attractions/park/princess-merida/img',true);
+    }
+    if (uri.includes('mulan')) {
+        return require.context('../../../assets/images/attractions/park/princess-mulan/img',true);
+    }
+    if (uri.includes('raiponce')) {
+        return require.context('../../../assets/images/attractions/park/princess-raiponce/img',true);
+    }
+    if (uri.includes('tiana')) {
+        return require.context('../../../assets/images/attractions/park/princess-tiana/img',true);
+    }
+    if (uri.includes('la-reine-de-coeur')) {
+        return require.context('../../../assets/images/attractions/park/la-reine-de-coeur/img',true);
+    }
+    
 }
 

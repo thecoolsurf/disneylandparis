@@ -109,3 +109,53 @@
     background-image: url('../../images/attractions/studio/dingo/icon/dingo.jpg');
     background-size: cover;
 }
+
+.icon-jessie {
+    background-image: url('../../images/attractions/studio/jessie/icon/jessie.jpg');
+    background-size: cover;
+}
+
+.icon-woody {
+    background-image: url('../../images/attractions/studio/woody/icon/woody.jpg');
+    background-size: cover;
+}
+
+.icon-frozen-anna {
+    background-image: url('../../images/attractions/studio/frozen-anna/icon/frozen-anna.jpg');
+    background-size: cover;
+}
+
+.icon-frozen-elsa {
+    background-image: url('../../images/attractions/studio/frozen-elsa/icon/frozen-elsa.jpg');
+    background-size: cover;
+}
+
+.icon-frozen-kristoff {
+    background-image: url('../../images/attractions/studio/frozen-kristoff/icon/frozen-kristoff.jpg');
+    background-size: cover;
+}
+
+.icon-frozen-olaf {
+    background-image: url('../../images/attractions/studio/frozen-olaf/icon/frozen-olaf.jpg');
+    background-size: cover;
+}
+
+.icon-mary-poppins-et-bert {
+    background-image: url('../../images/attractions/studio/mary-poppins-et-bert/icon/mary-poppins-et-bert.jpg');
+    background-size: cover;
+}
+
+.icon-mary-poppins-et-les-pingouins {
+    background-image: url('../../images/attractions/studio/mary-poppins-et-les-pingouins/icon/mary-poppins-et-les-pingouins.jpg');
+    background-size: cover;
+}
+
+.icon-monstres-et-cie-sulli {
+    background-image: url('../../images/attractions/studio/monstres-et-cie-sulli/icon/monstres-et-cie-sulli.jpg');
+    background-size: cover;
+}
+
+.icon-monstres-et-cie-bob {
+    background-image: url('../../images/attractions/studio/monstres-et-cie-bob/icon/monstres-et-cie-bob.jpg');
+    background-size: cover;
+}
