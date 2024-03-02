@@ -18,11 +18,9 @@ export const BlockLogo = (props) => {
         /* home */
         return (
             <a className="bloc-logo" href={props.href} alt={props.legend}>
-                <div className="logo icon-disneylandparis">
-                    <div className="logo icons-disneylandparis">
-                        <div className={'icon icon-' + props.slug}></div>
-                        <div className="legend">{props.legend}</div>
-                    </div>
+                <div className="logo">
+                    <div className={'icon icon-' + props.slug}></div>
+                    <div className="legend">{props.legend}</div>
                 </div>
             </a>
         )
