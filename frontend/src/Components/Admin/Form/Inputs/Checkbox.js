@@ -3,7 +3,7 @@ export const Checkbox = (props) => {
     const value = props.value;
     const inputName = name.slice(0, name.length - 1);
     const target = document.getElementById(props.name);
-    const values = value ? value.split(',') : value;
+    const values = value ? value.split(',') : [];
     const chooser = props.chooser;
     return (
         <div key={name} className="item">

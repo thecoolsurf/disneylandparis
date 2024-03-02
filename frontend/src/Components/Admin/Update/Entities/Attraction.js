@@ -77,7 +77,7 @@ export const Attraction = (props) => {
     const id_photopass = (props.e) ? props.e.id_photopass : '';
     const id_pmr = (props.e) ? props.e.id_pmr : '';
     const id_singlerider = (props.e) ? props.e.id_singlerider : '';
-    const premieraccess = (props.e) ? props.e.premieraccess : '4';
+    const premieraccess = (props.e) ? props.e.premieraccess : '';
     const duration = (props.e) ? props.e.duration : '';
     const height = (props.e) ? props.e.height : '';
     const width = (props.e) ? props.e.width : '';
@@ -87,8 +87,8 @@ export const Attraction = (props) => {
     const id_evacuation = (props.e) ? props.e.id_evacuation : '';
     const id_height = (props.e) ? props.e.id_height : '';
     const id_sensory = (props.e) ? props.e.id_sensory : '';
-    const handicaps = (props.e) ? props.e.handicaps : '4';
-    const interests = (props.e) ? props.e.interests : '3';
+    const handicaps = (props.e) ? props.e.handicaps : '';
+    const interests = (props.e) ? props.e.interests : '';
     const id = (props.e) ? props.e.id : '';
     return (
         <>
