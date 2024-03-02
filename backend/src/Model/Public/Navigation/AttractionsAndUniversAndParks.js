@@ -10,6 +10,7 @@ FROM attraction a
 JOIN univers u ON u.id = a.id_univ 
 JOIN park p ON p.id = a.id_park
 JOIN category c ON c.id = a.id_category
+ORDER BY a.name
 `;
 
 module.exports = navigation;
