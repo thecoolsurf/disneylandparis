@@ -94,6 +94,58 @@ export const RequireContextStudio = () => {
     if (uri.includes('mary-poppins-et-les-pingouins')) {
         return require.context('../../../assets/images/attractions/studio/mary-poppins-et-les-pingouins/img', true);
     }
+    if (uri.includes('marvel-ant-man')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-ant-man/img', true);
+    }
+    if (uri.includes('marvel-black-panther')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-black-panther/img', true);
+    }
+    if (uri.includes('marvel-captain-marvel')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-captain-marvel/img', true);
+    }
+    if (uri.includes('marvel-captain-america')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-captain-america/img', true);
+    }
+    if (uri.includes('marvel-crane-rouge')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-crane-rouge/img', true);
+    }
+    if (uri.includes('marvel-docteur-strange')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-docteur-strange/img', true);
+    }
+    if (uri.includes('marvel-gamora')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-gamora/img', true);
+    }
+    if (uri.includes('marvel-groot')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-groot/img', true);
+    }
+    if (uri.includes('marvel-hulk')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-hulk/img', true);
+    }
+    if (uri.includes('marvel-iron-man')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-iron-man/img', true);
+    }
+    if (uri.includes('marvel-la-guepe')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-la-guepe/img', true);
+    }
+    if (uri.includes('marvel-la-sorciere-rouge')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-la-sorciere-rouge/img', true);
+    }
+    if (uri.includes('marvel-la-veuve-noire')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-la-veuve-noire/img', true);
+    }
+    if (uri.includes('marvel-loki')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-loki/img', true);
+    }
+    if (uri.includes('marvel-spiderman')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-spiderman/img', true);
+    }
+    if (uri.includes('marvel-star-lord')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-star-lord/img', true);
+    }
+    if (uri.includes('marvel-thor')) {
+        return require.context('../../../assets/images/attractions/studio/marvel-thor/img', true);
+    }
 
 }
+
 
