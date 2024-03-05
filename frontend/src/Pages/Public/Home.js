@@ -20,7 +20,7 @@ export const Home = (props) => {
     const parkAndUnivers = FilterHomeDatas(home);
     const attraction = props.navigation;
     const categories = props.categories;
-    const legend = 'Liste des attractions - Park Disneyland & Walt Disney Studios';
+    const legend = `Disneyland Paris - ${parkAndUnivers.length} parks - ${home.length} univers - ${attraction.length} attractions`;
     return (
         <div className="home">
             <Carrousel legend={legend} datas={attraction} />

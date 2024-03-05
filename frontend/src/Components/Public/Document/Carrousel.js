@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Card } from "./Card.js";
 import { CountLoadedFiles } from "../Files/CountLoadedFiles.js";
 import { CountCardByScreen } from "../Files/CountCardByScreen.js";
+import { FilterBkgColor } from "../Filters/FilterBkgColor.js";
 
 /*
 @requre legend
@@ -20,7 +21,7 @@ export const Carrousel = (props) => {
     const [showNext, setShowNext] = useState('show');
     const [total, setTotal] = useState(0);
     return (
-        <section className="carrousel">
+        <section className={'carrousel '+FilterBkgColor()}>
             <div className="legend">{props.legend}</div>
             <div className="block">
                 <div className={'prev ' + showPrev} onClick={() => {

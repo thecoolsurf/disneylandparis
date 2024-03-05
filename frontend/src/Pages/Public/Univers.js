@@ -20,7 +20,7 @@ export const Univers = (props) => {
         };
         fetchData();
     }, []);
-    let legend = univers[0] ? 'Liste des attractions - ' + univers[0].uname : '';
+    let legend = univers[0] ? `Univers ${univers[0].uname} - ${attractions.length} attractions`: '';
     const categories = FilterCategory('univers',props.navigation, props.id);
     return (
         <div className="univers">

@@ -21,7 +21,7 @@ export const Park = (props) => {
     const park = FilterPark(parks);
     const attractions = FilterAttractions(props.navigation, props.id);
     const categories = FilterCategory('park',props.navigation, props.id);
-    let legend = 'Liste des univers - ' + props.name;
+    let legend = `${props.name} - ${parks.length} univers`;
     return (
         <div key="park" className="park">
             <Carrousel datas={parks} legend={legend} />
