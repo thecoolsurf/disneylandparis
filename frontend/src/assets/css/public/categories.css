@@ -25,7 +25,7 @@
     background-repeat: no-repeat;
     width: 200px;
     height:240px;
-    margin: 0 10px 10px 0;
+    margin: 0 20px 20px 0;
     padding: 0 0 20px 0;
     overflow: hidden;
     border-radius: 10px;
@@ -58,20 +58,21 @@
 }
 
 .categories .logo .park-name {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: normal;
-    color: #353535;
-}
-
-.categories .logo .univers-name {
-    font-size: 0.8rem;
-    font-weight: bold;
     color: #353535;
     text-transform: uppercase;
 }
 
+.categories .logo .univers-name {
+    margin: 0 0 10px 0;
+    font-size: 1rem;
+    font-weight: normal;
+    color: #353535;
+}
+
 .categories .logo .category-name {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
     font-weight: normal;
     color: #353535;
     text-transform: uppercase;
@@ -80,7 +81,7 @@
 .categories .logo .legend {
     width: 100%;
     height: auto;
-    padding: 10px 10px 0 10px;
+    padding: 0 10px;
     box-sizing: border-box;
     font-weight: 900;
     font-size: 1.2rem;
