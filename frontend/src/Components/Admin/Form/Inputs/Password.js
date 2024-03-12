@@ -4,7 +4,7 @@ export const Password = (props) => {
     return (
         <div key={name} className="item">
             <label htmlFor={name}>{name} (min 8 caracters)</label>
-            <input type="password" id={name} name={name} defaultValue={value} minLength="8" required />
+            <input type="password" id={name} name={name} defaultValue={value} minLength="8" placeholder="your@email.fr" required />
         </div>
     )
 }

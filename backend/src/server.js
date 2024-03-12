@@ -125,6 +125,18 @@ selectFind("/find_attraction", attraction_find);
 /* ************************************************************************************************** */
 /* ADMIN */
 
+function connexion(route, sql) {
+	// bcrypt.hash(myPlaintextPassword, 10);
+	server.post(route, (req, res, next) => {
+		let params = jsonToArray(req.body);
+		knex.raw(sql, params).then(([rows, columns]) => { res.json(rows); })
+	});
+	return server;
+}
+
+const admin_connexion = require('./Model/Admin/Entities/Administrator/Connexion.js');
+connexion("/admin/connexion", admin_connexion);
+
 const entities = require('../src/Tables/Entities.js');
 for (const entity of entities) {
 	const folder = entity.charAt(0).toUpperCase() + entity.slice(1, entity.length);
