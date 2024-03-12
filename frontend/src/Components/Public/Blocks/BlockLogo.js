@@ -8,7 +8,7 @@ export const BlockLogo = (props) => {
         /* park | univers */
         return (
             <div className="bloc-logo">
-                <div className="logo icons-disneylandparis">
+                <div className="logo">
                     <div className={'icon icon-' + props.slug}></div>
                     <div className="legend">{props.legend}</div>
                 </div>
