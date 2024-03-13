@@ -18,18 +18,18 @@ export const Attraction = (props) => {
     }, []);
     const legend = attraction[0] ? 'Galerie d\'images - ' + attraction[0].aname : '';
     return (
-        <div className="attraction">
+        <div className="attraction" key="attraction">
             <Carrousel datas={attraction} slugs={props.slugs} legend={legend} />
             <section className="infos">
                 {attraction.map((el) => {
                     const back = FilterRoute(el.aroute, 'attraction');
                     return (
                         <>
-                            <div className="bloc-infos">
+                            <div className="bloc-infos" key={el.aname}>
                                 <BlockLogo slug={el.aslug} legend={el.aname} />
                                 <BlockInfos back={back} univers={[1]} attractions={attraction} />
                             </div>
-                            <div className="description">
+                            <div className="description" key={el.cname}>
                                 <CreatedAt date={el.created} />
                                 <BreadCrumb />
                                 <div className="category">{el.cname}</div>

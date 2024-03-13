@@ -23,12 +23,12 @@ import { Park } from './Pages/Public/Park.js';
 import { Univers } from './Pages/Public/Univers.js';
 import { Attraction } from './Pages/Public/Attraction.js';
 import { FindAttractions } from './Pages/Public/FindAttractions.js';
+import { Categories } from './Pages/Public/Categories.js';
 /* admin routes */
 import { AdminConnexion } from './Pages/Admin/Connexion.js';
 import { AdminCollection } from "./Pages/Admin/Collection.js";
 import { AdminUpdate } from "./Pages/Admin/Update.js";
 import { AdminInsert } from "./Pages/Admin/Insert.js";
-import { Categories } from './Pages/Public/Categories.js';
 
 function App() {
     const uri = window.location.href;
@@ -52,21 +52,21 @@ function App() {
             <BrowserRouter>
                 <Header />
                 <Navigation datas={parkAndUnivers} admin={[entities, attributes]} />
-                <LinkToFinder />
+                <LinkToFinder key="linkfind" />
                 <Routes>
                     <Route path="/" element={
                         <Home navigation={navigation} categories={categories} />
                     } />
                     {categories.map((c) => {
                         return (
-                            <Route key={c} path={c.croute} element={
+                            <Route key={'c'+c.cid} path={c.croute} element={
                                 <Categories id={c.cid} name={c.cname} />
                             } />
                         )
                     })}
                     {parkAndUnivers.map((p) => {
                         return (
-                            <Route key={'rp' + p.pid} path={p.proute} element={
+                            <Route key={'p' + p.pid} path={p.proute} element={
                                 <Park id={p.pid} navigation={navigation} name={p.pname} />
                             } />
                         )
@@ -75,7 +75,7 @@ function App() {
                         return (
                             pu.univers.map((u) => {
                                 return (
-                                    <Route key={'ru' + u.uid} path={u.uroute} element={
+                                    <Route key={'u' + u.uid} path={u.uroute} element={
                                         <Univers id={u.uid} navigation={navigation} pname={pu.pname} uname={u.uname} />
                                     } />
                                 )
@@ -84,31 +84,31 @@ function App() {
                     })}
                     {allAttractions.map((a) => {
                         return (
-                            <Route key={'ra' + a.aid} path={a.aroute} element={
-                                <Attraction key={'a' + a.aid} id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} />
+                            <Route key={'a' + a.aid} path={a.aroute} element={
+                                <Attraction id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} />
                             } />
                         )
                     })}
-                    <Route key="rf" path={'/find/attractions'} element={
-                        <FindAttractions key="f" />
+                    <Route key="find" path={'/find/attractions'} element={
+                        <FindAttractions />
                     } />
 
                     {/* admin ******************************************************** */}
 
-                    <Route path={'/admin/connexion'} element={
+                    <Route key="conex" path={'/admin/connexion'} element={
                         <AdminConnexion uri={'connexion'} />
                     } />
                     {entities.map((name) => {
                         return (
                             <>
                                 <Route key={name} path={'/admin/entity/collection/' + name} element={
-                                    <AdminCollection key={'c' + name} nav={entities} uri={name} />
+                                    <AdminCollection uri={name} />
                                 } />
                                 <Route key={name} path={'/admin/entity/update/' + name} element={
-                                    <AdminUpdate key={'u' + name} nav={entities} uri={name} />
+                                    <AdminUpdate uri={name} />
                                 } />
                                 <Route key={name} path={'/admin/entity/insert/' + name} element={
-                                    <AdminInsert key={'i' + name} nav={entities} uri={name} />
+                                    <AdminInsert uri={name} />
                                 } />
                             </>
                         )
@@ -117,13 +117,13 @@ function App() {
                         return (
                             <>
                                 <Route key={name} path={'/admin/entity/collection/' + name} element={
-                                    <AdminCollection key={'c' + name} nav={attributes} uri={name} />
+                                    <AdminCollection uri={name} />
                                 } />
                                 <Route key={name} path={'/admin/entity/update/' + name} element={
-                                    <AdminUpdate key={'u' + name} nav={attributes} uri={name} />
+                                    <AdminUpdate uri={name} />
                                 } />
                                 <Route key={name} path={'/admin/entity/insert/' + name} element={
-                                    <AdminInsert key={'i' + name} nav={attributes} uri={name} />
+                                    <AdminInsert uri={name} />
                                 } />
                             </>
                         )

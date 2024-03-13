@@ -10,10 +10,10 @@ export const BlockPrivileges = (props) => {
                         note = el.description;
                         if (el.name.includes('Sans')) picto = 'picto disable';
                         return (
-                            <div className={picto}>
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-square fa-stack-2x"></i>
-                                    <i class={'fa ' + props.icon + ' fa-stack-1x fa-inverse'}></i>
+                            <div className={picto} key={picto}>
+                                <span className="fa-stack fa-lg">
+                                    <i className="fa fa-square fa-stack-2x"></i>
+                                    <i className={'fa ' + props.icon + ' fa-stack-1x fa-inverse'}></i>
                                 </span>
                                 {el.name}
                             </div>
@@ -27,9 +27,9 @@ export const BlockPrivileges = (props) => {
             return (
                 <li className={props.label}>
                     <div className={picto}>
-                        <span class="fa-stack fa-lg">
-                            <i class="fa fa-square fa-stack-2x"></i>
-                            <i class={'fa ' + props.icon + ' fa-stack-1x fa-inverse'}></i>
+                        <span className="fa-stack fa-lg">
+                            <i className="fa fa-square fa-stack-2x"></i>
+                            <i className={'fa ' + props.icon + ' fa-stack-1x fa-inverse'}></i>
                         </span>
                         {props.name}
                     </div>
@@ -41,7 +41,7 @@ export const BlockPrivileges = (props) => {
             return (
                 <li className={props.label}>
                     <div className={picto}>
-                        <i class={'fa ' + props.icon}></i>{props.name}
+                        <i className={'fa ' + props.icon}></i>{props.name}
                     </div>
                     <div className="note">{props.description}</div>
                 </li>

@@ -20,7 +20,7 @@ export const Home = (props) => {
     const parkAndUnivers = FilterHomeDatas(home);
     const attraction = props.navigation;
     const categories = props.categories;
-    const legend = `Disneyland Paris - ${parkAndUnivers.length} parks - ${home.length} univers - ${attraction.length} attractions`;
+    const legend = `${parkAndUnivers.length} parks à thèmes - ${home.length} univers - ${attraction.length} attractions`;
     return (
         <div className="home">
             <Carrousel legend={legend} datas={attraction} />
@@ -39,7 +39,7 @@ export const Home = (props) => {
                         univers = parkAndUnivers[1].univers;
                     }
                     return (
-                        <div className="bloc-infos">
+                        <div className="bloc-infos" key={'p'+p.pid}>
                             <BlockLogo href={p.proute} slug={p.pslug} legend={p.pname} />
                             <BlockInfos univers={univers} attractions={attractions} />
                         </div>

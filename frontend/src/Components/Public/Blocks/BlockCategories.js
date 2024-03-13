@@ -9,7 +9,7 @@ export const BlockCategories = (props) => {
             <div className="total">Attractions par catégories</div>
             {props.datas.map((c) => {
                 return (
-                    <div className="item">
+                    <div className="item" key={c.cslug}>
                         <a href={c.croute} alt={c.cname} className="item" key={c.cslug}>
                             <div className="cname">{c.cname}</div>
                         </a>
