@@ -52,22 +52,22 @@ function App() {
             <BrowserRouter>
                 <Header />
                 <Navigation datas={parkAndUnivers} admin={[entities, attributes]} />
-                <LinkToFinder key="linkfind" />
+                <LinkToFinder />
                 <Routes>
                     <Route path="/" element={
                         <Home navigation={navigation} categories={categories} />
                     } />
                     {categories.map((c) => {
                         return (
-                            <Route key={'c'+c.cid} path={c.croute} element={
-                                <Categories id={c.cid} name={c.cname} />
+                            <Route key={'rc'+c.cid} path={c.croute} element={
+                                <Categories key={'c'+c.cid} id={c.cid} name={c.cname} />
                             } />
                         )
                     })}
                     {parkAndUnivers.map((p) => {
                         return (
-                            <Route key={'p' + p.pid} path={p.proute} element={
-                                <Park id={p.pid} navigation={navigation} name={p.pname} />
+                            <Route key={'rp' + p.pid} path={p.proute} element={
+                                <Park key={'p'+p.pid} id={p.pid} navigation={navigation} name={p.pname} />
                             } />
                         )
                     })}
@@ -75,8 +75,8 @@ function App() {
                         return (
                             pu.univers.map((u) => {
                                 return (
-                                    <Route key={'u' + u.uid} path={u.uroute} element={
-                                        <Univers id={u.uid} navigation={navigation} pname={pu.pname} uname={u.uname} />
+                                    <Route key={'ru' + u.uid} path={u.uroute} element={
+                                        <Univers key={'u'+u.uid} id={u.uid} navigation={navigation} pname={pu.pname} uname={u.uname} />
                                     } />
                                 )
                             })
@@ -84,8 +84,8 @@ function App() {
                     })}
                     {allAttractions.map((a) => {
                         return (
-                            <Route key={'a' + a.aid} path={a.aroute} element={
-                                <Attraction id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} />
+                            <Route key={'ra' + a.aid} path={a.aroute} element={
+                                <Attraction key={'a'+a.aid} id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} />
                             } />
                         )
                     })}
@@ -95,7 +95,7 @@ function App() {
 
                     {/* admin ******************************************************** */}
 
-                    <Route key="conex" path={'/admin/connexion'} element={
+                    <Route path={'/admin/connexion'} element={
                         <AdminConnexion uri={'connexion'} />
                     } />
                     {entities.map((name) => {

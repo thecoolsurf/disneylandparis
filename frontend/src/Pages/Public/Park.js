@@ -23,17 +23,17 @@ export const Park = (props) => {
     const categories = FilterCategory('park',props.navigation, props.id);
     let legend = `${props.name} - ${parks.length} univers`;
     return (
-        <div key="park" className="park">
+        <div key={'park'+props.id} className="park">
             <Carrousel datas={parks} legend={legend} />
             <section className="infos">
                 {park.map((p) => {
                     return (
                         <>
-                            <div key={p.pid} className="bloc-infos">
+                            <div key={'info'+p.pid} className="bloc-infos">
                                 <BlockLogo slug={p.pslug} legend={p.pname} />
                                 <BlockInfos back={'/'} univers={parks} attractions={attractions} categories={categories} />
                             </div>
-                            <div className="description">
+                            <div key={'describe'+p.pid} className="description">
                                 <BreadCrumb />
                                 <div className="category">Parc à thèmes</div>
                                 <h2 className="title">{p.pname}</h2>

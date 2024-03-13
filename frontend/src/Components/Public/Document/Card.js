@@ -6,7 +6,7 @@ export const Card = (props) => {
     if (!uri.includes('park-park-disneyland') && !uri.includes('walt-disney-studios')) {
         /* home */
         return (
-            <a className="card" href={props.item.aroute} alt={props.item.aname}>
+            <a key={props.item.aname} className="card" href={props.item.aroute} alt={props.item.aname}>
                 <div className={'img icon-' + props.item.aslug}></div>
                 <div className="legend">{props.item.aname}</div>
             </a>
@@ -15,7 +15,7 @@ export const Card = (props) => {
     if (uri.includes('park') && !uri.includes('univers')) {
         /* Park & studio */
         return (
-            <a className="card" href={props.item.uroute} alt={props.item.uname}>
+            <a key={props.item.uname} className="card" href={props.item.uroute} alt={props.item.uname}>
                 <div className={'img icon-' + props.item.uslug}></div>
                 <div className="legend">{props.item.uname}</div>
             </a>
@@ -24,7 +24,7 @@ export const Card = (props) => {
     if (uri.includes('univers') && !uri.includes('attraction')) {
         /* Univers */
         return (
-            <a className="card" href={props.item.aroute} alt={props.item.aname}>
+            <a key={props.item.aname} className="card" href={props.item.aroute} alt={props.item.aname}>
                 <div className={'img icon-' + props.item.aslug}></div>
                 <div className="legend">{props.item.aname}</div>
             </a>
@@ -35,7 +35,7 @@ export const Card = (props) => {
         const collection = RequireContextPark();
         const files = collection.keys().map(image => collection(image));
         return (
-            <div className="card-collection">
+            <div key={props.item.aname} className="card-collection">
                 {files.map((src) => {
                     return (<img className="img" src={src} title={props.item.aname} />)
                 })}
@@ -47,7 +47,7 @@ export const Card = (props) => {
         const collection = RequireContextStudio();
         const files = collection.keys().map(image => collection(image));
         return (
-            <div className="card-collection">
+            <div key={props.item.aname} className="card-collection">
                 {files.map((src) => {
                     return (<img className="img" src={src} title={props.item.aname} />)
                 })}

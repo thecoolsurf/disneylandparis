@@ -21,10 +21,10 @@ export const Carrousel = (props) => {
     const [showNext, setShowNext] = useState('show');
     const [total, setTotal] = useState(0);
     return (
-        <section className={'carrousel '+FilterBkgColor()}>
+        <section key="carrousel" className={'carrousel '+FilterBkgColor()}>
             <div className="legend">{props.legend}</div>
             <div className="block">
-                <div className={'prev ' + showPrev} onClick={() => {
+                <div key="prev" className={'prev ' + showPrev} onClick={() => {
                     setIndex(index - 1);
                     setMargX(margX - (incr + marg));
                     if (margX < (incr + marg) * 2) setShowPrev('hide');
@@ -32,7 +32,7 @@ export const Carrousel = (props) => {
                 }}>
                     <i className="fa fa-chevron-circle-left" aria-hidden="true"></i>
                 </div>
-                <div className={'next ' + showNext} onClick={() => {
+                <div key="next" className={'next ' + showNext} onClick={() => {
                     setIndex(index + 1);
                     setMargX(margX + (incr + marg));
                     if (uri.includes('attraction')) { setTotal(CountLoadedFiles) } else { setTotal(props.datas.length); }
@@ -42,7 +42,7 @@ export const Carrousel = (props) => {
                 }}>
                     <i className="fa fa-chevron-circle-right" aria-hidden="true"></i>
                 </div>
-                <div className="wrapper" style={{ marginLeft: -margX + 'px' }} id="wrapper">
+                <div key="wrapper" className="wrapper" style={{ marginLeft: -margX + 'px' }} id="wrapper">
                     {props.datas.map((item) => {
                         return <Card key={item.aslug} item={item} />;
                     })}
