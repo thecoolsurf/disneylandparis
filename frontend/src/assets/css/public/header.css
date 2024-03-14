@@ -94,7 +94,7 @@
 	position: fixed;
 	top: 20px;
 	right: 20px;
-	z-index: 10;
+	z-index: 100;
 	font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
 	text-decoration: none;
 }
