@@ -15,6 +15,7 @@ import { Header } from './Components/Public/Document/Header.js';
 import { Footer } from './Components/Public/Document/Footer.js';
 import { Navigation } from './Components/Public/Document/Navigation.js';
 import { LinkToFinder } from './Components/Public/Document/LinkToFinder.js';
+import { BackTop } from './Components/Public/Document/BackTop.js';
 import { FilterParkAndUnivers } from './Components/Public/Filters/FilterParkAndUnivers.js';
 import { FilterCategory } from './Components/Public/Filters/FilterCategory.js';
 /* public routes */
@@ -54,42 +55,45 @@ function App() {
                 <Navigation datas={parkAndUnivers} admin={[entities, attributes]} />
                 <LinkToFinder />
                 <Routes>
+
+                    {/* public ******************************************************** */}
+
                     <Route path="/" element={
                         <Home navigation={navigation} categories={categories} />
                     } />
-                    {categories.map((c) => {
+                    {categories.map((c,i) => {
                         return (
-                            <Route key={'rc'+c.cid} path={c.croute} element={
-                                <Categories key={'c'+c.cid} id={c.cid} name={c.cname} />
+                            <Route key={i} path={c.croute} element={
+                                <Categories id={c.cid} name={c.cname} />
                             } />
                         )
                     })}
-                    {parkAndUnivers.map((p) => {
+                    {parkAndUnivers.map((p,i) => {
                         return (
-                            <Route key={'rp' + p.pid} path={p.proute} element={
-                                <Park key={'p'+p.pid} id={p.pid} navigation={navigation} name={p.pname} />
+                            <Route key={i} path={p.proute} element={
+                                <Park id={p.pid} navigation={navigation} name={p.pname} />
                             } />
                         )
                     })}
                     {parkAndUnivers.map((pu) => {
                         return (
-                            pu.univers.map((u) => {
+                            pu.univers.map((u,i) => {
                                 return (
-                                    <Route key={'ru' + u.uid} path={u.uroute} element={
-                                        <Univers key={'u'+u.uid} id={u.uid} navigation={navigation} pname={pu.pname} uname={u.uname} />
+                                    <Route key={i} path={u.uroute} element={
+                                        <Univers id={u.uid} navigation={navigation} pname={pu.pname} uname={u.uname} />
                                     } />
                                 )
                             })
                         )
                     })}
-                    {allAttractions.map((a) => {
+                    {allAttractions.map((a,i) => {
                         return (
-                            <Route key={'ra' + a.aid} path={a.aroute} element={
-                                <Attraction key={'a'+a.aid} id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} />
+                            <Route key={i} path={a.aroute} element={
+                                <Attraction id={a.aid} pname={a.pname} uname={a.uname} name={a.aname} />
                             } />
                         )
                     })}
-                    <Route key="find" path={'/find/attractions'} element={
+                    <Route path={'/find/attractions'} element={
                         <FindAttractions />
                     } />
 
@@ -98,40 +102,38 @@ function App() {
                     <Route path={'/admin/connexion'} element={
                         <AdminConnexion uri={'connexion'} />
                     } />
-                    {entities.map((name) => {
+                    {entities.map((name,i) => {
                         return (
                             <>
-                                <Route key={name} path={'/admin/entity/collection/' + name} element={
+                                <Route key={i} path={'/admin/entity/collection/' + name} element={
                                     <AdminCollection uri={name} />
                                 } />
-                                <Route key={name} path={'/admin/entity/update/' + name} element={
+                                <Route key={i} path={'/admin/entity/update/' + name} element={
                                     <AdminUpdate uri={name} />
                                 } />
-                                <Route key={name} path={'/admin/entity/insert/' + name} element={
+                                <Route key={i} path={'/admin/entity/insert/' + name} element={
                                     <AdminInsert uri={name} />
                                 } />
                             </>
                         )
                     })}
-                    {attributes.map((name) => {
+                    {attributes.map((name,i) => {
                         return (
                             <>
-                                <Route key={name} path={'/admin/entity/collection/' + name} element={
+                                <Route key={i} path={'/admin/entity/collection/' + name} element={
                                     <AdminCollection uri={name} />
                                 } />
-                                <Route key={name} path={'/admin/entity/update/' + name} element={
+                                <Route key={i} path={'/admin/entity/update/' + name} element={
                                     <AdminUpdate uri={name} />
                                 } />
-                                <Route key={name} path={'/admin/entity/insert/' + name} element={
+                                <Route key={i} path={'/admin/entity/insert/' + name} element={
                                     <AdminInsert uri={name} />
                                 } />
                             </>
                         )
                     })}
                 </Routes>
-                <div id="backtop" className="backtop" onClick={() => window.scrollTo({ top: 0, left: 0, behavior: "smooth" })}>
-                    <i className="fa fa-arrow-circle-up"></i>
-                </div>
+                <BackTop />
                 <Footer />
             </BrowserRouter>
         </div>
