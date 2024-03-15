@@ -20,8 +20,14 @@ export const Univers = (props) => {
         };
         fetchData();
     }, []);
-    let legend = univers[0] ? `Univers ${univers[0].uname} - ${attractions.length} attractions`: '';
     const categories = FilterCategory('univers',props.navigation, props.id);
+    const uname = univers[0] ? univers[0].uname : '';
+    let legend = [
+        `Univers ${uname}`,
+        `${categories.length} catégories`,
+        `${attractions.length} attractions`,
+        ``,
+    ];
     return (
         <div className="univers">
             <Carrousel datas={attractions} legend={legend} />

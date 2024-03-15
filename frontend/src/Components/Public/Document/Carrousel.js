@@ -6,8 +6,8 @@ import { CountCardByScreen } from "../Files/CountCardByScreen.js";
 import { FilterBkgColor } from "../Filters/FilterBkgColor.js";
 
 /*
-@requre legend
-@require datas {id,name,slug,route}
+@require array legend
+@require object datas {id,name,slug,route}
 */
 
 export const Carrousel = (props) => {
@@ -22,7 +22,12 @@ export const Carrousel = (props) => {
     const [total, setTotal] = useState(0);
     return (
         <section key="carrousel" className={'carrousel '+FilterBkgColor()}>
-            <div className="legend">{props.legend}</div>
+            <div className="legend">
+                <h1>{props.legend[0]}</h1>
+                <h2>{props.legend[1]}</h2>
+                <h2>{props.legend[2]}</h2>
+                <h2>{props.legend[3]}</h2>
+            </div>
             <div className="block">
                 <div key="prev" className={'prev ' + showPrev} onClick={() => {
                     setIndex(index - 1);

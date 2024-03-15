@@ -16,7 +16,13 @@ export const Attraction = (props) => {
         };
         fetchtheData();
     }, []);
-    const legend = attraction[0] ? 'Galerie d\'images - ' + attraction[0].aname : '';
+    const cname = attraction[0] ? attraction[0].cname : '';
+    const aname = attraction[0] ? attraction[0].aname : '';
+    const legend = [
+        `${aname}`,
+        `${cname}`,
+        `Galerie d'images ${aname}`,
+    ];
     return (
         <div className="attraction" key="attraction">
             <Carrousel datas={attraction} slugs={props.slugs} legend={legend} />

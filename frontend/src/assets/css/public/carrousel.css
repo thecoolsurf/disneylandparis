@@ -20,12 +20,22 @@
 }
 
 .carrousel .legend {
-    font-size: 1.4rem;
-    font-weight: 700;
     color: #FFF;
     width: 100%;
     height: auto;
     padding: 10px;
+}
+
+.carrousel .legend h1 {
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.carrousel .legend h2 {
+    font-size: 1.4rem;
+    font-weight: normal;
+    margin: 0;
 }
 
 .carrousel .block {
