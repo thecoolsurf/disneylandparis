@@ -20,6 +20,7 @@ export const FindAttractions = () => {
             <section className="infos">
                 <h2>Résultat</h2>
                 <ul className="result">
+                    <li><a href="/" alt="home">Home</a></li>
                     {findAttractions.map((el) => {
                         return (
                             <li key={el.slug}>

@@ -354,3 +354,33 @@
     background-image: url('../../images/attractions/park/la-reine-de-coeur/icon/la-reine-de-coeur.jpg');
     background-size: cover;
 }
+
+.icon-alice {
+    background-image: url('../../images/attractions/park/alice/icon/alice.jpg');
+    background-size: cover;
+}
+
+.icon-mad-hatter {
+    background-image: url('../../images/attractions/park/mad-hatter/icon/mad-hatter.jpg');
+    background-size: cover;
+}
+
+.icon-geppetto {
+    background-image: url('../../images/attractions/park/geppetto/icon/geppetto.jpg');
+    background-size: cover;
+}
+
+.icon-pinocchio {
+    background-image: url('../../images/attractions/park/pinocchio/icon/pinocchio.jpg');
+    background-size: cover;
+}
+
+.icon-max-goof {
+    background-image: url('../../images/attractions/park/max-goof/icon/max-goof.jpg');
+    background-size: cover;
+}
+
+.icon-baloo {
+    background-image: url('../../images/attractions/park/baloo/icon/baloo.jpg');
+    background-size: cover;
+}

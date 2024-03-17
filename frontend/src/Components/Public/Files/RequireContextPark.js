@@ -234,6 +234,23 @@ export const RequireContextPark = () => {
     if (uri.includes('la-reine-de-coeur')) {
         return require.context('../../../assets/images/attractions/park/la-reine-de-coeur/img',true);
     }
-    
+    if (uri.includes('alice')) {
+        return require.context('../../../assets/images/attractions/park/alice/img',true);
+    }
+    if (uri.includes('mad-hatter')) {
+        return require.context('../../../assets/images/attractions/park/mad-hatter/img',true);
+    }
+    if (uri.includes('geppetto')) {
+        return require.context('../../../assets/images/attractions/park/geppetto/img',true);
+    }
+    if (uri.includes('max-goof')) {
+        return require.context('../../../assets/images/attractions/park/max-goof/img',true);
+    }
+    if (uri.includes('pinocchio')) {
+        return require.context('../../../assets/images/attractions/park/pinocchio/img',true);
+    }
+    if (uri.includes('baloo')) {
+        return require.context('../../../assets/images/attractions/park/baloo/img',true);
+    }
 }
 
