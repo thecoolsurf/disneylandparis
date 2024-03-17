@@ -258,5 +258,8 @@ export const RequireContextPark = () => {
     if (uri.includes('capitaine-crochet')) {
         return require.context('../../../assets/images/attractions/park/capitaine-crochet/img',true);
     }
+    if (uri.includes('jack-sparrow')) {
+        return require.context('../../../assets/images/attractions/park/jack-sparrow/img',true);
+    }
 }
 

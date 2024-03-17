@@ -394,3 +394,8 @@
     background-image: url('../../images/attractions/park/mouche/icon/mouche.jpg');
     background-size: cover;
 }
+
+.icon-jack-sparrow {
+    background-image: url('../../images/attractions/park/jack-sparrow/icon/jack-sparrow.jpg');
+    background-size: cover;
+}
