@@ -252,5 +252,11 @@ export const RequireContextPark = () => {
     if (uri.includes('baloo')) {
         return require.context('../../../assets/images/attractions/park/baloo/img',true);
     }
+    if (uri.includes('mouche')) {
+        return require.context('../../../assets/images/attractions/park/mouche/img',true);
+    }
+    if (uri.includes('capitaine-crochet')) {
+        return require.context('../../../assets/images/attractions/park/capitaine-crochet/img',true);
+    }
 }
 

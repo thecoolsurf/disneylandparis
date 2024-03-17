@@ -384,3 +384,13 @@
     background-image: url('../../images/attractions/park/baloo/icon/baloo.jpg');
     background-size: cover;
 }
+
+.icon-capitaine-crochet {
+    background-image: url('../../images/attractions/park/capitaine-crochet/icon/capitaine-crochet.jpg');
+    background-size: cover;
+}
+
+.icon-mouche {
+    background-image: url('../../images/attractions/park/mouche/icon/mouche.jpg');
+    background-size: cover;
+}
