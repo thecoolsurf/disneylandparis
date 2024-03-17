@@ -47,8 +47,8 @@
   box-sizing: border-box;
 }
 
-.nav-admin .entity {
-  margin: 0 0 0 80px;
+.nav-admin .nav {
+  margin: 0 0 0 20px;
   font-family: 'InspireTWDC', 'Helvetica', 'Arial', 'sans-serif';
   font-size: 1.2rem;
   color: #FFF;
