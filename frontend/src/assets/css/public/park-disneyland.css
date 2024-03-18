@@ -399,3 +399,33 @@
     background-image: url('../../images/attractions/park/jack-sparrow/icon/jack-sparrow.jpg');
     background-size: cover;
 }
+
+.icon-picsou {
+    background-image: url('../../images/attractions/park/picsou/icon/picsou.jpg');
+    background-size: cover;
+}
+
+.icon-la-reine-sorciere {
+    background-image: url('../../images/attractions/park/la-reine-sorciere/icon/la-reine-sorciere.jpg');
+    background-size: cover;
+}
+
+.icon-le-genie {
+    background-image: url('../../images/attractions/park/le-genie/icon/le-genie.jpg');
+    background-size: cover;
+}
+
+.icon-alladin {
+    background-image: url('../../images/attractions/park/alladin/icon/alladin.jpg');
+    background-size: cover;
+}
+
+.icon-jasmine {
+    background-image: url('../../images/attractions/park/jasmine/icon/jasmine.jpeg');
+    background-size: cover;
+}
+
+.icon-le-roi-louie {
+    background-image: url('../../images/attractions/park/le-roi-louie/icon/le-roi-louie.jpg');
+    background-size: cover;
+}

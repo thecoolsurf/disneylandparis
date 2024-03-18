@@ -54,6 +54,11 @@
   color: #FFF;
 }
 
+.nav-admin .legend-entity {
+  margin: 10px 0 0 60px;
+  color: #FFF;
+}
+
 .nav-admin .show {
   display: flex;
   flex-direction: row;
