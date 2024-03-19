@@ -140,23 +140,28 @@
     background-size: cover;
 }
 
-.icon-mary-poppins-et-bert {
-    background-image: url('../../images/attractions/studio/mary-poppins-et-bert/icon/mary-poppins-et-bert.jpg');
+.icon-mary-poppins {
+    background-image: url('../../images/attractions/studio/mary-poppins/icon/mary-poppins.jpg');
     background-size: cover;
 }
 
-.icon-mary-poppins-et-les-pingouins {
-    background-image: url('../../images/attractions/studio/mary-poppins-et-les-pingouins/icon/mary-poppins-et-les-pingouins.jpg');
+.icon-bert {
+    background-image: url('../../images/attractions/studio/bert/icon/bert.jpg');
     background-size: cover;
 }
 
-.icon-monstres-et-cie-sulli {
-    background-image: url('../../images/attractions/studio/monstres-et-cie-sulli/icon/monstres-et-cie-sulli.jpg');
+.icon-les-pingouins {
+    background-image: url('../../images/attractions/studio/les-pingouins/icon/les-pingouins.jpg');
     background-size: cover;
 }
 
-.icon-monstres-et-cie-bob {
-    background-image: url('../../images/attractions/studio/monstres-et-cie-bob/icon/monstres-et-cie-bob.jpg');
+.icon-sulli {
+    background-image: url('../../images/attractions/studio/sulli/icon/sulli.jpg');
+    background-size: cover;
+}
+
+.icon-bob {
+    background-image: url('../../images/attractions/studio/bob/icon/bob.jpg');
     background-size: cover;
 }
 

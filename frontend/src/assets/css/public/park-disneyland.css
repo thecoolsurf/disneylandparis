@@ -415,8 +415,8 @@
     background-size: cover;
 }
 
-.icon-alladin {
-    background-image: url('../../images/attractions/park/alladin/icon/alladin.jpg');
+.icon-aladdin {
+    background-image: url('../../images/attractions/park/aladdin/icon/aladdin.jpg');
     background-size: cover;
 }
 
@@ -427,5 +427,15 @@
 
 .icon-le-roi-louie {
     background-image: url('../../images/attractions/park/le-roi-louie/icon/le-roi-louie.jpg');
+    background-size: cover;
+}
+
+.icon-bourriquet {
+    background-image: url('../../images/attractions/park/bourriquet/icon/bourriquet.jpg');
+    background-size: cover;
+}
+
+.icon-porcinet {
+    background-image: url('../../images/attractions/park/porcinet/icon/porcinet.jpg');
     background-size: cover;
 }

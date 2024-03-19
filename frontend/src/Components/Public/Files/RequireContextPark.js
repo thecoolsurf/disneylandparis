@@ -270,14 +270,29 @@ export const RequireContextPark = () => {
     if (uri.includes('le-genie')) {
         return require.context('../../../assets/images/attractions/park/le-genie/img',true);
     }
-    if (uri.includes('alladin')) {
-        return require.context('../../../assets/images/attractions/park/alladin/img',true);
+    if (uri.includes('aladdin')) {
+        return require.context('../../../assets/images/attractions/park/aladdin/img',true);
     }
     if (uri.includes('jasmine')) {
         return require.context('../../../assets/images/attractions/park/jasmine/img',true);
     }
     if (uri.includes('le-roi-louie')) {
         return require.context('../../../assets/images/attractions/park/le-roi-louie/img',true);
+    }
+    if (uri.includes('mary-poppins')) {
+        return require.context('../../../assets/images/attractions/park/mary-poppins/img',true);
+    }
+    if (uri.includes('bert')) {
+        return require.context('../../../assets/images/attractions/park/bert/img',true);
+    }
+    if (uri.includes('les-pinguins')) {
+        return require.context('../../../assets/images/attractions/park/les-pinguins/img',true);
+    }
+    if (uri.includes('bourriquet')) {
+        return require.context('../../../assets/images/attractions/park/bourriquet/img',true);
+    }
+    if (uri.includes('porcinet')) {
+        return require.context('../../../assets/images/attractions/park/porcinet/img',true);
     }
 }
 
