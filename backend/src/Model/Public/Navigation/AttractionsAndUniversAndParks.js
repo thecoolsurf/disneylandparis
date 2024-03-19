@@ -5,11 +5,13 @@ SELECT
 a.id AS aid, a.name AS aname, a.slug AS aslug, a.route AS aroute, 
 u.id AS uid, u.name AS uname, u.slug AS uslug, u.route AS uroute, 
 p.id AS pid, p.name AS pname, p.slug AS pslug, p.route AS proute, 
-c.id AS cid, c.name AS cname, c.slug AS cslug, c.route AS croute
+c.id AS cid, c.name AS cname, c.slug AS cslug, c.route AS croute,
+o.id AS oid, o.name AS oname, o.slug AS oslug, o.route AS oroute
 FROM attraction a
 JOIN univers u ON u.id = a.id_univ 
 JOIN park p ON p.id = a.id_park
 JOIN category c ON c.id = a.id_category
+JOIN origin o ON o.id = a.id_origin
 ORDER BY a.name
 `;
 
