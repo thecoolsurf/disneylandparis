@@ -5,6 +5,7 @@ export const Attributes = () => {
         'handicap', 
         'height', 
         'interest', 
+        'origin', 
         'photopass', 
         'pmr', 
         'premieraccess', 

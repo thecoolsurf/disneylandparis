@@ -11,6 +11,7 @@ export const Attraction = (props) => {
     const [parkChooser, setParkChooser] = useState([]);
     const [universChooser, setUniversChooser] = useState([]);
     const [categoryChooser, setCategoryChooser] = useState([]);
+    const [originChooser, setOriginChooser] = useState([]);
     const [publicChooser, setPublicChooser] = useState([]);
     const [photopassChooser, setPhotopassChooser] = useState([]);
     const [premieraccessChooser, setPremieraccessChooser] = useState([]);
@@ -32,6 +33,9 @@ export const Attraction = (props) => {
             const datasCategory = await fetch(`http://localhost:80/admin/collection/category`);
             const categoryChooser = await datasCategory.json();
             setCategoryChooser(categoryChooser);
+            const datasOrigin = await fetch(`http://localhost:80/admin/collection/origin`);
+            const originChooser = await datasOrigin.json();
+            setOriginChooser(originChooser);
             const datasPublic = await fetch(`http://localhost:80/admin/collection/public`);
             const publicChooser = await datasPublic.json();
             setPublicChooser(publicChooser);
@@ -68,6 +72,7 @@ export const Attraction = (props) => {
     const id_park = (props.e) ? props.e.id_park : '';
     const id_univ = (props.e) ? props.e.id_univ : '';
     const id_category = (props.e) ? props.e.id_category : '';
+    const id_origin = (props.e) ? props.e.id_origin : '';
     const created= (props.e) ? props.e.created : '';
     const author = (props.e) ? props.e.author : '';
     const slug = (props.e) ? props.e.slug : '';
@@ -95,6 +100,7 @@ export const Attraction = (props) => {
             <Select name="id_park" chooser={parkChooser} value={id_park} />
             <Select name="id_univ" chooser={universChooser} value={id_univ} />
             <Select name="id_category" chooser={categoryChooser} value={id_category} />
+            <Select name="id_origin" chooser={originChooser} value={id_origin} />
             <Date name="created" value={created} />
             <Text name="author" value={author} />
             <Text name="name" value={name} />

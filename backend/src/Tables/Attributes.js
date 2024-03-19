@@ -4,6 +4,7 @@ const attributes = [
     'handicap', 
     'height', 
     'interest', 
+    'origin',
     'photopass', 
     'pmr', 
     'premieraccess', 

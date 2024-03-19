@@ -26,9 +26,10 @@ export const Entities = (props) => {
                         <div className="rows">
                             <div className="id">{index+1}</div>
                             <div className="item">{e.name} ({e.id})</div>
-                            <div className="item">{e.cname}</div>
                             <div className="item">{e.pname}</div>
                             <div className="item">{e.uname}</div>
+                            <div className="item">{e.cname}</div>
+                            <div className="item">{e.oname}</div>
                             <BtnDelete id={e.id} uri={props.uri} />
                             <BtnUpdate id={e.id} uri={props.uri} />
                         </div>

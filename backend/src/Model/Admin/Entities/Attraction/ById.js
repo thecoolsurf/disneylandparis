@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, id_park, id_univ, id_category, 
+id, id_park, id_univ, id_category, id_origin, 
 created, author, 
 slug, route, name, 
 id_public, id_photopass, id_pmr, id_singlerider, 

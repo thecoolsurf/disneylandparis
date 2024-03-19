@@ -24,9 +24,10 @@ export const THead = (props) => {
                     <div className="thead">
                         <div className="id">id</div>
                         <div className="item">name</div>
-                        <div className="item">category</div>
                         <div className="item">park</div>
                         <div className="item">univers</div>
+                        <div className="item">category</div>
+                        <div className="item">Origin</div>
                     </div>
                 );
             case 'category':

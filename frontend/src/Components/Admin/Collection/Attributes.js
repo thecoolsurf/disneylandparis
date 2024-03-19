@@ -9,6 +9,7 @@ export const Attributes = (props) => {
         case 'handicap':
         case 'height':
         case 'interest':
+        case 'origin':
         case 'photopass':
         case 'pmr':
         case 'premieraccess':

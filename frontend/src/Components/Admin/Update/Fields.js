@@ -6,6 +6,7 @@ import { Univers } from "./Entities/Univers.js";
 import { User } from "./Entities/User.js";
 /* Attributes */
 import { Category } from './Attributes/Category.js';
+import { Origin } from './Attributes/Origin.js';
 import { Evacuation } from './Attributes/Evacuation.js';
 import { Handicap } from './Attributes/Handicap.js';
 import { Height } from './Attributes/Height.js';
@@ -45,6 +46,8 @@ export const Fields = (props) => {
             return (<Height key={uri} e={el} />);
         case 'interest':
             return (<Interest key={uri} e={el} />);
+        case 'origin':
+            return (<Origin key={uri} e={el} />);
         case 'photopass':
             return (<Photopass key={uri} e={el} />);
         case 'pmr':
