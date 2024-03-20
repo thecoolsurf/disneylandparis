@@ -33,6 +33,8 @@ export const Categories = (props) => {
                             </div>
                             <div className="park-name">{el.pname}</div>
                             <div className="univers-name">{el.uname}</div>
+                            <div className="park-name">{'Origine'}</div>
+                            <div className="univers-name">{el.oname}</div>
                             <div className="category-name">{el.cname}</div>
                             <div className="legend">{el.aname}</div>
                         </a>

@@ -279,15 +279,6 @@ export const RequireContextPark = () => {
     if (uri.includes('le-roi-louie')) {
         return require.context('../../../assets/images/attractions/park/le-roi-louie/img',true);
     }
-    if (uri.includes('mary-poppins')) {
-        return require.context('../../../assets/images/attractions/park/mary-poppins/img',true);
-    }
-    if (uri.includes('bert')) {
-        return require.context('../../../assets/images/attractions/park/bert/img',true);
-    }
-    if (uri.includes('les-pinguins')) {
-        return require.context('../../../assets/images/attractions/park/les-pinguins/img',true);
-    }
     if (uri.includes('bourriquet')) {
         return require.context('../../../assets/images/attractions/park/bourriquet/img',true);
     }

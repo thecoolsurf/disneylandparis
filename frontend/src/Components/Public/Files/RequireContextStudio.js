@@ -82,17 +82,11 @@ export const RequireContextStudio = () => {
     if (uri.includes('frozen-olaf')) {
         return require.context('../../../assets/images/attractions/studio/frozen-olaf/img', true);
     }
-    if (uri.includes('monstres-et-cie-sulli')) {
-        return require.context('../../../assets/images/attractions/studio/monstres-et-cie-sulli/img', true);
+    if (uri.includes('sulli')) {
+        return require.context('../../../assets/images/attractions/studio/sulli/img', true);
     }
-    if (uri.includes('monstres-et-cie-bob')) {
-        return require.context('../../../assets/images/attractions/studio/monstres-et-cie-bob/img', true);
-    }
-    if (uri.includes('mary-poppins-et-bert')) {
-        return require.context('../../../assets/images/attractions/studio/mary-poppins-et-bert/img', true);
-    }
-    if (uri.includes('mary-poppins-et-les-pingouins')) {
-        return require.context('../../../assets/images/attractions/studio/mary-poppins-et-les-pingouins/img', true);
+    if (uri.includes('bob')) {
+        return require.context('../../../assets/images/attractions/studio/bob/img', true);
     }
     if (uri.includes('marvel-ant-man')) {
         return require.context('../../../assets/images/attractions/studio/marvel-ant-man/img', true);
@@ -144,6 +138,15 @@ export const RequireContextStudio = () => {
     }
     if (uri.includes('marvel-thor')) {
         return require.context('../../../assets/images/attractions/studio/marvel-thor/img', true);
+    }
+    if (uri.includes('mary-poppins')) {
+        return require.context('../../../assets/images/attractions/studio/mary-poppins/img',true);
+    }
+    if (uri.includes('bert')) {
+        return require.context('../../../assets/images/attractions/studio/bert/img',true);
+    }
+    if (uri.includes('les-pingouins')) {
+        return require.context('../../../assets/images/attractions/studio/les-pingouins/img',true);
     }
 
 }

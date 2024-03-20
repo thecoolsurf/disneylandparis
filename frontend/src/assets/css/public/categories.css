@@ -24,12 +24,13 @@
     background-position: center center;
     background-repeat: no-repeat;
     width: 200px;
-    height:240px;
+    height:auto;
     margin: 0 20px 20px 0;
     padding: 0 0 20px 0;
     overflow: hidden;
     border-radius: 10px;
     box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.2);
+    box-sizing: border-box;
     text-align: center;
     text-decoration: none;
     color: #000;
@@ -57,21 +58,26 @@
     transform: scale(1.2);
 }
 
-.categories .logo .park-name {
+.categories .park-name {
+    margin: 0;
+    padding: 0 10px;
     font-size: 0.6rem;
     font-weight: normal;
     color: #353535;
     text-transform: uppercase;
 }
 
-.categories .logo .univers-name {
-    margin: 0 0 10px 0;
+.categories .univers-name {
+    margin: 0;
+    padding: 0 10px;
     font-size: 1rem;
     font-weight: normal;
     color: #353535;
 }
 
-.categories .logo .category-name {
+.categories .category-name {
+    margin: 10px 0 0 0;
+    padding: 0 10px;
     font-size: 0.6rem;
     font-weight: normal;
     color: #353535;

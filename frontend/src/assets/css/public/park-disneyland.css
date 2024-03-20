@@ -305,48 +305,48 @@
     background-size: cover;
 }
 
-.icon-princess-ariel {
-    background-image: url('../../images/attractions/park/princess-ariel/icon/princess-ariel.jpg');
+.icon-ariel {
+    background-image: url('../../images/attractions/park/ariel/icon/ariel.jpg');
     background-size: cover;
 }
 
-.icon-princess-aurore {
-    background-image: url('../../images/attractions/park/princess-aurore/icon/princess-aurore.jpg');
+.icon-aurore {
+    background-image: url('../../images/attractions/park/aurore/icon/aurore.jpg');
     background-size: cover;
 }
 
-.icon-princess-belle {
-    background-image: url('../../images/attractions/park/princess-belle/icon/princess-belle.jpg');
+.icon-belle {
+    background-image: url('../../images/attractions/park/belle/icon/belle.jpg');
     background-size: cover;
 }
 
-.icon-princess-blanche-neige {
-    background-image: url('../../images/attractions/park/princess-blanche-neige/icon/princess-blanche-neige.jpg');
+.icon-blanche-neige {
+    background-image: url('../../images/attractions/park/blanche-neige/icon/blanche-neige.jpg');
     background-size: cover;
 }
 
-.icon-princess-cendrillon {
-    background-image: url('../../images/attractions/park/princess-cendrillon/icon/princess-cendrillon.jpg');
+.icon-cendrillon {
+    background-image: url('../../images/attractions/park/cendrillon/icon/cendrillon.jpg');
     background-size: cover;
 }
 
-.icon-princess-merida {
-    background-image: url('../../images/attractions/park/princess-merida/icon/princess-merida.jpeg');
+.icon-merida {
+    background-image: url('../../images/attractions/park/merida/icon/merida.jpeg');
     background-size: cover;
 }
 
-.icon-princess-mulan {
-    background-image: url('../../images/attractions/park/princess-mulan/icon/princess-mulan.jpg');
+.icon-mulan {
+    background-image: url('../../images/attractions/park/mulan/icon/mulan.jpg');
     background-size: cover;
 }
 
-.icon-princess-raiponce {
-    background-image: url('../../images/attractions/park/princess-raiponce/icon/princess-raiponce.jpg');
+.icon-raiponce {
+    background-image: url('../../images/attractions/park/raiponce/icon/raiponce.jpg');
     background-size: cover;
 }
 
-.icon-princess-tiana {
-    background-image: url('../../images/attractions/park/princess-tiana/icon/princess-tiana.jpg');
+.icon-tiana {
+    background-image: url('../../images/attractions/park/tiana/icon/tiana.jpg');
     background-size: cover;
 }
 
@@ -437,5 +437,20 @@
 
 .icon-porcinet {
     background-image: url('../../images/attractions/park/porcinet/icon/porcinet.jpg');
+    background-size: cover;
+}
+
+.icon-timon {
+    background-image: url('../../images/attractions/park/timon/icon/timon.jpg');
+    background-size: cover;
+}
+
+.icon-rafiki {
+    background-image: url('../../images/attractions/park/rafiki/icon/rafiki.jpg');
+    background-size: cover;
+}
+
+.icon-lapin-blanc {
+    background-image: url('../../images/attractions/park/lapin-blanc/icon/lapin-blanc.jpg');
     background-size: cover;
 }
