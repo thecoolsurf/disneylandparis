@@ -5,6 +5,7 @@ import { FilterAttractions } from '../../Components/Public/Filters/FilterAttract
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
 import { BlockCategories } from '../../Components/Public/Blocks/BlockCategories.js';
+import { BlockOrigins } from '../../Components/Public/Blocks/BlockOrigins.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 
 export const Home = (props) => {
@@ -20,13 +21,13 @@ export const Home = (props) => {
     const parkAndUnivers = FilterHomeDatas(home);
     const attraction = props.navigation;
     const categories = props.categories;
+    const origins = props.origins;
     const legend = [
         `Disneyland Paris`,
         `${parkAndUnivers.length} parks à thèmes`,
         `${home.length} univers`,
         `${attraction.length} attractions`,
     ];
-    console.log(legend)
     return (
         <div className="home">
             <Carrousel legend={legend} datas={attraction} />
@@ -54,6 +55,7 @@ export const Home = (props) => {
                 <div className="bloc-infos">
                     <ul className="list">
                         <BlockCategories label="home-categories" datas={categories} />
+                        <BlockOrigins label="home-origins" datas={origins} />
                     </ul>
                 </div>
             </section>

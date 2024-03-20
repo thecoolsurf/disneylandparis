@@ -70,17 +70,17 @@ export const RequireContextStudio = () => {
     if (uri.includes('woody')) {
         return require.context('../../../assets/images/attractions/studio/woody/img', true);
     }
-    if (uri.includes('frozen-anna')) {
-        return require.context('../../../assets/images/attractions/studio/frozen-anna/img', true);
+    if (uri.includes('anna')) {
+        return require.context('../../../assets/images/attractions/studio/anna/img', true);
     }
-    if (uri.includes('frozen-elsa')) {
-        return require.context('../../../assets/images/attractions/studio/frozen-elsa/img', true);
+    if (uri.includes('elsa')) {
+        return require.context('../../../assets/images/attractions/studio/elsa/img', true);
     }
-    if (uri.includes('frozen-kristoff')) {
-        return require.context('../../../assets/images/attractions/studio/frozen-kristoff/img', true);
+    if (uri.includes('kristoff')) {
+        return require.context('../../../assets/images/attractions/studio/kristoff/img', true);
     }
-    if (uri.includes('frozen-olaf')) {
-        return require.context('../../../assets/images/attractions/studio/frozen-olaf/img', true);
+    if (uri.includes('olaf')) {
+        return require.context('../../../assets/images/attractions/studio/olaf/img', true);
     }
     if (uri.includes('sulli')) {
         return require.context('../../../assets/images/attractions/studio/sulli/img', true);

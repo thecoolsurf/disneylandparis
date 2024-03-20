@@ -18,13 +18,15 @@ import { LinkToFinder } from './Components/Public/Document/LinkToFinder.js';
 import { BackTop } from './Components/Public/Document/BackTop.js';
 import { FilterParkAndUnivers } from './Components/Public/Filters/FilterParkAndUnivers.js';
 import { FilterCategory } from './Components/Public/Filters/FilterCategory.js';
+import { FilterOrigins } from './Components/Public/Filters/FilterOrigins.js';
 /* public routes */
 import { Home } from './Pages/Public/Home.js';
 import { Park } from './Pages/Public/Park.js';
 import { Univers } from './Pages/Public/Univers.js';
 import { Attraction } from './Pages/Public/Attraction.js';
 import { FindAttractions } from './Pages/Public/FindAttractions.js';
-import { Categories } from './Pages/Public/Categories.js';
+import { Category } from './Pages/Public/Category.js';
+import { Origin } from './Pages/Public/Origin.js';
 /* admin routes */
 import { AdminConnexion } from './Pages/Admin/Connexion.js';
 import { AdminCollection } from "./Pages/Admin/Collection.js";
@@ -45,6 +47,7 @@ function App() {
     }, []);
     const parkAndUnivers = FilterParkAndUnivers(navigation);
     const categories = FilterCategory('home', navigation);
+    const origins = FilterOrigins('home', navigation);
     const allAttractions = navigation;
     const entities = Entities();
     const attributes = Attributes();
@@ -59,12 +62,19 @@ function App() {
                     {/* public ******************************************************** */}
 
                     <Route path="/" element={
-                        <Home navigation={navigation} categories={categories} />
+                        <Home navigation={navigation} categories={categories} origins={origins} />
                     } />
                     {categories.map((c,i) => {
                         return (
                             <Route key={i} path={c.croute} element={
-                                <Categories id={c.cid} name={c.cname} />
+                                <Category id={c.cid} name={c.cname} />
+                            } />
+                        )
+                    })}
+                    {origins.map((c,i) => {
+                        return (
+                            <Route key={i} path={c.oroute} element={
+                                <Origin id={c.oid} name={c.oname} />
                             } />
                         )
                     })}
