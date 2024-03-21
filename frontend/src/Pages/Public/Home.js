@@ -55,6 +55,10 @@ export const Home = (props) => {
                 <div className="bloc-infos">
                     <ul className="list">
                         <BlockCategories label="home-categories" datas={categories} />
+                    </ul>
+                </div>
+                <div className="bloc-infos">
+                    <ul className="list">
                         <BlockOrigins label="home-origins" datas={origins} />
                     </ul>
                 </div>
