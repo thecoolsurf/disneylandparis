@@ -12,14 +12,30 @@ export const BreadCrumb = () => {
             </div>
         )
     }
-    if (uri.includes('categorie')) {
+    if (uri.includes('categories') || uri.includes('origines')) {
         return (
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                <span>Categorie</span>
+                <span>{params[4]}</span>
+            </div>
+        )
+    }
+    if (uri.includes('categorie') && !uri.includes('categories')) {
+        return (
+            <div className="breadcrumb">
+                <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                <span>{params[4].replaceAll('-', ' ')}</span>
+                <a href={'/home/categories'} alt="categories">Catégories</a>
+            </div>
+        )
+    }
+    if (uri.includes('origine') && !uri.includes('origines')) {
+        return (
+            <div className="breadcrumb">
+                <a href={'/'} alt="home">home</a>
+                <i className="fa fa-circle"></i>
+                <a href={'/home/origines'} alt="origines">Origines</a>
             </div>
         )
     }

@@ -5,6 +5,7 @@ SELECT
 id, name
 FROM 
 origin
+ORDER BY name
 `;
 
 module.exports = collection;

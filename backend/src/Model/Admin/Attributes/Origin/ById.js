@@ -2,7 +2,7 @@
 
 const by_id = `
 SELECT 
-id, slug, name, route
+id, slug, name, route, description
 FROM origin
 WHERE id = ?`;
 

@@ -25,7 +25,9 @@ import { Park } from './Pages/Public/Park.js';
 import { Univers } from './Pages/Public/Univers.js';
 import { Attraction } from './Pages/Public/Attraction.js';
 import { FindAttractions } from './Pages/Public/FindAttractions.js';
+import { Categories } from './Pages/Public/Categories.js';
 import { Category } from './Pages/Public/Category.js';
+import { Origins } from './Pages/Public/Origins.js';
 import { Origin } from './Pages/Public/Origin.js';
 /* admin routes */
 import { AdminConnexion } from './Pages/Admin/Connexion.js';
@@ -62,7 +64,13 @@ function App() {
                     {/* public ******************************************************** */}
 
                     <Route path="/" element={
-                        <Home navigation={navigation} categories={categories} origins={origins} />
+                        <Home navigation={navigation} categories={categories} />
+                    } />
+                    <Route path="/home/categories" element={
+                        <Categories navigation={navigation} categories={categories} />
+                    } />
+                    <Route path="/home/origines" element={
+                        <Origins navigation={navigation} origins={origins} />
                     } />
                     {categories.map((c,i) => {
                         return (

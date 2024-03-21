@@ -2,9 +2,9 @@
 
 const insert = `
 INSERT INTO origin 
-(name, slug, route) 
+(name, slug, route, description) 
 VALUES
-(?, ?, ?);
+(?, ?, ?, ?);
 `;
 
 module.exports = insert;

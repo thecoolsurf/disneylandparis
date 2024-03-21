@@ -148,7 +148,15 @@ export const RequireContextStudio = () => {
     if (uri.includes('les-pingouins')) {
         return require.context('../../../assets/images/attractions/studio/les-pingouins/img',true);
     }
-
+    if (uri.includes('mr-indestructible')) {
+        return require.context('../../../assets/images/attractions/studio/mr-indestructible/img',true);
+    }
+    if (uri.includes('elastigirl')) {
+        return require.context('../../../assets/images/attractions/studio/elastigirl/img',true);
+    }
+    if (uri.includes('flash-mcqueen')) {
+        return require.context('../../../assets/images/attractions/studio/flash-mcqueen/img',true);
+    }
 }
 
 

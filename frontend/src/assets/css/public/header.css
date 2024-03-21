@@ -11,15 +11,6 @@
 	margin: 60px 0 0 0;
 }
 
-.img-default-header,
-.img-find,
-.img-categorie,
-.img-origine {
-	background-image: url('../../images/parks/bkg-disneyland-paris-v2.jpg');
-	background-size: cover;
-	background-position: center center;
-}
-
 .block-title {
 	position: relative;
 }

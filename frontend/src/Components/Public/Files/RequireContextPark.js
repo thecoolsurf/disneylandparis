@@ -282,5 +282,44 @@ export const RequireContextPark = () => {
     if (uri.includes('porcinet')) {
         return require.context('../../../assets/images/attractions/park/porcinet/img',true);
     }
+    if (uri.includes('coco-lapin')) {
+        return require.context('../../../assets/images/attractions/park/coco-lapin/img',true);
+    }
+    if (uri.includes('asha')) {
+        return require.context('../../../assets/images/attractions/park/asha/img',true);
+    }
+    if (uri.includes('coco')) {
+        return require.context('../../../assets/images/attractions/park/coco/img',true);
+    }
+    if (uri.includes('flora')) {
+        return require.context('../../../assets/images/attractions/park/flora/img',true);
+    }
+    if (uri.includes('pimprenelle')) {
+        return require.context('../../../assets/images/attractions/park/pimprenelle/img',true);
+    }
+    if (uri.includes('paquerette')) {
+        return require.context('../../../assets/images/attractions/park/paquerette/img',true);
+    }
+    if (uri.includes('mirabel')) {
+        return require.context('../../../assets/images/attractions/park/mirabel/img',true);
+    }
+    if (uri.includes('joie')) {
+        return require.context('../../../assets/images/attractions/park/joie/img',true);
+    }
+    if (uri.includes('nick-wilde')) {
+        return require.context('../../../assets/images/attractions/park/nick-wilde/img',true);
+    }
+    if (uri.includes('judy-hopps')) {
+        return require.context('../../../assets/images/attractions/park/judy-hopps/img',true);
+    }
+    if (uri.includes('lapin-blanc')) {
+        return require.context('../../../assets/images/attractions/park/lapin-blanc/img',true);
+    }
+    if (uri.includes('timon')) {
+        return require.context('../../../assets/images/attractions/park/timon/img',true);
+    }
+    if (uri.includes('rafiki')) {
+        return require.context('../../../assets/images/attractions/park/rafiki/img',true);
+    }
 }
 

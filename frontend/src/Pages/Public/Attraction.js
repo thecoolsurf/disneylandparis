@@ -1,3 +1,4 @@
+import '../../assets/css/public/attraction.css';
 import { useState, useEffect } from 'react';
 import { FilterRoute } from '../../Components/Public/Filters/FilterRoute.js';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
@@ -38,8 +39,9 @@ export const Attraction = (props) => {
                             <div className="description" key={el.cname}>
                                 <CreatedAt date={el.created} />
                                 <BreadCrumb />
-                                <div className="category">{el.cname}</div>
-                                <h2 className="title">{el.aname}</h2>
+                                <a className="category" href={'/categorie/'+el.cslug} alt={el.cname}>{'Catégorie '+el.cname}</a>
+                                <h2 className="name">{el.aname}</h2>
+                                <a className="origin" href={'/origine/'+el.oslug} alt={el.oname}>{'Origine '+el.oname}</a>
                                 <h5 className="author">Créateur(s): {el.author}</h5>
                                 <p className="texte">{el.description}</p>
                             </div>

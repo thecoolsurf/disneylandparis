@@ -4,10 +4,9 @@ import { FilterAttractions } from '../../Components/Public/Filters/FilterAttract
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
 import { BlockCategories } from '../../Components/Public/Blocks/BlockCategories.js';
-import { BlockOrigins } from '../../Components/Public/Blocks/BlockOrigins.js';
-import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
+import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 
-export const Home = (props) => {
+export const Categories = (props) => {
     const [home, setDatas] = useState([]);
     useEffect(() => {
         const fetchData = async () => {
@@ -20,16 +19,15 @@ export const Home = (props) => {
     const parkAndUnivers = FilterHomeDatas(home);
     const attraction = props.navigation;
     const categories = props.categories;
-    const legend = [
-        `Disneyland Paris`,
-        `${parkAndUnivers.length} parks à thèmes`,
-        `${home.length} univers`,
-        `${attraction.length} attractions`,
-    ];
     return (
         <div className="home">
-            <Carrousel legend={legend} datas={attraction} />
             <section className="infos">
+                <BreadCrumb />
+                <div className="bloc-infos">
+                    <ul className="list">
+                        <BlockCategories label="home-categories" datas={categories} />
+                    </ul>
+                </div>
                 {parkAndUnivers.map((p) => {
                     let park = null;
                     let univers = null;
@@ -44,17 +42,12 @@ export const Home = (props) => {
                         univers = parkAndUnivers[1].univers;
                     }
                     return (
-                        <div className="bloc-infos" key={'p'+p.pid}>
+                        <div className="bloc-infos" key={'p' + p.pid}>
                             <BlockLogo href={p.proute} slug={p.pslug} legend={p.pname} />
                             <BlockInfos univers={univers} attractions={attractions} />
                         </div>
                     )
                 })}
-                <div className="bloc-infos">
-                    <ul className="list">
-                        <BlockCategories label="home-categories" datas={categories} />
-                    </ul>
-                </div>
             </section>
         </div>
     )

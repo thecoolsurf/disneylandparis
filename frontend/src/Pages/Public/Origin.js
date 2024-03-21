@@ -1,4 +1,4 @@
-import '../../assets/css/public/origin.css';
+import '../../assets/css/public/category.css';
 import { useState, useEffect } from 'react';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 
@@ -12,12 +12,15 @@ export const Origin = (props) => {
         };
         fetchData();
     }, []);
+    const odescription = attractions[0] ? attractions[0].odescription : '';
     return (
-        <section className="origin">
+        <section className="category">
             <BreadCrumb />
-            <h1>Liste des attractions par origine: {props.name} ({attractions.length})</h1>
-            <div className="description">
-                Texte de description.
+            <div className="title">
+                <h4 className="origin">Origine</h4>
+                <h1 className="name">{props.name}</h1>
+                <h3>Liste des attractions</h3>
+                <h2>{attractions.length + ' attractions'}</h2>
             </div>
             <div className="list">
                 {attractions.map((el) => {
@@ -30,11 +33,14 @@ export const Origin = (props) => {
                             <div className="univers-name">{el.uname}</div>
                             <div className="park-name">{'Origine'}</div>
                             <div className="univers-name">{el.oname}</div>
-                            <div className="category-name">{el.cname}</div>
+                            <div className="park-name">{el.cname}</div>
                             <div className="legend">{el.aname}</div>
                         </a>
                     )
                 })}
+            </div>
+            <div className="description">
+                {odescription}
             </div>
         </section>
     )

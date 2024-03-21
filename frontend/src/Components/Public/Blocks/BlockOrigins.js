@@ -6,7 +6,7 @@
 export const BlockOrigins = (props) => {
     return (
         <li className="items-1">
-            <div className="total">Attractions par origine</div>
+            <div className="total">Attractions par origines</div>
             {props.datas.map((o) => {
                 return (
                     <div className="item" key={o.oslug}>

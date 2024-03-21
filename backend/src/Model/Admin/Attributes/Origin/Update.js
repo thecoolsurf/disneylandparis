@@ -2,7 +2,7 @@
 
 const update = `
 UPDATE origin SET 
-name = ?, slug = ?, route = ?
+name = ?, slug = ?, route = ?, description = ?
 WHERE id = ?`;
 
 module.exports = update;

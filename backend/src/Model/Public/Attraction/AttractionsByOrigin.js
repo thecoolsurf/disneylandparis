@@ -4,7 +4,7 @@ a.id AS aid, a.name AS aname, a.slug AS aslug, a.route AS aroute,
 p.name AS pname, 
 u.name AS uname, 
 c.name AS cname,
-o.name AS oname
+o.name AS oname, o.description AS odescription
 FROM attraction a 
 JOIN park p ON p.id = a.id_park
 JOIN univers u ON u.id = a.id_univ

@@ -5,6 +5,7 @@ SELECT
 id, name
 FROM 
 category
+ORDER BY name
 `;
 
 module.exports = collection;

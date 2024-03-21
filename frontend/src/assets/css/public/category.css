@@ -8,6 +8,36 @@
     padding: 30px;
 }
 
+.category .title {
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.category h1,
+.category h2,
+.category h3,
+.category h4 {
+    margin: 0;
+}
+
+.category .name {
+    font-size: 1.6rem;
+}
+
+.category h2 {
+    font-size: 1.2rem;
+}
+
+.category h3 {
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.category .origin {
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
 .category .list {
     width: 100%;
     display: flex;
@@ -97,4 +127,5 @@
 
 .category .description {
     max-width:none;
+    white-space: pre-line;
 }
