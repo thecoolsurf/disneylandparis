@@ -71,10 +71,10 @@ function App() {
                             } />
                         )
                     })}
-                    {origins.map((c,i) => {
+                    {origins.map((o,i) => {
                         return (
-                            <Route key={i} path={c.oroute} element={
-                                <Origin id={c.oid} name={c.oname} />
+                            <Route key={i} path={o.oroute} element={
+                                <Origin id={o.oid} name={o.oname} />
                             } />
                         )
                     })}

@@ -249,3 +249,19 @@
     background-image: url('../../images/attractions/studio/marvel-thor/icon/marvel-thor.jpg');
     background-size: cover;
 }
+
+.icon-flash-mcqueen {
+    background-image: url('../../images/attractions/studio/flash-mcqueen/icon/flash-mcqueen.jpg');
+    background-size: cover;
+}
+
+.icon-elastigirl {
+    background-image: url('../../images/attractions/studio/elastigirl/icon/elastigirl.jpg');
+    background-size: cover;
+}
+
+.icon-mr-indestructible {
+    background-image: url('../../images/attractions/studio/mr-indestructible/icon/mr-indestructible.jpg');
+    background-size: cover;
+}
+
