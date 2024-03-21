@@ -1,4 +1,4 @@
-import '../../assets/css/public/categories.css';
+import '../../assets/css/public/category.css';
 import { useState, useEffect } from 'react';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 
@@ -13,7 +13,7 @@ export const Category = (props) => {
         fetchData();
     }, []);
     return (
-        <section className="categories">
+        <section className="category">
             <BreadCrumb />
             <h1>Liste des attractions par catégorie: {props.name} ({attractions.length})</h1>
             <div className="description">

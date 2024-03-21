@@ -112,6 +112,9 @@ select("/attractions_by_univers", attractions_by_univers);
 /* categories */
 const attractions_by_category = require('./Model/Public/Attraction/AttractionsByCategory.js');
 select("/attractions_by_category", attractions_by_category);
+/* origins */
+const attractions_by_origin = require('./Model/Public/Attraction/AttractionsByOrigin.js');
+select("/attractions_by_origin", attractions_by_origin);
 /* attraction */
 const attraction_by_id = require('./Model/Public/Attraction/AttractionById.js');
 select("/attraction_by_id", attraction_by_id);

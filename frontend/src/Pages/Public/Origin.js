@@ -1,4 +1,4 @@
-import '../../assets/css/public/categories.css';
+import '../../assets/css/public/origin.css';
 import { useState, useEffect } from 'react';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 
