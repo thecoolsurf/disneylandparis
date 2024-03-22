@@ -157,6 +157,9 @@ export const RequireContextStudio = () => {
     if (uri.includes('flash-mcqueen')) {
         return require.context('../../../assets/images/attractions/studio/flash-mcqueen/img',true);
     }
+    if (uri.includes('la-bergere')) {
+        return require.context('../../../assets/images/attractions/studio/la-bergere/img',true);
+    }
 }
 
 

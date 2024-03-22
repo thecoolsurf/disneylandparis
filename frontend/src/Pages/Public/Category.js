@@ -16,10 +16,10 @@ export const Category = (props) => {
         <section className="category">
             <BreadCrumb />
             <div className="title">
-                <h4>Categorie</h4>
-                <h1>{props.name}</h1>
-                <h2>Liste des attractions par categorie</h2>
-                <h3>Nombre des attractions: {attractions.length}</h3>
+                <div className="title-category">Categorie</div>
+                <div className="title-name">{props.name}</div>
+                <div className="title-category">Liste des attractions par categorie</div>
+                <div className="title-info">Nombre des attractions: {attractions.length}</div>
             </div>
             <div className="list">
                 {attractions.map((el) => {

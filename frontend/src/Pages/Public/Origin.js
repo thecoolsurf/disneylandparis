@@ -1,4 +1,4 @@
-import '../../assets/css/public/category.css';
+import '../../assets/css/public/origin.css';
 import { useState, useEffect } from 'react';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 
@@ -14,13 +14,13 @@ export const Origin = (props) => {
     }, []);
     const odescription = attractions[0] ? attractions[0].odescription : '';
     return (
-        <section className="category">
+        <section className="origin">
             <BreadCrumb />
             <div className="title">
-                <h4 className="origin">Origine</h4>
-                <h1 className="name">{props.name}</h1>
-                <h3>Liste des attractions</h3>
-                <h2>{attractions.length + ' attractions'}</h2>
+                <div className="title-origin">Origine</div>
+                <div className="title-name">{props.name}</div>
+                <div className="title-origin">Liste des attractions</div>
+                <div className="title-infos">{attractions.length + ' attractions'}</div>
             </div>
             <div className="list">
                 {attractions.map((el) => {

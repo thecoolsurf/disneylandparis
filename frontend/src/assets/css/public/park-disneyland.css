@@ -493,3 +493,12 @@
     background-image: url('../../images/attractions/park/judy-hopps/icon/judy-hopps.jpg');
     background-size: cover;
 }
+.icon-prince-philippe {
+    background-image: url('../../images/attractions/park/prince-philippe/icon/prince-philippe.jpg');
+    background-size: cover;
+}
+
+.icon-panpan {
+    background-image: url('../../images/attractions/park/panpan/icon/panpan.jpg');
+    background-size: cover;
+}

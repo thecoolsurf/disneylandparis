@@ -39,10 +39,10 @@ export const Attraction = (props) => {
                             <div className="description" key={el.cname}>
                                 <CreatedAt date={el.created} />
                                 <BreadCrumb />
-                                <a className="category" href={'/categorie/'+el.cslug} alt={el.cname}>{'Catégorie '+el.cname}</a>
-                                <h2 className="name">{el.aname}</h2>
-                                <a className="origin" href={'/origine/'+el.oslug} alt={el.oname}>{'Origine '+el.oname}</a>
-                                <h5 className="author">Créateur(s): {el.author}</h5>
+                                <a className="title-category" href={'/categorie/'+el.cslug} alt={el.cname}>{'Catégorie '+el.cname}</a>
+                                <div className="title-name">{el.aname}</div>
+                                <a className="title-origin" href={'/origine/'+el.oslug} alt={el.oname}>{'Origine '+el.oname}</a>
+                                <div className="title-author">{'Création '+el.author}</div>
                                 <p className="texte">{el.description}</p>
                             </div>
                         </>

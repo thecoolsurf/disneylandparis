@@ -1,4 +1,4 @@
-.category {
+.origin {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -8,29 +8,29 @@
     padding: 30px;
 }
 
-.category .title {
+.origin .title {
     width: 100%;
     margin: 0 0 20px 0;
 }
 
-.category .title-name {
+.origin .title-name {
     font-size: 1.6rem;
     font-weight: 700;
 }
 
-.category .title-category,
-.category .title-origin {
+.origin .title-category,
+.origin .title-origin {
     font-size: 0.9rem;
     font-weight: 300;
     text-transform: uppercase;
 }
 
-.category .title-infos {
+.origin .title-infos {
     font-size: 1.4rem;
     font-weight: 700;
 }
 
-.category .list {
+.origin .list {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -41,7 +41,7 @@
     margin: 0 0 30px 0;
 }
 
-.category .logo {
+.origin .logo {
     background-color: #FFF;
     background-position: center center;
     background-repeat: no-repeat;
@@ -58,29 +58,29 @@
     color: #000;
 }
 
-.category .logo .icon {
+.origin .logo .icon {
     background-position: center center;
     background-repeat: no-repeat;
     width: auto;
     height: 120px;
 }
 
-.category .logo .img {
+.origin .logo .img {
     width: 100%;
     height: 120px;
     margin: 0 0 10px 0;
     overflow: hidden;
 }
 
-.category .logo .icon {
+.origin .logo .icon {
     transition: all 0.1s;
 }
 
-.category .logo:hover .img .icon {
+.origin .logo:hover .img .icon {
     transform: scale(1.2);
 }
 
-.category .park-name {
+.origin .park-name {
     margin: 0;
     padding: 0 10px;
     font-size: 0.6rem;
@@ -89,7 +89,7 @@
     text-transform: uppercase;
 }
 
-.category .univers-name {
+.origin .univers-name {
     margin: 0;
     padding: 0 10px;
     font-size: 1rem;
@@ -97,7 +97,7 @@
     color: #353535;
 }
 
-.category .category-name {
+.origin .origin-name {
     margin: 10px 0 0 0;
     padding: 0 10px;
     font-size: 0.6rem;
@@ -106,7 +106,7 @@
     text-transform: uppercase;
 }
 
-.category .logo .legend {
+.origin .logo .legend {
     width: 100%;
     height: auto;
     padding: 0 10px;
@@ -117,7 +117,7 @@
     line-height: 1;
 }
 
-.category .description {
+.origin .description {
     max-width:none;
     white-space: pre-line;
 }

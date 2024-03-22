@@ -321,5 +321,11 @@ export const RequireContextPark = () => {
     if (uri.includes('rafiki')) {
         return require.context('../../../assets/images/attractions/park/rafiki/img',true);
     }
+    if (uri.includes('prince-philippe')) {
+        return require.context('../../../assets/images/attractions/park/prince-philippe/img',true);
+    }
+    if (uri.includes('panpan')) {
+        return require.context('../../../assets/images/attractions/park/panpan/img',true);
+    }
 }
 
