@@ -17,7 +17,7 @@ export const BreadCrumb = () => {
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                <span>{params[4]}</span>
+                <span>{params[3]}</span>
             </div>
         )
     }
@@ -26,7 +26,7 @@ export const BreadCrumb = () => {
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                <a href={'/home/categories'} alt="categories">Catégories</a>
+                <a href={'/categories'} alt="categories">Catégories</a>
             </div>
         )
     }
@@ -35,7 +35,7 @@ export const BreadCrumb = () => {
             <div className="breadcrumb">
                 <a href={'/'} alt="home">home</a>
                 <i className="fa fa-circle"></i>
-                <a href={'/home/origines'} alt="origines">Origines</a>
+                <a href={'/origines'} alt="origines">Origines</a>
             </div>
         )
     }

@@ -23,15 +23,9 @@ export const Park = (props) => {
     const park = FilterPark(parks);
     const attractions = FilterAttractions(props.navigation, props.id);
     const categories = FilterCategory('park',props.navigation, props.id);
-    let legend = [
-        `${props.name}`,
-        `${parks.length} univers`,
-        `${categories.length} catégories`,
-        `${attractions.length} attractions`,
-    ];
     return (
         <div key={'park'+props.id} className="park">
-            <Carrousel datas={parks} legend={legend} />
+            <Carrousel datas={parks} />
             <section className="infos">
                 {park.map((p) => {
                     return (

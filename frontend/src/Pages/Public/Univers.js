@@ -24,15 +24,9 @@ export const Univers = (props) => {
     }, []);
     const categories = FilterCategory('univers',props.navigation, props.id);
     const uname = univers[0] ? univers[0].uname : '';
-    let legend = [
-        `Univers ${uname}`,
-        `${categories.length} catégories`,
-        `${attractions.length} attractions`,
-        ``,
-    ];
     return (
         <div className="univers">
-            <Carrousel datas={attractions} legend={legend} />
+            <Carrousel datas={attractions} />
             <section className="infos">
                 {univers.map((el) => {
                     const back = FilterRoute(el.uroute, 'univers');

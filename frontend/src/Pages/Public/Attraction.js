@@ -18,16 +18,9 @@ export const Attraction = (props) => {
         };
         fetchtheData();
     }, []);
-    const cname = attraction[0] ? attraction[0].cname : '';
-    const aname = attraction[0] ? attraction[0].aname : '';
-    const legend = [
-        `${aname}`,
-        `${cname}`,
-        `Galerie d'images ${aname}`,
-    ];
     return (
         <div className="attraction" key="attraction">
-            <Carrousel datas={attraction} slugs={props.slugs} legend={legend} />
+            <Carrousel datas={attraction} />
             <section className="infos">
                 {attraction.map((el) => {
                     const back = FilterRoute(el.aroute, 'attraction');

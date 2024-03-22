@@ -66,10 +66,10 @@ function App() {
                     <Route path="/" element={
                         <Home navigation={navigation} categories={categories} />
                     } />
-                    <Route path="/home/categories" element={
+                    <Route path="/categories" element={
                         <Categories navigation={navigation} categories={categories} />
                     } />
-                    <Route path="/home/origines" element={
+                    <Route path="/origines" element={
                         <Origins navigation={navigation} origins={origins} />
                     } />
                     {categories.map((c,i) => {
