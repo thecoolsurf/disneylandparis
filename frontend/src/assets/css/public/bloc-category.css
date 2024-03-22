@@ -1,36 +1,4 @@
-.origin {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-content: flex-start;
-    align-items: flex-start;
-    padding: 30px;
-}
-
-.origin .title {
-    width: 100%;
-    margin: 0 0 20px 0;
-}
-
-.origin .title-name {
-    font-size: 1.6rem;
-    font-weight: 700;
-}
-
-.origin .title-category,
-.origin .title-origin {
-    font-size: 0.9rem;
-    font-weight: 300;
-    text-transform: uppercase;
-}
-
-.origin .title-infos {
-    font-size: 1.4rem;
-    font-weight: 700;
-}
-
-.origin .list {
+.category .list {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -41,7 +9,7 @@
     margin: 0 0 30px 0;
 }
 
-.origin .logo {
+.category .logo {
     background-color: #FFF;
     background-position: center center;
     background-repeat: no-repeat;
@@ -58,29 +26,29 @@
     color: #000;
 }
 
-.origin .logo .icon {
+.category .logo .icon {
     background-position: center center;
     background-repeat: no-repeat;
     width: auto;
     height: 120px;
 }
 
-.origin .logo .img {
+.category .logo .img {
     width: 100%;
     height: 120px;
     margin: 0 0 10px 0;
     overflow: hidden;
 }
 
-.origin .logo .icon {
+.category .logo .icon {
     transition: all 0.1s;
 }
 
-.origin .logo:hover .img .icon {
+.category .logo:hover .img .icon {
     transform: scale(1.2);
 }
 
-.origin .park-name {
+.category .park-name {
     margin: 0;
     padding: 0 10px;
     font-size: 0.6rem;
@@ -89,7 +57,7 @@
     text-transform: uppercase;
 }
 
-.origin .univers-name {
+.category .univers-name {
     margin: 0;
     padding: 0 10px;
     font-size: 1rem;
@@ -97,7 +65,7 @@
     color: #353535;
 }
 
-.origin .origin-name {
+.category .category-name {
     margin: 10px 0 0 0;
     padding: 0 10px;
     font-size: 0.6rem;
@@ -106,7 +74,7 @@
     text-transform: uppercase;
 }
 
-.origin .logo .legend {
+.category .logo .legend {
     width: 100%;
     height: auto;
     padding: 0 10px;
@@ -117,7 +85,7 @@
     line-height: 1;
 }
 
-.origin .description {
+.category .description {
     max-width:none;
     white-space: pre-line;
 }

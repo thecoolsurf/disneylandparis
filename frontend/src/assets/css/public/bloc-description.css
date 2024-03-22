@@ -1,0 +1,109 @@
+.description {
+	position: relative;
+	float: left;
+	max-width: 600px;
+	margin: 0 0 30px 0;
+}
+
+.dates {
+	background: #FFF;
+	position: absolute;
+	top: 20px;
+	right: 0;
+	z-index: 10;
+	width: fit-content;
+	padding: 5px 10px;
+	text-align: center;
+	border: solid 1px #d3d3d3;
+	border-radius: 5px;
+	box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+	box-sizing: border-box;
+	color: #444;
+}
+
+.dates .created {
+	font-size: 0.7rem;
+	text-transform: uppercase;
+}
+
+.dates .day {
+	padding: 4px 0 0 0;
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: 1;
+}
+
+.dates .year {
+	font-size: 1rem;
+	text-transform: uppercase;
+}
+
+.dates .month {
+	position: relative;
+	left: -1px;
+	top: -1px;
+	width: 100%;
+	font-size: 0.8rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.title {
+    width: 100%;
+    margin: 0 0 20px 0;
+}
+
+.title-name {
+    font-size: 1.6rem;
+    font-weight: 700;
+	color: #444;
+}
+
+.title-category,
+.title-origin {
+    font-size: 0.9rem;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.title-infos {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.title-category,
+.title-origin {
+	font-weight: normal;
+	color: #666;
+	text-transform: uppercase;
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+}
+
+.title-category {
+	font-size: 0.8rem;
+}
+
+.title-origin {
+	font-size: 1.2rem;
+}
+
+.title-author {
+	font-size: 0.8rem;
+	font-weight: normal;
+	color: #666;
+	text-transform: uppercase;
+}
+
+.description .texte {
+	font-size: 1.2rem;
+	line-height: 1.8;
+	text-align: left;
+	white-space: pre-line;
+}
+
+.attraction .title-category:hover,
+.attraction .title-origin:hover {
+	font-weight: 700;
+	color: #000;
+}

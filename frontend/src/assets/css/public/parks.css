@@ -9,7 +9,7 @@
 
 .icon-park-disneyland {
 	background-image: url('../../images/parks/logo-park-disneyland.jpg');
-	background-size: 80%;
+	background-size: 100%;
 	background-position: center center;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .icon-walt-disney-studios {
-	background-image: url('../../images/parks/logo-walt-disney-studios-v1.png');
-	background-size: 80%;
+	background-image: url('../../images/parks/logo-walt-disney-studios-v1.jpg');
+	background-size: 100%;
 	background-position: center center;
 }

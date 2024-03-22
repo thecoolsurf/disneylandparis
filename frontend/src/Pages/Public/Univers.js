@@ -1,3 +1,5 @@
+import '../../assets/css/public/bloc-infos.css';
+import '../../assets/css/public/bloc-description.css';
 import { useState, useEffect } from 'react';
 import { FilterRoute } from '../../Components/Public/Filters/FilterRoute.js';
 import { FilterCategory } from '../../Components/Public/Filters/FilterCategory.js';
@@ -42,8 +44,10 @@ export const Univers = (props) => {
                             </div>
                             <div className="description">
                                 <BreadCrumb />
-                                <div className="category">Univers</div>
-                                <h2 className="title">{el.uname}</h2>
+                                <div className="title">
+                                    <div className="title-category">Univers</div>
+                                    <div className="title-name">{el.uname}</div>
+                                </div>
                                 <p className="texte">{el.description}</p>
                             </div>
                         </>

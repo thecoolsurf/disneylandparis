@@ -1,4 +1,6 @@
 import '../../assets/css/public/parks.css';
+import '../../assets/css/public/bloc-infos.css';
+import '../../assets/css/public/bloc-description.css';
 import { useState, useEffect } from 'react';
 import { FilterPark } from '../../Components/Public/Filters/FilterPark.js';
 import { FilterAttractions } from '../../Components/Public/Filters/FilterAttractions.js';
@@ -40,8 +42,8 @@ export const Park = (props) => {
                             </div>
                             <div key={'describe'+p.pid} className="description">
                                 <BreadCrumb />
-                                <div className="category">Parc à thèmes</div>
-                                <h2 className="title">{p.pname}</h2>
+                                <div className="title-category">Parc à thèmes</div>
+                                <h2 className="title-name">{p.pname}</h2>
                                 <p className="texte">{p.description}</p>
                             </div>
                         </>

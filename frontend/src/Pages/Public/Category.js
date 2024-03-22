@@ -1,4 +1,5 @@
-import '../../assets/css/public/category.css';
+import '../../assets/css/public/bloc-category.css';
+import '../../assets/css/public/bloc-infos.css';
 import { useState, useEffect } from 'react';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 

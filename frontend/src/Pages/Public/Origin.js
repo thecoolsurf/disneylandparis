@@ -1,4 +1,5 @@
-import '../../assets/css/public/origin.css';
+import '../../assets/css/public/bloc-category.css';
+import '../../assets/css/public/bloc-description.css';
 import { useState, useEffect } from 'react';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
 
@@ -14,7 +15,7 @@ export const Origin = (props) => {
     }, []);
     const odescription = attractions[0] ? attractions[0].odescription : '';
     return (
-        <section className="origin">
+        <section className="category">
             <BreadCrumb />
             <div className="title">
                 <div className="title-origin">Origine</div>

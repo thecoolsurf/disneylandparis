@@ -1,4 +1,5 @@
-import '../../assets/css/public/attraction.css';
+import '../../assets/css/public/bloc-infos.css';
+import '../../assets/css/public/bloc-description.css';
 import { useState, useEffect } from 'react';
 import { FilterRoute } from '../../Components/Public/Filters/FilterRoute.js';
 import { BreadCrumb } from '../../Components/Public/Document/Breadcrumb.js';
