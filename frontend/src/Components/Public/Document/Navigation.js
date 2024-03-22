@@ -6,6 +6,8 @@ export const Navigation = (props) => {
     const [show0, setShow0] = useState('hide');
     const [show1, setShow1] = useState('hide');
     const [show2, setShow2] = useState('hide');
+    const [show3, setShow3] = useState('hide');
+    let show = '';
     const bkgNav = FilterBkgColor();
     const uri = window.location.href;
     if (uri.includes('admin')) {
@@ -62,6 +64,16 @@ export const Navigation = (props) => {
                             </div>
                         )
                     })}
+                    <div className="nav-parent">
+                        <div className={'link show '+ bkgNav} onClick={(e) => {
+                            setShow3('show'); setShow1('hide'); setShow2('hide');
+                        }}>Attractions
+                        </div>
+                        <div className={'nav-childs ' + show3}>
+                            <a className="link link-3" href="/categories" alt="categories">par Catégories</a>
+                            <a className="link link-3" href="/origines" alt="origines">par Origines</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         );
