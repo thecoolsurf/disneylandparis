@@ -4,7 +4,6 @@ import { FilterAttractions } from '../../Components/Public/Filters/FilterAttract
 import { BlockLogo } from '../../Components/Public/Blocks/BlockLogo.js';
 import { BlockInfos } from '../../Components/Public/Blocks/BlockInfos.js';
 import { BlockCategories } from '../../Components/Public/Blocks/BlockCategories.js';
-import { BlockOrigins } from '../../Components/Public/Blocks/BlockOrigins.js';
 import { Carrousel } from '../../Components/Public/Document/Carrousel.js';
 
 export const Home = (props) => {
