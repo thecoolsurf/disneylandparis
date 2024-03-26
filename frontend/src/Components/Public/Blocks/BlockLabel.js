@@ -12,7 +12,7 @@ export const BlockLabel = (props) => {
         case 'Evacuation':
             return (
                 <li className="items-2">
-                    <i className={'icon ' + props.icon} aria-hidden="true"></i>
+                    <div className={'icon ' + props.icon} aria-hidden="true"></div>
                     <div className="item">
                         <div className="label">{props.label}</div>
                         <div className="name">{props.name}</div>
@@ -23,7 +23,7 @@ export const BlockLabel = (props) => {
         case 'Handicaps':
             return (
                 <li className="items-2">
-                    <i className={'icon ' + props.icon} aria-hidden="true"></i>
+                    <div className={'icon ' + props.icon} aria-hidden="true"></div>
                     <div className="item">
                         <div className="label">{props.label}</div>
                         <ul className="collection">
@@ -42,7 +42,7 @@ export const BlockLabel = (props) => {
         case 'Taille':
             return (
                 <li className="items-2">
-                    <i className={'icon ' + props.icon} aria-hidden="true"></i>
+                    <div className={'icon ' + props.icon} aria-hidden="true"></div>
                     <div className="item">
                         <div className="label">{props.name}</div>
                         <div className="name">{props.description}</div>
