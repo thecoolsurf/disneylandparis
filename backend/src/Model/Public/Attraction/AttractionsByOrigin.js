@@ -11,7 +11,7 @@ JOIN univers u ON u.id = a.id_univ
 JOIN category c ON c.id = a.id_category
 JOIN origin o ON o.id = a.id_origin
 WHERE a.id_origin = ?
-ORDER BY a.name ASC
+ORDER BY o.name AND a.name ASC
 `;
 
 module.exports = attractions_by_origin;
