@@ -45,7 +45,7 @@ export const RequireContextPark = () => {
         return require.context('../../../assets/images/attractions/park/casy-jr-le-petit-train-du-cirque/img',true);
     }
     if (uri.includes('discovery-arcade-main-street-usa')) {
-        return require.context('../../../assets/images/attractions/park/discovery-arcade-main-street-usa/img',true);
+        return require.context('../../../assets/images/attractions/park/discovery-arcade/img',true);
     }
     if (uri.includes('disneyland-railroad')) {
         return require.context('../../../assets/images/attractions/park/disneyland-railroad/img',true);
