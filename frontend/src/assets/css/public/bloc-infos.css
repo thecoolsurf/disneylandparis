@@ -49,7 +49,7 @@
 .bloc-infos .items-2 .item {
 	display: block;
 	float: left;
-	width: 260px;
+	width: 100%;
 }
 
 .bloc-infos .items-1 .item,

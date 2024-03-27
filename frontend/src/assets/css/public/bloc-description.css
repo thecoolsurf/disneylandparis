@@ -80,6 +80,12 @@
 	padding: 0;
 }
 
+.title-category .fa,
+.title-origin .fa {
+	padding: 0 10px 0 0;
+	font-size: 1rem;
+}
+
 .title-category {
 	font-size: 0.8rem;
 }
